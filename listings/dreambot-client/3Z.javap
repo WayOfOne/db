@@ -1,0 +1,1306 @@
+Compiled from "3Z.java"
+public class org.dreambot.3Z {
+  private static final java.util.List<org.dreambot.3B> 5;
+
+  private static final java.util.List<org.dreambot.3B> 0;
+
+  private static final java.util.concurrent.locks.ReentrantLock 7;
+
+  private static long 4;
+
+  private static long 1;
+
+  private static com.google.common.collect.ImmutableSet<java.lang.Integer> 6;
+
+  private static long 9;
+
+  private static boolean 3;
+
+  private static final java.lang.String a;
+
+  private static final long[] b;
+
+  private static final java.lang.Integer[] c;
+
+  private static final long[] d;
+
+  private static final java.lang.Long[] e;
+
+  public static java.util.List 9(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: pop
+       2: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+       5: astore_1
+       6: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+       9: getstatic     #289                // Field "4":J
+      12: lsub
+      13: getstatic     #316                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+      16: sipush        12324
+      19: ldc2_w        #397                // long 6112273549310176611l
+      22: invokestatic  #129                // Method b:(IJ)J
+      25: invokevirtual #58                 // Method java/util/concurrent/TimeUnit.toNanos:(J)J
+      28: lcmp
+      29: aload_1
+      30: ifnull        69
+      33: ifge          51
+      36: goto          43
+      39: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      42: athrow
+      43: getstatic     #175                // Field "5":Ljava/util/List;
+      46: areturn
+      47: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      50: athrow
+      51: getstatic     #347                // Field "7":Ljava/util/concurrent/locks/ReentrantLock;
+      54: sipush        12324
+      57: ldc2_w        #397                // long 6112273549310176611l
+      60: invokestatic  #129                // Method b:(IJ)J
+      63: getstatic     #316                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+      66: invokevirtual #39                 // Method java/util/concurrent/locks/ReentrantLock.tryLock:(JLjava/util/concurrent/TimeUnit;)Z
+      69: aload_1
+      70: ifnull        84
+      73: ifeq          236
+      76: goto          83
+      79: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      82: athrow
+      83: iconst_0
+      84: istore_2
+      85: iload_2
+      86: iconst_2
+      87: if_icmpge     216
+      90: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+      93: putstatic     #289                // Field "4":J
+      96: getstatic     #175                // Field "5":Ljava/util/List;
+      99: invokeinterface #189,  1          // InterfaceMethod java/util/List.clear:()V
+     104: new           #146                // class org/dreambot/b1
+     107: dup
+     108: invokespecial #254                // Method org/dreambot/b1."<init>":()V
+     111: astore_3
+     112: aload_3
+     113: iconst_0
+     114: anewarray     #29                 // class java/lang/Object
+     117: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+     120: ldc2_w        #401                // long 21573504337884080l
+     123: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+     126: swap
+     127: aconst_null
+     128: swap
+     129: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+     132: checkcast     #57                 // class java/lang/String
+     135: goto          142
+     138: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+     141: athrow
+     142: putfield      #179                // Field org/dreambot/b1.c:Ljava/lang/String;
+     145: aload_1
+     146: ifnull        222
+     149: aload_1
+     150: ifnull        212
+     153: goto          160
+     156: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     159: athrow
+     160: aload_3
+     161: getstatic     #175                // Field "5":Ljava/util/List;
+     164: iconst_2
+     165: anewarray     #29                 // class java/lang/Object
+     168: dup_x1
+     169: swap
+     170: iconst_1
+     171: swap
+     172: aastore
+     173: dup_x1
+     174: swap
+     175: iconst_0
+     176: swap
+     177: aastore
+     178: invokestatic  #93                 // Method "2":([Ljava/lang/Object;)Z
+     181: ifeq          202
+     184: goto          191
+     187: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     190: athrow
+     191: aload_1
+     192: ifnonnull     216
+     195: goto          202
+     198: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     201: athrow
+     202: iinc          2, 1
+     205: goto          212
+     208: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     211: athrow
+     212: aload_1
+     213: ifnonnull     85
+     216: getstatic     #347                // Field "7":Ljava/util/concurrent/locks/ReentrantLock;
+     219: invokevirtual #10                 // Method java/util/concurrent/locks/ReentrantLock.unlock:()V
+     222: goto          236
+     225: astore        4
+     227: getstatic     #347                // Field "7":Ljava/util/concurrent/locks/ReentrantLock;
+     230: invokevirtual #10                 // Method java/util/concurrent/locks/ReentrantLock.unlock:()V
+     233: aload         4
+     235: athrow
+     236: goto          240
+     239: astore_2
+     240: getstatic     #175                // Field "5":Ljava/util/List;
+     243: areturn
+    Exception table:
+       from    to  target type
+         191   205   208   Class java/lang/InterruptedException
+         160   195   198   Class java/lang/InterruptedException
+         149   184   187   Class java/lang/InterruptedException
+         129   135   138   Class java/lang/reflect/InvocationTargetException
+         112   153   156   Class java/lang/InterruptedException
+          69    76    79   Class java/lang/InterruptedException
+          33    47    47   Class java/lang/InterruptedException
+           6    36    39   Class java/lang/InterruptedException
+          83   216   225   any
+          51   236   239   Class java/lang/InterruptedException
+
+  private static boolean 2(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #29                 // class java/lang/Object
+       7: astore_1
+       8: dup
+       9: iconst_1
+      10: aaload
+      11: checkcast     #318                // class java/util/List
+      14: astore_2
+      15: pop
+      16: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+      19: iconst_0
+      20: anewarray     #29                 // class java/lang/Object
+      23: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+      26: ldc2_w        #403                // long 27158678155575524l
+      29: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+      32: swap
+      33: aconst_null
+      34: swap
+      35: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      38: goto          45
+      41: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+      44: athrow
+      45: aload_1
+      46: ldc           #1                  // class org/dreambot/a3
+      48: iconst_2
+      49: anewarray     #29                 // class java/lang/Object
+      52: dup_x1
+      53: swap
+      54: iconst_1
+      55: swap
+      56: aastore
+      57: dup_x1
+      58: swap
+      59: iconst_0
+      60: swap
+      61: aastore
+      62: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+      65: ldc2_w        #389                // long 18150626118977992l
+      68: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+      71: dup_x2
+      72: pop
+      73: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      76: goto          83
+      79: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+      82: athrow
+      83: checkcast     #1                  // class org/dreambot/a3
+      86: astore        4
+      88: astore_3
+      89: aload         4
+      91: aload_3
+      92: ifnull        177
+      95: ifnull        175
+      98: goto          105
+     101: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     104: athrow
+     105: aload         4
+     107: aload_3
+     108: ifnull        177
+     111: goto          118
+     114: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     117: athrow
+     118: getfield      #194                // Field org/dreambot/a3.v:Ljava/util/Collection;
+     121: ifnull        175
+     124: goto          131
+     127: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     130: athrow
+     131: aload_2
+     132: aload         4
+     134: getfield      #194                // Field org/dreambot/a3.v:Ljava/util/Collection;
+     137: invokeinterface #308,  1          // InterfaceMethod java/util/Collection.stream:()Ljava/util/stream/Stream;
+     142: invokedynamic #335,  0            // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+     147: invokeinterface #357,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+     152: invokestatic  #59                 // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+     155: invokeinterface #358,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+     160: checkcast     #375                // class java/util/Collection
+     163: invokeinterface #279,  2          // InterfaceMethod java/util/List.addAll:(Ljava/util/Collection;)Z
+     168: pop
+     169: iconst_1
+     170: ireturn
+     171: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     174: athrow
+     175: aload         4
+     177: ifnull        215
+     180: new           #111                // class java/lang/Thread
+     183: dup
+     184: invokedynamic #323,  0            // InvokeDynamic #1:run:()Ljava/lang/Runnable;
+     189: getstatic     #157                // Field a:Ljava/lang/String;
+     192: invokespecial #299                // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;Ljava/lang/String;)V
+     195: invokevirtual #177                // Method java/lang/Thread.start:()V
+     198: sipush        25221
+     201: ldc2_w        #383                // long 8532437190057525185l
+     204: invokestatic  #129                // Method b:(IJ)J
+     207: invokestatic  #249                // Method java/lang/Thread.sleep:(J)V
+     210: goto          215
+     213: astore        5
+     215: iconst_0
+     216: ireturn
+    Exception table:
+       from    to  target type
+          73    76    79   Class java/lang/reflect/InvocationTargetException
+          35    38    41   Class java/lang/reflect/InvocationTargetException
+         118   171   171   Class java/lang/InterruptedException
+         105   124   127   Class java/lang/InterruptedException
+          95   111   114   Class java/lang/InterruptedException
+          89    98   101   Class java/lang/InterruptedException
+         198   210   213   Class java/lang/InterruptedException
+
+  public static java.util.List 5(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: pop
+       2: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+       5: astore_1
+       6: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+       9: getstatic     #224                // Field "1":J
+      12: lsub
+      13: getstatic     #316                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+      16: sipush        18187
+      19: ldc2_w        #399                // long 2948535552315218509l
+      22: invokestatic  #129                // Method b:(IJ)J
+      25: invokevirtual #58                 // Method java/util/concurrent/TimeUnit.toNanos:(J)J
+      28: lcmp
+      29: aload_1
+      30: ifnull        69
+      33: ifge          51
+      36: goto          43
+      39: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      42: athrow
+      43: getstatic     #212                // Field "0":Ljava/util/List;
+      46: areturn
+      47: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      50: athrow
+      51: getstatic     #347                // Field "7":Ljava/util/concurrent/locks/ReentrantLock;
+      54: sipush        12324
+      57: ldc2_w        #397                // long 6112273549310176611l
+      60: invokestatic  #129                // Method b:(IJ)J
+      63: getstatic     #316                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+      66: invokevirtual #39                 // Method java/util/concurrent/locks/ReentrantLock.tryLock:(JLjava/util/concurrent/TimeUnit;)Z
+      69: aload_1
+      70: ifnull        84
+      73: ifeq          236
+      76: goto          83
+      79: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      82: athrow
+      83: iconst_0
+      84: istore_2
+      85: iload_2
+      86: iconst_2
+      87: if_icmpge     216
+      90: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+      93: putstatic     #224                // Field "1":J
+      96: getstatic     #212                // Field "0":Ljava/util/List;
+      99: invokeinterface #189,  1          // InterfaceMethod java/util/List.clear:()V
+     104: new           #64                 // class org/dreambot/aR
+     107: dup
+     108: invokespecial #199                // Method org/dreambot/aR."<init>":()V
+     111: astore_3
+     112: aload_3
+     113: iconst_0
+     114: anewarray     #29                 // class java/lang/Object
+     117: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+     120: ldc2_w        #401                // long 21573504337884080l
+     123: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+     126: swap
+     127: aconst_null
+     128: swap
+     129: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+     132: checkcast     #57                 // class java/lang/String
+     135: goto          142
+     138: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+     141: athrow
+     142: putfield      #338                // Field org/dreambot/aR.a:Ljava/lang/String;
+     145: aload_1
+     146: ifnull        222
+     149: aload_1
+     150: ifnull        212
+     153: goto          160
+     156: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     159: athrow
+     160: aload_3
+     161: getstatic     #212                // Field "0":Ljava/util/List;
+     164: iconst_2
+     165: anewarray     #29                 // class java/lang/Object
+     168: dup_x1
+     169: swap
+     170: iconst_1
+     171: swap
+     172: aastore
+     173: dup_x1
+     174: swap
+     175: iconst_0
+     176: swap
+     177: aastore
+     178: invokestatic  #93                 // Method "2":([Ljava/lang/Object;)Z
+     181: ifeq          202
+     184: goto          191
+     187: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     190: athrow
+     191: aload_1
+     192: ifnonnull     216
+     195: goto          202
+     198: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     201: athrow
+     202: iinc          2, 1
+     205: goto          212
+     208: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     211: athrow
+     212: aload_1
+     213: ifnonnull     85
+     216: getstatic     #347                // Field "7":Ljava/util/concurrent/locks/ReentrantLock;
+     219: invokevirtual #10                 // Method java/util/concurrent/locks/ReentrantLock.unlock:()V
+     222: goto          236
+     225: astore        4
+     227: getstatic     #347                // Field "7":Ljava/util/concurrent/locks/ReentrantLock;
+     230: invokevirtual #10                 // Method java/util/concurrent/locks/ReentrantLock.unlock:()V
+     233: aload         4
+     235: athrow
+     236: goto          240
+     239: astore_2
+     240: getstatic     #212                // Field "0":Ljava/util/List;
+     243: areturn
+    Exception table:
+       from    to  target type
+         191   205   208   Class java/lang/InterruptedException
+         160   195   198   Class java/lang/InterruptedException
+         149   184   187   Class java/lang/InterruptedException
+         129   135   138   Class java/lang/reflect/InvocationTargetException
+         112   153   156   Class java/lang/InterruptedException
+          69    76    79   Class java/lang/InterruptedException
+          33    47    47   Class java/lang/InterruptedException
+           6    36    39   Class java/lang/InterruptedException
+          83   216   225   any
+          51   236   239   Class java/lang/InterruptedException
+
+  public static boolean 4(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #158                // class java/lang/Integer
+       7: invokevirtual #161                // Method java/lang/Integer.intValue:()I
+      10: istore_1
+      11: pop
+      12: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+      15: astore_2
+      16: iload_1
+      17: aload_2
+      18: ifnull        42
+      21: iflt          41
+      24: iload_1
+      25: aload_2
+      26: ifnull        58
+      29: sipush        192
+      32: ldc2_w        #385                // long 7673375557150990992l
+      35: invokestatic  #353                // Method a:(IJ)I
+      38: if_icmple     43
+      41: iconst_0
+      42: ireturn
+      43: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+      46: getstatic     #224                // Field "1":J
+      49: lsub
+      50: getstatic     #367                // Field java/util/concurrent/TimeUnit.MINUTES:Ljava/util/concurrent/TimeUnit;
+      53: lconst_1
+      54: invokevirtual #58                 // Method java/util/concurrent/TimeUnit.toNanos:(J)J
+      57: lcmp
+      58: aload_2
+      59: ifnull        108
+      62: ifge          85
+      65: getstatic     #212                // Field "0":Ljava/util/List;
+      68: invokeinterface #361,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+      73: iload_1
+      74: invokedynamic #141,  0            // InvokeDynamic #2:test:(I)Ljava/util/function/Predicate;
+      79: invokeinterface #320,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+      84: ireturn
+      85: iconst_0
+      86: anewarray     #29                 // class java/lang/Object
+      89: invokestatic  #46                 // Method "5":([Ljava/lang/Object;)Ljava/util/List;
+      92: invokeinterface #361,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+      97: iload_1
+      98: invokedynamic #89,  0             // InvokeDynamic #3:test:(I)Ljava/util/function/Predicate;
+     103: invokeinterface #320,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+     108: ireturn
+
+  public static boolean 8(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #158                // class java/lang/Integer
+       7: invokevirtual #161                // Method java/lang/Integer.intValue:()I
+      10: istore_1
+      11: pop
+      12: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+      15: astore_2
+      16: iload_1
+      17: aload_2
+      18: ifnull        70
+      21: iflt          62
+      24: goto          31
+      27: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      30: athrow
+      31: iload_1
+      32: aload_2
+      33: ifnull        97
+      36: goto          43
+      39: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      42: athrow
+      43: sipush        4309
+      46: ldc2_w        #407                // long 7404631042488169092l
+      49: invokestatic  #353                // Method a:(IJ)I
+      52: if_icmple     71
+      55: goto          62
+      58: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      61: athrow
+      62: iconst_0
+      63: goto          70
+      66: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      69: athrow
+      70: ireturn
+      71: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+      74: getstatic     #101                // Field "9":J
+      77: lsub
+      78: aload_2
+      79: ifnull        157
+      82: getstatic     #367                // Field java/util/concurrent/TimeUnit.MINUTES:Ljava/util/concurrent/TimeUnit;
+      85: lconst_1
+      86: invokevirtual #58                 // Method java/util/concurrent/TimeUnit.toNanos:(J)J
+      89: lcmp
+      90: goto          97
+      93: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+      96: athrow
+      97: ifge          154
+     100: getstatic     #45                 // Field "6":Lcom/google/common/collect/ImmutableSet;
+     103: aload_2
+     104: ifnull        127
+     107: goto          114
+     110: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     113: athrow
+     114: ifnull        152
+     117: goto          124
+     120: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     123: athrow
+     124: getstatic     #45                 // Field "6":Lcom/google/common/collect/ImmutableSet;
+     127: iload_1
+     128: invokestatic  #140                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     131: invokevirtual #372                // Method com/google/common/collect/ImmutableSet.contains:(Ljava/lang/Object;)Z
+     134: aload_2
+     135: ifnull        149
+     138: ifeq          152
+     141: goto          148
+     144: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     147: athrow
+     148: iconst_1
+     149: goto          153
+     152: iconst_0
+     153: ireturn
+     154: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+     157: putstatic     #101                // Field "9":J
+     160: iconst_0
+     161: anewarray     #29                 // class java/lang/Object
+     164: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+     167: ldc2_w        #403                // long 27158678155575524l
+     170: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+     173: swap
+     174: aconst_null
+     175: swap
+     176: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+     179: goto          186
+     182: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+     185: athrow
+     186: new           #19                 // class "org/dreambot/4zW"
+     189: dup
+     190: invokespecial #206                // Method "org/dreambot/4zW"."<init>":()V
+     193: iconst_1
+     194: anewarray     #29                 // class java/lang/Object
+     197: dup_x1
+     198: swap
+     199: iconst_0
+     200: swap
+     201: aastore
+     202: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+     205: ldc2_w        #393                // long 21003432387747041l
+     208: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+     211: dup_x2
+     212: pop
+     213: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+     216: goto          223
+     219: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+     222: athrow
+     223: checkcast     #303                // class "org/dreambot/44y"
+     226: astore_3
+     227: aload_3
+     228: iconst_0
+     229: anewarray     #29                 // class java/lang/Object
+     232: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+     235: ldc2_w        #391                // long 26572872848318569l
+     238: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+     241: dup_x2
+     242: pop
+     243: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+     246: checkcast     #239                // class java/util/Set
+     249: goto          256
+     252: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+     255: athrow
+     256: invokestatic  #130                // Method com/google/common/collect/ImmutableSet.copyOf:(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableSet;
+     259: putstatic     #45                 // Field "6":Lcom/google/common/collect/ImmutableSet;
+     262: goto          266
+     265: astore_3
+     266: getstatic     #45                 // Field "6":Lcom/google/common/collect/ImmutableSet;
+     269: aload_2
+     270: ifnull        286
+     273: ifnull        311
+     276: goto          283
+     279: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     282: athrow
+     283: getstatic     #45                 // Field "6":Lcom/google/common/collect/ImmutableSet;
+     286: iload_1
+     287: invokestatic  #140                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     290: invokevirtual #372                // Method com/google/common/collect/ImmutableSet.contains:(Ljava/lang/Object;)Z
+     293: aload_2
+     294: ifnull        308
+     297: ifeq          311
+     300: goto          307
+     303: invokestatic  #169                // Method a:(Ljava/lang/Exception;)Ljava/lang/Exception;
+     306: athrow
+     307: iconst_1
+     308: goto          312
+     311: iconst_0
+     312: ireturn
+    Exception table:
+       from    to  target type
+         127   141   144   Class java/lang/Exception
+         100   117   120   Class java/lang/Exception
+          97   107   110   Class java/lang/Exception
+          71    90    93   Class java/lang/Exception
+          43    63    66   Class java/lang/Exception
+          31    55    58   Class java/lang/Exception
+          21    36    39   Class java/lang/Exception
+          16    24    27   Class java/lang/Exception
+         243   249   252   Class java/lang/reflect/InvocationTargetException
+         213   216   219   Class java/lang/reflect/InvocationTargetException
+         176   179   182   Class java/lang/reflect/InvocationTargetException
+         160   262   265   Class java/lang/Exception
+         266   276   279   Class java/lang/Exception
+         286   300   303   Class java/lang/Exception
+
+  public static boolean 7(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #158                // class java/lang/Integer
+       7: invokevirtual #161                // Method java/lang/Integer.intValue:()I
+      10: istore_1
+      11: pop
+      12: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+      15: astore_2
+      16: iload_1
+      17: aload_2
+      18: ifnull        42
+      21: iflt          41
+      24: iload_1
+      25: aload_2
+      26: ifnull        58
+      29: sipush        192
+      32: ldc2_w        #385                // long 7673375557150990992l
+      35: invokestatic  #353                // Method a:(IJ)I
+      38: if_icmple     43
+      41: iconst_0
+      42: ireturn
+      43: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+      46: getstatic     #224                // Field "1":J
+      49: lsub
+      50: getstatic     #367                // Field java/util/concurrent/TimeUnit.MINUTES:Ljava/util/concurrent/TimeUnit;
+      53: lconst_1
+      54: invokevirtual #58                 // Method java/util/concurrent/TimeUnit.toNanos:(J)J
+      57: lcmp
+      58: aload_2
+      59: ifnull        66
+      62: ifge          69
+      65: iconst_1
+      66: goto          70
+      69: iconst_0
+      70: istore_3
+      71: invokestatic  #327                // Method java/lang/System.nanoTime:()J
+      74: getstatic     #289                // Field "4":J
+      77: lsub
+      78: getstatic     #367                // Field java/util/concurrent/TimeUnit.MINUTES:Ljava/util/concurrent/TimeUnit;
+      81: lconst_1
+      82: invokevirtual #58                 // Method java/util/concurrent/TimeUnit.toNanos:(J)J
+      85: lcmp
+      86: aload_2
+      87: ifnull        94
+      90: ifge          97
+      93: iconst_1
+      94: goto          98
+      97: iconst_0
+      98: istore        4
+     100: iload_3
+     101: aload_2
+     102: ifnull        138
+     105: ifeq          136
+     108: getstatic     #212                // Field "0":Ljava/util/List;
+     111: invokeinterface #361,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+     116: iload_1
+     117: invokedynamic #22,  0             // InvokeDynamic #4:test:(I)Ljava/util/function/Predicate;
+     122: invokeinterface #320,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+     127: aload_2
+     128: ifnull        138
+     131: ifeq          136
+     134: iconst_1
+     135: ireturn
+     136: iload         4
+     138: aload_2
+     139: ifnull        175
+     142: ifeq          173
+     145: getstatic     #175                // Field "5":Ljava/util/List;
+     148: invokeinterface #361,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+     153: iload_1
+     154: invokedynamic #243,  0            // InvokeDynamic #5:test:(I)Ljava/util/function/Predicate;
+     159: invokeinterface #320,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+     164: aload_2
+     165: ifnull        175
+     168: ifeq          173
+     171: iconst_1
+     172: ireturn
+     173: iload         4
+     175: aload_2
+     176: ifnull        215
+     179: ifeq          192
+     182: iload_3
+     183: aload_2
+     184: ifnull        215
+     187: ifeq          192
+     190: iconst_0
+     191: ireturn
+     192: iconst_0
+     193: anewarray     #29                 // class java/lang/Object
+     196: invokestatic  #46                 // Method "5":([Ljava/lang/Object;)Ljava/util/List;
+     199: invokeinterface #361,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+     204: iload_1
+     205: invokedynamic #364,  0            // InvokeDynamic #6:test:(I)Ljava/util/function/Predicate;
+     210: invokeinterface #320,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+     215: aload_2
+     216: ifnull        253
+     219: ifne          252
+     222: iconst_0
+     223: anewarray     #29                 // class java/lang/Object
+     226: invokestatic  #223                // Method "9":([Ljava/lang/Object;)Ljava/util/List;
+     229: invokeinterface #361,  1          // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+     234: iload_1
+     235: invokedynamic #370,  0            // InvokeDynamic #7:test:(I)Ljava/util/function/Predicate;
+     240: invokeinterface #320,  2          // InterfaceMethod java/util/stream/Stream.anyMatch:(Ljava/util/function/Predicate;)Z
+     245: aload_2
+     246: ifnull        253
+     249: ifeq          256
+     252: iconst_1
+     253: goto          257
+     256: iconst_0
+     257: ireturn
+
+  private static boolean 4(int, org.dreambot.3B);
+    Code:
+       0: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+       3: astore_2
+       4: aload_1
+       5: iconst_0
+       6: anewarray     #29                 // class java/lang/Object
+       9: invokevirtual #219                // Method "org/dreambot/3B"."9v":([Ljava/lang/Object;)I
+      12: aload_2
+      13: ifnull        21
+      16: iload_0
+      17: if_icmpne     24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+
+  private static boolean 9(int, org.dreambot.3B);
+    Code:
+       0: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+       3: astore_2
+       4: aload_1
+       5: iconst_0
+       6: anewarray     #29                 // class java/lang/Object
+       9: invokevirtual #219                // Method "org/dreambot/3B"."9v":([Ljava/lang/Object;)I
+      12: aload_2
+      13: ifnull        21
+      16: iload_0
+      17: if_icmpne     24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+
+  private static boolean 2(int, org.dreambot.3B);
+    Code:
+       0: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+       3: astore_2
+       4: aload_1
+       5: iconst_0
+       6: anewarray     #29                 // class java/lang/Object
+       9: invokevirtual #219                // Method "org/dreambot/3B"."9v":([Ljava/lang/Object;)I
+      12: aload_2
+      13: ifnull        21
+      16: iload_0
+      17: if_icmpne     24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+
+  private static boolean 5(int, org.dreambot.3B);
+    Code:
+       0: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+       3: astore_2
+       4: aload_1
+       5: iconst_0
+       6: anewarray     #29                 // class java/lang/Object
+       9: invokevirtual #219                // Method "org/dreambot/3B"."9v":([Ljava/lang/Object;)I
+      12: aload_2
+      13: ifnull        21
+      16: iload_0
+      17: if_icmpne     24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+
+  private static boolean 0(int, org.dreambot.3B);
+    Code:
+       0: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+       3: astore_2
+       4: aload_1
+       5: iconst_0
+       6: anewarray     #29                 // class java/lang/Object
+       9: invokevirtual #247                // Method "org/dreambot/3B"."9h":([Ljava/lang/Object;)I
+      12: aload_2
+      13: ifnull        21
+      16: iload_0
+      17: if_icmpne     24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+
+  private static boolean 6(int, org.dreambot.3B);
+    Code:
+       0: invokestatic  #376                // Method "org/dreambot/3B"."9o":()[I
+       3: astore_2
+       4: aload_1
+       5: iconst_0
+       6: anewarray     #29                 // class java/lang/Object
+       9: invokevirtual #247                // Method "org/dreambot/3B"."9h":([Ljava/lang/Object;)I
+      12: aload_2
+      13: ifnull        21
+      16: iload_0
+      17: if_icmpne     24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+
+  private static void 7();
+    Code:
+       0: iconst_0
+       1: anewarray     #29                 // class java/lang/Object
+       4: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+       7: ldc2_w        #409                // long 26615125634945585l
+      10: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+      13: swap
+      14: aconst_null
+      15: swap
+      16: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      19: pop
+      20: goto          27
+      23: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+      26: athrow
+      27: iconst_0
+      28: anewarray     #29                 // class java/lang/Object
+      31: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+      34: ldc2_w        #403                // long 27158678155575524l
+      37: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+      40: swap
+      41: aconst_null
+      42: swap
+      43: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      46: goto          53
+      49: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+      52: athrow
+      53: iconst_0
+      54: anewarray     #29                 // class java/lang/Object
+      57: invokestatic  #71                 // Method com/google/protobuf/u.a:(Ljava/lang/Object;)[Ljava/lang/Object;
+      60: ldc2_w        #411                // long 27456648058932612l
+      63: invokestatic  #331                // Method com/google/protobuf/u.d:(J)Ljava/lang/reflect/Method;
+      66: dup_x2
+      67: pop
+      68: invokevirtual #133                // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      71: pop
+      72: goto          79
+      75: invokevirtual #159                // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+      78: athrow
+      79: iconst_0
+      80: anewarray     #29                 // class java/lang/Object
+      83: invokestatic  #119                // Method "org/dreambot/7j"."9o":([Ljava/lang/Object;)Lorg/dreambot/7j;
+      86: iconst_0
+      87: anewarray     #29                 // class java/lang/Object
+      90: invokevirtual #100                // Method "org/dreambot/7j"."0":([Ljava/lang/Object;)Lorg/dreambot/4Ql;
+      93: iconst_0
+      94: anewarray     #29                 // class java/lang/Object
+      97: invokevirtual #44                 // Method "org/dreambot/4Ql"."1":([Ljava/lang/Object;)V
+     100: return
+    Exception table:
+       from    to  target type
+          16    20    23   Class java/lang/reflect/InvocationTargetException
+          43    46    49   Class java/lang/reflect/InvocationTargetException
+          68    72    75   Class java/lang/reflect/InvocationTargetException
+
+  static {};
+    Code:
+       0: invokestatic  #150                // Method "1":()Z
+       3: ifne          10
+       6: iconst_1
+       7: invokestatic  #355                // Method "5":(Z)V
+      10: bipush        100
+      12: ldc           #5                  // String H\t\u001e\u000fA\u0013%y\u0018](N\u0013$v\t\u000f
+      14: iconst_m1
+      15: goto          24
+      18: putstatic     #157                // Field a:Ljava/lang/String;
+      21: goto          166
+      24: dup_x2
+      25: pop
+      26: invokevirtual #344                // Method java/lang/String.toCharArray:()[C
+      29: dup_x1
+      30: arraylength
+      31: dup_x2
+      32: pop
+      33: iconst_0
+      34: istore        16
+      36: dup2_x1
+      37: pop2
+      38: dup_x2
+      39: iconst_1
+      40: if_icmpgt     139
+      43: dup2
+      44: swap
+      45: iload         16
+      47: dup2_x1
+      48: caload
+      49: swap
+      50: iload         16
+      52: bipush        7
+      54: irem
+      55: tableswitch   { // 0 to 5
+
+                     0: 92
+
+                     1: 97
+
+                     2: 102
+
+                     3: 107
+
+                     4: 111
+
+                     5: 116
+               default: 121
+          }
+      92: bipush        126
+      94: goto          123
+      97: bipush        8
+      99: goto          123
+     102: bipush        25
+     104: goto          123
+     107: iconst_4
+     108: goto          123
+     111: bipush        75
+     113: goto          123
+     116: bipush        25
+     118: goto          123
+     121: bipush        36
+     123: ixor
+     124: ixor
+     125: i2c
+     126: castore
+     127: iinc          16, 1
+     130: dup
+     131: ifne          139
+     134: dup2
+     135: dup_x1
+     136: goto          47
+     139: dup2_x1
+     140: pop2
+     141: dup_x2
+     142: iload         16
+     144: if_icmpgt     43
+     147: pop
+     148: new           #57                 // class java/lang/String
+     151: dup_x1
+     152: swap
+     153: invokespecial #340                // Method java/lang/String."<init>":([C)V
+     156: invokevirtual #198                // Method java/lang/String.intern:()Ljava/lang/String;
+     159: swap
+     160: pop
+     161: swap
+     162: pop
+     163: goto          18
+     166: ldc2_w        #405                // long 8002760501617870587l
+     169: lstore        8
+     171: iconst_2
+     172: newarray       long
+     174: astore        14
+     176: iconst_0
+     177: istore        11
+     179: ldc           #4                  // String \u009d,P∙=,÷?\u0016≥\u009eWa\\µ+
+     181: dup
+     182: astore        12
+     184: invokevirtual #380                // Method java/lang/String.length:()I
+     187: istore        13
+     189: iconst_0
+     190: istore        10
+     192: aload         12
+     194: iload         10
+     196: iinc          10, 8
+     199: iload         10
+     201: invokevirtual #230                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     204: ldc           #3                  // String ISO-8859-1
+     206: invokevirtual #227                // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     209: astore        15
+     211: aload         14
+     213: iload         11
+     215: iinc          11, 1
+     218: aload         15
+     220: iconst_0
+     221: baload
+     222: i2l
+     223: ldc2_w        #381                // long 255l
+     226: land
+     227: bipush        56
+     229: lshl
+     230: aload         15
+     232: iconst_1
+     233: baload
+     234: i2l
+     235: ldc2_w        #381                // long 255l
+     238: land
+     239: bipush        48
+     241: lshl
+     242: lor
+     243: aload         15
+     245: iconst_2
+     246: baload
+     247: i2l
+     248: ldc2_w        #381                // long 255l
+     251: land
+     252: bipush        40
+     254: lshl
+     255: lor
+     256: aload         15
+     258: iconst_3
+     259: baload
+     260: i2l
+     261: ldc2_w        #381                // long 255l
+     264: land
+     265: bipush        32
+     267: lshl
+     268: lor
+     269: aload         15
+     271: iconst_4
+     272: baload
+     273: i2l
+     274: ldc2_w        #381                // long 255l
+     277: land
+     278: bipush        24
+     280: lshl
+     281: lor
+     282: aload         15
+     284: iconst_5
+     285: baload
+     286: i2l
+     287: ldc2_w        #381                // long 255l
+     290: land
+     291: bipush        16
+     293: lshl
+     294: lor
+     295: aload         15
+     297: bipush        6
+     299: baload
+     300: i2l
+     301: ldc2_w        #381                // long 255l
+     304: land
+     305: bipush        8
+     307: lshl
+     308: lor
+     309: aload         15
+     311: bipush        7
+     313: baload
+     314: i2l
+     315: ldc2_w        #381                // long 255l
+     318: land
+     319: lor
+     320: iconst_m1
+     321: goto          347
+     324: lastore
+     325: iload         10
+     327: iload         13
+     329: if_icmplt     192
+     332: aload         14
+     334: putstatic     #80                 // Field b:[J
+     337: iconst_2
+     338: anewarray     #158                // class java/lang/Integer
+     341: putstatic     #272                // Field c:[Ljava/lang/Integer;
+     344: goto          358
+     347: dup_x2
+     348: pop
+     349: lload         8
+     351: lxor
+     352: dup2_x1
+     353: pop2
+     354: pop
+     355: goto          324
+     358: ldc2_w        #387                // long 8718608844775445452l
+     361: lstore_0
+     362: iconst_3
+     363: newarray       long
+     365: astore        6
+     367: iconst_0
+     368: istore_3
+     369: ldc           #2                  // String P\u0015⌡√c0\u0089\u0084,-\u0090σ┤═~¬\u000e\u0097÷τ²▐½▌
+     371: dup
+     372: astore        4
+     374: invokevirtual #380                // Method java/lang/String.length:()I
+     377: istore        5
+     379: iconst_0
+     380: istore_2
+     381: aload         4
+     383: iload_2
+     384: iinc          2, 8
+     387: iload_2
+     388: invokevirtual #230                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     391: ldc           #3                  // String ISO-8859-1
+     393: invokevirtual #227                // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     396: astore        7
+     398: aload         6
+     400: iload_3
+     401: iinc          3, 1
+     404: aload         7
+     406: iconst_0
+     407: baload
+     408: i2l
+     409: ldc2_w        #381                // long 255l
+     412: land
+     413: bipush        56
+     415: lshl
+     416: aload         7
+     418: iconst_1
+     419: baload
+     420: i2l
+     421: ldc2_w        #381                // long 255l
+     424: land
+     425: bipush        48
+     427: lshl
+     428: lor
+     429: aload         7
+     431: iconst_2
+     432: baload
+     433: i2l
+     434: ldc2_w        #381                // long 255l
+     437: land
+     438: bipush        40
+     440: lshl
+     441: lor
+     442: aload         7
+     444: iconst_3
+     445: baload
+     446: i2l
+     447: ldc2_w        #381                // long 255l
+     450: land
+     451: bipush        32
+     453: lshl
+     454: lor
+     455: aload         7
+     457: iconst_4
+     458: baload
+     459: i2l
+     460: ldc2_w        #381                // long 255l
+     463: land
+     464: bipush        24
+     466: lshl
+     467: lor
+     468: aload         7
+     470: iconst_5
+     471: baload
+     472: i2l
+     473: ldc2_w        #381                // long 255l
+     476: land
+     477: bipush        16
+     479: lshl
+     480: lor
+     481: aload         7
+     483: bipush        6
+     485: baload
+     486: i2l
+     487: ldc2_w        #381                // long 255l
+     490: land
+     491: bipush        8
+     493: lshl
+     494: lor
+     495: aload         7
+     497: bipush        7
+     499: baload
+     500: i2l
+     501: ldc2_w        #381                // long 255l
+     504: land
+     505: lor
+     506: iconst_m1
+     507: goto          532
+     510: lastore
+     511: iload_2
+     512: iload         5
+     514: if_icmplt     381
+     517: aload         6
+     519: putstatic     #117                // Field d:[J
+     522: iconst_3
+     523: anewarray     #234                // class java/lang/Long
+     526: putstatic     #339                // Field e:[Ljava/lang/Long;
+     529: goto          542
+     532: dup_x2
+     533: pop
+     534: lload_0
+     535: lxor
+     536: dup2_x1
+     537: pop2
+     538: pop
+     539: goto          510
+     542: new           #232                // class java/util/ArrayList
+     545: dup
+     546: invokespecial #47                 // Method java/util/ArrayList."<init>":()V
+     549: putstatic     #175                // Field "5":Ljava/util/List;
+     552: new           #232                // class java/util/ArrayList
+     555: dup
+     556: invokespecial #47                 // Method java/util/ArrayList."<init>":()V
+     559: putstatic     #212                // Field "0":Ljava/util/List;
+     562: new           #153                // class java/util/concurrent/locks/ReentrantLock
+     565: dup
+     566: invokespecial #281                // Method java/util/concurrent/locks/ReentrantLock."<init>":()V
+     569: putstatic     #347                // Field "7":Ljava/util/concurrent/locks/ReentrantLock;
+     572: lconst_0
+     573: putstatic     #289                // Field "4":J
+     576: lconst_0
+     577: putstatic     #224                // Field "1":J
+     580: lconst_0
+     581: putstatic     #101                // Field "9":J
+     584: return
+
+  public static void 5(boolean);
+    Code:
+       0: iload_0
+       1: putstatic     #128                // Field "3":Z
+       4: return
+
+  public static boolean 6();
+    Code:
+       0: getstatic     #128                // Field "3":Z
+       3: ireturn
+
+  public static boolean 1();
+    Code:
+       0: invokestatic  #231                // Method "6":()Z
+       3: istore_0
+       4: iload_0
+       5: ifne          10
+       8: iconst_1
+       9: ireturn
+      10: iconst_0
+      11: ireturn
+
+  private static java.lang.Exception a(java.lang.Exception);
+    Code:
+       0: aload_0
+       1: areturn
+
+  private static int a(int, long);
+    Code:
+       0: iload_0
+       1: lload_1
+       2: ldc2_w        #395                // long 32767l
+       5: land
+       6: l2i
+       7: ixor
+       8: sipush        25169
+      11: ixor
+      12: istore_3
+      13: getstatic     #272                // Field c:[Ljava/lang/Integer;
+      16: iload_3
+      17: aaload
+      18: ifnonnull     37
+      21: getstatic     #272                // Field c:[Ljava/lang/Integer;
+      24: iload_3
+      25: getstatic     #80                 // Field b:[J
+      28: iload_3
+      29: laload
+      30: lload_1
+      31: lxor
+      32: l2i
+      33: invokestatic  #140                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      36: aastore
+      37: getstatic     #272                // Field c:[Ljava/lang/Integer;
+      40: iload_3
+      41: aaload
+      42: invokevirtual #161                // Method java/lang/Integer.intValue:()I
+      45: ireturn
+
+  private static long b(int, long);
+    Code:
+       0: iload_0
+       1: lload_1
+       2: l2i
+       3: ixor
+       4: sipush        7494
+       7: ixor
+       8: sipush        32767
+      11: iand
+      12: istore_3
+      13: getstatic     #339                // Field e:[Ljava/lang/Long;
+      16: iload_3
+      17: aaload
+      18: ifnonnull     36
+      21: getstatic     #339                // Field e:[Ljava/lang/Long;
+      24: iload_3
+      25: getstatic     #117                // Field d:[J
+      28: iload_3
+      29: laload
+      30: lload_1
+      31: lxor
+      32: invokestatic  #293                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      35: aastore
+      36: getstatic     #339                // Field e:[Ljava/lang/Long;
+      39: iload_3
+      40: aaload
+      41: invokevirtual #336                // Method java/lang/Long.longValue:()J
+      44: lreturn
+}

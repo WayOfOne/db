@@ -1,0 +1,6 @@
+Compiled from "7s.java"
+public interface org.dreambot.7s extends java.lang.annotation.Annotation {
+  public abstract java.lang.String value();
+
+  public abstract boolean 3();
+}

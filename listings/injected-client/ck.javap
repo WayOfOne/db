@@ -1,0 +1,240 @@
+Compiled from "ck.java"
+public class ck implements xz {
+  final int as;
+
+  static final ck af;
+
+  static final ck az;
+
+  static final int aq;
+
+  static final ck ag;
+
+  static final ck ae;
+
+  static final int cv;
+
+  static int ik;
+
+  static yz cc;
+
+  public static final int bn;
+
+  static final ck ab;
+
+  static final int bq;
+
+  public static final int aa;
+
+  static int pl;
+
+  public static int kw(mx, nm, nm);
+    Code:
+       0: aload_0
+       1: ifnonnull     11
+       4: aload_0
+       5: aload_1
+       6: aload_1
+       7: invokevirtual #39                 // Method mx.af:(Lnm;Lnm;)I
+      10: pop
+      11: aload_1
+      12: getfield      #44                 // Field nm.af:J
+      15: ldc2_w        #45                 // long 4044309507405125089l
+      18: lmul
+      19: ldc2_w        #45                 // long 4044309507405125089l
+      22: aload_2
+      23: getfield      #44                 // Field nm.af:J
+      26: lmul
+      27: lcmp
+      28: ifge          40
+      31: goto          38
+      34: iconst_0
+      35: goto          39
+      38: iconst_m1
+      39: ireturn
+      40: ldc2_w        #45                 // long 4044309507405125089l
+      43: aload_1
+      44: getfield      #44                 // Field nm.af:J
+      47: lmul
+      48: ldc2_w        #45                 // long 4044309507405125089l
+      51: aload_2
+      52: getfield      #44                 // Field nm.af:J
+      55: lmul
+      56: lcmp
+      57: ifne          63
+      60: goto          34
+      63: iconst_1
+      64: goto          39
+
+  public int az(byte);
+    Code:
+       0: ldc           #50                 // int -1776113227
+       2: aload_0
+       3: getfield      #52                 // Field as:I
+       6: imul
+       7: ireturn
+       8: new           #54                 // class java/lang/StringBuilder
+      11: dup
+      12: invokespecial #58                 // Method java/lang/StringBuilder."<init>":()V
+      15: ldc           #60                 // String ck.az(
+      17: invokevirtual #64                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      20: ldc           #65                 // int 41
+      22: invokevirtual #68                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      25: invokevirtual #72                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      28: invokestatic  #77                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      31: athrow
+    Exception table:
+       from    to  target type
+           0     8     8   Class java/lang/RuntimeException
+
+  static void gu(byte[], int, int);
+    Code:
+       0: aconst_null
+       1: getstatic     #85                 // Field client.lx:[B
+       4: if_acmpne     21
+       7: iload_2
+       8: ldc           #86                 // int -6840416
+      10: if_icmpne     33
+      13: new           #88                 // class java/lang/IllegalStateException
+      16: dup
+      17: invokespecial #89                 // Method java/lang/IllegalStateException."<init>":()V
+      20: athrow
+      21: aload_0
+      22: iload_1
+      23: getstatic     #85                 // Field client.lx:[B
+      26: iconst_0
+      27: bipush        24
+      29: invokestatic  #94                 // Method zz.az:([BI[BII)V
+      32: return
+      33: bipush        24
+      35: newarray       byte
+      37: putstatic     #85                 // Field client.lx:[B
+      40: goto          21
+      43: new           #54                 // class java/lang/StringBuilder
+      46: dup
+      47: invokespecial #58                 // Method java/lang/StringBuilder."<init>":()V
+      50: ldc           #96                 // String ck.gu(
+      52: invokevirtual #64                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      55: ldc           #65                 // int 41
+      57: invokevirtual #68                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      60: invokevirtual #72                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      63: invokestatic  #77                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      66: athrow
+    Exception table:
+       from    to  target type
+           0    43    43   Class java/lang/RuntimeException
+
+  static {};
+    Code:
+       0: new           #2                  // class ck
+       3: dup
+       4: iconst_0
+       5: invokespecial #100                // Method "<init>":(I)V
+       8: putstatic     #102                // Field az:Lck;
+      11: goto          54
+      14: new           #2                  // class ck
+      17: dup
+      18: iconst_3
+      19: invokespecial #100                // Method "<init>":(I)V
+      22: putstatic     #104                // Field ab:Lck;
+      25: goto          42
+      28: new           #2                  // class ck
+      31: dup
+      32: iconst_2
+      33: invokespecial #100                // Method "<init>":(I)V
+      36: putstatic     #106                // Field ae:Lck;
+      39: goto          14
+      42: new           #2                  // class ck
+      45: dup
+      46: iconst_4
+      47: invokespecial #100                // Method "<init>":(I)V
+      50: putstatic     #108                // Field ag:Lck;
+      53: return
+      54: new           #2                  // class ck
+      57: dup
+      58: iconst_1
+      59: invokespecial #100                // Method "<init>":(I)V
+      62: putstatic     #110                // Field af:Lck;
+      65: goto          28
+
+  public int af();
+    Code:
+       0: ldc           #50                 // int -1776113227
+       2: aload_0
+       3: getfield      #52                 // Field as:I
+       6: imul
+       7: ireturn
+
+  public int ae();
+    Code:
+       0: ldc           #112                // int -572266813
+       2: aload_0
+       3: getfield      #52                 // Field as:I
+       6: imul
+       7: ireturn
+
+  public int ab();
+    Code:
+       0: ldc           #50                 // int -1776113227
+       2: aload_0
+       3: getfield      #52                 // Field as:I
+       6: imul
+       7: ireturn
+
+  public static int az(int, int);
+    Code:
+       0: iload_0
+       1: bipush        11
+       3: ishr
+       4: bipush        63
+       6: iand
+       7: ireturn
+       8: new           #54                 // class java/lang/StringBuilder
+      11: dup
+      12: invokespecial #58                 // Method java/lang/StringBuilder."<init>":()V
+      15: ldc           #60                 // String ck.az(
+      17: invokevirtual #64                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      20: ldc           #65                 // int 41
+      22: invokevirtual #68                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      25: invokevirtual #72                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      28: invokestatic  #77                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      31: athrow
+    Exception table:
+       from    to  target type
+           0     8     8   Class java/lang/RuntimeException
+
+  ck(int);
+    Code:
+       0: aload_0
+       1: invokespecial #114                // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: ldc           #115                // int -171328355
+       7: iload_1
+       8: imul
+       9: putfield      #52                 // Field as:I
+      12: return
+      13: nop
+      14: nop
+      15: nop
+      16: nop
+      17: nop
+      18: nop
+      19: nop
+      20: nop
+      21: nop
+      22: nop
+      23: nop
+      24: nop
+      25: nop
+      26: nop
+      27: nop
+      28: nop
+      29: nop
+      30: nop
+      31: nop
+      32: nop
+      33: nop
+      34: nop
+      35: nop
+      36: athrow
+}

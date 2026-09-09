@@ -1,0 +1,150 @@
+Compiled from "mr.java"
+public class mr {
+  public static final int az;
+
+  public static final int af;
+
+  public static final int ae;
+
+  static final int aq;
+
+  static final int aa;
+
+  public static oc af(int, byte);
+    Code:
+       0: getstatic     #27                 // Field oc.ab:Ljz;
+       3: iload_0
+       4: i2l
+       5: invokevirtual #32                 // Method jz.az:(J)Lvj;
+       8: checkcast     #23                 // class oc
+      11: astore_2
+      12: goto          61
+      15: getstatic     #37                 // Field zw.ae:Lva;
+      18: iconst_5
+      19: iload_0
+      20: ldc           #38                 // int -753352399
+      22: invokevirtual #44                 // Method va.bb:(III)[B
+      25: astore_3
+      26: goto          33
+      29: aload_2
+      30: areturn
+      31: aload_2
+      32: areturn
+      33: new           #23                 // class oc
+      36: dup
+      37: new           #46                 // class xy
+      40: dup
+      41: aload_3
+      42: invokespecial #50                 // Method xy."<init>":([B)V
+      45: invokespecial #53                 // Method oc."<init>":(Lxy;)V
+      48: astore_2
+      49: getstatic     #27                 // Field oc.ab:Ljz;
+      52: aload_2
+      53: iload_0
+      54: i2l
+      55: invokevirtual #56                 // Method jz.ae:(Lvj;J)V
+      58: goto          31
+      61: aconst_null
+      62: aload_2
+      63: if_acmpeq     15
+      66: iload_1
+      67: bipush        10
+      69: if_icmpne     29
+      72: new           #58                 // class java/lang/IllegalStateException
+      75: dup
+      76: invokespecial #61                 // Method java/lang/IllegalStateException."<init>":()V
+      79: athrow
+      80: new           #63                 // class java/lang/StringBuilder
+      83: dup
+      84: invokespecial #64                 // Method java/lang/StringBuilder."<init>":()V
+      87: ldc           #66                 // String mr.af(
+      89: invokevirtual #70                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      92: ldc           #71                 // int 41
+      94: invokevirtual #74                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      97: invokevirtual #78                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     100: invokestatic  #83                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+     103: athrow
+    Exception table:
+       from    to  target type
+           0    80    80   Class java/lang/RuntimeException
+
+  mr() throws java.lang.Throwable;
+    Code:
+       0: aload_0
+       1: invokespecial #88                 // Method java/lang/Object."<init>":()V
+       4: new           #90                 // class java/lang/Error
+       7: dup
+       8: invokespecial #91                 // Method java/lang/Error."<init>":()V
+      11: athrow
+      12: nop
+      13: nop
+      14: nop
+      15: nop
+      16: nop
+      17: nop
+      18: nop
+      19: nop
+      20: nop
+      21: nop
+      22: nop
+      23: nop
+      24: nop
+      25: nop
+      26: nop
+      27: nop
+      28: nop
+      29: nop
+      30: nop
+      31: nop
+      32: nop
+      33: nop
+      34: nop
+      35: athrow
+
+  public static void az(va, int);
+    Code:
+       0: aload_0
+       1: putstatic     #97                 // Field pa.ae:Lva;
+       4: return
+       5: new           #63                 // class java/lang/StringBuilder
+       8: dup
+       9: invokespecial #64                 // Method java/lang/StringBuilder."<init>":()V
+      12: ldc           #99                 // String mr.az(
+      14: invokevirtual #70                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      17: ldc           #71                 // int 41
+      19: invokevirtual #74                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      22: invokevirtual #78                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      25: invokestatic  #83                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      28: athrow
+    Exception table:
+       from    to  target type
+           0     5     5   Class java/lang/RuntimeException
+
+  static void gf(xy, int, int);
+    Code:
+       0: aload_0
+       1: getfield      #104                // Field xy.aj:[B
+       4: iload_1
+       5: ldc           #105                // int 1087227559
+       7: invokestatic  #111                // Method ck.gu:([BII)V
+      10: goto          14
+      13: return
+      14: aload_0
+      15: iload_1
+      16: ldc           #112                // int -1038651980
+      18: invokestatic  #117                // Method bz.ag:(Lxy;II)V
+      21: goto          13
+      24: new           #63                 // class java/lang/StringBuilder
+      27: dup
+      28: invokespecial #64                 // Method java/lang/StringBuilder."<init>":()V
+      31: ldc           #119                // String mr.gf(
+      33: invokevirtual #70                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      36: ldc           #71                 // int 41
+      38: invokevirtual #74                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      41: invokevirtual #78                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      44: invokestatic  #83                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      47: athrow
+    Exception table:
+       from    to  target type
+           0    24    24   Class java/lang/RuntimeException
+}

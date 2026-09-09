@@ -1,0 +1,3168 @@
+Compiled from "4cs.java"
+public final class org.dreambot.4cs extends java.lang.ClassLoader {
+  private static final java.lang.String 2;
+
+  private final java.util.HashMap<java.lang.String, byte[]> 6;
+
+  private java.lang.String 3;
+
+  private static boolean 4;
+
+  private static final byte[] 7;
+
+  private static final long a;
+
+  private static final java.lang.String[] b;
+
+  private static final java.lang.String[] c;
+
+  private static final java.util.Map d;
+
+  public org.dreambot.4cs(long, byte[]);
+    Code:
+       0: getstatic     #223                // Field a:J
+       3: lload_1
+       4: lxor
+       5: lstore_1
+       6: lload_1
+       7: dup2
+       8: ldc2_w        #800                // long 92631485812448l
+      11: lxor
+      12: lstore        4
+      14: dup2
+      15: ldc2_w        #778                // long 30903671931144l
+      18: lxor
+      19: lstore        6
+      21: pop2
+      22: aload_0
+      23: ldc           #11                 // class "org/dreambot/4cs"
+      25: invokevirtual #73                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+      28: invokespecial #631                // Method java/lang/ClassLoader."<init>":(Ljava/lang/ClassLoader;)V
+      31: ldc2_w        #924                // long 3552328838016118243l
+      34: lload_1
+      35: invokedynamic #586,  0            // InvokeDynamic #6:█:(JJ)[Ljava/lang/String;
+      40: aload_0
+      41: new           #162                // class java/util/HashMap
+      44: dup
+      45: invokespecial #707                // Method java/util/HashMap."<init>":()V
+      48: putfield      #352                // Field "6":Ljava/util/HashMap;
+      51: astore        8
+      53: aload_0
+      54: aconst_null
+      55: putfield      #428                // Field "3":Ljava/lang/String;
+      58: new           #667                // class java/io/ByteArrayInputStream
+      61: dup
+      62: aload_3
+      63: invokespecial #169                // Method java/io/ByteArrayInputStream."<init>":([B)V
+      66: astore        9
+      68: new           #410                // class java/util/jar/JarInputStream
+      71: dup
+      72: aload         9
+      74: iconst_1
+      75: invokespecial #718                // Method java/util/jar/JarInputStream."<init>":(Ljava/io/InputStream;Z)V
+      78: astore        10
+      80: aload         10
+      82: invokevirtual #570                // Method java/util/jar/JarInputStream.getNextEntry:()Ljava/util/zip/ZipEntry;
+      85: dup
+      86: astore        11
+      88: ifnull        689
+      91: aload         11
+      93: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+      96: aload         8
+      98: ifnull        403
+     101: sipush        15811
+     104: ldc2_w        #762                // long 2213167930257168609l
+     107: lload_1
+     108: lxor
+     109: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     114: invokevirtual #446                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     117: lload_1
+     118: lconst_0
+     119: lcmp
+     120: iflt          909
+     123: aload         8
+     125: ifnull        909
+     128: goto          141
+     131: ldc2_w        #750                // long 3537616642253750570l
+     134: lload_1
+     135: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     140: athrow
+     141: ifne          346
+     144: goto          157
+     147: ldc2_w        #750                // long 3537616642253750570l
+     150: lload_1
+     151: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     156: athrow
+     157: aload         11
+     159: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+     162: aload         8
+     164: ifnull        403
+     167: goto          180
+     170: ldc2_w        #750                // long 3537616642253750570l
+     173: lload_1
+     174: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     179: athrow
+     180: lload_1
+     181: lconst_0
+     182: lcmp
+     183: ifle          390
+     186: sipush        11634
+     189: ldc2_w        #790                // long 209302144931547211l
+     192: lload_1
+     193: lxor
+     194: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     199: invokevirtual #446                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     202: ifne          346
+     205: goto          218
+     208: ldc2_w        #750                // long 3537616642253750570l
+     211: lload_1
+     212: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     217: athrow
+     218: lload_1
+     219: lconst_0
+     220: lcmp
+     221: iflt          415
+     224: aload         11
+     226: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+     229: aload         8
+     231: ifnull        403
+     234: goto          247
+     237: ldc2_w        #750                // long 3537616642253750570l
+     240: lload_1
+     241: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     246: athrow
+     247: lload_1
+     248: lconst_0
+     249: lcmp
+     250: iflt          390
+     253: sipush        12134
+     256: ldc2_w        #896                // long 5809433526878292565l
+     259: lload_1
+     260: lxor
+     261: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     266: invokevirtual #547                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+     269: ifne          346
+     272: goto          285
+     275: ldc2_w        #750                // long 3537616642253750570l
+     278: lload_1
+     279: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     284: athrow
+     285: aload         11
+     287: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+     290: lload_1
+     291: lconst_0
+     292: lcmp
+     293: iflt          450
+     296: sipush        19284
+     299: ldc2_w        #890                // long 2880510507462471267l
+     302: lload_1
+     303: lxor
+     304: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     309: aload         8
+     311: ifnull        445
+     314: goto          327
+     317: ldc2_w        #750                // long 3537616642253750570l
+     320: lload_1
+     321: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     326: athrow
+     327: invokevirtual #547                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+     330: ifeq          420
+     333: goto          346
+     336: ldc2_w        #750                // long 3537616642253750570l
+     339: lload_1
+     340: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     345: athrow
+     346: aload_0
+     347: getfield      #352                // Field "6":Ljava/util/HashMap;
+     350: aload         11
+     352: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+     355: aload_0
+     356: aload         10
+     358: lload         6
+     360: iconst_2
+     361: anewarray     #426                // class java/lang/Object
+     364: dup_x2
+     365: dup_x2
+     366: pop
+     367: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     370: iconst_1
+     371: swap
+     372: aastore
+     373: dup_x1
+     374: swap
+     375: iconst_0
+     376: swap
+     377: aastore
+     378: ldc2_w        #844                // long 3640087579657092516l
+     381: lload_1
+     382: invokedynamic #279,  0            // InvokeDynamic #8:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)[B
+     387: invokevirtual #622                // Method java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+     390: goto          403
+     393: ldc2_w        #750                // long 3537616642253750570l
+     396: lload_1
+     397: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     402: athrow
+     403: pop
+     404: aload         10
+     406: lload_1
+     407: lconst_0
+     408: lcmp
+     409: ifle          82
+     412: invokevirtual #398                // Method java/util/jar/JarInputStream.closeEntry:()V
+     415: aload         8
+     417: ifnonnull     80
+     420: aload         11
+     422: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+     425: bipush        47
+     427: bipush        46
+     429: invokevirtual #23                 // Method java/lang/String.replace:(CC)Ljava/lang/String;
+     432: sipush        31614
+     435: ldc2_w        #830                // long 3222723043179798082l
+     438: lload_1
+     439: lxor
+     440: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     445: ldc           #5                  // String
+     447: invokevirtual #94                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     450: astore        12
+     452: aload_0
+     453: aload         10
+     455: lload         6
+     457: iconst_2
+     458: anewarray     #426                // class java/lang/Object
+     461: dup_x2
+     462: dup_x2
+     463: pop
+     464: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     467: iconst_1
+     468: swap
+     469: aastore
+     470: dup_x1
+     471: swap
+     472: iconst_0
+     473: swap
+     474: aastore
+     475: ldc2_w        #844                // long 3640087579657092516l
+     478: lload_1
+     479: invokedynamic #279,  0            // InvokeDynamic #8:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)[B
+     484: astore        13
+     486: aload         8
+     488: lload_1
+     489: lconst_0
+     490: lcmp
+     491: ifle          522
+     494: ifnull        573
+     497: lload         4
+     499: aload         11
+     501: checkcast     #341                // class java/util/jar/JarEntry
+     504: iconst_2
+     505: anewarray     #426                // class java/lang/Object
+     508: dup_x1
+     509: swap
+     510: iconst_1
+     511: swap
+     512: aastore
+     513: dup_x2
+     514: dup_x2
+     515: pop
+     516: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     519: iconst_0
+     520: swap
+     521: aastore
+     522: ldc2_w        #754                // long 3557302599732550327l
+     525: lload_1
+     526: invokedynamic #128,  0            // InvokeDynamic #9:█:(Ljava/lang/Object;JJ)Z
+     531: ifne          574
+     534: goto          547
+     537: ldc2_w        #750                // long 3537616642253750570l
+     540: lload_1
+     541: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     546: athrow
+     547: sipush        17979
+     550: ldc2_w        #786                // long 4319091325802128187l
+     553: lload_1
+     554: lxor
+     555: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     560: invokestatic  #288                // Method org/dreambot/api/utilities/Logger.error:(Ljava/lang/Object;)V
+     563: aload         10
+     565: invokevirtual #381                // Method java/util/jar/JarInputStream.close:()V
+     568: aload         9
+     570: invokevirtual #56                 // Method java/io/ByteArrayInputStream.close:()V
+     573: return
+     574: aload_0
+     575: getfield      #428                // Field "3":Ljava/lang/String;
+     578: aload         8
+     580: ifnull        678
+     583: ifnonnull     667
+     586: goto          599
+     589: ldc2_w        #750                // long 3537616642253750570l
+     592: lload_1
+     593: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     598: athrow
+     599: lload_1
+     600: lconst_0
+     601: lcmp
+     602: ifle          684
+     605: aload         13
+     607: aload         8
+     609: ifnull        678
+     612: goto          625
+     615: ldc2_w        #750                // long 3537616642253750570l
+     618: lload_1
+     619: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     624: athrow
+     625: getstatic     #481                // Field "7":[B
+     628: invokestatic  #388                // Method com/google/common/primitives/Bytes.indexOf:([B[B)I
+     631: iconst_m1
+     632: if_icmpeq     667
+     635: goto          648
+     638: ldc2_w        #750                // long 3537616642253750570l
+     641: lload_1
+     642: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     647: athrow
+     648: aload_0
+     649: aload         12
+     651: putfield      #428                // Field "3":Ljava/lang/String;
+     654: goto          667
+     657: ldc2_w        #750                // long 3537616642253750570l
+     660: lload_1
+     661: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     666: athrow
+     667: aload_0
+     668: getfield      #352                // Field "6":Ljava/util/HashMap;
+     671: aload         12
+     673: aload         13
+     675: invokevirtual #622                // Method java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+     678: pop
+     679: aload         10
+     681: invokevirtual #398                // Method java/util/jar/JarInputStream.closeEntry:()V
+     684: aload         8
+     686: ifnonnull     80
+     689: aload         10
+     691: invokevirtual #381                // Method java/util/jar/JarInputStream.close:()V
+     694: lload_1
+     695: lconst_0
+     696: lcmp
+     697: ifle          91
+     700: goto          725
+     703: astore        11
+     705: aload         10
+     707: invokevirtual #381                // Method java/util/jar/JarInputStream.close:()V
+     710: goto          722
+     713: astore        12
+     715: aload         11
+     717: aload         12
+     719: invokevirtual #232                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+     722: aload         11
+     724: athrow
+     725: aload         9
+     727: invokevirtual #56                 // Method java/io/ByteArrayInputStream.close:()V
+     730: goto          755
+     733: astore        10
+     735: aload         9
+     737: invokevirtual #56                 // Method java/io/ByteArrayInputStream.close:()V
+     740: goto          752
+     743: astore        11
+     745: aload         10
+     747: aload         11
+     749: invokevirtual #232                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+     752: aload         10
+     754: athrow
+     755: goto          776
+     758: astore        9
+     760: sipush        12093
+     763: ldc2_w        #928                // long 4560127365572315651l
+     766: lload_1
+     767: lxor
+     768: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     773: invokestatic  #288                // Method org/dreambot/api/utilities/Logger.error:(Ljava/lang/Object;)V
+     776: aload_0
+     777: getfield      #428                // Field "3":Ljava/lang/String;
+     780: ifnonnull     1421
+     783: new           #667                // class java/io/ByteArrayInputStream
+     786: dup
+     787: aload_3
+     788: invokespecial #169                // Method java/io/ByteArrayInputStream."<init>":([B)V
+     791: astore        9
+     793: new           #302                // class java/util/zip/ZipInputStream
+     796: dup
+     797: aload         9
+     799: invokespecial #91                 // Method java/util/zip/ZipInputStream."<init>":(Ljava/io/InputStream;)V
+     802: astore        10
+     804: aload_0
+     805: getfield      #428                // Field "3":Ljava/lang/String;
+     808: ifnonnull     1334
+     811: aload         10
+     813: aload         8
+     815: lload_1
+     816: lconst_0
+     817: lcmp
+     818: iflt          826
+     821: ifnull        1342
+     824: aload         8
+     826: ifnull        1342
+     829: goto          842
+     832: ldc2_w        #750                // long 3537616642253750570l
+     835: lload_1
+     836: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     841: athrow
+     842: invokevirtual #378                // Method java/util/zip/ZipInputStream.getNextEntry:()Ljava/util/zip/ZipEntry;
+     845: dup
+     846: astore        11
+     848: lload_1
+     849: lconst_0
+     850: lcmp
+     851: iflt          859
+     854: ifnull        1334
+     857: aload         11
+     859: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+     862: aload         8
+     864: ifnull        1158
+     867: goto          880
+     870: ldc2_w        #750                // long 3537616642253750570l
+     873: lload_1
+     874: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     879: athrow
+     880: sipush        15811
+     883: ldc2_w        #762                // long 2213167930257168609l
+     886: lload_1
+     887: lxor
+     888: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     893: invokevirtual #446                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     896: goto          909
+     899: ldc2_w        #750                // long 3537616642253750570l
+     902: lload_1
+     903: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     908: athrow
+     909: ifne          1101
+     912: aload         11
+     914: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+     917: aload         8
+     919: ifnull        1158
+     922: goto          935
+     925: ldc2_w        #750                // long 3537616642253750570l
+     928: lload_1
+     929: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     934: athrow
+     935: lload_1
+     936: lconst_0
+     937: lcmp
+     938: iflt          1145
+     941: sipush        11634
+     944: ldc2_w        #790                // long 209302144931547211l
+     947: lload_1
+     948: lxor
+     949: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     954: invokevirtual #446                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     957: ifne          1101
+     960: goto          973
+     963: ldc2_w        #750                // long 3537616642253750570l
+     966: lload_1
+     967: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     972: athrow
+     973: lload_1
+     974: lconst_0
+     975: lcmp
+     976: ifle          1164
+     979: aload         11
+     981: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+     984: aload         8
+     986: ifnull        1158
+     989: goto          1002
+     992: ldc2_w        #750                // long 3537616642253750570l
+     995: lload_1
+     996: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1001: athrow
+    1002: lload_1
+    1003: lconst_0
+    1004: lcmp
+    1005: iflt          1145
+    1008: sipush        12134
+    1011: ldc2_w        #896                // long 5809433526878292565l
+    1014: lload_1
+    1015: lxor
+    1016: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+    1021: invokevirtual #547                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+    1024: ifne          1101
+    1027: goto          1040
+    1030: ldc2_w        #750                // long 3537616642253750570l
+    1033: lload_1
+    1034: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1039: athrow
+    1040: aload         11
+    1042: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+    1045: lload_1
+    1046: lconst_0
+    1047: lcmp
+    1048: iflt          1199
+    1051: sipush        19284
+    1054: ldc2_w        #890                // long 2880510507462471267l
+    1057: lload_1
+    1058: lxor
+    1059: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+    1064: aload         8
+    1066: ifnull        1194
+    1069: goto          1082
+    1072: ldc2_w        #750                // long 3537616642253750570l
+    1075: lload_1
+    1076: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1081: athrow
+    1082: invokevirtual #547                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+    1085: ifeq          1169
+    1088: goto          1101
+    1091: ldc2_w        #750                // long 3537616642253750570l
+    1094: lload_1
+    1095: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1100: athrow
+    1101: aload_0
+    1102: getfield      #352                // Field "6":Ljava/util/HashMap;
+    1105: aload         11
+    1107: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+    1110: aload_0
+    1111: aload         10
+    1113: lload         6
+    1115: iconst_2
+    1116: anewarray     #426                // class java/lang/Object
+    1119: dup_x2
+    1120: dup_x2
+    1121: pop
+    1122: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+    1125: iconst_1
+    1126: swap
+    1127: aastore
+    1128: dup_x1
+    1129: swap
+    1130: iconst_0
+    1131: swap
+    1132: aastore
+    1133: ldc2_w        #844                // long 3640087579657092516l
+    1136: lload_1
+    1137: invokedynamic #279,  0            // InvokeDynamic #8:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)[B
+    1142: invokevirtual #622                // Method java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    1145: goto          1158
+    1148: ldc2_w        #750                // long 3537616642253750570l
+    1151: lload_1
+    1152: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1157: athrow
+    1158: pop
+    1159: aload         10
+    1161: invokevirtual #490                // Method java/util/zip/ZipInputStream.closeEntry:()V
+    1164: aload         8
+    1166: ifnonnull     804
+    1169: aload         11
+    1171: invokevirtual #716                // Method java/util/zip/ZipEntry.getName:()Ljava/lang/String;
+    1174: bipush        47
+    1176: bipush        46
+    1178: invokevirtual #23                 // Method java/lang/String.replace:(CC)Ljava/lang/String;
+    1181: sipush        14119
+    1184: ldc2_w        #900                // long 4257485443678622241l
+    1187: lload_1
+    1188: lxor
+    1189: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+    1194: ldc           #5                  // String
+    1196: invokevirtual #94                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    1199: astore        12
+    1201: aload_0
+    1202: aload         10
+    1204: lload         6
+    1206: iconst_2
+    1207: anewarray     #426                // class java/lang/Object
+    1210: dup_x2
+    1211: dup_x2
+    1212: pop
+    1213: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+    1216: iconst_1
+    1217: swap
+    1218: aastore
+    1219: dup_x1
+    1220: swap
+    1221: iconst_0
+    1222: swap
+    1223: aastore
+    1224: ldc2_w        #844                // long 3640087579657092516l
+    1227: lload_1
+    1228: invokedynamic #279,  0            // InvokeDynamic #8:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)[B
+    1233: astore        13
+    1235: aload_0
+    1236: aload         12
+    1238: aload         13
+    1240: iconst_0
+    1241: aload         13
+    1243: arraylength
+    1244: invokevirtual #377                // Method defineClass:(Ljava/lang/String;[BII)Ljava/lang/Class;
+    1247: astore        14
+    1249: aload         14
+    1251: lload_1
+    1252: lconst_0
+    1253: lcmp
+    1254: ifle          1280
+    1257: aload         8
+    1259: ifnull        1280
+    1262: ifnull        1307
+    1265: goto          1278
+    1268: ldc2_w        #750                // long 3537616642253750570l
+    1271: lload_1
+    1272: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1277: athrow
+    1278: aload         14
+    1280: ldc           #15                 // class org/dreambot/api/script/ScriptManifest
+    1282: invokevirtual #233                // Method java/lang/Class.getAnnotation:(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    1285: ifnull        1307
+    1288: aload_0
+    1289: aload         12
+    1291: putfield      #428                // Field "3":Ljava/lang/String;
+    1294: goto          1307
+    1297: ldc2_w        #750                // long 3537616642253750570l
+    1300: lload_1
+    1301: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1306: athrow
+    1307: goto          1312
+    1310: astore        14
+    1312: aload_0
+    1313: getfield      #352                // Field "6":Ljava/util/HashMap;
+    1316: aload         12
+    1318: aload         13
+    1320: invokevirtual #622                // Method java/util/HashMap.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    1323: pop
+    1324: aload         10
+    1326: invokevirtual #490                // Method java/util/zip/ZipInputStream.closeEntry:()V
+    1329: aload         8
+    1331: ifnonnull     804
+    1334: lload_1
+    1335: lconst_0
+    1336: lcmp
+    1337: iflt          1345
+    1340: aload         10
+    1342: invokevirtual #165                // Method java/util/zip/ZipInputStream.close:()V
+    1345: goto          1370
+    1348: astore        11
+    1350: aload         10
+    1352: invokevirtual #165                // Method java/util/zip/ZipInputStream.close:()V
+    1355: goto          1367
+    1358: astore        12
+    1360: aload         11
+    1362: aload         12
+    1364: invokevirtual #232                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+    1367: aload         11
+    1369: athrow
+    1370: aload         9
+    1372: invokevirtual #56                 // Method java/io/ByteArrayInputStream.close:()V
+    1375: goto          1400
+    1378: astore        10
+    1380: aload         9
+    1382: invokevirtual #56                 // Method java/io/ByteArrayInputStream.close:()V
+    1385: goto          1397
+    1388: astore        11
+    1390: aload         10
+    1392: aload         11
+    1394: invokevirtual #232                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+    1397: aload         10
+    1399: athrow
+    1400: goto          1421
+    1403: astore        9
+    1405: sipush        1296
+    1408: ldc2_w        #788                // long 5468988156235014164l
+    1411: lload_1
+    1412: lxor
+    1413: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+    1418: invokestatic  #288                // Method org/dreambot/api/utilities/Logger.error:(Ljava/lang/Object;)V
+    1421: return
+    Exception table:
+       from    to  target type
+         486   534   537   Class java/lang/Throwable
+         327   390   393   Class java/lang/Throwable
+         285   333   336   Class java/lang/Throwable
+         247   314   317   Class java/lang/Throwable
+         218   272   275   Class java/lang/Throwable
+         180   234   237   Class java/lang/Throwable
+         157   205   208   Class java/lang/Throwable
+         141   167   170   Class java/lang/Throwable
+         101   144   147   Class java/lang/Throwable
+          91   128   131   Class java/lang/Throwable
+          80   563   703   Class java/lang/Throwable
+         625   654   657   Class java/lang/Throwable
+         599   635   638   Class java/lang/Throwable
+         583   612   615   Class java/lang/Throwable
+         574   586   589   Class java/lang/Throwable
+         574   689   703   Class java/lang/Throwable
+         705   710   713   Class java/lang/Throwable
+          68   568   733   Class java/lang/Throwable
+         574   725   733   Class java/lang/Throwable
+         735   740   743   Class java/lang/Throwable
+          58   573   758   Class java/io/IOException
+         574   755   758   Class java/io/IOException
+        1280  1294  1297   Class java/lang/Throwable
+        1249  1265  1268   Class java/lang/Throwable
+        1082  1145  1148   Class java/lang/Throwable
+        1040  1088  1091   Class java/lang/Throwable
+        1002  1069  1072   Class java/lang/Throwable
+         973  1027  1030   Class java/lang/Throwable
+         935   989   992   Class java/lang/Throwable
+         912   960   963   Class java/lang/Throwable
+         909   922   925   Class java/lang/Throwable
+         857   896   899   Class java/lang/Throwable
+         848   867   870   Class java/lang/Throwable
+         811   829   832   Class java/lang/Throwable
+        1235  1307  1310   Class java/lang/Throwable
+         804  1334  1348   Class java/lang/Throwable
+        1350  1355  1358   Class java/lang/Throwable
+         793  1370  1378   Class java/lang/Throwable
+        1380  1385  1388   Class java/lang/Throwable
+         783  1400  1403   Class java/io/IOException
+
+  private static boolean 3(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #221                // class java/lang/Long
+       7: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      10: lstore_1
+      11: dup
+      12: iconst_1
+      13: aaload
+      14: checkcast     #341                // class java/util/jar/JarEntry
+      17: astore_3
+      18: pop
+      19: getstatic     #223                // Field a:J
+      22: lload_1
+      23: lxor
+      24: lstore_1
+      25: ldc2_w        #884                // long -7504883953832490122l
+      28: lload_1
+      29: invokedynamic #586,  0            // InvokeDynamic #6:█:(JJ)[Ljava/lang/String;
+      34: astore        4
+      36: aload_3
+      37: invokevirtual #733                // Method java/util/jar/JarEntry.getCertificates:()[Ljava/security/cert/Certificate;
+      40: aload         4
+      42: ifnull        78
+      45: ifnull        100
+      48: goto          61
+      51: ldc2_w        #792                // long -7526359297155848257l
+      54: lload_1
+      55: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+      60: athrow
+      61: aload_3
+      62: invokevirtual #733                // Method java/util/jar/JarEntry.getCertificates:()[Ljava/security/cert/Certificate;
+      65: goto          78
+      68: ldc2_w        #792                // long -7526359297155848257l
+      71: lload_1
+      72: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+      77: athrow
+      78: arraylength
+      79: aload         4
+      81: ifnull        101
+      84: ifne          102
+      87: goto          100
+      90: ldc2_w        #792                // long -7526359297155848257l
+      93: lload_1
+      94: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+      99: athrow
+     100: iconst_1
+     101: ireturn
+     102: sipush        22437
+     105: ldc2_w        #736                // long 5700153980701250591l
+     108: lload_1
+     109: lxor
+     110: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     115: invokestatic  #350                // Method java/security/MessageDigest.getInstance:(Ljava/lang/String;)Ljava/security/MessageDigest;
+     118: astore        5
+     120: aload         5
+     122: aload_3
+     123: invokevirtual #733                // Method java/util/jar/JarEntry.getCertificates:()[Ljava/security/cert/Certificate;
+     126: iconst_0
+     127: aaload
+     128: invokevirtual #462                // Method java/security/cert/Certificate.getEncoded:()[B
+     131: invokevirtual #654                // Method java/security/MessageDigest.digest:([B)[B
+     134: bipush        32
+     136: newarray       byte
+     138: dup
+     139: iconst_0
+     140: bipush        -38
+     142: bastore
+     143: dup
+     144: iconst_1
+     145: bipush        -37
+     147: bastore
+     148: dup
+     149: iconst_2
+     150: bipush        63
+     152: bastore
+     153: dup
+     154: iconst_3
+     155: bipush        -17
+     157: bastore
+     158: dup
+     159: iconst_4
+     160: iconst_4
+     161: bastore
+     162: dup
+     163: iconst_5
+     164: bipush        105
+     166: bastore
+     167: dup
+     168: bipush        6
+     170: bipush        73
+     172: bastore
+     173: dup
+     174: bipush        7
+     176: bipush        -125
+     178: bastore
+     179: dup
+     180: bipush        8
+     182: bipush        105
+     184: bastore
+     185: dup
+     186: bipush        9
+     188: bipush        123
+     190: bastore
+     191: dup
+     192: bipush        10
+     194: iconst_1
+     195: bastore
+     196: dup
+     197: bipush        11
+     199: bipush        -116
+     201: bastore
+     202: dup
+     203: bipush        12
+     205: bipush        45
+     207: bastore
+     208: dup
+     209: bipush        13
+     211: bipush        69
+     213: bastore
+     214: dup
+     215: bipush        14
+     217: bipush        56
+     219: bastore
+     220: dup
+     221: bipush        15
+     223: bipush        34
+     225: bastore
+     226: dup
+     227: bipush        16
+     229: bipush        -110
+     231: bastore
+     232: dup
+     233: bipush        17
+     235: bipush        23
+     237: bastore
+     238: dup
+     239: bipush        18
+     241: bipush        -30
+     243: bastore
+     244: dup
+     245: bipush        19
+     247: bipush        97
+     249: bastore
+     250: dup
+     251: bipush        20
+     253: bipush        69
+     255: bastore
+     256: dup
+     257: bipush        21
+     259: bipush        96
+     261: bastore
+     262: dup
+     263: bipush        22
+     265: bipush        -125
+     267: bastore
+     268: dup
+     269: bipush        23
+     271: bipush        -114
+     273: bastore
+     274: dup
+     275: bipush        24
+     277: iconst_m1
+     278: bastore
+     279: dup
+     280: bipush        25
+     282: bipush        83
+     284: bastore
+     285: dup
+     286: bipush        26
+     288: bipush        32
+     290: bastore
+     291: dup
+     292: bipush        27
+     294: bipush        -46
+     296: bastore
+     297: dup
+     298: bipush        28
+     300: bipush        -94
+     302: bastore
+     303: dup
+     304: bipush        29
+     306: bipush        72
+     308: bastore
+     309: dup
+     310: bipush        30
+     312: bipush        21
+     314: bastore
+     315: dup
+     316: bipush        31
+     318: bipush        118
+     320: bastore
+     321: invokestatic  #76                 // Method java/util/Arrays.equals:([B[B)Z
+     324: aload         4
+     326: ifnull        346
+     329: ifne          347
+     332: goto          345
+     335: ldc2_w        #792                // long -7526359297155848257l
+     338: lload_1
+     339: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     344: athrow
+     345: iconst_0
+     346: ireturn
+     347: goto          352
+     350: astore        5
+     352: iconst_1
+     353: ireturn
+    Exception table:
+       from    to  target type
+         120   332   335   Class java/lang/Exception
+          78    87    90   Class java/lang/Exception
+          45    65    68   Class java/lang/Exception
+          36    48    51   Class java/lang/Exception
+         102   346   350   Class java/lang/Exception
+
+  public static java.lang.Class 8(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #526                // class java/lang/Integer
+       7: invokevirtual #344                // Method java/lang/Integer.intValue:()I
+      10: istore_1
+      11: dup
+      12: iconst_1
+      13: aaload
+      14: checkcast     #221                // class java/lang/Long
+      17: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      20: lstore_2
+      21: pop
+      22: getstatic     #223                // Field a:J
+      25: lload_2
+      26: lxor
+      27: lstore_2
+      28: lload_2
+      29: dup2
+      30: ldc2_w        #854                // long 68874748719070l
+      33: lxor
+      34: lstore        4
+      36: dup2
+      37: ldc2_w        #772                // long 73993707289638l
+      40: lxor
+      41: lstore        6
+      43: dup2
+      44: ldc2_w        #926                // long 53896151049580l
+      47: lxor
+      48: lstore        8
+      50: dup2
+      51: ldc2_w        #748                // long 112172609161046l
+      54: lxor
+      55: lstore        10
+      57: dup2
+      58: ldc2_w        #888                // long 115405041012390l
+      61: lxor
+      62: lstore        12
+      64: dup2
+      65: ldc2_w        #922                // long 125955742370476l
+      68: lxor
+      69: lstore        14
+      71: dup2
+      72: ldc2_w        #794                // long 97775015902361l
+      75: lxor
+      76: lstore        16
+      78: dup2
+      79: ldc2_w        #766                // long 34013726143469l
+      82: lxor
+      83: lstore        18
+      85: dup2
+      86: ldc2_w        #824                // long 32084502069123l
+      89: lxor
+      90: lstore        20
+      92: pop2
+      93: ldc2_w        #760                // long 2711245161472506127l
+      96: lload_2
+      97: invokedynamic #586,  0            // InvokeDynamic #6:█:(JJ)[Ljava/lang/String;
+     102: astore        22
+     104: iconst_0
+     105: anewarray     #426                // class java/lang/Object
+     108: invokestatic  #557                // Method "org/dreambot/1m"."9":([Ljava/lang/Object;)Lorg/dreambot/1m;
+     111: iconst_0
+     112: anewarray     #426                // class java/lang/Object
+     115: invokevirtual #495                // Method "org/dreambot/1m"."0R":([Ljava/lang/Object;)Lorg/dreambot/4KG;
+     118: aload         22
+     120: ifnull        232
+     123: lload         18
+     125: iconst_1
+     126: anewarray     #426                // class java/lang/Object
+     129: dup_x2
+     130: dup_x2
+     131: pop
+     132: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     135: iconst_0
+     136: swap
+     137: aastore
+     138: invokevirtual #272                // Method "org/dreambot/4KG"."5":([Ljava/lang/Object;)Z
+     141: ifne          169
+     144: goto          157
+     147: ldc2_w        #818                // long 2734824935691687366l
+     150: lload_2
+     151: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     156: athrow
+     157: aconst_null
+     158: areturn
+     159: ldc2_w        #818                // long 2734824935691687366l
+     162: lload_2
+     163: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     168: athrow
+     169: lload         20
+     171: iconst_1
+     172: anewarray     #426                // class java/lang/Object
+     175: dup_x2
+     176: dup_x2
+     177: pop
+     178: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     181: iconst_0
+     182: swap
+     183: aastore
+     184: ldc2_w        #822                // long 2712795945715303319l
+     187: lload_2
+     188: invokedynamic #50,  0             // InvokeDynamic #10:█:(Ljava/lang/Object;JJ)Lorg/dreambot/45X;
+     193: new           #704                // class "org/dreambot/1R"
+     196: dup
+     197: iload_1
+     198: invokespecial #415                // Method "org/dreambot/1R"."<init>":(I)V
+     201: lload         4
+     203: dup2_x1
+     204: pop2
+     205: iconst_2
+     206: anewarray     #426                // class java/lang/Object
+     209: dup_x1
+     210: swap
+     211: iconst_1
+     212: swap
+     213: aastore
+     214: dup_x2
+     215: dup_x2
+     216: pop
+     217: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     220: iconst_0
+     221: swap
+     222: aastore
+     223: ldc2_w        #914                // long 2721082314183807532l
+     226: lload_2
+     227: invokedynamic #506,  0            // InvokeDynamic #11:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/Object;
+     232: checkcast     #263                // class "org/dreambot/2p"
+     235: astore        23
+     237: aload         23
+     239: aload         22
+     241: lload_2
+     242: lconst_0
+     243: lcmp
+     244: ifle          272
+     247: ifnull        268
+     250: ifnull        305
+     253: goto          266
+     256: ldc2_w        #818                // long 2734824935691687366l
+     259: lload_2
+     260: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     265: athrow
+     266: aload         23
+     268: iconst_0
+     269: anewarray     #426                // class java/lang/Object
+     272: ldc2_w        #930                // long 2720651398105762031l
+     275: lload_2
+     276: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+     281: invokestatic  #697                // Method com/google/common/base/Strings.isNullOrEmpty:(Ljava/lang/String;)Z
+     284: aload         22
+     286: ifnull        336
+     289: ifeq          317
+     292: goto          305
+     295: ldc2_w        #818                // long 2734824935691687366l
+     298: lload_2
+     299: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     304: athrow
+     305: aconst_null
+     306: areturn
+     307: ldc2_w        #818                // long 2734824935691687366l
+     310: lload_2
+     311: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     316: athrow
+     317: iconst_1
+     318: putstatic     #642                // Field "org/dreambot/4P9"."1":Z
+     321: aload         23
+     323: iconst_0
+     324: anewarray     #426                // class java/lang/Object
+     327: ldc2_w        #898                // long 2675027901554770501l
+     330: lload_2
+     331: invokedynamic #163,  0            // InvokeDynamic #13:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)I
+     336: lload         12
+     338: dup2_x1
+     339: pop2
+     340: iconst_2
+     341: anewarray     #426                // class java/lang/Object
+     344: dup_x1
+     345: swap
+     346: invokestatic  #294                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     349: iconst_1
+     350: swap
+     351: aastore
+     352: dup_x2
+     353: dup_x2
+     354: pop
+     355: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     358: iconst_0
+     359: swap
+     360: aastore
+     361: ldc2_w        #828                // long 2667235773725005918l
+     364: lload_2
+     365: invokedynamic #447,  0            // InvokeDynamic #14:█:(Ljava/lang/Object;JJ)V
+     370: aconst_null
+     371: astore        24
+     373: new           #615                // class java/io/File
+     376: dup
+     377: getstatic     #580                // Field "2":Ljava/lang/String;
+     380: aload         23
+     382: iconst_0
+     383: anewarray     #426                // class java/lang/Object
+     386: ldc2_w        #930                // long 2720651398105762031l
+     389: lload_2
+     390: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+     395: invokedynamic #159,  0            // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     400: invokespecial #637                // Method java/io/File."<init>":(Ljava/lang/String;)V
+     403: astore        25
+     405: aload         25
+     407: invokevirtual #383                // Method java/io/File.exists:()Z
+     410: aload         22
+     412: ifnull        492
+     415: ifeq          575
+     418: goto          431
+     421: ldc2_w        #818                // long 2734824935691687366l
+     424: lload_2
+     425: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     430: athrow
+     431: aload         23
+     433: iconst_0
+     434: anewarray     #426                // class java/lang/Object
+     437: ldc2_w        #804                // long 2751552587000329943l
+     440: lload_2
+     441: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+     446: aload         25
+     448: invokevirtual #541                // Method java/io/File.getAbsolutePath:()Ljava/lang/String;
+     451: lload         6
+     453: dup2_x1
+     454: pop2
+     455: iconst_2
+     456: anewarray     #426                // class java/lang/Object
+     459: dup_x1
+     460: swap
+     461: iconst_1
+     462: swap
+     463: aastore
+     464: dup_x2
+     465: dup_x2
+     466: pop
+     467: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     470: iconst_0
+     471: swap
+     472: aastore
+     473: invokestatic  #190                // Method "org/dreambot/6x"."2T":([Ljava/lang/Object;)Ljava/lang/String;
+     476: invokestatic  #484                // Method java/util/Objects.equals:(Ljava/lang/Object;Ljava/lang/Object;)Z
+     479: goto          492
+     482: ldc2_w        #818                // long 2734824935691687366l
+     485: lload_2
+     486: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     491: athrow
+     492: ifeq          575
+     495: aload         25
+     497: invokevirtual #372                // Method java/io/File.toPath:()Ljava/nio/file/Path;
+     500: invokestatic  #234                // Method java/nio/file/Files.readAllBytes:(Ljava/nio/file/Path;)[B
+     503: aload         23
+     505: iconst_0
+     506: anewarray     #426                // class java/lang/Object
+     509: ldc2_w        #872                // long 2715472912649071900l
+     512: lload_2
+     513: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+     518: lload         14
+     520: iconst_3
+     521: anewarray     #426                // class java/lang/Object
+     524: dup_x2
+     525: dup_x2
+     526: pop
+     527: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     530: iconst_2
+     531: swap
+     532: aastore
+     533: dup_x1
+     534: swap
+     535: iconst_1
+     536: swap
+     537: aastore
+     538: dup_x1
+     539: swap
+     540: iconst_0
+     541: swap
+     542: aastore
+     543: ldc2_w        #780                // long 2690304192445393074l
+     546: lload_2
+     547: invokedynamic #419,  0            // InvokeDynamic #15:█:(Ljava/lang/Object;JJ)[B
+     552: astore        24
+     554: goto          575
+     557: astore        26
+     559: sipush        2097
+     562: ldc2_w        #860                // long 4851927343420733931l
+     565: lload_2
+     566: lxor
+     567: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     572: invokestatic  #288                // Method org/dreambot/api/utilities/Logger.error:(Ljava/lang/Object;)V
+     575: aload         24
+     577: lload_2
+     578: lconst_0
+     579: lcmp
+     580: iflt          1286
+     583: aload         22
+     585: ifnull        1286
+     588: ifnonnull     1284
+     591: goto          604
+     594: ldc2_w        #818                // long 2734824935691687366l
+     597: lload_2
+     598: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     603: athrow
+     604: lload         20
+     606: iconst_1
+     607: anewarray     #426                // class java/lang/Object
+     610: dup_x2
+     611: dup_x2
+     612: pop
+     613: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     616: iconst_0
+     617: swap
+     618: aastore
+     619: ldc2_w        #822                // long 2712795945715303319l
+     622: lload_2
+     623: invokedynamic #50,  0             // InvokeDynamic #10:█:(Ljava/lang/Object;JJ)Lorg/dreambot/45X;
+     628: new           #32                 // class "org/dreambot/4P6"
+     631: dup
+     632: invokespecial #154                // Method "org/dreambot/4P6"."<init>":()V
+     635: lload         4
+     637: dup2_x1
+     638: pop2
+     639: iconst_2
+     640: anewarray     #426                // class java/lang/Object
+     643: dup_x1
+     644: swap
+     645: iconst_1
+     646: swap
+     647: aastore
+     648: dup_x2
+     649: dup_x2
+     650: pop
+     651: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     654: iconst_0
+     655: swap
+     656: aastore
+     657: ldc2_w        #914                // long 2721082314183807532l
+     660: lload_2
+     661: invokedynamic #506,  0            // InvokeDynamic #11:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/Object;
+     666: checkcast     #555                // class "org/dreambot/4Xx"
+     669: astore        26
+     671: aload         26
+     673: aload         22
+     675: lload_2
+     676: lconst_0
+     677: lcmp
+     678: ifle          706
+     681: ifnull        702
+     684: ifnull        721
+     687: goto          700
+     690: ldc2_w        #818                // long 2734824935691687366l
+     693: lload_2
+     694: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     699: athrow
+     700: aload         26
+     702: iconst_0
+     703: anewarray     #426                // class java/lang/Object
+     706: ldc2_w        #906                // long 2709940441985571367l
+     709: lload_2
+     710: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+     715: invokestatic  #697                // Method com/google/common/base/Strings.isNullOrEmpty:(Ljava/lang/String;)Z
+     718: ifeq          733
+     721: aconst_null
+     722: areturn
+     723: ldc2_w        #818                // long 2734824935691687366l
+     726: lload_2
+     727: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     732: athrow
+     733: new           #242                // class java/net/URL
+     736: dup
+     737: aload         26
+     739: iconst_0
+     740: anewarray     #426                // class java/lang/Object
+     743: ldc2_w        #906                // long 2709940441985571367l
+     746: lload_2
+     747: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+     752: invokespecial #202                // Method java/net/URL."<init>":(Ljava/lang/String;)V
+     755: astore        27
+     757: aload         27
+     759: invokevirtual #533                // Method java/net/URL.getProtocol:()Ljava/lang/String;
+     762: sipush        2806
+     765: ldc2_w        #878                // long 5697803149530987315l
+     768: lload_2
+     769: lxor
+     770: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     775: invokevirtual #446                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     778: aload         22
+     780: ifnull        839
+     783: ifeq          842
+     786: goto          799
+     789: ldc2_w        #818                // long 2734824935691687366l
+     792: lload_2
+     793: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     798: athrow
+     799: aload         27
+     801: ldc2_w        #746                // long 2735498103390143078l
+     804: lload_2
+     805: invokedynamic #725,  0            // InvokeDynamic #16:²:(Ljava/lang/Object;JJ)Ljava/lang/String;
+     810: sipush        24894
+     813: ldc2_w        #810                // long 3071367328930795768l
+     816: lload_2
+     817: lxor
+     818: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     823: invokevirtual #547                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+     826: goto          839
+     829: ldc2_w        #818                // long 2734824935691687366l
+     832: lload_2
+     833: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     838: athrow
+     839: ifne          844
+     842: aconst_null
+     843: areturn
+     844: goto          851
+     847: astore        27
+     849: aconst_null
+     850: areturn
+     851: new           #242                // class java/net/URL
+     854: dup
+     855: aload         26
+     857: iconst_0
+     858: anewarray     #426                // class java/lang/Object
+     861: ldc2_w        #906                // long 2709940441985571367l
+     864: lload_2
+     865: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+     870: invokespecial #202                // Method java/net/URL."<init>":(Ljava/lang/String;)V
+     873: astore        27
+     875: aload         27
+     877: invokevirtual #22                 // Method java/net/URL.openConnection:()Ljava/net/URLConnection;
+     880: checkcast     #500                // class java/net/HttpURLConnection
+     883: astore        28
+     885: aload         28
+     887: sipush        29746
+     890: ldc2_w        #912                // long 7846928306729420275l
+     893: lload_2
+     894: lxor
+     895: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     900: invokevirtual #176                // Method java/net/HttpURLConnection.setRequestMethod:(Ljava/lang/String;)V
+     903: aload         28
+     905: sipush        28256
+     908: ldc2_w        #812                // long 1990757208542617516l
+     911: lload_2
+     912: lxor
+     913: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     918: aload         23
+     920: iconst_0
+     921: anewarray     #426                // class java/lang/Object
+     924: ldc2_w        #804                // long 2751552587000329943l
+     927: lload_2
+     928: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+     933: invokedynamic #620,  0            // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+     938: invokevirtual #20                 // Method java/net/HttpURLConnection.setRequestProperty:(Ljava/lang/String;Ljava/lang/String;)V
+     941: aload         28
+     943: sipush        5000
+     946: invokevirtual #691                // Method java/net/HttpURLConnection.setConnectTimeout:(I)V
+     949: aload         28
+     951: sipush        15000
+     954: invokevirtual #653                // Method java/net/HttpURLConnection.setReadTimeout:(I)V
+     957: aload         28
+     959: aload         22
+     961: ifnull        1001
+     964: invokevirtual #569                // Method java/net/HttpURLConnection.getResponseCode:()I
+     967: sipush        200
+     970: if_icmpne     1263
+     973: goto          986
+     976: ldc2_w        #818                // long 2734824935691687366l
+     979: lload_2
+     980: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     985: athrow
+     986: aload         28
+     988: goto          1001
+     991: ldc2_w        #818                // long 2734824935691687366l
+     994: lload_2
+     995: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1000: athrow
+    1001: invokevirtual #432                // Method java/net/HttpURLConnection.getInputStream:()Ljava/io/InputStream;
+    1004: astore        29
+    1006: aload         29
+    1008: invokestatic  #625                // Method org/apache/commons/compress/utils/IOUtils.toByteArray:(Ljava/io/InputStream;)[B
+    1011: astore        30
+    1013: lload_2
+    1014: lconst_0
+    1015: lcmp
+    1016: ifle          1160
+    1019: aload         30
+    1021: aload         23
+    1023: iconst_0
+    1024: anewarray     #426                // class java/lang/Object
+    1027: ldc2_w        #804                // long 2751552587000329943l
+    1030: lload_2
+    1031: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+    1036: lload         8
+    1038: dup2_x1
+    1039: pop2
+    1040: iconst_3
+    1041: anewarray     #426                // class java/lang/Object
+    1044: dup_x1
+    1045: swap
+    1046: iconst_2
+    1047: swap
+    1048: aastore
+    1049: dup_x2
+    1050: dup_x2
+    1051: pop
+    1052: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+    1055: iconst_1
+    1056: swap
+    1057: aastore
+    1058: dup_x1
+    1059: swap
+    1060: iconst_0
+    1061: swap
+    1062: aastore
+    1063: ldc2_w        #874                // long 2703282679052940404l
+    1066: lload_2
+    1067: invokedynamic #128,  0            // InvokeDynamic #9:█:(Ljava/lang/Object;JJ)Z
+    1072: aload         22
+    1074: ifnull        1159
+    1077: ifeq          1175
+    1080: goto          1093
+    1083: ldc2_w        #818                // long 2734824935691687366l
+    1086: lload_2
+    1087: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1092: athrow
+    1093: aload         30
+    1095: aload         23
+    1097: iconst_0
+    1098: anewarray     #426                // class java/lang/Object
+    1101: ldc2_w        #872                // long 2715472912649071900l
+    1104: lload_2
+    1105: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+    1110: lload         14
+    1112: iconst_3
+    1113: anewarray     #426                // class java/lang/Object
+    1116: dup_x2
+    1117: dup_x2
+    1118: pop
+    1119: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+    1122: iconst_2
+    1123: swap
+    1124: aastore
+    1125: dup_x1
+    1126: swap
+    1127: iconst_1
+    1128: swap
+    1129: aastore
+    1130: dup_x1
+    1131: swap
+    1132: iconst_0
+    1133: swap
+    1134: aastore
+    1135: ldc2_w        #780                // long 2690304192445393074l
+    1138: lload_2
+    1139: invokedynamic #419,  0            // InvokeDynamic #15:█:(Ljava/lang/Object;JJ)[B
+    1144: astore        24
+    1146: new           #615                // class java/io/File
+    1149: dup
+    1150: getstatic     #580                // Field "2":Ljava/lang/String;
+    1153: invokespecial #637                // Method java/io/File."<init>":(Ljava/lang/String;)V
+    1156: invokevirtual #650                // Method java/io/File.mkdirs:()Z
+    1159: pop
+    1160: aload         25
+    1162: invokevirtual #372                // Method java/io/File.toPath:()Ljava/nio/file/Path;
+    1165: aload         30
+    1167: iconst_0
+    1168: anewarray     #219                // class java/nio/file/OpenOption
+    1171: invokestatic  #703                // Method java/nio/file/Files.write:(Ljava/nio/file/Path;[B[Ljava/nio/file/OpenOption;)Ljava/nio/file/Path;
+    1174: pop
+    1175: lload_2
+    1176: lconst_0
+    1177: lcmp
+    1178: iflt          1209
+    1181: aload         29
+    1183: aload         22
+    1185: ifnull        1206
+    1188: ifnull        1263
+    1191: goto          1204
+    1194: ldc2_w        #818                // long 2734824935691687366l
+    1197: lload_2
+    1198: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1203: athrow
+    1204: aload         29
+    1206: invokevirtual #75                 // Method java/io/InputStream.close:()V
+    1209: goto          1263
+    1212: astore        30
+    1214: lload_2
+    1215: lconst_0
+    1216: lcmp
+    1217: ifle          1248
+    1220: aload         29
+    1222: aload         22
+    1224: ifnull        1245
+    1227: ifnull        1260
+    1230: goto          1243
+    1233: ldc2_w        #818                // long 2734824935691687366l
+    1236: lload_2
+    1237: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1242: athrow
+    1243: aload         29
+    1245: invokevirtual #75                 // Method java/io/InputStream.close:()V
+    1248: goto          1260
+    1251: astore        31
+    1253: aload         30
+    1255: aload         31
+    1257: invokevirtual #232                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+    1260: aload         30
+    1262: athrow
+    1263: goto          1284
+    1266: astore        27
+    1268: sipush        32118
+    1271: ldc2_w        #868                // long 5172600987149536447l
+    1274: lload_2
+    1275: lxor
+    1276: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+    1281: invokestatic  #288                // Method org/dreambot/api/utilities/Logger.error:(Ljava/lang/Object;)V
+    1284: aload         24
+    1286: ifnonnull     1301
+    1289: aconst_null
+    1290: areturn
+    1291: ldc2_w        #818                // long 2734824935691687366l
+    1294: lload_2
+    1295: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1300: athrow
+    1301: new           #11                 // class "org/dreambot/4cs"
+    1304: dup
+    1305: lload         16
+    1307: aload         24
+    1309: invokespecial #521                // Method "<init>":(J[B)V
+    1312: astore        26
+    1314: aload         26
+    1316: aload         22
+    1318: lload_2
+    1319: lconst_0
+    1320: lcmp
+    1321: ifle          1331
+    1324: ifnull        1391
+    1327: iconst_0
+    1328: anewarray     #426                // class java/lang/Object
+    1331: ldc2_w        #796                // long 2754613209691094327l
+    1334: lload_2
+    1335: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+    1340: ifnull        1412
+    1343: goto          1356
+    1346: ldc2_w        #818                // long 2734824935691687366l
+    1349: lload_2
+    1350: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+    1355: athrow
+    1356: lload         10
+    1358: iload_1
+    1359: iconst_2
+    1360: anewarray     #426                // class java/lang/Object
+    1363: dup_x1
+    1364: swap
+    1365: invokestatic  #294                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+    1368: iconst_1
+    1369: swap
+    1370: aastore
+    1371: dup_x2
+    1372: dup_x2
+    1373: pop
+    1374: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+    1377: iconst_0
+    1378: swap
+    1379: aastore
+    1380: ldc2_w        #858                // long 2703042123503784951l
+    1383: lload_2
+    1384: invokedynamic #447,  0            // InvokeDynamic #14:█:(Ljava/lang/Object;JJ)V
+    1389: aload         26
+    1391: aload         26
+    1393: iconst_0
+    1394: anewarray     #426                // class java/lang/Object
+    1397: ldc2_w        #796                // long 2754613209691094327l
+    1400: lload_2
+    1401: invokedynamic #177,  0            // InvokeDynamic #12:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/String;
+    1406: invokevirtual #329                // Method loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+    1409: areturn
+    1410: astore        27
+    1412: aconst_null
+    1413: areturn
+    Exception table:
+       from    to  target type
+         415   479   482   Class java/io/IOException
+         405   418   421   Class java/io/IOException
+         289   307   307   Class java/io/IOException
+         268   292   295   Class java/io/IOException
+         237   253   256   Class java/io/IOException
+         123   159   159   Class java/io/IOException
+         104   144   147   Class java/io/IOException
+         495   554   557   Class java/io/IOException
+         783   826   829   Class java/io/IOException
+         757   786   789   Class java/io/IOException
+         702   723   723   Class java/io/IOException
+         671   687   690   Class java/io/IOException
+         575   591   594   Class java/io/IOException
+         733   843   847   Class java/net/MalformedURLException
+        1013  1080  1083   Class java/io/IOException
+         964   988   991   Class java/io/IOException
+         885   973   976   Class java/io/IOException
+        1006  1175  1212   Class java/lang/Throwable
+        1214  1230  1233   Class java/io/IOException
+        1175  1191  1194   Class java/io/IOException
+        1243  1248  1251   Class java/lang/Throwable
+         851  1263  1266   Class java/lang/Exception
+        1314  1343  1346   Class java/io/IOException
+        1286  1291  1291   Class java/io/IOException
+        1356  1409  1410   Class java/lang/Throwable
+
+  private static boolean 2(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #634                // class "[B"
+       7: astore_2
+       8: dup
+       9: iconst_1
+      10: aaload
+      11: checkcast     #221                // class java/lang/Long
+      14: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      17: lstore_3
+      18: dup
+      19: iconst_2
+      20: aaload
+      21: checkcast     #6                  // class java/lang/String
+      24: astore_1
+      25: pop
+      26: getstatic     #223                // Field a:J
+      29: lload_3
+      30: lxor
+      31: lstore_3
+      32: lload_3
+      33: dup2
+      34: ldc2_w        #910                // long 1219482660015l
+      37: lxor
+      38: lstore        5
+      40: pop2
+      41: sipush        19542
+      44: ldc2_w        #798                // long 4494440514544349320l
+      47: lload_3
+      48: lxor
+      49: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      54: invokestatic  #350                // Method java/security/MessageDigest.getInstance:(Ljava/lang/String;)Ljava/security/MessageDigest;
+      57: astore        7
+      59: aload_1
+      60: aload         7
+      62: aload_2
+      63: invokevirtual #654                // Method java/security/MessageDigest.digest:([B)[B
+      66: lload         5
+      68: iconst_2
+      69: anewarray     #426                // class java/lang/Object
+      72: dup_x2
+      73: dup_x2
+      74: pop
+      75: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      78: iconst_1
+      79: swap
+      80: aastore
+      81: dup_x1
+      82: swap
+      83: iconst_0
+      84: swap
+      85: aastore
+      86: ldc2_w        #764                // long 3134015212615350279l
+      89: lload_3
+      90: invokedynamic #595,  0            // InvokeDynamic #17:█:(Ljava/lang/Object;JJ)Ljava/lang/String;
+      95: invokestatic  #484                // Method java/util/Objects.equals:(Ljava/lang/Object;Ljava/lang/Object;)Z
+      98: ireturn
+      99: astore        7
+     101: iconst_0
+     102: ireturn
+    Exception table:
+       from    to  target type
+          41    98    99   Class java/lang/Exception
+
+  public java.io.InputStream getResourceAsStream(java.lang.String);
+    Code:
+       0: getstatic     #223                // Field a:J
+       3: ldc2_w        #908                // long 89285693916641l
+       6: lxor
+       7: lstore_2
+       8: ldc2_w        #836                // long -1434261660647722825l
+      11: lload_2
+      12: invokedynamic #586,  0            // InvokeDynamic #6:█:(JJ)[Ljava/lang/String;
+      17: astore        4
+      19: aload_1
+      20: sipush        31521
+      23: ldc2_w        #852                // long 6713176002203992950l
+      26: lload_2
+      27: lxor
+      28: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      33: invokevirtual #446                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      36: aload         4
+      38: ifnull        61
+      41: ifne          114
+      44: aload_1
+      45: sipush        503
+      48: ldc2_w        #802                // long 8269260857052674449l
+      51: lload_2
+      52: lxor
+      53: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      58: invokevirtual #446                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      61: aload         4
+      63: ifnull        86
+      66: ifne          114
+      69: aload_1
+      70: sipush        20097
+      73: ldc2_w        #770                // long 4015254364163503826l
+      76: lload_2
+      77: lxor
+      78: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      83: invokevirtual #547                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+      86: aload         4
+      88: ifnull        111
+      91: ifne          114
+      94: aload_1
+      95: sipush        4087
+      98: ldc2_w        #856                // long 4286513374305826710l
+     101: lload_2
+     102: lxor
+     103: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     108: invokevirtual #547                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+     111: ifeq          133
+     114: new           #667                // class java/io/ByteArrayInputStream
+     117: dup
+     118: aload_0
+     119: getfield      #352                // Field "6":Ljava/util/HashMap;
+     122: aload_1
+     123: invokevirtual #646                // Method java/util/HashMap.get:(Ljava/lang/Object;)Ljava/lang/Object;
+     126: checkcast     #634                // class "[B"
+     129: invokespecial #169                // Method java/io/ByteArrayInputStream."<init>":([B)V
+     132: areturn
+     133: aload_0
+     134: aload_1
+     135: invokespecial #255                // Method java/lang/ClassLoader.getResourceAsStream:(Ljava/lang/String;)Ljava/io/InputStream;
+     138: areturn
+
+  protected java.lang.Class<?> loadClass(java.lang.String, boolean) throws java.lang.ClassNotFoundException;
+    Code:
+       0: getstatic     #223                // Field a:J
+       3: ldc2_w        #870                // long 33287537188966l
+       6: lxor
+       7: lstore_3
+       8: ldc2_w        #864                // long 5305018175067575600l
+      11: lload_3
+      12: invokedynamic #586,  0            // InvokeDynamic #6:█:(JJ)[Ljava/lang/String;
+      17: aload_0
+      18: aload_1
+      19: invokevirtual #564                // Method getClassLoadingLock:(Ljava/lang/String;)Ljava/lang/Object;
+      22: dup
+      23: astore        6
+      25: monitorenter
+      26: astore        5
+      28: aload_0
+      29: aload_1
+      30: invokevirtual #359                // Method findLoadedClass:(Ljava/lang/String;)Ljava/lang/Class;
+      33: astore        7
+      35: aload         7
+      37: ifnonnull     152
+      40: aload_0
+      41: aload         5
+      43: ifnull        96
+      46: goto          59
+      49: ldc2_w        #920                // long 5317482573851326969l
+      52: lload_3
+      53: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+      58: athrow
+      59: getfield      #352                // Field "6":Ljava/util/HashMap;
+      62: aload_1
+      63: invokevirtual #239                // Method java/util/HashMap.containsKey:(Ljava/lang/Object;)Z
+      66: ifeq          108
+      69: goto          82
+      72: ldc2_w        #920                // long 5317482573851326969l
+      75: lload_3
+      76: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+      81: athrow
+      82: aload_0
+      83: goto          96
+      86: ldc2_w        #920                // long 5317482573851326969l
+      89: lload_3
+      90: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+      95: athrow
+      96: aload_1
+      97: ldc2_w        #904                // long 5338895759698604028l
+     100: lload_3
+     101: invokedynamic #339,  0            // InvokeDynamic #18:²:(Ljava/lang/Object;Ljava/lang/Object;JJ)Ljava/lang/Class;
+     106: astore        7
+     108: aload         7
+     110: aload         5
+     112: ifnull        150
+     115: ifnonnull     152
+     118: goto          131
+     121: ldc2_w        #920                // long 5317482573851326969l
+     124: lload_3
+     125: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     130: athrow
+     131: aload_0
+     132: aload_1
+     133: iload_2
+     134: invokespecial #479                // Method java/lang/ClassLoader.loadClass:(Ljava/lang/String;Z)Ljava/lang/Class;
+     137: goto          150
+     140: ldc2_w        #920                // long 5317482573851326969l
+     143: lload_3
+     144: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     149: athrow
+     150: astore        7
+     152: iload_2
+     153: ifeq          175
+     156: aload_0
+     157: aload         7
+     159: invokevirtual #218                // Method resolveClass:(Ljava/lang/Class;)V
+     162: goto          175
+     165: ldc2_w        #920                // long 5317482573851326969l
+     168: lload_3
+     169: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     174: athrow
+     175: aload         7
+     177: aload         6
+     179: monitorexit
+     180: areturn
+     181: astore        8
+     183: aload         6
+     185: monitorexit
+     186: aload         8
+     188: athrow
+    Exception table:
+       from    to  target type
+         152   162   165   Class java/lang/ClassNotFoundException
+         115   137   140   Class java/lang/ClassNotFoundException
+         108   118   121   Class java/lang/ClassNotFoundException
+          59    83    86   Class java/lang/ClassNotFoundException
+          40    69    72   Class java/lang/ClassNotFoundException
+          35    46    49   Class java/lang/ClassNotFoundException
+          28   180   181   any
+         181   186   181   any
+
+  protected java.lang.Class<?> findClass(java.lang.String);
+    Code:
+       0: getstatic     #223                // Field a:J
+       3: ldc2_w        #742                // long 55055126591854l
+       6: lxor
+       7: lstore_2
+       8: ldc2_w        #876                // long 5807138525089614904l
+      11: lload_2
+      12: invokedynamic #586,  0            // InvokeDynamic #6:█:(JJ)[Ljava/lang/String;
+      17: aload_0
+      18: getfield      #352                // Field "6":Ljava/util/HashMap;
+      21: aload_1
+      22: invokevirtual #72                 // Method java/util/HashMap.remove:(Ljava/lang/Object;)Ljava/lang/Object;
+      25: checkcast     #634                // class "[B"
+      28: astore        5
+      30: astore        4
+      32: aload         5
+      34: ifnonnull     165
+      37: aload_1
+      38: aload         4
+      40: ifnull        160
+      43: sipush        3822
+      46: ldc2_w        #838                // long 579092247892429360l
+      49: lload_2
+      50: lxor
+      51: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      56: invokevirtual #576                // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+      59: ifeq          123
+      62: sipush        26809
+      65: ldc2_w        #808                // long 7047417469624314979l
+      68: lload_2
+      69: lxor
+      70: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      75: iconst_0
+      76: invokestatic  #80                 // Method org/dreambot/api/utilities/StatusBar.warn:(Ljava/lang/String;Z)V
+      79: sipush        2125
+      82: ldc2_w        #814                // long 2907237839168638124l
+      85: lload_2
+      86: lxor
+      87: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      92: invokestatic  #288                // Method org/dreambot/api/utilities/Logger.error:(Ljava/lang/Object;)V
+      95: aload_1
+      96: sipush        10211
+      99: ldc2_w        #744                // long 1212769353053676293l
+     102: lload_2
+     103: lxor
+     104: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     109: swap
+     110: invokedynamic #304,  0            // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     115: invokestatic  #288                // Method org/dreambot/api/utilities/Logger.error:(Ljava/lang/Object;)V
+     118: aload         4
+     120: ifnonnull     163
+     123: sipush        12439
+     126: ldc2_w        #782                // long 1983429340161913967l
+     129: lload_2
+     130: lxor
+     131: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     136: iconst_0
+     137: invokestatic  #80                 // Method org/dreambot/api/utilities/StatusBar.warn:(Ljava/lang/String;Z)V
+     140: aload_1
+     141: sipush        23441
+     144: ldc2_w        #846                // long 5373112466398863227l
+     147: lload_2
+     148: lxor
+     149: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     154: swap
+     155: invokedynamic #563,  0            // InvokeDynamic #3:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     160: invokestatic  #288                // Method org/dreambot/api/utilities/Logger.error:(Ljava/lang/Object;)V
+     163: aconst_null
+     164: areturn
+     165: aload_0
+     166: aload_1
+     167: aload         5
+     169: iconst_0
+     170: aload         5
+     172: arraylength
+     173: invokevirtual #377                // Method defineClass:(Ljava/lang/String;[BII)Ljava/lang/Class;
+     176: areturn
+
+  private byte[] 7(java.lang.Object[]) throws java.io.IOException;
+    Code:
+       0: aload_1
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #137                // class java/io/InputStream
+       7: astore_2
+       8: dup
+       9: iconst_1
+      10: aaload
+      11: checkcast     #221                // class java/lang/Long
+      14: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      17: lstore_3
+      18: pop
+      19: getstatic     #223                // Field a:J
+      22: lload_3
+      23: lxor
+      24: lstore_3
+      25: ldc2_w        #848                // long 6354864854295430302l
+      28: lload_3
+      29: invokedynamic #586,  0            // InvokeDynamic #6:█:(JJ)[Ljava/lang/String;
+      34: new           #244                // class java/io/ByteArrayOutputStream
+      37: dup
+      38: invokespecial #714                // Method java/io/ByteArrayOutputStream."<init>":()V
+      41: astore        6
+      43: sipush        16384
+      46: newarray       byte
+      48: astore        8
+      50: astore        5
+      52: aload_2
+      53: aload         8
+      55: iconst_0
+      56: aload         8
+      58: arraylength
+      59: invokevirtual #153                // Method java/io/InputStream.read:([BII)I
+      62: dup
+      63: istore        7
+      65: iconst_m1
+      66: if_icmpeq     114
+      69: lload_3
+      70: lconst_0
+      71: lcmp
+      72: iflt          90
+      75: aload         6
+      77: aload         5
+      79: ifnull        116
+      82: aload         8
+      84: iconst_0
+      85: iload         7
+      87: invokevirtual #330                // Method java/io/ByteArrayOutputStream.write:([BII)V
+      90: aload         5
+      92: ifnonnull     52
+      95: lload_3
+      96: lconst_0
+      97: lcmp
+      98: ifle          69
+     101: goto          114
+     104: ldc2_w        #886                // long 6369576672026224727l
+     107: lload_3
+     108: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     113: athrow
+     114: aload         6
+     116: invokevirtual #498                // Method java/io/ByteArrayOutputStream.toByteArray:()[B
+     119: areturn
+    Exception table:
+       from    to  target type
+          69    95   104   Class java/io/IOException
+
+  private static byte[] 5(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #634                // class "[B"
+       7: astore_2
+       8: dup
+       9: iconst_1
+      10: aaload
+      11: checkcast     #6                  // class java/lang/String
+      14: astore_1
+      15: dup
+      16: iconst_2
+      17: aaload
+      18: checkcast     #221                // class java/lang/Long
+      21: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      24: lstore_3
+      25: pop
+      26: getstatic     #223                // Field a:J
+      29: lload_3
+      30: lxor
+      31: lstore_3
+      32: bipush        16
+      34: newarray       byte
+      36: astore        5
+      38: aload_2
+      39: iconst_0
+      40: aload         5
+      42: iconst_0
+      43: bipush        16
+      45: invokestatic  #399                // Method java/lang/System.arraycopy:(Ljava/lang/Object;ILjava/lang/Object;II)V
+      48: aload_2
+      49: arraylength
+      50: bipush        16
+      52: isub
+      53: newarray       byte
+      55: astore        6
+      57: aload_2
+      58: bipush        16
+      60: aload         6
+      62: iconst_0
+      63: aload_2
+      64: arraylength
+      65: bipush        16
+      67: isub
+      68: invokestatic  #399                // Method java/lang/System.arraycopy:(Ljava/lang/Object;ILjava/lang/Object;II)V
+      71: new           #150                // class javax/crypto/spec/SecretKeySpec
+      74: dup
+      75: invokestatic  #685                // Method java/util/Base64.getDecoder:()Ljava/util/Base64$Decoder;
+      78: aload_1
+      79: invokevirtual #726                // Method java/util/Base64$Decoder.decode:(Ljava/lang/String;)[B
+      82: sipush        24009
+      85: ldc2_w        #768                // long 4932281702606507738l
+      88: lload_3
+      89: lxor
+      90: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      95: invokespecial #367                // Method javax/crypto/spec/SecretKeySpec."<init>":([BLjava/lang/String;)V
+      98: astore        7
+     100: sipush        30787
+     103: ldc2_w        #862                // long 7833828681349606260l
+     106: lload_3
+     107: lxor
+     108: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     113: invokestatic  #42                 // Method javax/crypto/Cipher.getInstance:(Ljava/lang/String;)Ljavax/crypto/Cipher;
+     116: astore        8
+     118: new           #528                // class javax/crypto/spec/IvParameterSpec
+     121: dup
+     122: aload         5
+     124: invokespecial #210                // Method javax/crypto/spec/IvParameterSpec."<init>":([B)V
+     127: astore        9
+     129: aload         8
+     131: iconst_2
+     132: aload         7
+     134: aload         9
+     136: invokevirtual #314                // Method javax/crypto/Cipher.init:(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+     139: aload         8
+     141: aload         6
+     143: invokevirtual #689                // Method javax/crypto/Cipher.doFinal:([B)[B
+     146: areturn
+     147: astore        5
+     149: aconst_null
+     150: areturn
+    Exception table:
+       from    to  target type
+          32   146   147   Class java/lang/Exception
+
+  public static java.lang.String 6(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #221                // class java/lang/Long
+       7: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      10: lstore_1
+      11: pop
+      12: getstatic     #223                // Field a:J
+      15: lload_1
+      16: lxor
+      17: lstore_1
+      18: lload_1
+      19: dup2
+      20: ldc2_w        #902                // long 102114865791932l
+      23: lxor
+      24: lstore_3
+      25: pop2
+      26: new           #615                // class java/io/File
+      29: dup
+      30: ldc           #8                  // class "org/dreambot/6x"
+      32: ldc2_w        #880                // long -5999538920424467523l
+      35: lload_1
+      36: invokedynamic #575,  0            // InvokeDynamic #19:²:(Ljava/lang/Object;JJ)Ljava/security/ProtectionDomain;
+      41: ldc2_w        #916                // long -6001948330670094046l
+      44: lload_1
+      45: invokedynamic #26,  0             // InvokeDynamic #20:²:(Ljava/lang/Object;JJ)Ljava/security/CodeSource;
+      50: ldc2_w        #826                // long -5773762131192289426l
+      53: lload_1
+      54: invokedynamic #445,  0            // InvokeDynamic #21:²:(Ljava/lang/Object;JJ)Ljava/net/URL;
+      59: invokevirtual #240                // Method java/net/URL.toURI:()Ljava/net/URI;
+      62: invokespecial #437                // Method java/io/File."<init>":(Ljava/net/URI;)V
+      65: astore        5
+      67: aload         5
+      69: invokevirtual #383                // Method java/io/File.exists:()Z
+      72: ifne          89
+      75: sipush        11692
+      78: ldc2_w        #840                // long 199807572625610164l
+      81: lload_1
+      82: lxor
+      83: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      88: areturn
+      89: aload         5
+      91: invokevirtual #376                // Method java/io/File.isDirectory:()Z
+      94: lload_1
+      95: lconst_0
+      96: lcmp
+      97: ifle          144
+     100: ifeq          117
+     103: sipush        2791
+     106: ldc2_w        #806                // long 6903258225595806451l
+     109: lload_1
+     110: lxor
+     111: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     116: areturn
+     117: aload         5
+     119: invokevirtual #30                 // Method java/io/File.getName:()Ljava/lang/String;
+     122: lload_1
+     123: lconst_0
+     124: lcmp
+     125: ifle          196
+     128: sipush        14223
+     131: ldc2_w        #882                // long 3797052788748210052l
+     134: lload_1
+     135: lxor
+     136: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     141: invokevirtual #547                // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+     144: ifne          161
+     147: sipush        5622
+     150: ldc2_w        #740                // long 5201536245653401081l
+     153: lload_1
+     154: lxor
+     155: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     160: areturn
+     161: aload         5
+     163: invokevirtual #541                // Method java/io/File.getAbsolutePath:()Ljava/lang/String;
+     166: lload_3
+     167: dup2_x1
+     168: pop2
+     169: iconst_2
+     170: anewarray     #426                // class java/lang/Object
+     173: dup_x1
+     174: swap
+     175: iconst_1
+     176: swap
+     177: aastore
+     178: dup_x2
+     179: dup_x2
+     180: pop
+     181: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     184: iconst_0
+     185: swap
+     186: aastore
+     187: ldc2_w        #892                // long -6028506952020236036l
+     190: lload_1
+     191: invokedynamic #595,  0            // InvokeDynamic #17:█:(Ljava/lang/Object;JJ)Ljava/lang/String;
+     196: areturn
+     197: astore        5
+     199: aload         5
+     201: invokevirtual #507                // Method java/lang/Exception.toString:()Ljava/lang/String;
+     204: areturn
+    Exception table:
+       from    to  target type
+          26    88   197   Class java/lang/Exception
+          89   116   197   Class java/lang/Exception
+         117   160   197   Class java/lang/Exception
+         161   196   197   Class java/lang/Exception
+
+  public static java.lang.String 4(java.lang.Object[]) throws java.lang.Exception;
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #221                // class java/lang/Long
+       7: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      10: lstore_2
+      11: dup
+      12: iconst_1
+      13: aaload
+      14: checkcast     #6                  // class java/lang/String
+      17: astore_1
+      18: pop
+      19: getstatic     #223                // Field a:J
+      22: lload_2
+      23: lxor
+      24: lstore_2
+      25: lload_2
+      26: dup2
+      27: ldc2_w        #758                // long 5587090228131l
+      30: lxor
+      31: lstore        4
+      33: pop2
+      34: sipush        7452
+      37: ldc2_w        #820                // long 5303093733404151499l
+      40: lload_2
+      41: lxor
+      42: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      47: invokestatic  #350                // Method java/security/MessageDigest.getInstance:(Ljava/lang/String;)Ljava/security/MessageDigest;
+      50: astore        6
+      52: new           #148                // class java/io/FileInputStream
+      55: dup
+      56: aload_1
+      57: invokespecial #298                // Method java/io/FileInputStream."<init>":(Ljava/lang/String;)V
+      60: astore        7
+      62: new           #140                // class java/io/BufferedInputStream
+      65: dup
+      66: aload         7
+      68: invokespecial #510                // Method java/io/BufferedInputStream."<init>":(Ljava/io/InputStream;)V
+      71: astore        8
+      73: sipush        8192
+      76: newarray       byte
+      78: astore        9
+      80: aload         8
+      82: aload         9
+      84: invokevirtual #544                // Method java/io/BufferedInputStream.read:([B)I
+      87: dup
+      88: istore        10
+      90: iconst_m1
+      91: if_icmpeq     123
+      94: aload         6
+      96: aload         9
+      98: iconst_0
+      99: iload         10
+     101: invokevirtual #256                // Method java/security/MessageDigest.update:([BII)V
+     104: lload_2
+     105: lconst_0
+     106: lcmp
+     107: iflt          128
+     110: goto          80
+     113: ldc2_w        #774                // long -4043864741842552877l
+     116: lload_2
+     117: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     122: athrow
+     123: aload         8
+     125: invokevirtual #574                // Method java/io/BufferedInputStream.close:()V
+     128: goto          153
+     131: astore        9
+     133: aload         8
+     135: invokevirtual #574                // Method java/io/BufferedInputStream.close:()V
+     138: goto          150
+     141: astore        10
+     143: aload         9
+     145: aload         10
+     147: invokevirtual #232                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+     150: aload         9
+     152: athrow
+     153: aload         7
+     155: invokevirtual #62                 // Method java/io/FileInputStream.close:()V
+     158: goto          183
+     161: astore        8
+     163: aload         7
+     165: invokevirtual #62                 // Method java/io/FileInputStream.close:()V
+     168: goto          180
+     171: astore        9
+     173: aload         8
+     175: aload         9
+     177: invokevirtual #232                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+     180: aload         8
+     182: athrow
+     183: aload         6
+     185: invokevirtual #451                // Method java/security/MessageDigest.digest:()[B
+     188: astore        7
+     190: aload         7
+     192: lload         4
+     194: iconst_2
+     195: anewarray     #426                // class java/lang/Object
+     198: dup_x2
+     199: dup_x2
+     200: pop
+     201: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     204: iconst_1
+     205: swap
+     206: aastore
+     207: dup_x1
+     208: swap
+     209: iconst_0
+     210: swap
+     211: aastore
+     212: ldc2_w        #918                // long -4291290305329080565l
+     215: lload_2
+     216: invokedynamic #595,  0            // InvokeDynamic #17:█:(Ljava/lang/Object;JJ)Ljava/lang/String;
+     221: areturn
+    Exception table:
+       from    to  target type
+          90   113   113   Class java/lang/Throwable
+          73   123   131   Class java/lang/Throwable
+         133   138   141   Class java/lang/Throwable
+          62   153   161   Class java/lang/Throwable
+         163   168   171   Class java/lang/Throwable
+
+  private static java.lang.String 0(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #634                // class "[B"
+       7: astore_1
+       8: dup
+       9: iconst_1
+      10: aaload
+      11: checkcast     #221                // class java/lang/Long
+      14: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      17: lstore_2
+      18: pop
+      19: getstatic     #223                // Field a:J
+      22: lload_2
+      23: lxor
+      24: lstore_2
+      25: new           #382                // class java/lang/StringBuilder
+      28: dup
+      29: invokespecial #253                // Method java/lang/StringBuilder."<init>":()V
+      32: astore        4
+      34: aload_1
+      35: astore        5
+      37: aload         5
+      39: arraylength
+      40: istore        6
+      42: iconst_0
+      43: istore        7
+      45: iload         7
+      47: iload         6
+      49: if_icmpge     108
+      52: aload         5
+      54: iload         7
+      56: baload
+      57: istore        8
+      59: aload         4
+      61: sipush        16963
+      64: ldc2_w        #894                // long 4675347382505257560l
+      67: lload_2
+      68: lxor
+      69: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      74: iconst_1
+      75: anewarray     #426                // class java/lang/Object
+      78: dup
+      79: iconst_0
+      80: iload         8
+      82: invokestatic  #273                // Method java/lang/Byte.valueOf:(B)Ljava/lang/Byte;
+      85: aastore
+      86: invokestatic  #215                // Method java/lang/String.format:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+      89: invokevirtual #517                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      92: lload_2
+      93: lconst_0
+      94: lcmp
+      95: ifle          110
+      98: pop
+      99: iinc          7, 1
+     102: lload_2
+     103: lconst_0
+     104: lcmp
+     105: ifge          45
+     108: aload         4
+     110: invokevirtual #468                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     113: areturn
+
+  public static boolean 9(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #290                // class java/net/SocketAddress
+       7: astore_1
+       8: dup
+       9: iconst_1
+      10: aaload
+      11: checkcast     #221                // class java/lang/Long
+      14: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      17: lstore_2
+      18: pop
+      19: getstatic     #223                // Field a:J
+      22: lload_2
+      23: lxor
+      24: lstore_2
+      25: ldc2_w        #756                // long -4464399408595312988l
+      28: lload_2
+      29: invokedynamic #586,  0            // InvokeDynamic #6:█:(JJ)[Ljava/lang/String;
+      34: astore        4
+      36: ldc           #1                  // class java/net/InetSocketAddress
+      38: sipush        9825
+      41: ldc2_w        #834                // long 584331538108723207l
+      44: lload_2
+      45: lxor
+      46: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      51: iconst_0
+      52: anewarray     #260                // class java/lang/Class
+      55: invokevirtual #380                // Method java/lang/Class.getDeclaredMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+      58: astore        5
+      60: aload         5
+      62: aload_1
+      63: iconst_0
+      64: anewarray     #426                // class java/lang/Object
+      67: invokevirtual #98                 // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      70: checkcast     #6                  // class java/lang/String
+      73: sipush        23805
+      76: ldc2_w        #832                // long 3352618879908235906l
+      79: lload_2
+      80: lxor
+      81: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+      86: invokevirtual #664                // Method java/lang/String.contains:(Ljava/lang/CharSequence;)Z
+      89: aload         4
+      91: ifnull        128
+      94: ifne          127
+      97: goto          110
+     100: ldc2_w        #850                // long -4440813449690320275l
+     103: lload_2
+     104: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     109: athrow
+     110: iconst_1
+     111: putstatic     #53                 // Field "4":Z
+     114: goto          127
+     117: ldc2_w        #850                // long -4440813449690320275l
+     120: lload_2
+     121: invokedynamic #151,  0            // InvokeDynamic #7:█:(Ljava/lang/Object;JJ)Ljava/lang/Throwable;
+     126: athrow
+     127: iconst_1
+     128: ireturn
+     129: astore        5
+     131: iconst_1
+     132: ireturn
+    Exception table:
+       from    to  target type
+          94   114   117   Class java/lang/Throwable
+          60    97   100   Class java/lang/Throwable
+          36   128   129   Class java/lang/Throwable
+
+  public java.lang.String 1(java.lang.Object[]);
+    Code:
+       0: aload_1
+       1: pop
+       2: aload_0
+       3: getfield      #428                // Field "3":Ljava/lang/String;
+       6: areturn
+
+  public static boolean 8();
+    Code:
+       0: getstatic     #53                 // Field "4":Z
+       3: ireturn
+
+  static {};
+    Code:
+       0: ldc2_w        #752                // long -3841198242163419732l
+       3: ldc2_w        #842                // long -4440152545374265612l
+       6: invokestatic  #226                // Method java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+       9: invokevirtual #81                 // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+      12: invokestatic  #363                // Method org/dreambot/x.a:(JJLjava/lang/Object;)Lorg/dreambot/b;
+      15: ldc2_w        #932                // long 84643090483786l
+      18: invokeinterface #145,  3          // InterfaceMethod org/dreambot/b.a:(J)J
+      23: putstatic     #223                // Field a:J
+      26: getstatic     #223                // Field a:J
+      29: ldc2_w        #776                // long 138044217340347l
+      32: lxor
+      33: lstore        9
+      35: new           #162                // class java/util/HashMap
+      38: dup
+      39: bipush        13
+      41: invokespecial #249                // Method java/util/HashMap."<init>":(I)V
+      44: putstatic     #373                // Field d:Ljava/util/Map;
+      47: ldc           #3                  // String DES/CBC/PKCS5Padding
+      49: invokestatic  #42                 // Method javax/crypto/Cipher.getInstance:(Ljava/lang/String;)Ljavax/crypto/Cipher;
+      52: dup
+      53: astore_0
+      54: iconst_2
+      55: ldc           #10                 // String DES
+      57: invokestatic  #623                // Method javax/crypto/SecretKeyFactory.getInstance:(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;
+      60: bipush        8
+      62: newarray       byte
+      64: dup
+      65: iconst_0
+      66: lload         9
+      68: bipush        56
+      70: lushr
+      71: l2i
+      72: i2b
+      73: bastore
+      74: iconst_1
+      75: istore_1
+      76: iload_1
+      77: bipush        8
+      79: if_icmpge     103
+      82: dup
+      83: iload_1
+      84: lload         9
+      86: iload_1
+      87: bipush        8
+      89: imul
+      90: lshl
+      91: bipush        56
+      93: lushr
+      94: l2i
+      95: i2b
+      96: bastore
+      97: iinc          1, 1
+     100: goto          76
+     103: new           #661                // class javax/crypto/spec/DESKeySpec
+     106: dup_x1
+     107: swap
+     108: invokespecial #641                // Method javax/crypto/spec/DESKeySpec."<init>":([B)V
+     111: invokevirtual #535                // Method javax/crypto/SecretKeyFactory.generateSecret:(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
+     114: new           #528                // class javax/crypto/spec/IvParameterSpec
+     117: dup
+     118: bipush        8
+     120: newarray       byte
+     122: invokespecial #210                // Method javax/crypto/spec/IvParameterSpec."<init>":([B)V
+     125: invokevirtual #314                // Method javax/crypto/Cipher.init:(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+     128: bipush        40
+     130: anewarray     #6                  // class java/lang/String
+     133: astore        7
+     135: iconst_0
+     136: istore        5
+     138: ldc           #9                  // String \u001c┬E\u0002┼σß\u0082▌├=^\u0099\u0011╔\b\u000f\n\u0098Nφ\u0082\u001a\f¡+Ω\u0010A@█╨\u0018\u0083\u0090╛φ°j\b╓+└⌐∙\u0010²╓\u0089\u0012│¿P2¼\u0016\u0000hⁿ\u0082D1\u0085Uf╛yX\'\u0083\u0019\u001a╩Q▐|.\u0083?n√╪π\u00946v┤F²{ª╥▐_╪1\u0001∙ ±c!├kñz╦░O\b\b\'\u0087!X<\u001ac┌\u001bV|║-\t\u00195┼+\t«g\u0018≡█¡\u0015\u0015n\u009a]\u0089ΩW\fñ\b▀X}\u001c\u0093\u0012]\n/\b\u008f≈\u008e5I sBRu\u0019▒[rºX#eí%┐╠\u0005╕╟)╡@c\u0001\u0097\f╙\u008b\u0000█rYPS╙╚!X\u0016∙\u0097\u0018╝σ>≤7\u001d╔Ñ\u001f╪\u0012\nτ└Z▌V\u001c\u008e▀%|]AΣ╕t▐[▒\\J├9\u0016\f:\fo\u0086á÷v\f÷╪bY\u0001°\u0092¬\u0001╖\u0082⌡\u009bT[└√\u0019\u0085>┬\u0010▒\u0006▄ε2\u0010√\n▄lºf\u0084«ⁿ╪[·I\u0090ßs\u0010┼J$l\u008cΘn<hi\u0093\u008d\u0016─p>\u0010áε∩l9P%M▒A\t00B╙l\u0010c0\u008a═╢\u009e┼Q└>up█╠Yε\u0010╨╖c9∩≈╓»\u000fδ\u001aφ|ig═\u0010KK≤¿╟M8╖v\u0011\u0099U▀║░\t(\u0000z╪/b╓÷:A:ñ*\u000eΦ)\u0004∩z-\u0017nv▀\u0093≡\t\u001e┬\u009b≥\u009fu\u001c╪u\u009f:π\u009cc\u0010ih▀5\u0082ó)3╢║[▓╦╗▌W\u0010\u008c»∩ΣF\u008b\u0091■S,╦(⌠¼╬\u0006\u0010n\u001c:0÷\u000e{)∩≡#{fT╥M\u0010\u0092╝\u0001J7Nc^\u0081<╕▒Ñ\u008f\u0084m░▀\u0089fx²KÑ\u0012╘?\u0001√\u000f9╦╔\u009ay)Tqi²\u009a\u0097╒\u009ae≡;A\u0004\u001c\u0094\u001fmbⁿ┴m┘¼⌐ßAK«_%p\u0004Ff;┴Q\u001dA\"O⌐┼)■M≥x$|7▐╩ ε\u0092╒╨Tú╙X\u0004\n≥)─╘o┐\u0080±E\u0012└\u001ap\u008a═ºkA[╚N\u009e\u008e\u0015z+\u007f\u0096;╓σí^iV?%╣\u0016XY«C_Já\u008c)CΦRó∞&\'╕\u008a\u0003╤\f╢Z\u001d\u0099k\u0099╔\u009fP╡\u00199\u008d\u0097╠\u001eR▌╜\u0082 E\u0084\u009b▌y\u001c■█\u009d╛Θ⌡ b\n<\u0093G\u008cΩA┤\u0016≤r∙W\u009b╙╖o[=▒\u009a╙98├\u0005\u0016≈▀╗±\u0010>\u009f╙Nk╣⌠▒>╕─│á∙Θ┬ ⌠\u0092\u008d\u001d;╙xTVφ8⌡-\u0019√\u0099 \u009cY[T▀╤\u000e■úG\u001e\u0098{a\u008b\u0010φW\u008c\u001d╩`b\u007f∞_$\u00048Q\u0013\\\u0010d╬&ªh\u0012}#S╠ⁿ\u0099αj1(\u0010¿ε|ú¼\u009d╨▀{w╤\u0084J1\u0093\u0017H\u008a▀\u0000╖f·Σá\u008c⌐\u000f)3\u0087(mc╢\u0084╩N\u001e\u0012v≡;Có∞f\u0014╩¼\"E│}8Σ*-\u0089▒}─├\u009e\u008af\u0006╙\u001f╗╠\u008c╗$E÷:┤╠º\u0088\r\u000e+\u0003≤mr= │py\'á\u008c`Wy\u0002\u001ae╒Ps8]ª╙\u008e3b┼\u0001s∙≈Q\u0002°┴!\u0010\'¬⌠j\u0092░\u001bu\u000bτ\u007fT╩\u009b\u0092A\u0010\u0097╘\u0087∞\u0094{╦.¡ ┤\u0089+EΓµp\u001fU(\"\u0006QX5Z\u0015±+²╞╙\u0001\u008f]╓⌡Γ≥╕╗\u001f7φ\u009c\u0096╥╘\u008f`≡■@\u0098%╞lmRFGS╙Θ╤≥\u008dN\u007fTw\u0087`Q\u0087\u0092O\r▓ó\u001b\u0091╩\u008e╘i╗╟\u0099\u0002pστ%\n\\I\u0080φ^⌡\"<■ ╥\u0011σtΣσσ\u0010\u008ea»\u0084\u009c\u009d?+\u0097╝d\u0093╡\u0018\u0091▌0ñ\u0091\u0090√┘─]╓p°\t @+\u001b\u001fNπ░║g≤YV\u0007]πt├\u008fΣT╔÷╞y╬!\\ⁿσ6πE%ΣΣ⌠\u0018\u0098\u0005¡╦)&\u0019⌡≥s\u0097\"R\u0083╢∞▀GD\u000f¬j∙5\u0010Θ6#╒k/µ\f23└\u0015∩ W▒Hq\u009f÷╦\u0014▓\u0097∩\r\u000e\u007f0*k\u0015@DEr÷┐Θ\u001f*\u0003\u0012\u0094\u0016\u0080├╒(G \u009e\u0093┌,zσ{╖\u0003 Z\u0015w}\u008bi\u00144}\u0015α»R≡7 h∙\u0002\u0089\u009d■╝|¬╛\u0093g`⌡_\u0017├≥?\\▌ª#`p`ß├h\u001acs}Px<\u009d√\u0092\u0007X\u0083-¼j\n▐9╬\u0093m∩\u0003σ═$\u001f\u0001cµ1\u0014\'#B╪\u0019┬╜φ╪╥R│■@SNs ▓>\u0083Φ\\\u000e╕\u0006z\u0016\u0081\u001b∙\n\'4Z╝╡\u0085Qb8╒╙k\u0016&F\u0088l├)\u001bΘ\u0093\u001f\"\u0000d\u0092▐≈\u001f¼\u0089\u0080⌐eíáK┌▄/±R⌠╩\u0098╒·9\u0019∙┌qg▓Q\u0011|4\fh»Y·\u001e\u008b╫¡B≈a3G/\u0011á╡jªº7■N┘\u0095v\u0016╧╖▓≈╥G\u0003τ\u0080óe╥╒g\u001d ╢cU┼\u0098M?\u0019º┼S*\u0000\u0080└\u0099µ\"╒\b≡Z√╧K`\t\u0099U═½4\u0019\u0081«\'\u0001─O╠Ω\u0085╥▀úε┐÷0 ]\u0081UÑ{\u0095s\u001fx╛9\u0006╫Gδ▀\u0013╠ √┴g|[┤▓@╫=\u0093\u009bú(πΓ\\B\u0002\u0081QK°k:σ╟╓z\u001ed)\u0085÷1█7╝≈c\u0006\u008c╞P\u0094\u0082\u0013\u0001├]\u008c\u0082\u00023 ºeZ╢ñ½¿\f\u0018(²9\u0012Φ╤?\u0096=\u0014[Xτ8≡\u0004√`╒\u0013\u009ct\u0007P╤\u0083├G╪╟\u001eδ\u0005╖\\$\u0092q\u00106lr@}¡\u0093\u0088\u0082δ\u0006\u0001\u0086Ñ}┼g÷]ab#7RWn/∩╤╫\u007fA╫T∩╗\u00913yO\n2\u0081!\u0097\u0018r8\u009f≥!\b/╗╦a\u0002gTµQ\u0018SΦ_
+     140: dup
+     141: astore        4
+     143: invokevirtual #166                // Method java/lang/String.length:()I
+     146: istore        6
+     148: bipush        32
+     150: istore_3
+     151: iconst_m1
+     152: istore_2
+     153: iinc          2, 1
+     156: aload         4
+     158: iload_2
+     159: dup
+     160: iload_3
+     161: iadd
+     162: invokevirtual #499                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     165: iconst_m1
+     166: goto          276
+     169: aload         7
+     171: swap
+     172: iload         5
+     174: iinc          5, 1
+     177: swap
+     178: aastore
+     179: iload_2
+     180: iload_3
+     181: iadd
+     182: dup
+     183: istore_2
+     184: iload         6
+     186: if_icmpge     199
+     189: aload         4
+     191: iload_2
+     192: invokevirtual #354                // Method java/lang/String.charAt:(I)C
+     195: istore_3
+     196: goto          153
+     199: ldc           #13                 // String /`\u0018├,╫@╖∞\u0014\u001a╩╥\u0082v▀\u0018½@\u009b╨~. P┴nRc\u0093e╧u└ⁿ\u0092\u0090\u0090\u0005\u009e«
+     201: dup
+     202: astore        4
+     204: invokevirtual #166                // Method java/lang/String.length:()I
+     207: istore        6
+     209: bipush        16
+     211: istore_3
+     212: iconst_m1
+     213: istore_2
+     214: iinc          2, 1
+     217: aload         4
+     219: iload_2
+     220: dup
+     221: iload_3
+     222: iadd
+     223: invokevirtual #499                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     226: iconst_0
+     227: goto          276
+     230: aload         7
+     232: swap
+     233: iload         5
+     235: iinc          5, 1
+     238: swap
+     239: aastore
+     240: iload_2
+     241: iload_3
+     242: iadd
+     243: dup
+     244: istore_2
+     245: iload         6
+     247: if_icmpge     260
+     250: aload         4
+     252: iload_2
+     253: invokevirtual #354                // Method java/lang/String.charAt:(I)C
+     256: istore_3
+     257: goto          214
+     260: aload         7
+     262: putstatic     #721                // Field b:[Ljava/lang/String;
+     265: bipush        40
+     267: anewarray     #6                  // class java/lang/String
+     270: putstatic     #441                // Field c:[Ljava/lang/String;
+     273: goto          316
+     276: swap
+     277: ldc           #2                  // String ISO-8859-1
+     279: invokevirtual #546                // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     282: aload_0
+     283: swap
+     284: invokevirtual #689                // Method javax/crypto/Cipher.doFinal:([B)[B
+     287: astore        8
+     289: aload         8
+     291: invokestatic  #594                // Method a:([B)Ljava/lang/String;
+     294: invokevirtual #207                // Method java/lang/String.intern:()Ljava/lang/String;
+     297: swap
+     298: tableswitch   { // 0 to 0
+
+                     0: 230
+               default: 169
+          }
+     316: sipush        17599
+     319: ldc2_w        #738                // long 3110915753812887681l
+     322: lload         9
+     324: lxor
+     325: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     330: invokestatic  #55                 // Method java/lang/System.getProperty:(Ljava/lang/String;)Ljava/lang/String;
+     333: getstatic     #116                // Field java/io/File.separator:Ljava/lang/String;
+     336: getstatic     #116                // Field java/io/File.separator:Ljava/lang/String;
+     339: sipush        16500
+     342: ldc2_w        #784                // long 5286887340043799638l
+     345: lload         9
+     347: lxor
+     348: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     353: dup_x2
+     354: pop
+     355: sipush        15019
+     358: ldc2_w        #816                // long 4796141903148152450l
+     361: lload         9
+     363: lxor
+     364: invokedynamic #222,  0            // InvokeDynamic #5:j:(IJ)Ljava/lang/String;
+     369: swap
+     370: invokedynamic #453,  0            // InvokeDynamic #4:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     375: putstatic     #580                // Field "2":Ljava/lang/String;
+     378: iconst_0
+     379: putstatic     #53                 // Field "4":Z
+     382: bipush        32
+     384: newarray       byte
+     386: dup
+     387: iconst_0
+     388: bipush        51
+     390: bastore
+     391: dup
+     392: iconst_1
+     393: bipush        100
+     395: bastore
+     396: dup
+     397: iconst_2
+     398: bipush        55
+     400: bastore
+     401: dup
+     402: iconst_3
+     403: bipush        57
+     405: bastore
+     406: dup
+     407: iconst_4
+     408: bipush        101
+     410: bastore
+     411: dup
+     412: iconst_5
+     413: bipush        49
+     415: bastore
+     416: dup
+     417: bipush        6
+     419: bipush        100
+     421: bastore
+     422: dup
+     423: bipush        7
+     425: bipush        102
+     427: bastore
+     428: dup
+     429: bipush        8
+     431: bipush        48
+     433: bastore
+     434: dup
+     435: bipush        9
+     437: bipush        54
+     439: bastore
+     440: dup
+     441: bipush        10
+     443: bipush        56
+     445: bastore
+     446: dup
+     447: bipush        11
+     449: bipush        101
+     451: bastore
+     452: dup
+     453: bipush        12
+     455: bipush        55
+     457: bastore
+     458: dup
+     459: bipush        13
+     461: bipush        48
+     463: bastore
+     464: dup
+     465: bipush        14
+     467: bipush        57
+     469: bastore
+     470: dup
+     471: bipush        15
+     473: bipush        54
+     475: bastore
+     476: dup
+     477: bipush        16
+     479: bipush        54
+     481: bastore
+     482: dup
+     483: bipush        17
+     485: bipush        101
+     487: bastore
+     488: dup
+     489: bipush        18
+     491: bipush        98
+     493: bastore
+     494: dup
+     495: bipush        19
+     497: bipush        97
+     499: bastore
+     500: dup
+     501: bipush        20
+     503: bipush        52
+     505: bastore
+     506: dup
+     507: bipush        21
+     509: bipush        51
+     511: bastore
+     512: dup
+     513: bipush        22
+     515: bipush        55
+     517: bastore
+     518: dup
+     519: bipush        23
+     521: bipush        57
+     523: bastore
+     524: dup
+     525: bipush        24
+     527: bipush        51
+     529: bastore
+     530: dup
+     531: bipush        25
+     533: bipush        56
+     535: bastore
+     536: dup
+     537: bipush        26
+     539: bipush        97
+     541: bastore
+     542: dup
+     543: bipush        27
+     545: bipush        97
+     547: bastore
+     548: dup
+     549: bipush        28
+     551: bipush        100
+     553: bastore
+     554: dup
+     555: bipush        29
+     557: bipush        53
+     559: bastore
+     560: dup
+     561: bipush        30
+     563: bipush        100
+     565: bastore
+     566: dup
+     567: bipush        31
+     569: bipush        102
+     571: bastore
+     572: putstatic     #481                // Field "7":[B
+     575: return
+
+  private static java.lang.Throwable a(java.lang.Throwable);
+    Code:
+       0: aload_0
+       1: areturn
+
+  private static java.lang.String a(byte[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: aload_0
+       3: arraylength
+       4: dup
+       5: istore_2
+       6: newarray       char
+       8: astore_3
+       9: iconst_0
+      10: istore        4
+      12: iload         4
+      14: iload_2
+      15: if_icmpge     178
+      18: sipush        255
+      21: aload_0
+      22: iload         4
+      24: baload
+      25: iand
+      26: dup
+      27: istore        5
+      29: sipush        192
+      32: if_icmpge     47
+      35: aload_3
+      36: iload_1
+      37: iinc          1, 1
+      40: iload         5
+      42: i2c
+      43: castore
+      44: goto          172
+      47: iload         5
+      49: sipush        224
+      52: if_icmpge     99
+      55: iload         5
+      57: bipush        31
+      59: iand
+      60: i2c
+      61: bipush        6
+      63: ishl
+      64: i2c
+      65: istore        6
+      67: aload_0
+      68: iinc          4, 1
+      71: iload         4
+      73: baload
+      74: istore        5
+      76: iload         6
+      78: iload         5
+      80: bipush        63
+      82: iand
+      83: i2c
+      84: ior
+      85: i2c
+      86: istore        6
+      88: aload_3
+      89: iload_1
+      90: iinc          1, 1
+      93: iload         6
+      95: castore
+      96: goto          172
+      99: iload         4
+     101: iload_2
+     102: iconst_2
+     103: isub
+     104: if_icmpge     172
+     107: iload         5
+     109: bipush        15
+     111: iand
+     112: i2c
+     113: bipush        12
+     115: ishl
+     116: i2c
+     117: istore        6
+     119: aload_0
+     120: iinc          4, 1
+     123: iload         4
+     125: baload
+     126: istore        5
+     128: iload         6
+     130: iload         5
+     132: bipush        63
+     134: iand
+     135: i2c
+     136: bipush        6
+     138: ishl
+     139: ior
+     140: i2c
+     141: istore        6
+     143: aload_0
+     144: iinc          4, 1
+     147: iload         4
+     149: baload
+     150: istore        5
+     152: iload         6
+     154: iload         5
+     156: bipush        63
+     158: iand
+     159: i2c
+     160: ior
+     161: i2c
+     162: istore        6
+     164: aload_3
+     165: iload_1
+     166: iinc          1, 1
+     169: iload         6
+     171: castore
+     172: iinc          4, 1
+     175: goto          12
+     178: new           #6                  // class java/lang/String
+     181: dup
+     182: aload_3
+     183: iconst_0
+     184: iload_1
+     185: invokespecial #621                // Method java/lang/String."<init>":([CII)V
+     188: areturn
+
+  private static java.lang.String a(int, long);
+    Code:
+       0: iload_0
+       1: lload_1
+       2: ldc2_w        #866                // long 32767l
+       5: land
+       6: l2i
+       7: ixor
+       8: sipush        21985
+      11: ixor
+      12: istore        5
+      14: getstatic     #441                // Field c:[Ljava/lang/String;
+      17: iload         5
+      19: aaload
+      20: ifnonnull     248
+      23: invokestatic  #146                // Method java/lang/Thread.currentThread:()Ljava/lang/Thread;
+      26: invokevirtual #238                // Method java/lang/Thread.getId:()J
+      29: invokestatic  #693                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      32: astore_3
+      33: getstatic     #373                // Field d:Ljava/util/Map;
+      36: aload_3
+      37: invokeinterface #200,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      42: checkcast     #14                 // class "[Ljava/lang/Object;"
+      45: astore        4
+      47: aload         4
+      49: ifnonnull     120
+      52: iconst_3
+      53: anewarray     #426                // class java/lang/Object
+      56: astore        4
+      58: aload         4
+      60: iconst_0
+      61: ldc           #3                  // String DES/CBC/PKCS5Padding
+      63: invokestatic  #42                 // Method javax/crypto/Cipher.getInstance:(Ljava/lang/String;)Ljavax/crypto/Cipher;
+      66: aastore
+      67: aload         4
+      69: iconst_1
+      70: ldc           #10                 // String DES
+      72: invokestatic  #623                // Method javax/crypto/SecretKeyFactory.getInstance:(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;
+      75: aastore
+      76: aload         4
+      78: iconst_2
+      79: new           #528                // class javax/crypto/spec/IvParameterSpec
+      82: dup
+      83: bipush        8
+      85: newarray       byte
+      87: invokespecial #210                // Method javax/crypto/spec/IvParameterSpec."<init>":([B)V
+      90: aastore
+      91: getstatic     #373                // Field d:Ljava/util/Map;
+      94: aload_3
+      95: aload         4
+      97: invokeinterface #243,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+     102: pop
+     103: goto          120
+     106: astore        9
+     108: new           #188                // class java/lang/RuntimeException
+     111: dup
+     112: ldc           #4                  // String org/dreambot/4cs
+     114: aload         9
+     116: invokespecial #293                // Method java/lang/RuntimeException."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+     119: athrow
+     120: bipush        8
+     122: newarray       byte
+     124: astore        6
+     126: aload         6
+     128: iconst_0
+     129: lload_1
+     130: bipush        56
+     132: lushr
+     133: l2i
+     134: i2b
+     135: bastore
+     136: iconst_1
+     137: istore        7
+     139: iload         7
+     141: bipush        8
+     143: if_icmpge     169
+     146: aload         6
+     148: iload         7
+     150: lload_1
+     151: iload         7
+     153: bipush        8
+     155: imul
+     156: lshl
+     157: bipush        56
+     159: lushr
+     160: l2i
+     161: i2b
+     162: bastore
+     163: iinc          7, 1
+     166: goto          139
+     169: new           #661                // class javax/crypto/spec/DESKeySpec
+     172: dup
+     173: aload         6
+     175: invokespecial #641                // Method javax/crypto/spec/DESKeySpec."<init>":([B)V
+     178: astore        7
+     180: aload         4
+     182: iconst_1
+     183: aaload
+     184: checkcast     #157                // class javax/crypto/SecretKeyFactory
+     187: aload         7
+     189: invokevirtual #535                // Method javax/crypto/SecretKeyFactory.generateSecret:(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
+     192: astore        8
+     194: aload         4
+     196: iconst_0
+     197: aaload
+     198: checkcast     #370                // class javax/crypto/Cipher
+     201: iconst_2
+     202: aload         8
+     204: aload         4
+     206: iconst_2
+     207: aaload
+     208: checkcast     #528                // class javax/crypto/spec/IvParameterSpec
+     211: invokevirtual #314                // Method javax/crypto/Cipher.init:(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+     214: getstatic     #721                // Field b:[Ljava/lang/String;
+     217: iload         5
+     219: aaload
+     220: ldc           #2                  // String ISO-8859-1
+     222: invokevirtual #546                // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     225: astore        9
+     227: getstatic     #441                // Field c:[Ljava/lang/String;
+     230: iload         5
+     232: aload         4
+     234: iconst_0
+     235: aaload
+     236: checkcast     #370                // class javax/crypto/Cipher
+     239: aload         9
+     241: invokevirtual #689                // Method javax/crypto/Cipher.doFinal:([B)[B
+     244: invokestatic  #594                // Method a:([B)Ljava/lang/String;
+     247: aastore
+     248: getstatic     #441                // Field c:[Ljava/lang/String;
+     251: iload         5
+     253: aaload
+     254: areturn
+    Exception table:
+       from    to  target type
+          23   103   106   Class java/lang/Exception
+
+  private static java.lang.Object a(java.lang.invoke.MethodHandles$Lookup, java.lang.invoke.MutableCallSite, java.lang.String, java.lang.Object[]);
+    Code:
+       0: aload_3
+       1: iconst_0
+       2: aaload
+       3: checkcast     #526                // class java/lang/Integer
+       6: invokevirtual #344                // Method java/lang/Integer.intValue:()I
+       9: istore        4
+      11: aload_3
+      12: iconst_1
+      13: aaload
+      14: checkcast     #221                // class java/lang/Long
+      17: invokevirtual #612                // Method java/lang/Long.longValue:()J
+      20: lstore        5
+      22: iload         4
+      24: lload         5
+      26: invokestatic  #90                 // Method a:(IJ)Ljava/lang/String;
+      29: astore        7
+      31: ldc           #6                  // class java/lang/String
+      33: aload         7
+      35: invokestatic  #257                // Method java/lang/invoke/MethodHandles.constant:(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/invoke/MethodHandle;
+      38: astore        8
+      40: aload_1
+      41: aload         8
+      43: iconst_0
+      44: iconst_2
+      45: anewarray     #260                // class java/lang/Class
+      48: dup
+      49: iconst_0
+      50: getstatic     #578                // Field java/lang/Integer.TYPE:Ljava/lang/Class;
+      53: aastore
+      54: dup
+      55: iconst_1
+      56: getstatic     #502                // Field java/lang/Long.TYPE:Ljava/lang/Class;
+      59: aastore
+      60: invokestatic  #71                 // Method java/lang/invoke/MethodHandles.dropArguments:(Ljava/lang/invoke/MethodHandle;I[Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;
+      63: invokevirtual #17                 // Method java/lang/invoke/MutableCallSite.setTarget:(Ljava/lang/invoke/MethodHandle;)V
+      66: aload         7
+      68: areturn
+
+  private static java.lang.invoke.CallSite a(java.lang.invoke.MethodHandles$Lookup, java.lang.String, java.lang.invoke.MethodType);
+    Code:
+       0: new           #682                // class java/lang/invoke/MutableCallSite
+       3: dup
+       4: aload_2
+       5: invokespecial #658                // Method java/lang/invoke/MutableCallSite."<init>":(Ljava/lang/invoke/MethodType;)V
+       8: astore_3
+       9: aload_3
+      10: ldc           #12                 // MethodHandle REF_invokeStatic "org/dreambot/4cs".a:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/invoke/MutableCallSite;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+      12: ldc           #14                 // class "[Ljava/lang/Object;"
+      14: aload_2
+      15: invokevirtual #404                // Method java/lang/invoke/MethodType.parameterCount:()I
+      18: invokevirtual #505                // Method java/lang/invoke/MethodHandle.asCollector:(Ljava/lang/Class;I)Ljava/lang/invoke/MethodHandle;
+      21: iconst_0
+      22: iconst_3
+      23: anewarray     #426                // class java/lang/Object
+      26: dup
+      27: iconst_0
+      28: aload_0
+      29: aastore
+      30: dup
+      31: iconst_1
+      32: aload_3
+      33: aastore
+      34: dup
+      35: iconst_2
+      36: aload_1
+      37: aastore
+      38: invokestatic  #111                // Method java/lang/invoke/MethodHandles.insertArguments:(Ljava/lang/invoke/MethodHandle;I[Ljava/lang/Object;)Ljava/lang/invoke/MethodHandle;
+      41: aload_2
+      42: invokestatic  #604                // Method java/lang/invoke/MethodHandles.explicitCastArguments:(Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;
+      45: invokevirtual #17                 // Method java/lang/invoke/MutableCallSite.setTarget:(Ljava/lang/invoke/MethodHandle;)V
+      48: goto          99
+      51: astore        4
+      53: new           #188                // class java/lang/RuntimeException
+      56: dup
+      57: new           #382                // class java/lang/StringBuilder
+      60: dup
+      61: invokespecial #253                // Method java/lang/StringBuilder."<init>":()V
+      64: ldc           #4                  // String org/dreambot/4cs
+      66: invokevirtual #517                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      69: ldc           #7                  // String  :
+      71: invokevirtual #517                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      74: aload_1
+      75: invokevirtual #517                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      78: ldc           #7                  // String  :
+      80: invokevirtual #517                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      83: aload_2
+      84: invokevirtual #598                // Method java/lang/invoke/MethodType.toString:()Ljava/lang/String;
+      87: invokevirtual #517                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      90: invokevirtual #468                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      93: aload         4
+      95: invokespecial #293                // Method java/lang/RuntimeException."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+      98: athrow
+      99: aload_3
+     100: areturn
+    Exception table:
+       from    to  target type
+           9    48    51   Class java/lang/Exception
+}

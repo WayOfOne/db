@@ -1,0 +1,89 @@
+Compiled from "LocalLoader.java"
+public final class org.dreambot.api.script.loader.LocalLoader {
+  public org.dreambot.api.script.loader.LocalLoader();
+    Code:
+       0: aload_0
+       1: invokespecial #31                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void resetLoader();
+    Code:
+       0: iconst_0
+       1: anewarray     #56                 // class java/lang/Object
+       4: invokestatic  #54                 // Method "org/dreambot/8Q"."7":([Ljava/lang/Object;)V
+       7: return
+
+  public static java.net.URLClassLoader getLoader(java.io.File, java.util.List<java.lang.String>);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iconst_2
+       3: anewarray     #56                 // class java/lang/Object
+       6: dup_x1
+       7: swap
+       8: iconst_1
+       9: swap
+      10: aastore
+      11: dup_x1
+      12: swap
+      13: iconst_0
+      14: swap
+      15: aastore
+      16: invokestatic  #71                 // Method "org/dreambot/8Q"."3E":([Ljava/lang/Object;)Ljava/net/URLClassLoader;
+      19: areturn
+
+  public static void clear();
+    Code:
+       0: iconst_0
+       1: anewarray     #56                 // class java/lang/Object
+       4: invokestatic  #46                 // Method "org/dreambot/8Q"."6":([Ljava/lang/Object;)V
+       7: return
+
+  public static void loadScripts();
+    Code:
+       0: iconst_0
+       1: anewarray     #56                 // class java/lang/Object
+       4: invokestatic  #34                 // Method "org/dreambot/8Q"."6z":([Ljava/lang/Object;)V
+       7: return
+
+  public static void reload();
+    Code:
+       0: iconst_0
+       1: anewarray     #56                 // class java/lang/Object
+       4: invokestatic  #5                  // Method "org/dreambot/8Q"."6k":([Ljava/lang/Object;)V
+       7: return
+
+  public static synchronized java.util.List<java.lang.Class<? extends org.dreambot.api.script.AbstractScript>> getScripts();
+    Code:
+       0: iconst_0
+       1: anewarray     #56                 // class java/lang/Object
+       4: invokestatic  #27                 // Method "org/dreambot/8Q"."6s":([Ljava/lang/Object;)Ljava/util/List;
+       7: areturn
+
+  public static java.util.List<org.dreambot.api.script.ScriptManifest> getAllScripts();
+    Code:
+       0: iconst_0
+       1: anewarray     #56                 // class java/lang/Object
+       4: invokestatic  #73                 // Method "org/dreambot/8Q"."6V":([Ljava/lang/Object;)Ljava/util/List;
+       7: areturn
+
+  public static java.util.List<org.dreambot.3B> getAllLocalScripts();
+    Code:
+       0: iconst_0
+       1: anewarray     #56                 // class java/lang/Object
+       4: invokestatic  #26                 // Method "org/dreambot/8Q"."6J":([Ljava/lang/Object;)Ljava/util/List;
+       7: areturn
+
+  public static java.lang.Class<? extends org.dreambot.api.script.AbstractScript> getScriptFromManifest(org.dreambot.api.script.ScriptManifest);
+    Code:
+       0: aload_0
+       1: iconst_1
+       2: anewarray     #56                 // class java/lang/Object
+       5: dup_x1
+       6: swap
+       7: iconst_0
+       8: swap
+       9: aastore
+      10: invokestatic  #13                 // Method "org/dreambot/8Q"."8r":([Ljava/lang/Object;)Ljava/lang/Class;
+      13: areturn
+}

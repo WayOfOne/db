@@ -1,0 +1,184 @@
+Compiled from "9J.java"
+public class org.dreambot.9J {
+  public static java.util.UUID 2;
+
+  public static long 4;
+
+  public static org.dreambot.api.utilities.Timer 0;
+
+  public static boolean 9;
+
+  public static java.util.Map<org.dreambot.api.methods.skills.Skill, java.lang.Integer> 8;
+
+  private static final long a;
+
+  public static java.util.List 0(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #4                  // class java/lang/Long
+       7: invokevirtual #27                 // Method java/lang/Long.longValue:()J
+      10: lstore_1
+      11: pop
+      12: getstatic     #137                // Field a:J
+      15: lload_1
+      16: lxor
+      17: lstore_1
+      18: getstatic     #100                // Field "org/dreambot/core/7"."5":Z
+      21: ifne          32
+      24: new           #135                // class java/util/ArrayList
+      27: dup
+      28: invokespecial #119                // Method java/util/ArrayList."<init>":()V
+      31: areturn
+      32: new           #135                // class java/util/ArrayList
+      35: dup
+      36: invokestatic  #114                // Method "org/dreambot/4Pa"."3":()[Lorg/dreambot/4Pa;
+      39: invokestatic  #17                 // InterfaceMethod java/util/List.of:([Ljava/lang/Object;)Ljava/util/List;
+      42: invokespecial #111                // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+      45: areturn
+
+  public static void 7(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #4                  // class java/lang/Long
+       7: invokevirtual #27                 // Method java/lang/Long.longValue:()J
+      10: lstore_1
+      11: pop
+      12: getstatic     #137                // Field a:J
+      15: lload_1
+      16: lxor
+      17: lstore_1
+      18: ldc2_w        #206                // long -4415900276569018432l
+      21: lload_1
+      22: invokedynamic #147,  0            // InvokeDynamic #0:█:(JJ)I
+      27: getstatic     #148                // Field "8":Ljava/util/Map;
+      30: invokeinterface #169,  1          // InterfaceMethod java/util/Map.clear:()V
+      35: istore_3
+      36: invokestatic  #161                // Method java/util/UUID.randomUUID:()Ljava/util/UUID;
+      39: putstatic     #11                 // Field "2":Ljava/util/UUID;
+      42: invokestatic  #23                 // Method java/lang/System.currentTimeMillis:()J
+      45: putstatic     #75                 // Field "4":J
+      48: getstatic     #74                 // Field "0":Lorg/dreambot/api/utilities/Timer;
+      51: invokevirtual #26                 // Method org/dreambot/api/utilities/Timer.reset:()V
+      54: getstatic     #74                 // Field "0":Lorg/dreambot/api/utilities/Timer;
+      57: invokevirtual #133                // Method org/dreambot/api/utilities/Timer.resume:()V
+      60: iload_3
+      61: ifeq          89
+      64: ldc2_w        #202                // long -4473671706684047259l
+      67: lload_1
+      68: invokedynamic #147,  0            // InvokeDynamic #0:█:(JJ)I
+      73: istore        4
+      75: iinc          4, 1
+      78: iload         4
+      80: ldc2_w        #200                // long -4473848846070859153l
+      83: lload_1
+      84: invokedynamic #163,  0            // InvokeDynamic #1:█:(IJJ)V
+      89: return
+
+  public static void 3(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: pop
+       2: getstatic     #74                 // Field "0":Lorg/dreambot/api/utilities/Timer;
+       5: invokevirtual #178                // Method org/dreambot/api/utilities/Timer.pause:()V
+       8: return
+
+  public static void 5(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #4                  // class java/lang/Long
+       7: invokevirtual #27                 // Method java/lang/Long.longValue:()J
+      10: lstore_2
+      11: dup
+      12: iconst_1
+      13: aaload
+      14: checkcast     #126                // class org/dreambot/api/script/event/impl/ExperienceEvent
+      17: astore_1
+      18: pop
+      19: getstatic     #137                // Field a:J
+      22: lload_2
+      23: lxor
+      24: lstore_2
+      25: ldc2_w        #196                // long -5721085525304959507l
+      28: lload_2
+      29: invokedynamic #147,  0            // InvokeDynamic #0:█:(JJ)I
+      34: istore        4
+      36: getstatic     #74                 // Field "0":Lorg/dreambot/api/utilities/Timer;
+      39: iload         4
+      41: ifne          50
+      44: ifnull        112
+      47: getstatic     #74                 // Field "0":Lorg/dreambot/api/utilities/Timer;
+      50: invokevirtual #63                 // Method org/dreambot/api/utilities/Timer.isPaused:()Z
+      53: iload         4
+      55: ifne          83
+      58: ifne          112
+      61: getstatic     #148                // Field "8":Ljava/util/Map;
+      64: aload_1
+      65: invokevirtual #176                // Method org/dreambot/api/script/event/impl/ExperienceEvent.getSkill:()Lorg/dreambot/api/methods/skills/Skill;
+      68: iconst_0
+      69: invokestatic  #146                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      72: invokeinterface #115,  3          // InterfaceMethod java/util/Map.getOrDefault:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      77: checkcast     #187                // class java/lang/Integer
+      80: invokevirtual #31                 // Method java/lang/Integer.intValue:()I
+      83: istore        5
+      85: iload         5
+      87: aload_1
+      88: invokevirtual #103                // Method org/dreambot/api/script/event/impl/ExperienceEvent.getChange:()I
+      91: iadd
+      92: istore        5
+      94: getstatic     #148                // Field "8":Ljava/util/Map;
+      97: aload_1
+      98: invokevirtual #176                // Method org/dreambot/api/script/event/impl/ExperienceEvent.getSkill:()Lorg/dreambot/api/methods/skills/Skill;
+     101: iload         5
+     103: invokestatic  #146                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     106: invokeinterface #71,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+     111: pop
+     112: return
+
+  static {};
+    Code:
+       0: ldc2_w        #198                // long 2753197151927803186l
+       3: ldc2_w        #204                // long 5933255173020529952l
+       6: invokestatic  #144                // Method java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+       9: invokevirtual #105                // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+      12: invokestatic  #162                // Method org/dreambot/x.a:(JJLjava/lang/Object;)Lorg/dreambot/b;
+      15: ldc2_w        #208                // long 60935011759821l
+      18: invokeinterface #13,  3           // InterfaceMethod org/dreambot/b.a:(J)J
+      23: putstatic     #137                // Field a:J
+      26: new           #62                 // class org/dreambot/api/utilities/Timer
+      29: dup
+      30: invokespecial #73                 // Method org/dreambot/api/utilities/Timer."<init>":()V
+      33: putstatic     #74                 // Field "0":Lorg/dreambot/api/utilities/Timer;
+      36: iconst_0
+      37: putstatic     #7                  // Field "9":Z
+      40: new           #143                // class java/util/HashMap
+      43: dup
+      44: invokespecial #65                 // Method java/util/HashMap."<init>":()V
+      47: putstatic     #148                // Field "8":Ljava/util/Map;
+      50: invokestatic  #40                 // Method org/dreambot/core/Instance.getInstance:()Lorg/dreambot/core/Instance;
+      53: invokevirtual #55                 // Method org/dreambot/core/Instance."4e":()Lorg/dreambot/39;
+      56: iconst_0
+      57: anewarray     #99                 // class java/lang/Object
+      60: invokevirtual #49                 // Method "org/dreambot/39"."6":([Ljava/lang/Object;)Lorg/dreambot/4z7;
+      63: new           #117                // class "org/dreambot/4g0"
+      66: dup
+      67: invokespecial #89                 // Method "org/dreambot/4g0"."<init>":()V
+      70: iconst_1
+      71: anewarray     #99                 // class java/lang/Object
+      74: dup_x1
+      75: swap
+      76: iconst_0
+      77: swap
+      78: aastore
+      79: invokevirtual #184                // Method "org/dreambot/4z7"."3D":([Ljava/lang/Object;)Z
+      82: pop
+      83: return
+}

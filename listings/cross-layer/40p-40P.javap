@@ -1,0 +1,1047 @@
+Compiled from "40p.java"
+public class org.dreambot.40p extends org.dreambot.4Xi {
+  private static final long a;
+
+  public org.dreambot.40p();
+    Code:
+       0: aload_0
+       1: invokespecial #136                // Method "org/dreambot/4Xi"."<init>":()V
+       4: return
+
+  public boolean 1(java.lang.Object[]);
+    Code:
+       0: aload_1
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #72                 // class org/objectweb/asm/tree/ClassNode
+       7: astore        5
+       9: dup
+      10: iconst_1
+      11: aaload
+      12: checkcast     #142                // class java/lang/reflect/Method
+      15: astore_2
+      16: dup
+      17: iconst_2
+      18: aaload
+      19: checkcast     #100                // class java/lang/Long
+      22: invokevirtual #172                // Method java/lang/Long.longValue:()J
+      25: lstore_3
+      26: pop
+      27: lload_3
+      28: dup2
+      29: ldc2_w        #289                // long 96586956384849l
+      32: lxor
+      33: lstore        6
+      35: dup2
+      36: ldc2_w        #281                // long 55856608329309l
+      39: lxor
+      40: lstore        8
+      42: pop2
+      43: ldc2_w        #271                // long 3669439856565508868l
+      46: lload_3
+      47: invokedynamic #79,  0             // InvokeDynamic #0:█:(JJ)Ljava/lang/String;
+      52: astore        10
+      54: aload_0
+      55: aload_2
+      56: lload         6
+      58: iconst_2
+      59: anewarray     #180                // class java/lang/Object
+      62: dup_x2
+      63: dup_x2
+      64: pop
+      65: invokestatic  #41                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      68: iconst_1
+      69: swap
+      70: aastore
+      71: dup_x1
+      72: swap
+      73: iconst_0
+      74: swap
+      75: aastore
+      76: invokevirtual #71                 // Method "3":([Ljava/lang/Object;)Z
+      79: aload         10
+      81: ifnull        135
+      84: ifne          89
+      87: iconst_0
+      88: ireturn
+      89: aload_0
+      90: aload         5
+      92: aload_2
+      93: aload_2
+      94: ldc           #7                  // class "org/dreambot/4f"
+      96: invokevirtual #92                 // Method java/lang/reflect/Method.getAnnotation:(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+      99: checkcast     #7                  // class "org/dreambot/4f"
+     102: lload         8
+     104: iconst_4
+     105: anewarray     #180                // class java/lang/Object
+     108: dup_x2
+     109: dup_x2
+     110: pop
+     111: invokestatic  #41                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     114: iconst_3
+     115: swap
+     116: aastore
+     117: dup_x1
+     118: swap
+     119: iconst_2
+     120: swap
+     121: aastore
+     122: dup_x1
+     123: swap
+     124: iconst_1
+     125: swap
+     126: aastore
+     127: dup_x1
+     128: swap
+     129: iconst_0
+     130: swap
+     131: aastore
+     132: invokevirtual #168                // Method "6":([Ljava/lang/Object;)Z
+     135: ireturn
+
+  private boolean 6(java.lang.Object[]);
+    Code:
+       0: aload_1
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #72                 // class org/objectweb/asm/tree/ClassNode
+       7: astore_3
+       8: dup
+       9: iconst_1
+      10: aaload
+      11: checkcast     #142                // class java/lang/reflect/Method
+      14: astore        4
+      16: dup
+      17: iconst_2
+      18: aaload
+      19: checkcast     #7                  // class "org/dreambot/4f"
+      22: astore_2
+      23: dup
+      24: iconst_3
+      25: aaload
+      26: checkcast     #100                // class java/lang/Long
+      29: invokevirtual #172                // Method java/lang/Long.longValue:()J
+      32: lstore        5
+      34: pop
+      35: getstatic     #133                // Field a:J
+      38: lload         5
+      40: lxor
+      41: lstore        5
+      43: lload         5
+      45: dup2
+      46: ldc2_w        #287                // long 99024201238065l
+      49: lxor
+      50: lstore        7
+      52: dup2
+      53: ldc2_w        #275                // long 126131488757567l
+      56: lxor
+      57: lstore        9
+      59: dup2
+      60: ldc2_w        #291                // long 140484696358453l
+      63: lxor
+      64: lstore        11
+      66: dup2
+      67: ldc2_w        #273                // long 109371134407717l
+      70: lxor
+      71: lstore        13
+      73: pop2
+      74: ldc2_w        #279                // long 582155440397181436l
+      77: lload         5
+      79: invokedynamic #79,  0             // InvokeDynamic #0:█:(JJ)Ljava/lang/String;
+      84: astore        15
+      86: aload_2
+      87: aload         15
+      89: ifnull        98
+      92: ifnonnull     97
+      95: iconst_0
+      96: ireturn
+      97: aload_2
+      98: invokeinterface #198,  1          // InterfaceMethod "org/dreambot/4f".value:()Ljava/lang/String;
+     103: lload         11
+     105: dup2_x1
+     106: pop2
+     107: iconst_2
+     108: anewarray     #180                // class java/lang/Object
+     111: dup_x1
+     112: swap
+     113: iconst_1
+     114: swap
+     115: aastore
+     116: dup_x2
+     117: dup_x2
+     118: pop
+     119: invokestatic  #41                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     122: iconst_0
+     123: swap
+     124: aastore
+     125: invokestatic  #247                // Method "org/dreambot/82"."7":([Ljava/lang/Object;)Ljava/lang/String;
+     128: lload         7
+     130: dup2_x1
+     131: pop2
+     132: iconst_2
+     133: anewarray     #180                // class java/lang/Object
+     136: dup_x1
+     137: swap
+     138: iconst_1
+     139: swap
+     140: aastore
+     141: dup_x2
+     142: dup_x2
+     143: pop
+     144: invokestatic  #41                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     147: iconst_0
+     148: swap
+     149: aastore
+     150: invokestatic  #209                // Method "org/dreambot/4XS"."0":([Ljava/lang/Object;)Lorg/dreambot/4k4;
+     153: checkcast     #95                 // class "org/dreambot/4kA"
+     156: astore        16
+     158: aload         16
+     160: ifnonnull     165
+     163: iconst_0
+     164: ireturn
+     165: aload_0
+     166: aload         4
+     168: invokevirtual #111                // Method java/lang/reflect/Method.getGenericReturnType:()Ljava/lang/reflect/Type;
+     171: lload         13
+     173: dup2_x1
+     174: pop2
+     175: iconst_2
+     176: anewarray     #180                // class java/lang/Object
+     179: dup_x1
+     180: swap
+     181: iconst_1
+     182: swap
+     183: aastore
+     184: dup_x2
+     185: dup_x2
+     186: pop
+     187: invokestatic  #41                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     190: iconst_0
+     191: swap
+     192: aastore
+     193: invokevirtual #29                 // Method "8":([Ljava/lang/Object;)Ljava/lang/String;
+     196: astore        17
+     198: aload         17
+     200: ifnonnull     205
+     203: iconst_0
+     204: ireturn
+     205: iconst_0
+     206: istore        18
+     208: new           #219                // class java/util/ArrayList
+     211: dup
+     212: invokespecial #269                // Method java/util/ArrayList."<init>":()V
+     215: astore        19
+     217: new           #228                // class java/lang/StringBuilder
+     220: dup
+     221: invokespecial #249                // Method java/lang/StringBuilder."<init>":()V
+     224: ldc           #11                 // String (
+     226: invokevirtual #90                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     229: astore        20
+     231: aload         4
+     233: invokevirtual #122                // Method java/lang/reflect/Method.getGenericParameterTypes:()[Ljava/lang/reflect/Type;
+     236: astore        21
+     238: aload         21
+     240: arraylength
+     241: istore        22
+     243: iconst_0
+     244: istore        23
+     246: iload         23
+     248: iload         22
+     250: if_icmpge     329
+     253: aload         21
+     255: iload         23
+     257: aaload
+     258: astore        24
+     260: iinc          18, 1
+     263: aload_0
+     264: lload         13
+     266: aload         24
+     268: iconst_2
+     269: anewarray     #180                // class java/lang/Object
+     272: dup_x1
+     273: swap
+     274: iconst_1
+     275: swap
+     276: aastore
+     277: dup_x2
+     278: dup_x2
+     279: pop
+     280: invokestatic  #41                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     283: iconst_0
+     284: swap
+     285: aastore
+     286: invokevirtual #29                 // Method "8":([Ljava/lang/Object;)Ljava/lang/String;
+     289: astore        25
+     291: aload         20
+     293: aload         25
+     295: invokevirtual #90                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     298: pop
+     299: aload         19
+     301: aload         25
+     303: invokeinterface #124,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     308: pop
+     309: iinc          23, 1
+     312: aload         15
+     314: lload         5
+     316: lconst_0
+     317: lcmp
+     318: ifle          326
+     321: ifnull        349
+     324: aload         15
+     326: ifnonnull     246
+     329: aload         20
+     331: ldc           #10                 // String )
+     333: invokevirtual #90                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     336: aload         17
+     338: invokevirtual #90                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     341: pop
+     342: lload         5
+     344: lconst_0
+     345: lcmp
+     346: iflt          349
+     349: new           #159                // class org/objectweb/asm/tree/MethodNode
+     352: dup
+     353: iconst_1
+     354: aload         4
+     356: invokevirtual #89                 // Method java/lang/reflect/Method.getName:()Ljava/lang/String;
+     359: aload         20
+     361: invokevirtual #158                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     364: aconst_null
+     365: aconst_null
+     366: invokespecial #239                // Method org/objectweb/asm/tree/MethodNode."<init>":(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+     369: astore        21
+     371: new           #42                 // class org/objectweb/asm/tree/InsnList
+     374: dup
+     375: invokespecial #93                 // Method org/objectweb/asm/tree/InsnList."<init>":()V
+     378: astore        22
+     380: iconst_1
+     381: istore        23
+     383: iconst_0
+     384: istore        24
+     386: aload_2
+     387: invokeinterface #244,  1          // InterfaceMethod "org/dreambot/4f"."3":()Z
+     392: ifne          410
+     395: aload         22
+     397: new           #222                // class org/objectweb/asm/tree/VarInsnNode
+     400: dup
+     401: bipush        25
+     403: iconst_0
+     404: invokespecial #185                // Method org/objectweb/asm/tree/VarInsnNode."<init>":(II)V
+     407: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+     410: aload         19
+     412: invokeinterface #161,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+     417: astore        25
+     419: aload         25
+     421: invokeinterface #233,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     426: ifeq          884
+     429: aload         25
+     431: invokeinterface #246,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     436: checkcast     #256                // class java/lang/String
+     439: astore        26
+     441: aload         26
+     443: astore        27
+     445: iconst_m1
+     446: istore        28
+     448: aload         27
+     450: invokevirtual #204                // Method java/lang/String.hashCode:()I
+     453: aload         15
+     455: lload         5
+     457: lconst_0
+     458: lcmp
+     459: ifle          467
+     462: ifnull        1199
+     465: aload         15
+     467: ifnull        660
+     470: lookupswitch  { // 5
+
+                    66: 580
+
+                    68: 640
+
+                    73: 520
+
+                    74: 610
+
+                    90: 550
+               default: 658
+          }
+     520: aload         27
+     522: ldc           #4                  // String I
+     524: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     527: aload         15
+     529: ifnull        660
+     532: ifeq          658
+     535: iconst_0
+     536: istore        28
+     538: aload         15
+     540: lload         5
+     542: lconst_0
+     543: lcmp
+     544: iflt          552
+     547: ifnonnull     658
+     550: aload         27
+     552: ldc           #1                  // String Z
+     554: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     557: aload         15
+     559: ifnull        660
+     562: ifeq          658
+     565: iconst_1
+     566: istore        28
+     568: aload         15
+     570: lload         5
+     572: lconst_0
+     573: lcmp
+     574: ifle          582
+     577: ifnonnull     658
+     580: aload         27
+     582: ldc           #2                  // String B
+     584: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     587: aload         15
+     589: ifnull        660
+     592: ifeq          658
+     595: iconst_2
+     596: istore        28
+     598: aload         15
+     600: lload         5
+     602: lconst_0
+     603: lcmp
+     604: ifle          612
+     607: ifnonnull     658
+     610: aload         27
+     612: ldc           #6                  // String J
+     614: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     617: aload         15
+     619: ifnull        660
+     622: ifeq          658
+     625: iconst_3
+     626: istore        28
+     628: aload         15
+     630: lload         5
+     632: lconst_0
+     633: lcmp
+     634: ifle          642
+     637: ifnonnull     658
+     640: aload         27
+     642: ldc           #5                  // String D
+     644: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     647: aload         15
+     649: ifnull        660
+     652: ifeq          658
+     655: iconst_4
+     656: istore        28
+     658: iload         28
+     660: tableswitch   { // 0 to 4
+
+                     0: 696
+
+                     1: 696
+
+                     2: 696
+
+                     3: 724
+
+                     4: 755
+               default: 786
+          }
+     696: aload         22
+     698: new           #222                // class org/objectweb/asm/tree/VarInsnNode
+     701: dup
+     702: bipush        21
+     704: iload         23
+     706: invokespecial #185                // Method org/objectweb/asm/tree/VarInsnNode."<init>":(II)V
+     709: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+     712: aload         15
+     714: lload         5
+     716: lconst_0
+     717: lcmp
+     718: iflt          881
+     721: ifnonnull     873
+     724: aload         22
+     726: new           #222                // class org/objectweb/asm/tree/VarInsnNode
+     729: dup
+     730: bipush        22
+     732: iload         23
+     734: invokespecial #185                // Method org/objectweb/asm/tree/VarInsnNode."<init>":(II)V
+     737: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+     740: iinc          23, 1
+     743: aload         15
+     745: lload         5
+     747: lconst_0
+     748: lcmp
+     749: iflt          881
+     752: ifnonnull     873
+     755: aload         22
+     757: new           #222                // class org/objectweb/asm/tree/VarInsnNode
+     760: dup
+     761: bipush        24
+     763: iload         23
+     765: invokespecial #185                // Method org/objectweb/asm/tree/VarInsnNode."<init>":(II)V
+     768: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+     771: iinc          23, 1
+     774: aload         15
+     776: lload         5
+     778: lconst_0
+     779: lcmp
+     780: iflt          881
+     783: ifnonnull     873
+     786: aload         22
+     788: new           #222                // class org/objectweb/asm/tree/VarInsnNode
+     791: dup
+     792: bipush        25
+     794: iload         23
+     796: invokespecial #185                // Method org/objectweb/asm/tree/VarInsnNode."<init>":(II)V
+     799: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+     802: aload         16
+     804: lload         9
+     806: iconst_1
+     807: anewarray     #180                // class java/lang/Object
+     810: dup_x2
+     811: dup_x2
+     812: pop
+     813: invokestatic  #41                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     816: iconst_0
+     817: swap
+     818: aastore
+     819: invokevirtual #74                 // Method "org/dreambot/4kA"."7":([Ljava/lang/Object;)Ljava/util/List;
+     822: iload         24
+     824: invokeinterface #215,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+     829: checkcast     #256                // class java/lang/String
+     832: astore        29
+     834: aload         29
+     836: ldc           #9                  // String L
+     838: ldc           #3                  // String
+     840: invokevirtual #16                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     843: astore        29
+     845: aload         29
+     847: ldc           #12                 // String ;
+     849: ldc           #3                  // String
+     851: invokevirtual #16                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     854: astore        29
+     856: aload         22
+     858: new           #260                // class org/objectweb/asm/tree/TypeInsnNode
+     861: dup
+     862: sipush        192
+     865: aload         29
+     867: invokespecial #137                // Method org/objectweb/asm/tree/TypeInsnNode."<init>":(ILjava/lang/String;)V
+     870: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+     873: iinc          24, 1
+     876: iinc          23, 1
+     879: aload         15
+     881: ifnonnull     419
+     884: aload         16
+     886: lload         5
+     888: lconst_0
+     889: lcmp
+     890: ifle          436
+     893: aload         15
+     895: ifnull        910
+     898: iconst_0
+     899: anewarray     #180                // class java/lang/Object
+     902: invokevirtual #143                // Method "org/dreambot/4kA"."0N":([Ljava/lang/Object;)Ljava/lang/Number;
+     905: ifnull        1193
+     908: aload         16
+     910: lload         9
+     912: iconst_1
+     913: anewarray     #180                // class java/lang/Object
+     916: dup_x2
+     917: dup_x2
+     918: pop
+     919: invokestatic  #41                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     922: iconst_0
+     923: swap
+     924: aastore
+     925: invokevirtual #74                 // Method "org/dreambot/4kA"."7":([Ljava/lang/Object;)Ljava/util/List;
+     928: invokeinterface #38,  1           // InterfaceMethod java/util/List.size:()I
+     933: aload         15
+     935: ifnull        1199
+     938: aload         19
+     940: invokeinterface #38,  1           // InterfaceMethod java/util/List.size:()I
+     945: if_icmpeq     1193
+     948: iinc          24, 1
+     951: aload         16
+     953: iconst_0
+     954: anewarray     #180                // class java/lang/Object
+     957: invokevirtual #143                // Method "org/dreambot/4kA"."0N":([Ljava/lang/Object;)Ljava/lang/Number;
+     960: invokevirtual #208                // Method java/lang/Number.intValue:()I
+     963: istore        25
+     965: iload         25
+     967: aload         15
+     969: lload         5
+     971: lconst_0
+     972: lcmp
+     973: iflt          1018
+     976: ifnull        1016
+     979: iflt          1014
+     982: iload         25
+     984: iconst_5
+     985: aload         15
+     987: ifnull        1022
+     990: if_icmpgt     1014
+     993: aload         22
+     995: new           #160                // class org/objectweb/asm/tree/InsnNode
+     998: dup
+     999: iconst_3
+    1000: iload         25
+    1002: iadd
+    1003: invokespecial #188                // Method org/objectweb/asm/tree/InsnNode."<init>":(I)V
+    1006: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1009: aload         15
+    1011: ifnonnull     1193
+    1014: iload         25
+    1016: aload         15
+    1018: ifnull        1046
+    1021: iconst_5
+    1022: if_icmple     1044
+    1025: iload         25
+    1027: aload         15
+    1029: lload         5
+    1031: lconst_0
+    1032: lcmp
+    1033: iflt          1048
+    1036: ifnull        1046
+    1039: bipush        127
+    1041: if_icmple     1073
+    1044: iload         25
+    1046: aload         15
+    1048: lload         5
+    1050: lconst_0
+    1051: lcmp
+    1052: iflt          1098
+    1055: ifnull        1096
+    1058: ifge          1094
+    1061: iload         25
+    1063: bipush        -128
+    1065: aload         15
+    1067: ifnull        1103
+    1070: if_icmplt     1094
+    1073: aload         22
+    1075: new           #270                // class org/objectweb/asm/tree/IntInsnNode
+    1078: dup
+    1079: bipush        16
+    1081: iload         25
+    1083: invokespecial #59                 // Method org/objectweb/asm/tree/IntInsnNode."<init>":(II)V
+    1086: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1089: aload         15
+    1091: ifnonnull     1193
+    1094: iload         25
+    1096: aload         15
+    1098: ifnull        1128
+    1101: bipush        127
+    1103: if_icmple     1126
+    1106: iload         25
+    1108: aload         15
+    1110: lload         5
+    1112: lconst_0
+    1113: lcmp
+    1114: ifle          1130
+    1117: ifnull        1128
+    1120: sipush        32767
+    1123: if_icmple     1144
+    1126: iload         25
+    1128: aload         15
+    1130: ifnull        1138
+    1133: ifge          1172
+    1136: iload         25
+    1138: sipush        -32768
+    1141: if_icmplt     1172
+    1144: aload         22
+    1146: lload         5
+    1148: lconst_0
+    1149: lcmp
+    1150: ifle          1174
+    1153: new           #270                // class org/objectweb/asm/tree/IntInsnNode
+    1156: dup
+    1157: bipush        17
+    1159: iload         25
+    1161: invokespecial #59                 // Method org/objectweb/asm/tree/IntInsnNode."<init>":(II)V
+    1164: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1167: aload         15
+    1169: ifnonnull     1193
+    1172: aload         22
+    1174: new           #125                // class org/objectweb/asm/tree/LdcInsnNode
+    1177: dup
+    1178: aload         16
+    1180: iconst_0
+    1181: anewarray     #180                // class java/lang/Object
+    1184: invokevirtual #143                // Method "org/dreambot/4kA"."0N":([Ljava/lang/Object;)Ljava/lang/Number;
+    1187: invokespecial #47                 // Method org/objectweb/asm/tree/LdcInsnNode."<init>":(Ljava/lang/Object;)V
+    1190: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1193: aload_2
+    1194: invokeinterface #244,  1          // InterfaceMethod "org/dreambot/4f"."3":()Z
+    1199: ifeq          1256
+    1202: aload         22
+    1204: new           #51                 // class org/objectweb/asm/tree/MethodInsnNode
+    1207: dup
+    1208: sipush        184
+    1211: aload         16
+    1213: iconst_0
+    1214: anewarray     #180                // class java/lang/Object
+    1217: invokevirtual #110                // Method "org/dreambot/4kA"."0j":([Ljava/lang/Object;)Ljava/lang/String;
+    1220: aload         16
+    1222: iconst_0
+    1223: anewarray     #180                // class java/lang/Object
+    1226: invokevirtual #213                // Method "org/dreambot/4kA"."0C":([Ljava/lang/Object;)Ljava/lang/String;
+    1229: aload         16
+    1231: iconst_0
+    1232: anewarray     #180                // class java/lang/Object
+    1235: invokevirtual #63                 // Method "org/dreambot/4kA"."01":([Ljava/lang/Object;)Ljava/lang/String;
+    1238: invokespecial #195                // Method org/objectweb/asm/tree/MethodInsnNode."<init>":(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    1241: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1244: aload         15
+    1246: lload         5
+    1248: lconst_0
+    1249: lcmp
+    1250: iflt          1300
+    1253: ifnonnull     1298
+    1256: aload         22
+    1258: new           #51                 // class org/objectweb/asm/tree/MethodInsnNode
+    1261: dup
+    1262: sipush        182
+    1265: aload         16
+    1267: iconst_0
+    1268: anewarray     #180                // class java/lang/Object
+    1271: invokevirtual #110                // Method "org/dreambot/4kA"."0j":([Ljava/lang/Object;)Ljava/lang/String;
+    1274: aload         16
+    1276: iconst_0
+    1277: anewarray     #180                // class java/lang/Object
+    1280: invokevirtual #213                // Method "org/dreambot/4kA"."0C":([Ljava/lang/Object;)Ljava/lang/String;
+    1283: aload         16
+    1285: iconst_0
+    1286: anewarray     #180                // class java/lang/Object
+    1289: invokevirtual #63                 // Method "org/dreambot/4kA"."01":([Ljava/lang/Object;)Ljava/lang/String;
+    1292: invokespecial #195                // Method org/objectweb/asm/tree/MethodInsnNode."<init>":(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    1295: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1298: aload         17
+    1300: astore        25
+    1302: iconst_m1
+    1303: istore        26
+    1305: aload         25
+    1307: invokevirtual #204                // Method java/lang/String.hashCode:()I
+    1310: aload         15
+    1312: ifnull        1542
+    1315: lookupswitch  { // 6
+
+                    66: 1432
+
+                    68: 1492
+
+                    73: 1372
+
+                    74: 1462
+
+                    86: 1522
+
+                    90: 1402
+               default: 1540
+          }
+    1372: aload         25
+    1374: ldc           #4                  // String I
+    1376: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1379: aload         15
+    1381: ifnull        1542
+    1384: ifeq          1540
+    1387: iconst_0
+    1388: istore        26
+    1390: aload         15
+    1392: lload         5
+    1394: lconst_0
+    1395: lcmp
+    1396: ifle          1404
+    1399: ifnonnull     1540
+    1402: aload         25
+    1404: ldc           #1                  // String Z
+    1406: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1409: aload         15
+    1411: ifnull        1542
+    1414: ifeq          1540
+    1417: iconst_1
+    1418: istore        26
+    1420: aload         15
+    1422: lload         5
+    1424: lconst_0
+    1425: lcmp
+    1426: ifle          1434
+    1429: ifnonnull     1540
+    1432: aload         25
+    1434: ldc           #2                  // String B
+    1436: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1439: aload         15
+    1441: ifnull        1542
+    1444: ifeq          1540
+    1447: iconst_2
+    1448: istore        26
+    1450: aload         15
+    1452: lload         5
+    1454: lconst_0
+    1455: lcmp
+    1456: iflt          1464
+    1459: ifnonnull     1540
+    1462: aload         25
+    1464: ldc           #6                  // String J
+    1466: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1469: aload         15
+    1471: ifnull        1542
+    1474: ifeq          1540
+    1477: iconst_3
+    1478: istore        26
+    1480: aload         15
+    1482: lload         5
+    1484: lconst_0
+    1485: lcmp
+    1486: iflt          1494
+    1489: ifnonnull     1540
+    1492: aload         25
+    1494: ldc           #5                  // String D
+    1496: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1499: aload         15
+    1501: ifnull        1542
+    1504: ifeq          1540
+    1507: iconst_4
+    1508: istore        26
+    1510: aload         15
+    1512: lload         5
+    1514: lconst_0
+    1515: lcmp
+    1516: ifle          1524
+    1519: ifnonnull     1540
+    1522: aload         25
+    1524: ldc           #8                  // String V
+    1526: invokevirtual #147                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+    1529: aload         15
+    1531: ifnull        1542
+    1534: ifeq          1540
+    1537: iconst_5
+    1538: istore        26
+    1540: iload         26
+    1542: tableswitch   { // 0 to 5
+
+                     0: 1580
+
+                     1: 1580
+
+                     2: 1580
+
+                     3: 1607
+
+                     4: 1634
+
+                     5: 1661
+               default: 1688
+          }
+    1580: aload         22
+    1582: new           #160                // class org/objectweb/asm/tree/InsnNode
+    1585: dup
+    1586: sipush        172
+    1589: invokespecial #188                // Method org/objectweb/asm/tree/InsnNode."<init>":(I)V
+    1592: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1595: lload         5
+    1597: lconst_0
+    1598: lcmp
+    1599: ifle          1738
+    1602: aload         15
+    1604: ifnonnull     1703
+    1607: aload         22
+    1609: new           #160                // class org/objectweb/asm/tree/InsnNode
+    1612: dup
+    1613: sipush        173
+    1616: invokespecial #188                // Method org/objectweb/asm/tree/InsnNode."<init>":(I)V
+    1619: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1622: lload         5
+    1624: lconst_0
+    1625: lcmp
+    1626: ifle          1738
+    1629: aload         15
+    1631: ifnonnull     1703
+    1634: aload         22
+    1636: new           #160                // class org/objectweb/asm/tree/InsnNode
+    1639: dup
+    1640: sipush        175
+    1643: invokespecial #188                // Method org/objectweb/asm/tree/InsnNode."<init>":(I)V
+    1646: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1649: lload         5
+    1651: lconst_0
+    1652: lcmp
+    1653: iflt          1738
+    1656: aload         15
+    1658: ifnonnull     1703
+    1661: aload         22
+    1663: new           #160                // class org/objectweb/asm/tree/InsnNode
+    1666: dup
+    1667: sipush        177
+    1670: invokespecial #188                // Method org/objectweb/asm/tree/InsnNode."<init>":(I)V
+    1673: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1676: lload         5
+    1678: lconst_0
+    1679: lcmp
+    1680: iflt          1738
+    1683: aload         15
+    1685: ifnonnull     1703
+    1688: aload         22
+    1690: new           #160                // class org/objectweb/asm/tree/InsnNode
+    1693: dup
+    1694: sipush        176
+    1697: invokespecial #188                // Method org/objectweb/asm/tree/InsnNode."<init>":(I)V
+    1700: invokevirtual #214                // Method org/objectweb/asm/tree/InsnList.add:(Lorg/objectweb/asm/tree/AbstractInsnNode;)V
+    1703: aload         21
+    1705: aload         22
+    1707: putfield      #20                 // Field org/objectweb/asm/tree/MethodNode.instructions:Lorg/objectweb/asm/tree/InsnList;
+    1710: aload         21
+    1712: iload         24
+    1714: iload         18
+    1716: iconst_1
+    1717: iadd
+    1718: invokevirtual #94                 // Method org/objectweb/asm/tree/MethodNode.visitMaxs:(II)V
+    1721: aload         21
+    1723: invokevirtual #167                // Method org/objectweb/asm/tree/MethodNode.visitEnd:()V
+    1726: aload_3
+    1727: getfield      #178                // Field org/objectweb/asm/tree/ClassNode.methods:Ljava/util/List;
+    1730: aload         21
+    1732: invokeinterface #124,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+    1737: pop
+    1738: iconst_1
+    1739: ireturn
+
+  public boolean 3(java.lang.Object[]);
+    Code:
+       0: aload_1
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #142                // class java/lang/reflect/Method
+       7: astore        4
+       9: dup
+      10: iconst_1
+      11: aaload
+      12: checkcast     #100                // class java/lang/Long
+      15: invokevirtual #172                // Method java/lang/Long.longValue:()J
+      18: lstore_2
+      19: pop
+      20: aload         4
+      22: ldc           #7                  // class "org/dreambot/4f"
+      24: invokevirtual #92                 // Method java/lang/reflect/Method.getAnnotation:(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+      27: ifnull        34
+      30: iconst_1
+      31: goto          35
+      34: iconst_0
+      35: ireturn
+
+  static {};
+    Code:
+       0: ldc2_w        #283                // long -7938769809450022388l
+       3: ldc2_w        #285                // long 3176295424839244521l
+       6: invokestatic  #30                 // Method java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+       9: invokevirtual #205                // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+      12: invokestatic  #131                // Method org/dreambot/x.a:(JJLjava/lang/Object;)Lorg/dreambot/b;
+      15: ldc2_w        #277                // long 156811769166702l
+      18: invokeinterface #207,  3          // InterfaceMethod org/dreambot/b.a:(J)J
+      23: putstatic     #133                // Field a:J
+      26: return
+}
+Compiled from "40P.java"
+public class org.dreambot.40P {
+  private static final org.dreambot.1r 3;
+
+  private static int[] 6;
+
+  private static final long a;
+
+  public static int 1(java.lang.Object[]);
+    Code:
+       0: aload_0
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #41                 // class "org/dreambot/core/6n"
+       7: astore_3
+       8: dup
+       9: iconst_1
+      10: aaload
+      11: checkcast     #44                 // class java/lang/Long
+      14: invokevirtual #21                 // Method java/lang/Long.longValue:()J
+      17: lstore_1
+      18: pop
+      19: getstatic     #22                 // Field a:J
+      22: lload_1
+      23: lxor
+      24: lstore_1
+      25: lload_1
+      26: dup2
+      27: ldc2_w        #101                // long 111285388902188l
+      30: lxor
+      31: lstore        4
+      33: pop2
+      34: getstatic     #88                 // Field "3":Lorg/dreambot/1r;
+      37: new           #12                 // class "org/dreambot/4cx"
+      40: dup
+      41: aload_3
+      42: invokespecial #71                 // Method "org/dreambot/4cx"."<init>":(Lorg/dreambot/core/6n;)V
+      45: invokestatic  #18                 // Method java/time/Instant.now:()Ljava/time/Instant;
+      48: lload         4
+      50: dup2_x2
+      51: pop2
+      52: iconst_3
+      53: anewarray     #56                 // class java/lang/Object
+      56: dup_x1
+      57: swap
+      58: iconst_2
+      59: swap
+      60: aastore
+      61: dup_x1
+      62: swap
+      63: iconst_1
+      64: swap
+      65: aastore
+      66: dup_x2
+      67: dup_x2
+      68: pop
+      69: invokestatic  #29                 // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      72: iconst_0
+      73: swap
+      74: aastore
+      75: invokevirtual #3                  // Method "org/dreambot/1r"."8":([Ljava/lang/Object;)I
+      78: ireturn
+      79: astore        6
+      81: iconst_m1
+      82: ireturn
+    Exception table:
+       from    to  target type
+          34    78    79   Class java/security/InvalidKeyException
+
+  static {};
+    Code:
+       0: ldc2_w        #103                // long -6549377364869690985l
+       3: ldc2_w        #107                // long 8547471111800482559l
+       6: invokestatic  #25                 // Method java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+       9: invokevirtual #82                 // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+      12: invokestatic  #10                 // Method org/dreambot/x.a:(JJLjava/lang/Object;)Lorg/dreambot/b;
+      15: ldc2_w        #99                 // long 80768483915463l
+      18: invokeinterface #80,  3           // InterfaceMethod org/dreambot/b.a:(J)J
+      23: putstatic     #22                 // Field a:J
+      26: getstatic     #22                 // Field a:J
+      29: ldc2_w        #105                // long 4759876398499l
+      32: lxor
+      33: lstore_0
+      34: iconst_2
+      35: newarray       int
+      37: new           #68                 // class "org/dreambot/1r"
+      40: dup
+      41: invokespecial #73                 // Method "org/dreambot/1r"."<init>":()V
+      44: putstatic     #88                 // Field "3":Lorg/dreambot/1r;
+      47: ldc2_w        #109                // long -4397354030882515741l
+      50: lload_0
+      51: invokedynamic #52,  0             // InvokeDynamic #0:�:(Ljava/lang/Object;JJ)V
+      56: return
+
+  public static void 1(int[]);
+    Code:
+       0: aload_0
+       1: putstatic     #64                 // Field "6":[I
+       4: return
+
+  public static int[] 0();
+    Code:
+       0: getstatic     #64                 // Field "6":[I
+       3: areturn
+}

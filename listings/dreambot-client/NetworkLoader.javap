@@ -1,0 +1,54 @@
+Compiled from "NetworkLoader.java"
+public class org.dreambot.api.script.loader.NetworkLoader {
+  private static boolean 1;
+
+  public org.dreambot.api.script.loader.NetworkLoader();
+    Code:
+       0: aload_0
+       1: invokespecial #20                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static java.util.List<org.dreambot.3B> getAllFreeScripts();
+    Code:
+       0: iconst_0
+       1: anewarray     #40                 // class java/lang/Object
+       4: invokestatic  #4                  // Method "org/dreambot/3Z"."9":([Ljava/lang/Object;)Ljava/util/List;
+       7: areturn
+
+  public static java.util.List<org.dreambot.3B> getAllPremiumScripts();
+    Code:
+       0: iconst_0
+       1: anewarray     #40                 // class java/lang/Object
+       4: invokestatic  #32                 // Method "org/dreambot/3Z"."5":([Ljava/lang/Object;)Ljava/util/List;
+       7: areturn
+
+  public static void 7(boolean);
+    Code:
+       0: iload_0
+       1: putstatic     #24                 // Field "1":Z
+       4: return
+
+  public static boolean 2();
+    Code:
+       0: getstatic     #24                 // Field "1":Z
+       3: ireturn
+
+  public static boolean 8();
+    Code:
+       0: invokestatic  #38                 // Method "2":()Z
+       3: istore_0
+       4: iload_0
+       5: ifne          10
+       8: iconst_1
+       9: ireturn
+      10: iconst_0
+      11: ireturn
+
+  static {};
+    Code:
+       0: invokestatic  #34                 // Method "8":()Z
+       3: ifeq          10
+       6: iconst_1
+       7: invokestatic  #2                  // Method "7":(Z)V
+      10: return
+}

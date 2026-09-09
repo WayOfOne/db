@@ -1,0 +1,517 @@
+Compiled from "pj.java"
+public class pj implements java.util.Iterator {
+  int af;
+
+  int ae;
+
+  pz az;
+
+  static final java.lang.String ac;
+
+  public static final int bz;
+
+  public void ar();
+    Code:
+       0: new           #25                 // class java/lang/UnsupportedOperationException
+       3: dup
+       4: invokespecial #28                 // Method java/lang/UnsupportedOperationException."<init>":()V
+       7: athrow
+
+  public boolean hasNext();
+    Code:
+       0: aload_0
+       1: getfield      #34                 // Field ae:I
+       4: ldc           #35                 // int -984169853
+       6: imul
+       7: ldc           #36                 // int 287626351
+       9: aload_0
+      10: getfield      #38                 // Field az:Lpz;
+      13: getfield      #43                 // Field pz.ab:I
+      16: imul
+      17: if_icmpge     24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+      26: new           #45                 // class java/lang/StringBuilder
+      29: dup
+      30: invokespecial #46                 // Method java/lang/StringBuilder."<init>":()V
+      33: ldc           #48                 // String pj.hasNext(
+      35: invokevirtual #52                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      38: ldc           #53                 // int 41
+      40: invokevirtual #56                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      43: invokevirtual #60                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      46: invokestatic  #65                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      49: athrow
+    Exception table:
+       from    to  target type
+           0    26    26   Class java/lang/RuntimeException
+
+  pj(pz);
+    Code:
+       0: aload_0
+       1: invokespecial #67                 // Method java/lang/Object."<init>":()V
+       4: goto          33
+       7: aload_0
+       8: aload_0
+       9: getfield      #38                 // Field az:Lpz;
+      12: getfield      #70                 // Field pz.ag:I
+      15: ldc           #71                 // int 2038097811
+      17: imul
+      18: putfield      #73                 // Field af:I
+      21: goto          25
+      24: return
+      25: aload_0
+      26: aload_1
+      27: putfield      #38                 // Field az:Lpz;
+      30: goto          24
+      33: aload_0
+      34: iconst_0
+      35: putfield      #34                 // Field ae:I
+      38: goto          7
+      41: nop
+      42: nop
+      43: nop
+      44: nop
+      45: nop
+      46: nop
+      47: nop
+      48: nop
+      49: nop
+      50: nop
+      51: nop
+      52: nop
+      53: nop
+      54: nop
+      55: nop
+      56: nop
+      57: nop
+      58: nop
+      59: nop
+      60: nop
+      61: nop
+      62: nop
+      63: nop
+      64: athrow
+
+  public boolean au();
+    Code:
+       0: aload_0
+       1: getfield      #34                 // Field ae:I
+       4: ldc           #35                 // int -984169853
+       6: imul
+       7: ldc           #36                 // int 287626351
+       9: aload_0
+      10: getfield      #38                 // Field az:Lpz;
+      13: getfield      #43                 // Field pz.ab:I
+      16: imul
+      17: if_icmpge     23
+      20: goto          27
+      23: iconst_0
+      24: goto          28
+      27: iconst_1
+      28: ireturn
+
+  public java.lang.Object ao();
+    Code:
+       0: ldc           #81                 // int -160205185
+       2: aload_0
+       3: getfield      #73                 // Field af:I
+       6: imul
+       7: aload_0
+       8: getfield      #38                 // Field az:Lpz;
+      11: getfield      #70                 // Field pz.ag:I
+      14: ldc           #82                 // int 868197357
+      16: imul
+      17: if_icmpeq     71
+      20: goto          31
+      23: new           #84                 // class java/util/NoSuchElementException
+      26: dup
+      27: invokespecial #85                 // Method java/util/NoSuchElementException."<init>":()V
+      30: athrow
+      31: new           #87                 // class java/util/ConcurrentModificationException
+      34: dup
+      35: invokespecial #88                 // Method java/util/ConcurrentModificationException."<init>":()V
+      38: athrow
+      39: aload_0
+      40: getfield      #38                 // Field az:Lpz;
+      43: getfield      #91                 // Field pz.af:[Lpd;
+      46: aload_0
+      47: getfield      #34                 // Field ae:I
+      50: ldc           #35                 // int -984169853
+      52: imul
+      53: aaload
+      54: getfield      #96                 // Field pd.az:Ljava/lang/Object;
+      57: astore_1
+      58: aload_0
+      59: dup
+      60: getfield      #34                 // Field ae:I
+      63: ldc           #97                 // int -376628181
+      65: iadd
+      66: putfield      #34                 // Field ae:I
+      69: aload_1
+      70: areturn
+      71: aload_0
+      72: getfield      #34                 // Field ae:I
+      75: ldc           #35                 // int -984169853
+      77: imul
+      78: aload_0
+      79: getfield      #38                 // Field az:Lpz;
+      82: getfield      #43                 // Field pz.ab:I
+      85: ldc           #36                 // int 287626351
+      87: imul
+      88: if_icmpge     23
+      91: goto          39
+
+  public void remove();
+    Code:
+       0: new           #25                 // class java/lang/UnsupportedOperationException
+       3: dup
+       4: invokespecial #28                 // Method java/lang/UnsupportedOperationException."<init>":()V
+       7: athrow
+       8: new           #45                 // class java/lang/StringBuilder
+      11: dup
+      12: invokespecial #46                 // Method java/lang/StringBuilder."<init>":()V
+      15: ldc           #100                // String pj.remove(
+      17: invokevirtual #52                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      20: ldc           #53                 // int 41
+      22: invokevirtual #56                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      25: invokevirtual #60                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      28: invokestatic  #65                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      31: athrow
+    Exception table:
+       from    to  target type
+           0     8     8   Class java/lang/RuntimeException
+
+  public java.lang.Object aj();
+    Code:
+       0: ldc           #81                 // int -160205185
+       2: aload_0
+       3: getfield      #73                 // Field af:I
+       6: imul
+       7: aload_0
+       8: getfield      #38                 // Field az:Lpz;
+      11: getfield      #70                 // Field pz.ag:I
+      14: ldc           #82                 // int 868197357
+      16: imul
+      17: if_icmpeq     25
+      20: goto          67
+      23: aload_1
+      24: areturn
+      25: aload_0
+      26: getfield      #34                 // Field ae:I
+      29: ldc           #35                 // int -984169853
+      31: imul
+      32: aload_0
+      33: getfield      #38                 // Field az:Lpz;
+      36: getfield      #43                 // Field pz.ab:I
+      39: ldc           #36                 // int 287626351
+      41: imul
+      42: if_icmpge     89
+      45: aload_0
+      46: getfield      #38                 // Field az:Lpz;
+      49: getfield      #91                 // Field pz.af:[Lpd;
+      52: aload_0
+      53: getfield      #34                 // Field ae:I
+      56: ldc           #35                 // int -984169853
+      58: imul
+      59: aaload
+      60: getfield      #96                 // Field pd.az:Ljava/lang/Object;
+      63: astore_1
+      64: goto          75
+      67: new           #87                 // class java/util/ConcurrentModificationException
+      70: dup
+      71: invokespecial #88                 // Method java/util/ConcurrentModificationException."<init>":()V
+      74: athrow
+      75: aload_0
+      76: dup
+      77: getfield      #34                 // Field ae:I
+      80: ldc           #97                 // int -376628181
+      82: iadd
+      83: putfield      #34                 // Field ae:I
+      86: goto          23
+      89: new           #84                 // class java/util/NoSuchElementException
+      92: dup
+      93: invokespecial #85                 // Method java/util/NoSuchElementException."<init>":()V
+      96: athrow
+
+  public java.lang.Object ay();
+    Code:
+       0: ldc           #103                // int -1162884564
+       2: aload_0
+       3: getfield      #73                 // Field af:I
+       6: imul
+       7: aload_0
+       8: getfield      #38                 // Field az:Lpz;
+      11: getfield      #70                 // Field pz.ag:I
+      14: ldc           #104                // int 1405692877
+      16: imul
+      17: if_icmpeq     37
+      20: goto          79
+      23: aload_0
+      24: dup
+      25: getfield      #34                 // Field ae:I
+      28: ldc           #105                // int -258712084
+      30: iadd
+      31: putfield      #34                 // Field ae:I
+      34: goto          87
+      37: aload_0
+      38: getfield      #34                 // Field ae:I
+      41: ldc           #35                 // int -984169853
+      43: imul
+      44: aload_0
+      45: getfield      #38                 // Field az:Lpz;
+      48: getfield      #43                 // Field pz.ab:I
+      51: ldc           #106                // int -206018461
+      53: imul
+      54: if_icmpge     89
+      57: aload_0
+      58: getfield      #38                 // Field az:Lpz;
+      61: getfield      #91                 // Field pz.af:[Lpd;
+      64: aload_0
+      65: getfield      #34                 // Field ae:I
+      68: ldc           #107                // int 1770533645
+      70: imul
+      71: aaload
+      72: getfield      #96                 // Field pd.az:Ljava/lang/Object;
+      75: astore_1
+      76: goto          23
+      79: new           #87                 // class java/util/ConcurrentModificationException
+      82: dup
+      83: invokespecial #88                 // Method java/util/ConcurrentModificationException."<init>":()V
+      86: athrow
+      87: aload_1
+      88: areturn
+      89: new           #84                 // class java/util/NoSuchElementException
+      92: dup
+      93: invokespecial #85                 // Method java/util/NoSuchElementException."<init>":()V
+      96: athrow
+
+  public boolean ad();
+    Code:
+       0: aload_0
+       1: getfield      #34                 // Field ae:I
+       4: ldc           #35                 // int -984169853
+       6: imul
+       7: ldc           #36                 // int 287626351
+       9: aload_0
+      10: getfield      #38                 // Field az:Lpz;
+      13: getfield      #43                 // Field pz.ab:I
+      16: imul
+      17: if_icmpge     24
+      20: iconst_1
+      21: goto          25
+      24: iconst_0
+      25: ireturn
+
+  public boolean ap();
+    Code:
+       0: aload_0
+       1: getfield      #34                 // Field ae:I
+       4: ldc           #110                // int -276240757
+       6: imul
+       7: ldc           #111                // int 722093119
+       9: aload_0
+      10: getfield      #38                 // Field az:Lpz;
+      13: getfield      #43                 // Field pz.ab:I
+      16: imul
+      17: if_icmpge     24
+      20: goto          28
+      23: ireturn
+      24: iconst_0
+      25: goto          23
+      28: iconst_1
+      29: goto          23
+
+  public java.lang.Object al();
+    Code:
+       0: ldc           #81                 // int -160205185
+       2: aload_0
+       3: getfield      #73                 // Field af:I
+       6: imul
+       7: aload_0
+       8: getfield      #38                 // Field az:Lpz;
+      11: getfield      #70                 // Field pz.ag:I
+      14: ldc           #82                 // int 868197357
+      16: imul
+      17: if_icmpeq     37
+      20: goto          60
+      23: aload_0
+      24: dup
+      25: getfield      #34                 // Field ae:I
+      28: ldc           #97                 // int -376628181
+      30: iadd
+      31: putfield      #34                 // Field ae:I
+      34: goto          90
+      37: aload_0
+      38: getfield      #34                 // Field ae:I
+      41: ldc           #35                 // int -984169853
+      43: imul
+      44: aload_0
+      45: getfield      #38                 // Field az:Lpz;
+      48: getfield      #43                 // Field pz.ab:I
+      51: ldc           #36                 // int 287626351
+      53: imul
+      54: if_icmpge     92
+      57: goto          68
+      60: new           #87                 // class java/util/ConcurrentModificationException
+      63: dup
+      64: invokespecial #88                 // Method java/util/ConcurrentModificationException."<init>":()V
+      67: athrow
+      68: aload_0
+      69: getfield      #38                 // Field az:Lpz;
+      72: getfield      #91                 // Field pz.af:[Lpd;
+      75: aload_0
+      76: getfield      #34                 // Field ae:I
+      79: ldc           #35                 // int -984169853
+      81: imul
+      82: aaload
+      83: getfield      #96                 // Field pd.az:Ljava/lang/Object;
+      86: astore_1
+      87: goto          23
+      90: aload_1
+      91: areturn
+      92: new           #84                 // class java/util/NoSuchElementException
+      95: dup
+      96: invokespecial #85                 // Method java/util/NoSuchElementException."<init>":()V
+      99: athrow
+
+  public void ai();
+    Code:
+       0: new           #25                 // class java/lang/UnsupportedOperationException
+       3: dup
+       4: invokespecial #28                 // Method java/lang/UnsupportedOperationException."<init>":()V
+       7: athrow
+
+  public java.lang.Object next();
+    Code:
+       0: ldc           #81                 // int -160205185
+       2: aload_0
+       3: getfield      #73                 // Field af:I
+       6: imul
+       7: aload_0
+       8: getfield      #38                 // Field az:Lpz;
+      11: getfield      #70                 // Field pz.ag:I
+      14: ldc           #82                 // int 868197357
+      16: imul
+      17: if_icmpeq     45
+      20: goto          37
+      23: aload_0
+      24: dup
+      25: getfield      #34                 // Field ae:I
+      28: ldc           #97                 // int -376628181
+      30: iadd
+      31: putfield      #34                 // Field ae:I
+      34: goto          87
+      37: new           #87                 // class java/util/ConcurrentModificationException
+      40: dup
+      41: invokespecial #88                 // Method java/util/ConcurrentModificationException."<init>":()V
+      44: athrow
+      45: aload_0
+      46: getfield      #34                 // Field ae:I
+      49: ldc           #35                 // int -984169853
+      51: imul
+      52: aload_0
+      53: getfield      #38                 // Field az:Lpz;
+      56: getfield      #43                 // Field pz.ab:I
+      59: ldc           #36                 // int 287626351
+      61: imul
+      62: if_icmpge     89
+      65: aload_0
+      66: getfield      #38                 // Field az:Lpz;
+      69: getfield      #91                 // Field pz.af:[Lpd;
+      72: aload_0
+      73: getfield      #34                 // Field ae:I
+      76: ldc           #35                 // int -984169853
+      78: imul
+      79: aaload
+      80: getfield      #96                 // Field pd.az:Ljava/lang/Object;
+      83: astore_1
+      84: goto          23
+      87: aload_1
+      88: areturn
+      89: new           #84                 // class java/util/NoSuchElementException
+      92: dup
+      93: invokespecial #85                 // Method java/util/NoSuchElementException."<init>":()V
+      96: athrow
+      97: new           #45                 // class java/lang/StringBuilder
+     100: dup
+     101: invokespecial #46                 // Method java/lang/StringBuilder."<init>":()V
+     104: ldc           #116                // String pj.next(
+     106: invokevirtual #52                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     109: ldc           #53                 // int 41
+     111: invokevirtual #56                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+     114: invokevirtual #60                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     117: invokestatic  #65                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+     120: athrow
+    Exception table:
+       from    to  target type
+           0    97    97   Class java/lang/RuntimeException
+
+  public static int od(pt, int);
+    Code:
+       0: getstatic     #123                // Field pt.af:[I
+       3: ldc           #124                // int 1870062131
+       5: aload_0
+       6: getfield      #127                // Field pt.ax:I
+       9: imul
+      10: ldc           #128                // int -526564793
+      12: aload_0
+      13: getfield      #131                // Field pt.as:I
+      16: imul
+      17: isub
+      18: iaload
+      19: istore_2
+      20: iload_1
+      21: ldc           #132                // int 811454747
+      23: aload_0
+      24: getfield      #131                // Field pt.as:I
+      27: imul
+      28: ishr
+      29: iload_2
+      30: iand
+      31: ireturn
+
+  static void bp(java.lang.Object[], int, int, byte);
+    Code:
+       0: iload_1
+       1: iload_2
+       2: if_icmpge     30
+       5: iload_3
+       6: iconst_1
+       7: if_icmpgt     11
+      10: return
+      11: aload_0
+      12: iload_1
+      13: aaload
+      14: astore        4
+      16: aload_0
+      17: iload_1
+      18: aload_0
+      19: iload_2
+      20: aaload
+      21: aastore
+      22: aload_0
+      23: iload_2
+      24: aload         4
+      26: aastore
+      27: goto          37
+      30: return
+      31: iinc          2, -1
+      34: goto          0
+      37: iinc          1, 1
+      40: goto          31
+      43: new           #45                 // class java/lang/StringBuilder
+      46: dup
+      47: invokespecial #46                 // Method java/lang/StringBuilder."<init>":()V
+      50: ldc           #136                // String pj.bp(
+      52: invokevirtual #52                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      55: ldc           #53                 // int 41
+      57: invokevirtual #56                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      60: invokevirtual #60                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      63: invokestatic  #65                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      66: athrow
+    Exception table:
+       from    to  target type
+           0    43    43   Class java/lang/RuntimeException
+}

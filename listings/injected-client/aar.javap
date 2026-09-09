@@ -1,0 +1,875 @@
+Compiled from "aar.java"
+public final class aar {
+  final java.io.File az;
+
+  final long af;
+
+  java.io.RandomAccessFile ae;
+
+  long ab;
+
+  public final void ak(boolean) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        37
+       7: iload_1
+       8: ifeq          25
+      11: aload_0
+      12: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      15: invokevirtual #29                 // Method java/io/RandomAccessFile.getFD:()Ljava/io/FileDescriptor;
+      18: invokevirtual #35                 // Method java/io/FileDescriptor.sync:()V
+      21: goto          25
+      24: astore_2
+      25: aload_0
+      26: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      29: invokevirtual #38                 // Method java/io/RandomAccessFile.close:()V
+      32: aload_0
+      33: aconst_null
+      34: putfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      37: return
+    Exception table:
+       from    to  target type
+          11    21    24   Class java/io/SyncFailedException
+
+  public aar(java.io.File, java.lang.String, long) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: invokespecial #42                 // Method java/lang/Object."<init>":()V
+       4: goto          93
+       7: aload_0
+       8: aload_1
+       9: putfield      #44                 // Field az:Ljava/io/File;
+      12: goto          22
+      15: ldc2_w        #45                 // long 9223372036854775807l
+      18: lstore_3
+      19: goto          42
+      22: aload_0
+      23: ldc2_w        #47                 // long 4558015941283848441l
+      26: lload_3
+      27: lmul
+      28: putfield      #50                 // Field af:J
+      31: goto          134
+      34: aload_1
+      35: invokevirtual #56                 // Method java/io/File.delete:()Z
+      38: pop
+      39: goto          65
+      42: aload_1
+      43: invokevirtual #60                 // Method java/io/File.length:()J
+      46: lload_3
+      47: lcmp
+      48: ifle          65
+      51: goto          34
+      54: aload_0
+      55: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      58: lconst_0
+      59: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+      62: goto          81
+      65: aload_0
+      66: new           #25                 // class java/io/RandomAccessFile
+      69: dup
+      70: aload_1
+      71: aload_2
+      72: invokespecial #67                 // Method java/io/RandomAccessFile."<init>":(Ljava/io/File;Ljava/lang/String;)V
+      75: putfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      78: goto          7
+      81: aload_0
+      82: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      85: iload         5
+      87: invokevirtual #71                 // Method java/io/RandomAccessFile.write:(I)V
+      90: goto          142
+      93: ldc2_w        #72                 // long -1l
+      96: lload_3
+      97: lcmp
+      98: ifne          42
+     101: goto          15
+     104: iload         5
+     106: iconst_m1
+     107: if_icmpeq     142
+     110: aload_2
+     111: ldc           #75                 // String r
+     113: invokevirtual #81                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+     116: ifne          142
+     119: goto          54
+     122: aload_0
+     123: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+     126: invokevirtual #85                 // Method java/io/RandomAccessFile.read:()I
+     129: istore        5
+     131: goto          104
+     134: aload_0
+     135: lconst_0
+     136: putfield      #87                 // Field ab:J
+     139: goto          122
+     142: aload_0
+     143: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+     146: lconst_0
+     147: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+     150: return
+     151: nop
+     152: nop
+     153: nop
+     154: nop
+     155: nop
+     156: nop
+     157: nop
+     158: nop
+     159: nop
+     160: nop
+     161: nop
+     162: nop
+     163: nop
+     164: nop
+     165: nop
+     166: nop
+     167: nop
+     168: nop
+     169: nop
+     170: nop
+     171: nop
+     172: nop
+     173: nop
+     174: athrow
+
+  public final long an() throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: invokevirtual #113                // Method java/io/RandomAccessFile.length:()J
+       7: lreturn
+
+  public void da(long);
+    Code:
+       0: aload_0
+       1: lload_1
+       2: invokevirtual #116                // Method af:(J)V
+       5: return
+
+  public final void ae(byte[], int, int, int) throws java.io.IOException;
+    Code:
+       0: iload_3
+       1: i2l
+       2: ldc2_w        #120                // long 8826329765573070539l
+       5: aload_0
+       6: getfield      #87                 // Field ab:J
+       9: lmul
+      10: ladd
+      11: aload_0
+      12: getfield      #50                 // Field af:J
+      15: ldc2_w        #122                // long -1097077856284434103l
+      18: lmul
+      19: lcmp
+      20: ifle          69
+      23: iload         4
+      25: ldc           #124                // int 689229467
+      27: if_icmplt     38
+      30: new           #126                // class java/lang/IllegalStateException
+      33: dup
+      34: invokespecial #127                // Method java/lang/IllegalStateException."<init>":()V
+      37: athrow
+      38: aload_0
+      39: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      42: ldc2_w        #122                // long -1097077856284434103l
+      45: aload_0
+      46: getfield      #50                 // Field af:J
+      49: lmul
+      50: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+      53: aload_0
+      54: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      57: iconst_1
+      58: invokevirtual #71                 // Method java/io/RandomAccessFile.write:(I)V
+      61: new           #129                // class java/io/EOFException
+      64: dup
+      65: invokespecial #130                // Method java/io/EOFException."<init>":()V
+      68: athrow
+      69: aload_0
+      70: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      73: aload_1
+      74: iload_2
+      75: iload_3
+      76: invokevirtual #133                // Method java/io/RandomAccessFile.write:([BII)V
+      79: aload_0
+      80: dup
+      81: getfield      #87                 // Field ab:J
+      84: iload_3
+      85: i2l
+      86: ldc2_w        #134                // long 7580072378778380003l
+      89: lmul
+      90: ladd
+      91: putfield      #87                 // Field ab:J
+      94: return
+      95: new           #89                 // class java/lang/StringBuilder
+      98: dup
+      99: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+     102: ldc           #137                // String aar.ae(
+     104: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     107: ldc           #97                 // int 41
+     109: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+     112: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     115: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+     118: athrow
+    Exception table:
+       from    to  target type
+           0    95    95   Class java/lang/RuntimeException
+
+  public final void ag(boolean, int) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        58
+       7: iload_2
+       8: ldc           #140                // int 1032478127
+      10: if_icmpne     21
+      13: new           #126                // class java/lang/IllegalStateException
+      16: dup
+      17: invokespecial #127                // Method java/lang/IllegalStateException."<init>":()V
+      20: athrow
+      21: iload_1
+      22: ifeq          46
+      25: iload_2
+      26: ldc           #140                // int 1032478127
+      28: if_icmpne     32
+      31: return
+      32: aload_0
+      33: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      36: invokevirtual #29                 // Method java/io/RandomAccessFile.getFD:()Ljava/io/FileDescriptor;
+      39: invokevirtual #35                 // Method java/io/FileDescriptor.sync:()V
+      42: goto          46
+      45: astore_3
+      46: aload_0
+      47: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      50: invokevirtual #38                 // Method java/io/RandomAccessFile.close:()V
+      53: aload_0
+      54: aconst_null
+      55: putfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      58: return
+      59: new           #89                 // class java/lang/StringBuilder
+      62: dup
+      63: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      66: ldc           #142                // String aar.ag(
+      68: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      71: ldc           #97                 // int 41
+      73: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      76: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      79: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      82: athrow
+    Exception table:
+       from    to  target type
+          32    42    45   Class java/io/SyncFailedException
+           0    59    59   Class java/lang/RuntimeException
+
+  public final long as(int) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: invokevirtual #113                // Method java/io/RandomAccessFile.length:()J
+       7: lreturn
+       8: new           #89                 // class java/lang/StringBuilder
+      11: dup
+      12: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      15: ldc           #146                // String aar.as(
+      17: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      20: ldc           #97                 // int 41
+      22: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      25: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      28: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      31: athrow
+    Exception table:
+       from    to  target type
+           0     8     8   Class java/lang/RuntimeException
+
+  public final int ax(byte[], int, int, int) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: aload_1
+       5: iload_2
+       6: iload_3
+       7: invokevirtual #151                // Method java/io/RandomAccessFile.read:([BII)I
+      10: istore        5
+      12: iload         5
+      14: ifle          48
+      17: iload         4
+      19: ldc           #152                // int -1397369950
+      21: if_icmpeq     32
+      24: new           #126                // class java/lang/IllegalStateException
+      27: dup
+      28: invokespecial #127                // Method java/lang/IllegalStateException."<init>":()V
+      31: athrow
+      32: aload_0
+      33: dup
+      34: getfield      #87                 // Field ab:J
+      37: iload         5
+      39: i2l
+      40: ldc2_w        #134                // long 7580072378778380003l
+      43: lmul
+      44: ladd
+      45: putfield      #87                 // Field ab:J
+      48: iload         5
+      50: ireturn
+      51: new           #89                 // class java/lang/StringBuilder
+      54: dup
+      55: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      58: ldc           #154                // String aar.ax(
+      60: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      63: ldc           #97                 // int 41
+      65: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      68: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      71: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      74: athrow
+    Exception table:
+       from    to  target type
+           0    51    51   Class java/lang/RuntimeException
+
+  protected void finalize() throws java.lang.Throwable;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        10
+       7: goto          11
+      10: return
+      11: aload_0
+      12: iconst_1
+      13: invokestatic  #161                // Method qm:(Laar;B)V
+      16: goto          10
+      19: new           #89                 // class java/lang/StringBuilder
+      22: dup
+      23: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      26: ldc           #163                // String aar.finalize(
+      28: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      31: ldc           #97                 // int 41
+      33: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      36: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      39: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      42: athrow
+    Exception table:
+       from    to  target type
+           0    19    19   Class java/lang/RuntimeException
+
+  public final void ad(byte[], int, int) throws java.io.IOException;
+    Code:
+       0: iload_3
+       1: i2l
+       2: ldc2_w        #120                // long 8826329765573070539l
+       5: aload_0
+       6: getfield      #87                 // Field ab:J
+       9: lmul
+      10: ladd
+      11: aload_0
+      12: getfield      #50                 // Field af:J
+      15: ldc2_w        #122                // long -1097077856284434103l
+      18: lmul
+      19: lcmp
+      20: ifle          38
+      23: goto          51
+      26: return
+      27: aload_0
+      28: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      31: iconst_1
+      32: invokevirtual #71                 // Method java/io/RandomAccessFile.write:(I)V
+      35: goto          87
+      38: aload_0
+      39: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      42: aload_1
+      43: iload_2
+      44: iload_3
+      45: invokevirtual #133                // Method java/io/RandomAccessFile.write:([BII)V
+      48: goto          69
+      51: aload_0
+      52: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      55: ldc2_w        #122                // long -1097077856284434103l
+      58: aload_0
+      59: getfield      #50                 // Field af:J
+      62: lmul
+      63: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+      66: goto          27
+      69: aload_0
+      70: dup
+      71: getfield      #87                 // Field ab:J
+      74: iload_3
+      75: i2l
+      76: ldc2_w        #134                // long 7580072378778380003l
+      79: lmul
+      80: ladd
+      81: putfield      #87                 // Field ab:J
+      84: goto          26
+      87: new           #129                // class java/io/EOFException
+      90: dup
+      91: invokespecial #130                // Method java/io/EOFException."<init>":()V
+      94: athrow
+
+  protected void abn() throws java.lang.Throwable;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        10
+       7: goto          11
+      10: return
+      11: aload_0
+      12: iconst_1
+      13: invokestatic  #161                // Method qm:(Laar;B)V
+      16: goto          10
+
+  public static java.io.File dl(aar, int);
+    Code:
+       0: aload_0
+       1: ifnonnull     10
+       4: aload_0
+       5: iload_1
+       6: invokevirtual #170                // Method az:(I)Ljava/io/File;
+       9: areturn
+      10: aload_0
+      11: getfield      #44                 // Field az:Ljava/io/File;
+      14: areturn
+      15: new           #89                 // class java/lang/StringBuilder
+      18: dup
+      19: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      22: ldc           #172                // String aar.az(
+      24: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      27: ldc           #97                 // int 41
+      29: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      32: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      35: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      38: athrow
+    Exception table:
+       from    to  target type
+          10    15    15   Class java/lang/RuntimeException
+
+  final java.io.File ac();
+    Code:
+       0: aload_0
+       1: getfield      #44                 // Field az:Ljava/io/File;
+       4: areturn
+
+  protected void abc() throws java.lang.Throwable;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        12
+       7: aload_0
+       8: iconst_1
+       9: invokestatic  #161                // Method qm:(Laar;B)V
+      12: return
+
+  final void ao(long) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: lload_1
+       5: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+       8: goto          12
+      11: return
+      12: aload_0
+      13: lload_1
+      14: ldc2_w        #134                // long 7580072378778380003l
+      17: lmul
+      18: putfield      #87                 // Field ab:J
+      21: goto          11
+
+  final void al(long) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: lload_1
+       5: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+       8: aload_0
+       9: lload_1
+      10: ldc2_w        #134                // long 7580072378778380003l
+      13: lmul
+      14: putfield      #87                 // Field ab:J
+      17: return
+
+  final void aj(long) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: lload_1
+       5: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+       8: goto          12
+      11: return
+      12: aload_0
+      13: lload_1
+      14: ldc2_w        #134                // long 7580072378778380003l
+      17: lmul
+      18: putfield      #87                 // Field ab:J
+      21: goto          11
+
+  public long gm();
+    Code:
+       0: aload_0
+       1: ldc           #180                // int -153393736
+       3: invokevirtual #182                // Method as:(I)J
+       6: lreturn
+
+  public final void aq(byte[], int, int) throws java.io.IOException;
+    Code:
+       0: iload_3
+       1: i2l
+       2: ldc2_w        #120                // long 8826329765573070539l
+       5: aload_0
+       6: getfield      #87                 // Field ab:J
+       9: lmul
+      10: ladd
+      11: aload_0
+      12: getfield      #50                 // Field af:J
+      15: ldc2_w        #122                // long -1097077856284434103l
+      18: lmul
+      19: lcmp
+      20: ifle          79
+      23: goto          43
+      26: return
+      27: aload_0
+      28: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      31: iconst_1
+      32: invokevirtual #71                 // Method java/io/RandomAccessFile.write:(I)V
+      35: new           #129                // class java/io/EOFException
+      38: dup
+      39: invokespecial #130                // Method java/io/EOFException."<init>":()V
+      42: athrow
+      43: aload_0
+      44: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      47: ldc2_w        #122                // long -1097077856284434103l
+      50: aload_0
+      51: getfield      #50                 // Field af:J
+      54: lmul
+      55: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+      58: goto          27
+      61: aload_0
+      62: dup
+      63: getfield      #87                 // Field ab:J
+      66: iload_3
+      67: i2l
+      68: ldc2_w        #134                // long 7580072378778380003l
+      71: lmul
+      72: ladd
+      73: putfield      #87                 // Field ab:J
+      76: goto          26
+      79: aload_0
+      80: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      83: aload_1
+      84: iload_2
+      85: iload_3
+      86: invokevirtual #133                // Method java/io/RandomAccessFile.write:([BII)V
+      89: goto          61
+
+  public final long at() throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: invokevirtual #113                // Method java/io/RandomAccessFile.length:()J
+       7: lreturn
+
+  public static void eg(aar, byte[], int, int) throws java.io.IOException;
+    Code:
+       0: iload_3
+       1: i2l
+       2: ldc2_w        #120                // long 8826329765573070539l
+       5: aload_0
+       6: getfield      #87                 // Field ab:J
+       9: lmul
+      10: ladd
+      11: aload_0
+      12: getfield      #50                 // Field af:J
+      15: ldc2_w        #122                // long -1097077856284434103l
+      18: lmul
+      19: lcmp
+      20: ifle          43
+      23: goto          71
+      26: return
+      27: aload_0
+      28: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      31: iconst_1
+      32: invokevirtual #71                 // Method java/io/RandomAccessFile.write:(I)V
+      35: new           #129                // class java/io/EOFException
+      38: dup
+      39: invokespecial #130                // Method java/io/EOFException."<init>":()V
+      42: athrow
+      43: aload_0
+      44: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      47: aload_1
+      48: iload_2
+      49: iload_3
+      50: invokevirtual #133                // Method java/io/RandomAccessFile.write:([BII)V
+      53: aload_0
+      54: dup
+      55: getfield      #87                 // Field ab:J
+      58: iload_3
+      59: i2l
+      60: ldc2_w        #134                // long 7580072378778380003l
+      63: lmul
+      64: ladd
+      65: putfield      #87                 // Field ab:J
+      68: goto          26
+      71: aload_0
+      72: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      75: ldc2_w        #122                // long -1097077856284434103l
+      78: aload_0
+      79: getfield      #50                 // Field af:J
+      82: lmul
+      83: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+      86: goto          27
+
+  public final void av(boolean) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        37
+       7: iload_1
+       8: ifeq          25
+      11: aload_0
+      12: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      15: invokevirtual #29                 // Method java/io/RandomAccessFile.getFD:()Ljava/io/FileDescriptor;
+      18: invokevirtual #35                 // Method java/io/FileDescriptor.sync:()V
+      21: goto          25
+      24: astore_2
+      25: aload_0
+      26: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      29: invokevirtual #38                 // Method java/io/RandomAccessFile.close:()V
+      32: aload_0
+      33: aconst_null
+      34: putfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      37: return
+    Exception table:
+       from    to  target type
+          11    21    24   Class java/io/SyncFailedException
+
+  public final void au() throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: iconst_0
+       2: ldc           #188                // int 1494157377
+       4: invokevirtual #190                // Method ag:(ZI)V
+       7: return
+
+  public static void qm(aar, byte) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: ifnonnull     9
+       4: aload_0
+       5: iload_1
+       6: invokevirtual #193                // Method ab:(B)V
+       9: aload_0
+      10: iconst_0
+      11: ldc           #194                // int 1787136346
+      13: invokevirtual #190                // Method ag:(ZI)V
+      16: return
+      17: new           #89                 // class java/lang/StringBuilder
+      20: dup
+      21: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      24: ldc           #196                // String aar.ab(
+      26: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      29: ldc           #97                 // int 41
+      31: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      34: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      37: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      40: athrow
+    Exception table:
+       from    to  target type
+           9    17    17   Class java/lang/RuntimeException
+
+  public void ii(byte[], int, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iload_2
+       3: iload_3
+       4: ldc           #198                // int -1522899189
+       6: invokevirtual #200                // Method ae:([BIII)V
+       9: return
+
+  public final void ai() throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: iconst_0
+       2: ldc           #202                // int -347069786
+       4: invokevirtual #190                // Method ag:(ZI)V
+       7: return
+
+  public final void ar(boolean) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        37
+       7: iload_1
+       8: ifeq          25
+      11: aload_0
+      12: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      15: invokevirtual #29                 // Method java/io/RandomAccessFile.getFD:()Ljava/io/FileDescriptor;
+      18: invokevirtual #35                 // Method java/io/FileDescriptor.sync:()V
+      21: goto          25
+      24: astore_2
+      25: aload_0
+      26: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      29: invokevirtual #38                 // Method java/io/RandomAccessFile.close:()V
+      32: aload_0
+      33: aconst_null
+      34: putfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      37: return
+    Exception table:
+       from    to  target type
+          11    21    24   Class java/io/SyncFailedException
+
+  public final void aw(boolean) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        37
+       7: iload_1
+       8: ifeq          25
+      11: aload_0
+      12: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      15: invokevirtual #29                 // Method java/io/RandomAccessFile.getFD:()Ljava/io/FileDescriptor;
+      18: invokevirtual #35                 // Method java/io/FileDescriptor.sync:()V
+      21: goto          25
+      24: astore_2
+      25: aload_0
+      26: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      29: invokevirtual #38                 // Method java/io/RandomAccessFile.close:()V
+      32: aload_0
+      33: aconst_null
+      34: putfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+      37: return
+    Exception table:
+       from    to  target type
+          11    21    24   Class java/io/SyncFailedException
+
+  public void vj(boolean);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: ldc           #194                // int 1787136346
+       4: invokevirtual #190                // Method ag:(ZI)V
+       7: return
+
+  public final void ap() throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: iconst_0
+       2: ldc           #207                // int 1573672214
+       4: invokevirtual #190                // Method ag:(ZI)V
+       7: return
+
+  protected void abt() throws java.lang.Throwable;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: ifnull        12
+       7: aload_0
+       8: iconst_1
+       9: invokestatic  #161                // Method qm:(Laar;B)V
+      12: return
+
+  final void af(long) throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: lload_1
+       5: invokevirtual #64                 // Method java/io/RandomAccessFile.seek:(J)V
+       8: goto          12
+      11: return
+      12: aload_0
+      13: lload_1
+      14: ldc2_w        #134                // long 7580072378778380003l
+      17: lmul
+      18: putfield      #87                 // Field ab:J
+      21: goto          11
+      24: new           #89                 // class java/lang/StringBuilder
+      27: dup
+      28: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      31: ldc           #210                // String aar.af(
+      33: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      36: ldc           #97                 // int 41
+      38: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      41: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      44: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      47: athrow
+    Exception table:
+       from    to  target type
+           0    24    24   Class java/lang/RuntimeException
+
+  public final long am() throws java.io.IOException;
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       4: invokevirtual #113                // Method java/io/RandomAccessFile.length:()J
+       7: lreturn
+
+  public void tf(byte[], int, int);
+    Code:
+       0: iload_3
+       1: ifle          63
+       4: aload_0
+       5: getfield      #23                 // Field ae:Ljava/io/RandomAccessFile;
+       8: aload_1
+       9: iload_2
+      10: iload_3
+      11: invokevirtual #151                // Method java/io/RandomAccessFile.read:([BII)I
+      14: istore        4
+      16: iload         4
+      18: iconst_m1
+      19: if_icmpne     30
+      22: new           #129                // class java/io/EOFException
+      25: dup
+      26: invokespecial #130                // Method java/io/EOFException."<init>":()V
+      29: athrow
+      30: aload_0
+      31: dup
+      32: getfield      #87                 // Field ab:J
+      35: ldc2_w        #120                // long 8826329765573070539l
+      38: lmul
+      39: iload         4
+      41: i2l
+      42: ladd
+      43: ldc2_w        #134                // long 7580072378778380003l
+      46: lmul
+      47: putfield      #87                 // Field ab:J
+      50: iload_2
+      51: iload         4
+      53: iadd
+      54: istore_2
+      55: iload_3
+      56: iload         4
+      58: isub
+      59: istore_3
+      60: goto          0
+      63: return
+
+  public final void ab(byte);
+    Code:
+       0: aload_0
+       1: iconst_0
+       2: ldc           #194                // int 1787136346
+       4: invokevirtual #190                // Method ag:(ZI)V
+       7: return
+       8: new           #89                 // class java/lang/StringBuilder
+      11: dup
+      12: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      15: ldc           #196                // String aar.ab(
+      17: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      20: ldc           #97                 // int 41
+      22: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      25: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      28: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      31: athrow
+    Exception table:
+       from    to  target type
+           0     8     8   Class java/lang/RuntimeException
+
+  final java.io.File az(int);
+    Code:
+       0: aload_0
+       1: getfield      #44                 // Field az:Ljava/io/File;
+       4: areturn
+       5: new           #89                 // class java/lang/StringBuilder
+       8: dup
+       9: invokespecial #90                 // Method java/lang/StringBuilder."<init>":()V
+      12: ldc           #172                // String aar.az(
+      14: invokevirtual #96                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      17: ldc           #97                 // int 41
+      19: invokevirtual #100                // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      22: invokevirtual #104                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      25: invokestatic  #109                // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      28: athrow
+    Exception table:
+       from    to  target type
+           0     5     5   Class java/lang/RuntimeException
+}

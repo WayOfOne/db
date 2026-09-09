@@ -1,0 +1,4 @@
+Compiled from "0L.java"
+public interface org.dreambot.0L extends java.lang.annotation.Annotation {
+  public abstract java.lang.String value();
+}

@@ -1,0 +1,226 @@
+Compiled from "cp.java"
+public class cp {
+  static final cp au;
+
+  static final cp af;
+
+  static final cp ae;
+
+  static final cp ab;
+
+  static final cp ac;
+
+  static final cp as;
+
+  static final cp ax;
+
+  static final cp aa;
+
+  static final cp ay;
+
+  static final cp ai;
+
+  static final cp al;
+
+  static final cp aj;
+
+  static final cp ao;
+
+  static final cp az;
+
+  static final cp ad;
+
+  static final cp ag;
+
+  static byte[][] le;
+
+  static int bk;
+
+  static final int ak;
+
+  static final cp ap;
+
+  static final java.lang.String bu;
+
+  static final cp aq;
+
+  public static void ae(short);
+    Code:
+       0: getstatic     #45                 // Field zu.ab:Ljz;
+       3: invokestatic  #51                 // Method jz.rl:(Ljz;)V
+       6: return
+       7: new           #53                 // class java/lang/StringBuilder
+      10: dup
+      11: invokespecial #57                 // Method java/lang/StringBuilder."<init>":()V
+      14: ldc           #59                 // String cp.ae(
+      16: invokevirtual #63                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      19: ldc           #64                 // int 41
+      21: invokevirtual #67                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      24: invokevirtual #71                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      27: invokestatic  #76                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      30: athrow
+    Exception table:
+       from    to  target type
+           0     7     7   Class java/lang/RuntimeException
+
+  static {};
+    Code:
+       0: new           #2                  // class cp
+       3: dup
+       4: invokespecial #78                 // Method "<init>":()V
+       7: putstatic     #80                 // Field az:Lcp;
+      10: goto          167
+      13: new           #2                  // class cp
+      16: dup
+      17: invokespecial #78                 // Method "<init>":()V
+      20: putstatic     #82                 // Field as:Lcp;
+      23: goto          75
+      26: new           #2                  // class cp
+      29: dup
+      30: invokespecial #78                 // Method "<init>":()V
+      33: putstatic     #84                 // Field ac:Lcp;
+      36: goto          101
+      39: new           #2                  // class cp
+      42: dup
+      43: invokespecial #78                 // Method "<init>":()V
+      46: putstatic     #86                 // Field ab:Lcp;
+      49: new           #2                  // class cp
+      52: dup
+      53: invokespecial #78                 // Method "<init>":()V
+      56: putstatic     #88                 // Field ag:Lcp;
+      59: goto          13
+      62: new           #2                  // class cp
+      65: dup
+      66: invokespecial #78                 // Method "<init>":()V
+      69: putstatic     #90                 // Field aq:Lcp;
+      72: goto          88
+      75: new           #2                  // class cp
+      78: dup
+      79: invokespecial #78                 // Method "<init>":()V
+      82: putstatic     #92                 // Field ax:Lcp;
+      85: goto          26
+      88: new           #2                  // class cp
+      91: dup
+      92: invokespecial #78                 // Method "<init>":()V
+      95: putstatic     #94                 // Field ad:Lcp;
+      98: goto          180
+     101: new           #2                  // class cp
+     104: dup
+     105: invokespecial #78                 // Method "<init>":()V
+     108: putstatic     #96                 // Field aa:Lcp;
+     111: new           #2                  // class cp
+     114: dup
+     115: invokespecial #78                 // Method "<init>":()V
+     118: putstatic     #98                 // Field ao:Lcp;
+     121: new           #2                  // class cp
+     124: dup
+     125: invokespecial #78                 // Method "<init>":()V
+     128: putstatic     #100                // Field al:Lcp;
+     131: new           #2                  // class cp
+     134: dup
+     135: invokespecial #78                 // Method "<init>":()V
+     138: putstatic     #102                // Field aj:Lcp;
+     141: new           #2                  // class cp
+     144: dup
+     145: invokespecial #78                 // Method "<init>":()V
+     148: putstatic     #104                // Field ay:Lcp;
+     151: goto          62
+     154: new           #2                  // class cp
+     157: dup
+     158: invokespecial #78                 // Method "<init>":()V
+     161: putstatic     #106                // Field ae:Lcp;
+     164: goto          39
+     167: new           #2                  // class cp
+     170: dup
+     171: invokespecial #78                 // Method "<init>":()V
+     174: putstatic     #108                // Field af:Lcp;
+     177: goto          154
+     180: new           #2                  // class cp
+     183: dup
+     184: invokespecial #78                 // Method "<init>":()V
+     187: putstatic     #110                // Field ap:Lcp;
+     190: new           #2                  // class cp
+     193: dup
+     194: invokespecial #78                 // Method "<init>":()V
+     197: putstatic     #112                // Field au:Lcp;
+     200: new           #2                  // class cp
+     203: dup
+     204: invokespecial #78                 // Method "<init>":()V
+     207: putstatic     #114                // Field ai:Lcp;
+     210: return
+
+  cp();
+    Code:
+       0: aload_0
+       1: invokespecial #115                // Method java/lang/Object."<init>":()V
+       4: return
+       5: nop
+       6: nop
+       7: nop
+       8: nop
+       9: nop
+      10: nop
+      11: nop
+      12: nop
+      13: nop
+      14: nop
+      15: nop
+      16: nop
+      17: nop
+      18: nop
+      19: nop
+      20: nop
+      21: nop
+      22: nop
+      23: nop
+      24: nop
+      25: nop
+      26: nop
+      27: nop
+      28: athrow
+
+  public static void az(va, va, va, int);
+    Code:
+       0: aload_0
+       1: putstatic     #126                // Field es.av:Lva;
+       4: aload_1
+       5: putstatic     #131                // Field wn.at:Lva;
+       8: aload_2
+       9: putstatic     #136                // Field en.an:Lva;
+      12: getstatic     #142                // Field eb.pt:Lvt;
+      15: dup
+      16: getstatic     #148                // Field oe.cz:Lclient;
+      19: getfield      #154                // Field client.uu:Lnet/runelite/api/hooks/Callbacks;
+      22: invokevirtual #158                // Method java/lang/Object.getClass:()Ljava/lang/Class;
+      25: invokevirtual #164                // Method java/lang/Class.getSigners:()[Ljava/lang/Object;
+      28: invokestatic  #170                // Method java/util/Arrays.hashCode:([Ljava/lang/Object;)I
+      31: iconst_2
+      32: ishr
+      33: ldc           #171                // int 721999872
+      35: imul
+      36: ldc           #172                // int -1694189056
+      38: iadd
+      39: getstatic     #178                // Field sn.px:Z
+      42: iconst_1
+      43: isub
+      44: ldc           #179                // int 1337221120
+      46: imul
+      47: iadd
+      48: putfield      #184                // Field vt.cr:I
+      51: invokestatic  #186                // Method client.ak:()Ljava/lang/String;
+      54: putfield      #188                // Field vt.cp:Ljava/lang/String;
+      57: return
+      58: new           #53                 // class java/lang/StringBuilder
+      61: dup
+      62: invokespecial #57                 // Method java/lang/StringBuilder."<init>":()V
+      65: ldc           #190                // String cp.az(
+      67: invokevirtual #63                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      70: ldc           #64                 // int 41
+      72: invokevirtual #67                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+      75: invokevirtual #71                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      78: invokestatic  #76                 // Method eg.af:(Ljava/lang/Throwable;Ljava/lang/String;)Laaf;
+      81: athrow
+    Exception table:
+       from    to  target type
+           0    58    58   Class java/lang/RuntimeException
+}

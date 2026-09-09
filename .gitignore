@@ -1,0 +1,32 @@
+# build / scratch output
+tools/classes/
+*.class
+
+# Extracted jar trees: large, machine-specific, and case-unsafe on Windows
+# (obfuscated names like 4cs vs 4cS collapse on extraction). Re-extract from
+# %USERPROFILE%\DreamBot\BotData\ per .agents/skills/dreambot-deob/SKILL.md.
+# Only listings/, results/, docs/, and tools/*.java are committed.
+inputs/*/
+!inputs/.gitkeep
+
+# reverse-engineering scratch -- large and machine-specific
+*.i64
+*.idb
+*.til
+*.nam
+*.id0
+*.id1
+*.id2
+
+# NEVER commit account data, credentials, tokens, or session material.
+# SDN work uses catalog + metadata + opaque payload bytes only.
+accounts.db*
+*.db
+*token*
+*secret*
+
+# editors / OS
+.vs/
+.idea/
+*.user
+Thumbs.db
