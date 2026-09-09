@@ -10,6 +10,7 @@ import net.runelite.api.MenuAction;
 import net.runelite.api.MenuEntry;
 import net.runelite.api.NPC;
 import net.runelite.api.Perspective;
+import net.runelite.api.TileItem;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 
@@ -60,6 +61,25 @@ public final class Actions {
             .setForceLeftClick(true);
     }
 
+    /** Nth-option entry on a ground item (0-based; Take is usually third). */
+    public static MenuEntry groundItemMenu(TileItem item, String option, int actionIndex) {
+        MenuAction type;
+        switch (actionIndex) {
+            case 1: type = MenuAction.GROUND_ITEM_SECOND_OPTION; break;
+            case 2: type = MenuAction.GROUND_ITEM_THIRD_OPTION; break;
+            case 3: type = MenuAction.GROUND_ITEM_FOURTH_OPTION; break;
+            case 4: type = MenuAction.GROUND_ITEM_FIFTH_OPTION; break;
+            default: type = MenuAction.GROUND_ITEM_FIRST_OPTION; break;
+        }
+        String name = Game.client().getItemDefinition(item.getId()).getName();
+        return Game.client().createMenuEntry(actionIndex)
+            .setOption(option)
+            .setTarget(name)
+            .setIdentifier(item.getId())
+            .setType(type)
+            .setForceLeftClick(true);
+    }
+
     /** Install an entry as the entire menu (left-click does it). */
     public static void install(MenuEntry entry) {
         Game.client().setMenuEntries(new MenuEntry[] { entry });
@@ -107,6 +127,40 @@ public final class Actions {
             return false;
         }
         click(at);
+        return true;
+    }
+
+    /** First option on scenery at its clickbox. Game-only. */
+    public static boolean object(GameObject object, String option) throws Exception {
+        if (object == null) {
+            return false;
+        }
+        install(objectMenu(object, option));
+        java.awt.Shape box = object.getClickbox();
+        if (box == null) {
+            return false;
+        }
+        Rectangle r = box.getBounds();
+        click(new Point(r.x + r.width / 2, r.y + r.height / 2));
+        return true;
+    }
+
+    /** Nth option on a ground item at its tile. Game-only. */
+    public static boolean take(GroundItems.Loot loot, String option, int actionIndex) throws Exception {
+        if (loot == null) {
+            return false;
+        }
+        install(groundItemMenu(loot.item(), option, actionIndex));
+        LocalPoint local = LocalPoint.fromWorld(Game.client(), loot.location());
+        if (local == null) {
+            return false;
+        }
+        java.awt.Polygon poly = Perspective.getCanvasTilePoly(Game.client(), local);
+        if (poly == null) {
+            return false;
+        }
+        Rectangle r = poly.getBounds();
+        click(new Point(r.x + r.width / 2, r.y + r.height / 2));
         return true;
     }
 

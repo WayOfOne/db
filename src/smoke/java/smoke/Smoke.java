@@ -10,15 +10,21 @@ import java.util.Map;
 
 import bot.api.Actions;
 import bot.api.Game;
+import bot.api.GroundItems;
 import bot.api.Npcs;
 import bot.script.Script;
 import bot.script.ScriptLoader;
 import bot.script.ScriptRunner;
 import net.runelite.api.Client;
+import net.runelite.api.GameObject;
+import net.runelite.api.ItemComposition;
 import net.runelite.api.MenuAction;
 import net.runelite.api.MenuEntry;
 import net.runelite.api.NPC;
 import net.runelite.api.Player;
+import net.runelite.api.Scene;
+import net.runelite.api.Tile;
+import net.runelite.api.TileItem;
 import net.runelite.api.coords.WorldPoint;
 
 /** Offline verification: loads the sample script jar, runs it against a stub
@@ -34,7 +40,7 @@ public final class Smoke {
 
         try (ScriptLoader loader = new ScriptLoader()) {
             List<ScriptLoader.LoadedScript> found = loader.loadAll(new File(argv[0]));
-            check(found.size() == 2, "two sample scripts load (failures=" + loader.failures() + ")");
+            check(found.size() == 3, "three sample scripts load (failures=" + loader.failures() + ")");
             ScriptLoader.LoadedScript hello = null;
             for (ScriptLoader.LoadedScript s : found) {
                 if ("Hello".equals(s.manifest().name())) {
@@ -59,6 +65,19 @@ public final class Smoke {
             && e.getIdentifier() == 3
             && e.getType() == MenuAction.NPC_FIRST_OPTION
             && e.isForceLeftClick(), "npc menu entry fields");
+
+        TileItem coins = GroundItems.nearest(995).item();
+        check(coins != null && coins.getQuantity() == 10, "nearest ground item by id");
+        check(GroundItems.nearestWithin(10, 995) != null, "coins within 10 tiles");
+        check(GroundItems.nearestWithin(2, 995) == null, "coins not within 2 tiles");
+        check(GroundItems.nearest(9999) == null, "unknown ground id yields null");
+
+        MenuEntry g = Actions.groundItemMenu(coins, "Take", 2);
+        check("Take".equals(g.getOption())
+            && "Coins".equals(g.getTarget())
+            && g.getIdentifier() == 995
+            && g.getType() == MenuAction.GROUND_ITEM_THIRD_OPTION
+            && g.isForceLeftClick(), "ground item menu entry fields");
 
         System.out.println("SMOKE PASS (" + checks + " checks)");
     }
@@ -125,13 +144,63 @@ public final class Smoke {
             Smoke.class.getClassLoader(), new Class<?>[] { MenuEntry.class }, h);
     }
 
+    private static TileItem stubGroundItem(Tile tile) {
+        InvocationHandler h = (proxy, m, args) -> switch (m.getName()) {
+            case "getId" -> 995;
+            case "getQuantity" -> 10;
+            case "getTile" -> tile;
+            default -> defaultValue(m.getReturnType());
+        };
+        return (TileItem) Proxy.newProxyInstance(
+            Smoke.class.getClassLoader(), new Class<?>[] { TileItem.class }, h);
+    }
+
+    private static Tile stubTile(TileItem[] box) {
+        InvocationHandler h = (proxy, m, args) -> switch (m.getName()) {
+            case "getWorldLocation" -> new WorldPoint(3225, 3218, 0);
+            case "getGameObjects" -> new GameObject[0];
+            case "getGroundItems" -> List.of(box[0]);
+            default -> defaultValue(m.getReturnType());
+        };
+        return (Tile) Proxy.newProxyInstance(
+            Smoke.class.getClassLoader(), new Class<?>[] { Tile.class }, h);
+    }
+
+    private static Scene stubScene() {
+        TileItem[] box = new TileItem[1];
+        Tile tile = stubTile(box);
+        box[0] = stubGroundItem(tile);
+        Tile[][][] grid = new Tile[1][104][104];
+        grid[0][50][50] = tile;
+        InvocationHandler h = (proxy, m, args) -> switch (m.getName()) {
+            case "getTiles" -> grid;
+            default -> defaultValue(m.getReturnType());
+        };
+        return (Scene) Proxy.newProxyInstance(
+            Smoke.class.getClassLoader(), new Class<?>[] { Scene.class }, h);
+    }
+
+    private static ItemComposition stubItemComp() {
+        InvocationHandler h = (proxy, m, args) -> switch (m.getName()) {
+            case "getName" -> "Coins";
+            default -> defaultValue(m.getReturnType());
+        };
+        return (ItemComposition) Proxy.newProxyInstance(
+            Smoke.class.getClassLoader(), new Class<?>[] { ItemComposition.class }, h);
+    }
+
     private static Client stubClient() {
         NPC cow = stubNpc();
         Player me = stubPlayer();
+        Scene scene = stubScene();
+        ItemComposition coins = stubItemComp();
         InvocationHandler h = (proxy, m, args) -> switch (m.getName()) {
             case "getNpcs" -> List.of(cow);
             case "getPlayers" -> List.of();
             case "getLocalPlayer" -> me;
+            case "getScene" -> scene;
+            case "getPlane" -> 0;
+            case "getItemDefinition" -> coins;
             case "createMenuEntry" -> stubEntry();
             default -> defaultValue(m.getReturnType());
         };

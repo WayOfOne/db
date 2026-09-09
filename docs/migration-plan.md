@@ -153,6 +153,12 @@ server, no credential vault, no packet code.
 - [ ] Live pass: `gradlew run -Pscripts=<dir> -Pscript=<name>` against the
   real game (needs network + login; never attempted in this environment).
 
+## Phase 10 — Looting + gathering round (local scripts only)
+
+- [x] `GroundItems` (`Loot` = item + tile, since `TileItem` carries no
+  position), `Actions.take`/`object`/`groundItemMenu`, `Woodcutter` sample.
+  Covered by `smokeTest` (14 checks).
+
 ## Guardrails (apply to every phase)
 
 - Jars stay in `%USERPROFILE%\DreamBot\BotData\`; this repo holds listings,

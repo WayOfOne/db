@@ -2,8 +2,9 @@
 
 Scripts are plain Java against `bot.script` + `bot.api`, loaded from jars you
 drop in a directory. No server, no account system, no store: the directory is
-the catalog. `src/sample/java/sample/CowHitter.java` is the worked example;
-everything below refers to it.
+the catalog. `src/sample/java/sample/CowHitter.java` is the worked combat example and
+`src/sample/java/sample/Woodcutter.java` the gathering one (chop until full);
+everything below refers to them.
 
 ## Prerequisites
 
@@ -66,6 +67,7 @@ Three rules, no exceptions:
 | Finding NPCs | `Npcs.nearest(ids...)`, `Npcs.nearestWithin(range, ids...)`, `Npcs.withId(ids...)` |
 | Players | `Players.nearest()` (others only), local player via `Game.me()` |
 | Scenery | `GameObjects.nearest(ids...)` — walks the scene grid, so no typed-in tiles |
+| Ground loot | `GroundItems.nearest/nearestWithin(ids...)` — returns a `Loot` (item + tile, since items carry no position); `Actions.take(loot, "Take", 2)` |
 | Self | `Local`: `location()`, `worldX/Y()`, `animation()`, `isIdle()`, `combatLevel()` |
 | Skills | `Skills.level/base/experience(Skill)` (boosted vs real, like the skill tab) |
 | Inventory | `Inventory.count/contains/full/items()`, `Inventory.health()` (current HP) |
