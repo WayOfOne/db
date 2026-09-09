@@ -5,6 +5,13 @@ It is modeled on `bot-client/.agents/skills/deob/SKILL.md`, with the method
 ported from native reversing (Ghidra/IDA + Lua-binding anchors + RVAs) to
 Java bytecode reversing (`javap` + ASM + constant-pool anchors + class maps).
 
+**Project direction: RuneLite-based fork.** The end goal (see
+`docs/fork-plan.md`, phases 5–9 in `docs/migration-plan.md`) is to reimplement
+DreamBot-style scripting on the pinned RuneLite 1.12.36 base (BSD-2-Clause).
+This deob work produces behavior specs for that fork — clean-room only: never
+copy DreamBot bytecode, and never build identity/telemetry/credential tooling
+(the non-goals in `docs/fork-plan.md` are final).
+
 Source of truth for jars (all local, authorized artifacts only):
 
 ```text

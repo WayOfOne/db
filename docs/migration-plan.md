@@ -9,6 +9,10 @@ reusable DreamBot knowledge out of bot-client (where it sits beside a native
 `osclient.exe` injector: `client/offsets.hpp`, `launcher/`, `java/kewl/`) and
 re-homes it where the DreamBot Java jars are the first-class target.
 
+**Direction change (2026-09-09): the end goal is a RuneLite-based fork that
+reimplements DreamBot-style scripting — see `docs/fork-plan.md`. Phases 0–4
+below built the behavior-spec foundation; Phases 5–9 build the fork.**
+
 ## What moves, what stays
 
 MOVE (DreamBot-specific, portable as knowledge):
@@ -104,6 +108,45 @@ When Phases 1–2 are green on current jars: replace "carried over from
 bot-client" labels with local evidence levels, archive the `D_Jok`-era paths
 and five-payload inventory as historical notes, and keep bot-client linked as
 method-origin only (its native `offsets.hpp` workflow does not apply here).
+
+---
+
+## Part 2 — RuneLite-based fork (see `docs/fork-plan.md`)
+
+Clean-room rule (applies to all fork phases): behavior specs only, never
+DreamBot bytecode; keep RuneLite BSD-2-Clause headers on derived files;
+non-goals are final — no identity/HWID tooling, no telemetry clone, no SDN
+server, no credential vault, no packet code.
+
+## Phase 5 — Pin the RuneLite base
+
+- [ ] Fingerprint `runelite-api-1.12.36-runtime.jar` (fill the TBD in
+  `docs/fork-plan.md`) and confirm `client-1.12.36.jar` == `base-client.jar`
+  (hashes match: `82F000DD…4274D3`).
+- [ ] Verify the LICENSE of the exact pinned RuneLite source tree before any
+  derived file is published.
+- [ ] Gradle scaffold: Java 17, local file deps only, `run`/`dist` tasks.
+
+## Phase 6 — Script framework + loader (local scripts only)
+
+- [ ] `Script` base + `@ScriptManifest` + runner (start/loop/exit).
+- [ ] Scripts-directory scan -> manifest read -> per-script `URLClassLoader`,
+  reload/unload. No catalog file, no network loading.
+
+## Phase 7 — Game-API facade
+
+- [ ] `Npcs`/`Players`/`GameObjects`/`GroundItems`, `Actions` (menu entries),
+  `Skills`/`Inventory`/`Local`, driven by the verified Phase-1 semantics
+  (24-byte/`vt` knowledge stays *out*; entity/interact semantics carry over).
+
+## Phase 8 — Overlays and config (local scripts only)
+
+- [ ] Overlay helpers on `OverlayManager`; per-script config via
+  `ConfigManager`. No profiles, no account code.
+
+## Phase 9 — Launcher/dist + docs
+
+- [ ] Side-by-side `dist/` layout with a verifying task; fork user docs.
 
 ## Guardrails (apply to every phase)
 
