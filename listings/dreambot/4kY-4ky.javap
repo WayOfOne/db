@@ -1095,3 +1095,272 @@ public final class org.dreambot.4ky {
        from    to  target type
            9    48    51   Class java/lang/Exception
 }
+Compiled from "4kY.java"
+abstract class org.dreambot.4kY<E> extends org.dreambot.4kN<E> {
+  private static final long 3;
+
+  private volatile long producerLimit;
+
+  private static final long i;
+
+  org.dreambot.4kY(int, long);
+    Code:
+       0: getstatic     #66                 // Field i:J
+       3: lload_2
+       4: lxor
+       5: lstore_2
+       6: lload_2
+       7: dup2
+       8: ldc2_w        #139                // long 28442379391634l
+      11: lxor
+      12: lstore        4
+      14: pop2
+      15: aload_0
+      16: iload_1
+      17: lload         4
+      19: invokespecial #36                 // Method "org/dreambot/4kN"."<init>":(IJ)V
+      22: aload_0
+      23: iload_1
+      24: i2l
+      25: putfield      #28                 // Field producerLimit:J
+      28: return
+
+  final long 2(java.lang.Object[]);
+    Code:
+       0: aload_1
+       1: pop
+       2: aload_0
+       3: getfield      #28                 // Field producerLimit:J
+       6: lreturn
+
+  final void 5(java.lang.Object[]);
+    Code:
+       0: aload_1
+       1: dup
+       2: iconst_0
+       3: aaload
+       4: checkcast     #64                 // class java/lang/Long
+       7: invokevirtual #122                // Method java/lang/Long.longValue:()J
+      10: lstore_2
+      11: pop
+      12: getstatic     #107                // Field "org/dreambot/45P"."5":Lsun/misc/Unsafe;
+      15: aload_0
+      16: getstatic     #117                // Field "3":J
+      19: lload_2
+      20: invokevirtual #130                // Method sun/misc/Unsafe.putOrderedLong:(Ljava/lang/Object;JJ)V
+      23: return
+
+  static {};
+    Code:
+       0: ldc2_w        #143                // long 53450111740026341l
+       3: ldc2_w        #137                // long 6006442918501311654l
+       6: invokestatic  #80                 // Method java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+       9: invokevirtual #29                 // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+      12: invokestatic  #16                 // Method org/dreambot/x.a:(JJLjava/lang/Object;)Lorg/dreambot/b;
+      15: ldc2_w        #145                // long 38052652444767l
+      18: invokeinterface #54,  3           // InterfaceMethod org/dreambot/b.a:(J)J
+      23: putstatic     #66                 // Field i:J
+      26: getstatic     #66                 // Field i:J
+      29: ldc2_w        #141                // long 66164365222225l
+      32: lxor
+      33: lstore        4
+      35: ldc           #1                  // String DES/CBC/PKCS5Padding
+      37: invokestatic  #81                 // Method javax/crypto/Cipher.getInstance:(Ljava/lang/String;)Ljavax/crypto/Cipher;
+      40: dup
+      41: astore_1
+      42: iconst_2
+      43: ldc           #2                  // String DES
+      45: invokestatic  #63                 // Method javax/crypto/SecretKeyFactory.getInstance:(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;
+      48: bipush        8
+      50: newarray       byte
+      52: dup
+      53: iconst_0
+      54: lload         4
+      56: bipush        56
+      58: lushr
+      59: l2i
+      60: i2b
+      61: bastore
+      62: iconst_1
+      63: istore_2
+      64: iload_2
+      65: bipush        8
+      67: if_icmpge     91
+      70: dup
+      71: iload_2
+      72: lload         4
+      74: iload_2
+      75: bipush        8
+      77: imul
+      78: lshl
+      79: bipush        56
+      81: lushr
+      82: l2i
+      83: i2b
+      84: bastore
+      85: iinc          2, 1
+      88: goto          64
+      91: new           #96                 // class javax/crypto/spec/DESKeySpec
+      94: dup_x1
+      95: swap
+      96: invokespecial #100                // Method javax/crypto/spec/DESKeySpec."<init>":([B)V
+      99: invokevirtual #115                // Method javax/crypto/SecretKeyFactory.generateSecret:(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
+     102: new           #73                 // class javax/crypto/spec/IvParameterSpec
+     105: dup
+     106: bipush        8
+     108: newarray       byte
+     110: invokespecial #114                // Method javax/crypto/spec/IvParameterSpec."<init>":([B)V
+     113: invokevirtual #67                 // Method javax/crypto/Cipher.init:(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+     116: ldc           #4                  // String 0U»\u0004\nÞ\u009f\\¾¤\u008dö_ìÝ\u0094
+     118: iconst_m1
+     119: goto          126
+     122: astore_0
+     123: goto          150
+     126: swap
+     127: ldc           #3                  // String ISO-8859-1
+     129: invokevirtual #88                 // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     132: aload_1
+     133: swap
+     134: invokevirtual #60                 // Method javax/crypto/Cipher.doFinal:([B)[B
+     137: astore_3
+     138: aload_3
+     139: invokestatic  #78                 // Method b:([B)Ljava/lang/String;
+     142: invokevirtual #103                // Method java/lang/String.intern:()Ljava/lang/String;
+     145: swap
+     146: pop
+     147: goto          122
+     150: ldc           #5                  // class "org/dreambot/4kY"
+     152: aload_0
+     153: iconst_2
+     154: anewarray     #135                // class java/lang/Object
+     157: dup_x1
+     158: swap
+     159: iconst_1
+     160: swap
+     161: aastore
+     162: dup_x1
+     163: swap
+     164: iconst_0
+     165: swap
+     166: aastore
+     167: invokestatic  #57                 // Method "org/dreambot/45P"."5":([Ljava/lang/Object;)J
+     170: putstatic     #117                // Field "3":J
+     173: return
+
+  private static java.lang.String b(byte[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: aload_0
+       3: arraylength
+       4: dup
+       5: istore_2
+       6: newarray       char
+       8: astore_3
+       9: iconst_0
+      10: istore        4
+      12: iload         4
+      14: iload_2
+      15: if_icmpge     178
+      18: sipush        255
+      21: aload_0
+      22: iload         4
+      24: baload
+      25: iand
+      26: dup
+      27: istore        5
+      29: sipush        192
+      32: if_icmpge     47
+      35: aload_3
+      36: iload_1
+      37: iinc          1, 1
+      40: iload         5
+      42: i2c
+      43: castore
+      44: goto          172
+      47: iload         5
+      49: sipush        224
+      52: if_icmpge     99
+      55: iload         5
+      57: bipush        31
+      59: iand
+      60: i2c
+      61: bipush        6
+      63: ishl
+      64: i2c
+      65: istore        6
+      67: aload_0
+      68: iinc          4, 1
+      71: iload         4
+      73: baload
+      74: istore        5
+      76: iload         6
+      78: iload         5
+      80: bipush        63
+      82: iand
+      83: i2c
+      84: ior
+      85: i2c
+      86: istore        6
+      88: aload_3
+      89: iload_1
+      90: iinc          1, 1
+      93: iload         6
+      95: castore
+      96: goto          172
+      99: iload         4
+     101: iload_2
+     102: iconst_2
+     103: isub
+     104: if_icmpge     172
+     107: iload         5
+     109: bipush        15
+     111: iand
+     112: i2c
+     113: bipush        12
+     115: ishl
+     116: i2c
+     117: istore        6
+     119: aload_0
+     120: iinc          4, 1
+     123: iload         4
+     125: baload
+     126: istore        5
+     128: iload         6
+     130: iload         5
+     132: bipush        63
+     134: iand
+     135: i2c
+     136: bipush        6
+     138: ishl
+     139: ior
+     140: i2c
+     141: istore        6
+     143: aload_0
+     144: iinc          4, 1
+     147: iload         4
+     149: baload
+     150: istore        5
+     152: iload         6
+     154: iload         5
+     156: bipush        63
+     158: iand
+     159: i2c
+     160: ior
+     161: i2c
+     162: istore        6
+     164: aload_3
+     165: iload_1
+     166: iinc          1, 1
+     169: iload         6
+     171: castore
+     172: iinc          4, 1
+     175: goto          12
+     178: new           #58                 // class java/lang/String
+     181: dup
+     182: aload_3
+     183: iconst_0
+     184: iload_1
+     185: invokespecial #22                 // Method java/lang/String."<init>":([CII)V
+     188: areturn
+}
