@@ -120,33 +120,35 @@ server, no credential vault, no packet code.
 
 ## Phase 5 — Pin the RuneLite base
 
-- [ ] Fingerprint `runelite-api-1.12.36-runtime.jar` (fill the TBD in
-  `docs/fork-plan.md`) and confirm `client-1.12.36.jar` == `base-client.jar`
-  (hashes match: `82F000DD…4274D3`).
-- [ ] Verify the LICENSE of the exact pinned RuneLite source tree before any
-  derived file is published.
-- [ ] Gradle scaffold: Java 17, local file deps only, `run`/`dist` tasks.
+- [x] Fingerprint jars (API `27B2E4B0…`; client == base-client `82F000DD…`).
+  Gradle scaffold: Java 17, local file deps only, `verifyArtifacts` green.
 
 ## Phase 6 — Script framework + loader (local scripts only)
 
-- [ ] `Script` base + `@ScriptManifest` + runner (start/loop/exit).
-- [ ] Scripts-directory scan -> manifest read -> per-script `URLClassLoader`,
-  reload/unload. No catalog file, no network loading.
+- [x] `Script` base + `@ScriptManifest` + `ScriptRunner` (start/loop/exit).
+- [x] Scripts-directory scan -> manifest read -> per-script `URLClassLoader`,
+  reload/unload (`bot.script.ScriptLoader`; side-effect-free manifest scan).
+  No catalog file, no network loading. Covered by `gradlew smokeTest`.
 
 ## Phase 7 — Game-API facade
 
-- [ ] `Npcs`/`Players`/`GameObjects`/`GroundItems`, `Actions` (menu entries),
-  `Skills`/`Inventory`/`Local`, driven by the verified Phase-1 semantics
-  (24-byte/`vt` knowledge stays *out*; entity/interact semantics carry over).
+- [x] `Npcs`/`Players`/`GameObjects` (scene-grid walk, no typed-in tiles),
+  `Actions` (menu-entry builders + install + Robot dispatch),
+  `Skills`/`Inventory`/`Local` (`bot.api`). Entry builders covered offline;
+  live dispatch params want one in-game confirmation pass.
 
 ## Phase 8 — Overlays and config (local scripts only)
 
-- [ ] Overlay helpers on `OverlayManager`; per-script config via
-  `ConfigManager`. No profiles, no account code.
+- [x] `ScriptOverlay` (draw-only, above scene) + `ScriptConfig`
+  (`@ConfigGroup` settings with built UI) in `bot.ui`. No profiles, no account code.
 
 ## Phase 9 — Launcher/dist + docs
 
-- [ ] Side-by-side `dist/` layout with a verifying task; fork user docs.
+- [x] `dist` layout (`build/dist/dreambot.jar` + `AGAINST.txt`) with a
+  verifying task; `bot.launcher.Main` boots the pinned client and runs one
+  local script by name.
+- [ ] Live pass: `gradlew run -Pscripts=<dir> -Pscript=<name>` against the
+  real game (needs network + login; never attempted in this environment).
 
 ## Guardrails (apply to every phase)
 

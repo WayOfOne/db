@@ -1,0 +1,140 @@
+// build.gradle -- RuneLite-based fork (local scripts only).
+//
+// Offline by design: no repositories, no plugins to download, game artifacts
+// resolve from the local DreamBot install via DREAMBOT_BOTDATA (defaults to
+// this machine's BotData). JDK comes from gradle.properties org.gradle.java.home.
+//
+//   gradlew verifyArtifacts   prove the pinned base (also gates compilation)
+//   gradlew build             compile everything
+//   gradlew smokeTest         offline proof: loader + runner + search + menus
+//   gradlew dist              ship layout into build/dist (jars + whats-needed)
+//   gradlew run               boot the real client (needs the live game;
+//                             -Pscripts=<dir> -Pscript=<name>)
+
+plugins {
+    id 'java'
+}
+
+def botData = System.getenv('DREAMBOT_BOTDATA')
+    ?: (System.getenv('USERPROFILE') + '/DreamBot/BotData')
+def apiJar = "$botData/repository2/runelite-api-1.12.36-runtime.jar"
+def clientJar = "$botData/repository2/client-1.12.36.jar"
+
+// Pinned base, verified 2026-09-09 (see AGENTS.md fingerprint table).
+// Keys are BotData-relative paths; values are lowercase SHA-256.
+def pinned = [
+    'repository2/runelite-api-1.12.36-runtime.jar': '27b2e4b021dd14389d2e8f529c519941f67675589617718d3b16dc11c4334e31',
+    'repository2/client-1.12.36.jar'              : '82f000dde83c87029fd40fc7b29fabb86b41ecece96015d3571b5966204274d3',
+    'repository2/injected-client-1.12.36.jar'     : 'fd8a49d6278431a8dcc966d97a1b84f546d4cc9715c4e64b1b55f98abf6c06f7',
+    'repository2/dreambot-client.jar'             : '66036cb5246a9bd8014a93dcfc7a5ae49dde0253b1d07da4ad747ec0c700882a',
+]
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+sourceSets {
+    sample {
+        java.srcDir 'src/sample/java'
+    }
+    smoke {
+        java.srcDir 'src/smoke/java'
+    }
+}
+
+dependencies {
+    // Compile against the pinned RuneLite API + client. Guice is needed only
+    // for the launcher's injector lookup (the client jar doesn't bundle it).
+    implementation files(apiJar, clientJar, "$botData/repository2/guice-4.1.0-no_aop.jar")
+    sampleImplementation sourceSets.main.output
+    sampleImplementation files(apiJar)
+    smokeImplementation sourceSets.main.output
+    smokeImplementation files(apiJar)
+}
+
+tasks.register('verifyArtifacts') {
+    group = 'verification'
+    description = 'Check the pinned BotData jars exist and match their recorded SHA-256.'
+
+    doLast {
+        def digest = java.security.MessageDigest.getInstance('SHA-256')
+        def failures = []
+        pinned.each { rel, expected ->
+            def f = new File(botData, rel)
+            if (!f.isFile()) {
+                failures += "$rel: MISSING (looked in $botData)"
+                return
+            }
+            def actual
+            f.withInputStream { s ->
+                def buf = new byte[8192]
+                int n
+                while ((n = s.read(buf)) != -1) { digest.update(buf, 0, n) }
+                actual = digest.digest().encodeHex().toString()
+                digest.reset()
+            }
+            if (actual == expected) {
+                logger.lifecycle("  OK  $rel  (${f.length()} bytes)")
+            } else {
+                failures += "$rel: HASH MISMATCH\n      expected $expected\n      actual   $actual"
+            }
+        }
+        if (!failures.isEmpty()) {
+            throw new GradleException(
+                "Pinned base verification failed (re-fingerprint after any DreamBot update, see AGENTS.md):\n" +
+                failures.join('\n'))
+        }
+        logger.lifecycle("pinned base verified under $botData")
+    }
+}
+
+// Compilation must never run against an unverified base.
+tasks.named('compileJava') { dependsOn 'verifyArtifacts' }
+
+tasks.register('sampleJar', Jar) {
+    group = 'build'
+    description = 'Packages the sample Hello script for the smoke test.'
+    archiveFileName = 'hello-sample.jar'
+    destinationDirectory = layout.buildDirectory.dir('sample-scripts')
+    from sourceSets.sample.output
+    dependsOn 'sampleClasses'
+}
+
+tasks.register('smokeTest', JavaExec) {
+    group = 'verification'
+    description = 'Offline proof: load, run, search, and menu-build without the game.'
+    classpath = files(sourceSets.main.output, sourceSets.smoke.output, apiJar)
+    mainClass = 'smoke.Smoke'
+    args layout.buildDirectory.dir('sample-scripts').get().asFile.absolutePath
+    dependsOn 'sampleJar', 'smokeClasses'
+}
+
+tasks.register('dist', Copy) {
+    group = 'build'
+    description = 'Ship layout: the fork jar plus a note of the local jars it runs against.'
+    dependsOn 'jar'
+    from(layout.buildDirectory.dir('libs')) { include '*.jar' }
+    into(layout.buildDirectory.dir('dist'))
+    doLast {
+        def note = layout.buildDirectory.dir('dist').get().file('AGAINST.txt').asFile
+        note.text = "Runs against these local jars (never vendored, never downloaded):\n" +
+            pinned.keySet().collect { "  $botData/$it" }.join('\n') + '\n'
+        def missing = pinned.keySet().findAll { !(new File(botData, it).isFile()) }
+        if (missing) {
+            throw new GradleException("dist assembled but the game jars are missing: $missing")
+        }
+        logger.lifecycle("dist -> ${layout.buildDirectory.dir('dist').get().asFile}")
+    }
+}
+
+tasks.register('run', JavaExec) {
+    group = 'application'
+    description = 'Boot the real client and run one local script. Needs the live game.'
+    classpath = files(sourceSets.main.output,
+        layout.buildDirectory.dir('libs').get().asFile.absolutePath + '/*.jar') +
+        fileTree(dir: "$botData/repository2", include: '*.jar')
+    mainClass = 'bot.launcher.Main'
+    args System.getProperty('scripts', 'scripts'), System.getProperty('script', 'Hello')
+    dependsOn 'jar'
+}

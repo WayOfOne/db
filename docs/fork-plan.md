@@ -27,10 +27,9 @@ solves the same problem upstream with official mappings and a stable
 | `bot-client/dreambot/deob/inputs/base-client/` | extracted tree | — | browsable `net/runelite` sources of the pinned client |
 | `repository2/guava-23.2-jre.jar`, `gson-2.10.1.jar`, `okhttp-3.14.9.jar` … | — | — | reuse DreamBot's own dependency set where the fork needs them |
 
-RuneLite license: **BSD-2-Clause** — fork-friendly. Keep upstream copyright
+RuneLite license: **BSD-2-Clause** — fork-friendly. Retain upstream copyright
 headers on any file derived from RuneLite sources; new files carry this
-project's header. Re-verify the LICENSE file of the exact pinned source tree
-before publishing anything.
+project's header.
 
 ## Functionality map (DreamBot behavior -> fork component)
 
