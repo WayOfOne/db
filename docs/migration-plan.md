@@ -183,6 +183,17 @@ server, no credential vault, no packet code.
 - [x] `smokeTest` at 45 checks, all offline. Offer *creation* (search/qty/
   price widgets) deferred to a live pass.
 
+## Phase 15 — Widget-id mining + full offer/trade/deposit flows
+
+- [x] Extracted every interface id from DreamBot's own API bytecode
+  (`tools/ExtractWidgetIds.py`, `results/widget-id-sites.txt`): GE screens,
+  qty/price/search widgets, confirms, abort, collect; trade accept/decline
+  both stages; deposit buttons/slots/close.
+- [x] `GrandExchange.buyOffer/sellOffer` (screen, search, qty, price,
+  confirm), `Trade`, `DepositBox`, `WidgetIds`, `Actions.widgetMenu` overload.
+- [x] `smokeTest` at 53 checks, all offline. Dispatch semantics want one
+  live pass; ids are cited, never guessed.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

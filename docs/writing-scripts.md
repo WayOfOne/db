@@ -73,7 +73,9 @@ Three rules, no exceptions:
 | Skills | `Skills.level/base/experience(Skill)` (boosted vs real, like the skill tab) |
 | Inventory | `Inventory.count/contains/full/items()`, `Inventory.health()` (current HP) |
 | Bank | `Bank.isOpen/count/contains`, `openBooth/openBanker(ids...)`, `depositInventory/depositEquipment()`, `close()` (escape) — widget clicks game-only |
-| Exchange | `GrandExchange.isOpen/offers/active/isDone/progress`, `openClerk(ids...)`, `collectAll()` (clicks the game's own Collect actions). Creating buy/sell offers is deferred (search/qty/price flow wants a live pass) |
+| Exchange | `GrandExchange.isOpen/offers/active/isDone/progress`, `openClerk(ids...)`, `collectAll()`, full `buyOffer`/`sellOffer` (screen, search, qty, price, confirm), `abortOffer`, `collectToBank()` |
+| Trade | `Trade.isOpen/accept/decline/tradeWith(name)` (both stages) |
+| Deposit box | `DepositBox.isOpen/open(ids...)/depositAllItems/depositAllEquipment/depositAllLoot/close/slotWidget` |
 | Equipment | `Equipment.equipped/count` (worn items) |
 | Acting | `Actions.npc(npc, option)`, `Actions.walkTo(worldPoint)` (both via real menu entries + mouse — game-only) |
 | Walking | `Walking.findPath(goal)` (A* over collision) and `walkPath(goal)` (stepped, waits arrival) — game-only |

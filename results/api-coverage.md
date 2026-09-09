@@ -36,7 +36,8 @@ never cut for convenience on the core botting surface.
 | `Prayers` | quick-pray orb + `isActive` | Partial; per-prayer book clicks deferred |
 | `Tabs` | all fixed tabs + resizable inv/prayer, layout-aware | Covered (compiles; clicks game-only) |
 | `Dialogues` | `Dialogs` (widget state + space/number-key input) | Covered (smoke state reads) |
-| `GrandExchange` (excl. `LivePrices`) | `GrandExchange` reads + clerk open + Collect-all (no hardcoded button ids); offer *creation* deferred | Covered (smoke); creation wants a live pass |
+| `GrandExchange` (excl. `LivePrices`) | `GrandExchange` reads, screens, search, qty/price, confirm, abort, collect + collect-to-bank, full `buyOffer`/`sellOffer` flows | Covered (builders + lookup offline; dispatch game-only) |
+| `Trade`, `DepositBox` | `Trade` (open/accept/decline/tradeWith, both stages), `DepositBox` (open/deposit-all ×3/close/slots) | Covered (lookup offline; dispatch game-only) |
 | `Combat` / `CombatStyle` | `Combat.isInCombat` (both directions) | Partial; styles deferred |
 | Widget search + Smithing/ItemProcessing helpers | `Widgets` recursive text/action/id search | Covered (structure); trade-skill helpers deferred |
 | Mouse/Keyboard | `Actions.click`, `Mouse.move`, `Keyboard.type` | Covered (builders offline; dispatch game-only) |
@@ -44,14 +45,25 @@ never cut for convenience on the core botting surface.
 | Varbits/varps/settings | `Vars` (+ energy, prayer, health%) | Covered (smoke defaults) |
 | Areas, Sleep, Timing, Calculations | `bot.api.Area`, `bot.util.*` | Covered (smoke) |
 
+## Widget-id provenance
+
+All interface ids (`bot.api.WidgetIds`) were read out of DreamBot's own API
+bytecode, not guessed: `results/javap-c-db-widgetapis.txt` holds the
+`GrandExchange`/`Trade`/`DepositBox`/`WidgetChild`/`Widgets` dumps,
+`results/widget-id-sites.txt` the extracted (group, child) call sites
+(`tools/ExtractWidgetIds.py`), and `results/phase1-reverification.md` §1 the
+decision log. Group ids are game content ids; child semantics come from the
+enclosing DreamBot method names (openBuyScreen, cancelOffer, depositAllItems…).
+Every flow built on them still wants one live pass.
+
 ## Explicitly out (non-goals, unchanged)
 
 - `randoms/*` solvers, `LoginUtility`, `WorldHopper`/`JSocket`, `LivePrices`,
   `AccountManager`, telemetry, SDN deploy, `ClientSettings` sync — server,
   auth, or evasion-adjacent scope. The fork runs local scripts under the
   launcher's login and nothing else.
-- Deferred niche content (no core loop needs them): offer *creation*,
-  `Trade`, `DepositBox`, quest book data, minigames, sailing, favour, music,
+- Deferred niche content (no core loop needs them): shop handling (no shop
+  API found in the original surface either), quest book data, minigames,
   emotes, diaries, fairy rings, hint arrows, clan/friend/ignore, bonds,
   `SkillTracker`, per-prayer toggles, full spellbooks, Smithing helpers.
   Each is a widget-data task a script author can add following the

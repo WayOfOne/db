@@ -5,11 +5,13 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Shape;
 
+import net.runelite.api.Actor;
 import net.runelite.api.GameObject;
 import net.runelite.api.MenuAction;
 import net.runelite.api.MenuEntry;
 import net.runelite.api.NPC;
 import net.runelite.api.Perspective;
+import net.runelite.api.Player;
 import net.runelite.api.TileItem;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.coords.LocalPoint;
@@ -52,8 +54,17 @@ public final class Actions {
             .setForceLeftClick(true);
     }
 
-    /** First-option entry on scenery (Chop down / Mine / Open ...). */
-    public static MenuEntry objectMenu(GameObject object, String option) {
+    /** First-option entry on another player (Trade with, Challenge...). */
+    public static MenuEntry playerMenu(Player player, String option) {
+        return Game.client().createMenuEntry(0)
+            .setOption(option)
+            .setTarget(player.getName())
+            .setIdentifier(player.getId())
+            .setType(MenuAction.PLAYER_FIRST_OPTION)
+            .setForceLeftClick(true);
+    }
+
+    /** First-option entry on scenery (Chop down / Mine / Open ...). */    public static MenuEntry objectMenu(GameObject object, String option) {
         return Game.client().createMenuEntry(0)
             .setOption(option)
             .setTarget(object.getWorldLocation().toString())
@@ -86,17 +97,22 @@ public final class Actions {
         Game.client().setMenuEntries(new MenuEntry[] { entry });
     }
 
-    /** Screen point at an NPC's clickbox center, or null when off screen. */
-    public static Point npcScreen(NPC npc) {
-        LocalPoint local = npc.getLocalLocation();
+    /** Screen point at an actor's clickbox center, or null when off screen. */
+    public static Point actorScreen(Actor actor) {
+        LocalPoint local = actor.getLocalLocation();
         Shape box = Perspective.getClickbox(
-            Game.client(), Game.client().getTopLevelWorldView(), npc.getModel(),
-            npc.getOrientation(), local.getX(), local.getY(), Game.client().getPlane());
+            Game.client(), Game.client().getTopLevelWorldView(), actor.getModel(),
+            actor.getOrientation(), local.getX(), local.getY(), Game.client().getPlane());
         if (box == null) {
             return null;
         }
         Rectangle r = box.getBounds();
         return new Point(r.x + r.width / 2, r.y + r.height / 2);
+    }
+
+    /** Screen point at an NPC's clickbox center, or null when off screen. */
+    public static Point npcScreen(NPC npc) {
+        return actorScreen(npc);
     }
 
     /** Screen point on the minimap for a world tile (walking), or null. */
@@ -182,6 +198,12 @@ public final class Actions {
         String[] actions = widget.getActions();
         String option = actions != null && actions.length > 0 && actions[0] != null
             ? actions[0] : "Continue";
+        return widgetMenu(widget, option);
+    }
+
+    /** Widget-button entry with an explicit option (Cancel vs Collect on the
+     * same button, quantity presets, dialog choices). */
+    public static MenuEntry widgetMenu(Widget widget, String option) {
         return Game.client().createMenuEntry(0)
             .setOption(option)
             .setTarget(widget.getName())

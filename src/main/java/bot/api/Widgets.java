@@ -73,6 +73,46 @@ public final class Widgets {
         return w != null && !w.isHidden() ? w : null;
     }
 
+    /** Widget by (group, child) id, or null when absent/hidden. Group ids are
+     * game content ids — see {@link WidgetIds} for provenance. */
+    public static Widget child(int group, int child) {
+        Widget w = Game.client().getWidget(group, child);
+        return w != null && !w.isHidden() ? w : null;
+    }
+
+    /** Children of a (group, child) widget, never null. */
+    public static Widget[] childrenOf(int group, int child) {
+        Widget w = child(group, child);
+        if (w == null) {
+            return new Widget[0];
+        }
+        Widget[] kids = w.getChildren();
+        return kids == null ? new Widget[0] : kids;
+    }
+
+    /** First visible widget with an action containing {@code text}
+     * (case-insensitive). For runtime-discovered labels like Collect variants
+     * that must never be hardcoded. */
+    public static Widget findByActionContaining(String text) {
+        String want = text.toLowerCase(java.util.Locale.ROOT);
+        List<Widget> found = findAll(w -> {
+            if (w.isHidden()) {
+                return false;
+            }
+            String[] actions = w.getActions();
+            if (actions == null) {
+                return false;
+            }
+            for (String a : actions) {
+                if (a != null && a.toLowerCase(java.util.Locale.ROOT).contains(want)) {
+                    return true;
+                }
+            }
+            return false;
+        });
+        return found.isEmpty() ? null : found.get(0);
+    }
+
     private static String strip(String s) {
         return s == null ? null : s.replaceAll("<[^>]*>", "").trim();
     }

@@ -11,6 +11,7 @@ import java.util.Map;
 import bot.api.Actions;
 import bot.api.Area;
 import bot.api.Bank;
+import bot.api.DepositBox;
 import bot.api.Dialogs;
 import bot.api.Equipment;
 import bot.api.Game;
@@ -18,7 +19,10 @@ import bot.api.GrandExchange;
 import bot.api.GroundItems;
 import bot.api.Npcs;
 import bot.api.PathFinder;
+import bot.api.Trade;
 import bot.api.Vars;
+import bot.api.WidgetIds;
+import bot.api.Widgets;
 import bot.util.Calculations;
 import bot.util.Sleep;
 import bot.util.Timing;
@@ -122,6 +126,21 @@ public final class Smoke {
         check(!GrandExchange.isDone(buying), "buying not done");
         check(GrandExchange.isDone(sold), "sold done");
         check(Math.abs(GrandExchange.progress(buying) - 0.5) < 1e-9, "half-filled progress");
+
+        check(WidgetIds.GE_GROUP == 465 && WidgetIds.TRADE_MAIN == 335
+            && WidgetIds.TRADE_CONFIRM == 334 && WidgetIds.DEPOSIT_GROUP == 192
+            && WidgetIds.BANK_GROUP == 12 && WidgetIds.SEARCH_GROUP == 162,
+            "widget group ids");
+        Widget slotRoot = Widgets.child(465, 7);
+        check(slotRoot != null && slotRoot.getChild(3) != null, "offer slot child lookup");
+        MenuEntry abort = Actions.widgetMenu(slotRoot.getChild(3), "Abort");
+        check("Abort".equals(abort.getOption()) && abort.getType() == MenuAction.CC_OP,
+            "explicit-option widget entry");
+        check(!Trade.isOpen(), "no trade open");
+        check(!Trade.accept(), "accept with no screen fails clean");
+        check(!Trade.decline(), "decline with no screen fails clean");
+        check(!Trade.tradeWith("Nobody"), "unknown player yields false");
+        check(!DepositBox.isOpen(), "no deposit box open");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");
@@ -288,6 +307,21 @@ public final class Smoke {
             case "getName" -> "";
             case "getActions" -> new String[] { "Deposit inventory" };
             case "isHidden" -> false;
+            case "getChild" -> stubButton();
+            case "getChildren" -> new Widget[] { stubButton() };
+            default -> defaultValue(m.getReturnType());
+        };
+        return (Widget) Proxy.newProxyInstance(
+            Smoke.class.getClassLoader(), new Class<?>[] { Widget.class }, h);
+    }
+
+    private static Widget stubButton() {
+        InvocationHandler h = (proxy, m, args) -> switch (m.getName()) {
+            case "getId" -> 0;
+            case "getIndex" -> 3;
+            case "getName" -> "Slot";
+            case "getActions" -> new String[] { "Buy" };
+            case "isHidden" -> false;
             default -> defaultValue(m.getReturnType());
         };
         return (Widget) Proxy.newProxyInstance(
@@ -334,7 +368,8 @@ public final class Smoke {
             case "getGrandExchangeOffers" -> offers;
             case "getWidget" -> args[0] == WidgetInfo.BANK_ITEM_CONTAINER
                 || args[0] == WidgetInfo.BANK_DEPOSIT_INVENTORY
-                || args[0] == WidgetInfo.BANK_DEPOSIT_EQUIPMENT ? widget : null;
+                || args[0] == WidgetInfo.BANK_DEPOSIT_EQUIPMENT ? widget
+                : args.length == 2 && args[0].equals(465) && args[1].equals(7) ? widget : null;
             default -> defaultValue(m.getReturnType());
         };
         return (Client) Proxy.newProxyInstance(
