@@ -12,9 +12,9 @@ import java.util.jar.JarFile;
 
 /** Finds script jars in a directory and loads them, one {@link URLClassLoader}
  * per jar. The scripts directory itself is the catalog: every {@code *.jar}
- * carrying exactly one {@link ScriptManifest}-annotated {@link Script}
- * implementation becomes runnable. Jars that fail load are skipped with the
- * failure recorded, never aborting the scan. */
+ * is scanned and each {@link ScriptManifest}-annotated {@link Script}
+ * implementation inside becomes runnable (a jar may hold several). Jars that
+ * fail load are skipped with the failure recorded, never aborting the scan. */
 public final class ScriptLoader implements AutoCloseable {
 
     /** One successfully loaded script jar. */
@@ -71,7 +71,7 @@ public final class ScriptLoader implements AutoCloseable {
     private void loadOne(File jar) throws IOException {
         URLClassLoader ucl = new URLClassLoader(
             new URL[] { jar.toURI().toURL() }, ScriptLoader.class.getClassLoader());
-        boolean claimed = false;
+        int claimed = 0;
         try (JarFile jf = new JarFile(jar)) {
             Enumeration<JarEntry> entries = jf.entries();
             while (entries.hasMoreElements()) {
@@ -90,15 +90,12 @@ public final class ScriptLoader implements AutoCloseable {
                 }
                 if (Script.class.isAssignableFrom(c)
                     && c.isAnnotationPresent(ScriptManifest.class)) {
-                    if (claimed) {
-                        throw new IllegalStateException("jar holds more than one @ScriptManifest script");
-                    }
                     loaded.add(new LoadedScript(jar, ucl, c.asSubclass(Script.class)));
-                    claimed = true;
+                    claimed++;
                 }
             }
         }
-        if (!claimed) {
+        if (claimed == 0) {
             ucl.close();
             throw new IllegalStateException("jar holds no @ScriptManifest script");
         }

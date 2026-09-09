@@ -1,5 +1,0 @@
-Runs against these local jars (never vendored, never downloaded):
-  C:\Users\thewa/DreamBot/BotData/repository2/runelite-api-1.12.36-runtime.jar
-  C:\Users\thewa/DreamBot/BotData/repository2/client-1.12.36.jar
-  C:\Users\thewa/DreamBot/BotData/repository2/injected-client-1.12.36.jar
-  C:\Users\thewa/DreamBot/BotData/repository2/dreambot-client.jar

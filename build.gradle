@@ -95,10 +95,12 @@ tasks.named('compileJava') { dependsOn 'verifyArtifacts' }
 tasks.register('sampleJar', Jar) {
     group = 'build'
     description = 'Packages the sample Hello script for the smoke test.'
-    archiveFileName = 'hello-sample.jar'
+    archiveFileName = 'sample-scripts.jar'
     destinationDirectory = layout.buildDirectory.dir('sample-scripts')
     from sourceSets.sample.output
     dependsOn 'sampleClasses'
+    // Hermetic sample dir: a renamed sample jar must not linger beside the new one.
+    doFirst { delete(destinationDirectory.get().asFile.listFiles()) }
 }
 
 tasks.register('smokeTest', JavaExec) {

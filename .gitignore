@@ -1,4 +1,6 @@
 # build / scratch output
+build/
+.gradle/
 tools/classes/
 *.class
 

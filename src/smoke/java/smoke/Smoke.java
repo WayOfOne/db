@@ -34,9 +34,15 @@ public final class Smoke {
 
         try (ScriptLoader loader = new ScriptLoader()) {
             List<ScriptLoader.LoadedScript> found = loader.loadAll(new File(argv[0]));
-            check(found.size() == 1, "exactly one script loads (failures=" + loader.failures() + ")");
-            check("Hello".equals(found.get(0).manifest().name()), "manifest name Hello");
-            Script s = found.get(0).newInstance();
+            check(found.size() == 2, "two sample scripts load (failures=" + loader.failures() + ")");
+            ScriptLoader.LoadedScript hello = null;
+            for (ScriptLoader.LoadedScript s : found) {
+                if ("Hello".equals(s.manifest().name())) {
+                    hello = s;
+                }
+            }
+            check(hello != null, "manifest name Hello resolves");
+            Script s = hello.newInstance();
             int loops = new ScriptRunner().run(s, client, 10);
             check(loops == 5, "five loops then stop, got " + loops);
         }

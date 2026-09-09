@@ -147,6 +147,9 @@ server, no credential vault, no packet code.
 - [x] `dist` layout (`build/dist/dreambot.jar` + `AGAINST.txt`) with a
   verifying task; `bot.launcher.Main` boots the pinned client and runs one
   local script by name.
+- [x] User docs: `docs/writing-scripts.md` (lifecycle, API tour, offline/online
+  runs) with `sample.CowHitter` as the worked example; multi-script jars
+  allowed, sample dir hermetic.
 - [ ] Live pass: `gradlew run -Pscripts=<dir> -Pscript=<name>` against the
   real game (needs network + login; never attempted in this environment).
 
