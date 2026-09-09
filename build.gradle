@@ -51,6 +51,8 @@ dependencies {
     sampleImplementation files(apiJar)
     smokeImplementation sourceSets.main.output
     smokeImplementation files(apiJar)
+    // Game.install's signature names Injector; the smoke stub passes null.
+    smokeImplementation files("$botData/repository2/guice-4.1.0-no_aop.jar")
 }
 
 tasks.register('verifyArtifacts') {
@@ -112,6 +114,22 @@ tasks.register('smokeTest', JavaExec) {
     dependsOn 'sampleJar', 'smokeClasses'
 }
 
+tasks.register('checkRunClasspath') {
+    group = 'verification'
+    description = 'Resolve the run classpath without launching: every entry must ' +
+        'exist and none may contain a glob (a literal "*" once broke Guava\'s ' +
+        'classpath scan at boot).'
+    dependsOn 'processResources'
+    doLast {
+        def entries = tasks.named('run', JavaExec).get().classpath.files
+        def bad = entries.findAll { it.path.contains('*') || !it.exists() }
+        if (!bad.isEmpty()) {
+            throw new GradleException("unresolvable run classpath entries:\n" + bad.join('\n'))
+        }
+        logger.lifecycle("run classpath: ${entries.size()} existing entries, no globs")
+    }
+}
+
 tasks.register('dist', Copy) {
     group = 'build'
     description = 'Ship layout: the fork jar plus a note of the local jars it runs against.'
@@ -133,10 +151,13 @@ tasks.register('dist', Copy) {
 tasks.register('run', JavaExec) {
     group = 'application'
     description = 'Boot the real client and run one local script. Needs the live game.'
-    classpath = files(sourceSets.main.output,
-        layout.buildDirectory.dir('libs').get().asFile.absolutePath + '/*.jar') +
+    // NOTE: files() does not glob — a literal 'libs/*.jar' entry once broke
+    // Guava's classpath scan at boot. runtimeClasspath + fileTree only.
+    classpath = sourceSets.main.runtimeClasspath +
         fileTree(dir: "$botData/repository2", include: '*.jar')
     mainClass = 'bot.launcher.Main'
-    args System.getProperty('scripts', 'scripts'), System.getProperty('script', 'Hello')
+    // -Pscripts/-Pscript project props reach Main as main-method argv
+    // (system properties would not: Main reads positional args).
+    args findProperty('scripts') ?: 'scripts', findProperty('script') ?: 'Hello'
     dependsOn 'jar'
 }

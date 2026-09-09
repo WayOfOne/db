@@ -11,6 +11,7 @@ import net.runelite.api.MenuEntry;
 import net.runelite.api.NPC;
 import net.runelite.api.Perspective;
 import net.runelite.api.TileItem;
+import net.runelite.api.widgets.Widget;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 
@@ -171,6 +172,36 @@ public final class Actions {
             return false;
         }
         click(at);
+        return true;
+    }
+
+    /** Widget-button entry (bank buttons, dialog options). Uses the widget's
+     * first action as the option. Identifier/param convention matches the
+     * client's own widget handling; wants one live confirmation pass. */
+    public static MenuEntry widgetMenu(Widget widget) {
+        String[] actions = widget.getActions();
+        String option = actions != null && actions.length > 0 && actions[0] != null
+            ? actions[0] : "Continue";
+        return Game.client().createMenuEntry(0)
+            .setOption(option)
+            .setTarget(widget.getName())
+            .setIdentifier(widget.getIndex())
+            .setParam0(widget.getId())
+            .setType(MenuAction.CC_OP)
+            .setForceLeftClick(true);
+    }
+
+    /** Click a widget button. Game-only. */
+    public static boolean widget(Widget widget) throws Exception {
+        if (widget == null || widget.isHidden()) {
+            return false;
+        }
+        install(widgetMenu(widget));
+        net.runelite.api.Point at = widget.getCanvasLocation();
+        if (at == null) {
+            return false;
+        }
+        click(new Point(at.getX(), at.getY()));
         return true;
     }
 }

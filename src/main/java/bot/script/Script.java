@@ -1,5 +1,6 @@
 package bot.script;
 
+import bot.ui.ScriptOverlay;
 import net.runelite.api.Client;
 
 /** Base class for local scripts. The runner calls {@link #onStart} once, then
@@ -24,5 +25,10 @@ public abstract class Script {
     public abstract int onLoop();
 
     public void onExit() {
+    }
+
+    /** Optional overlay, registered for the script's lifetime. Null by default. */
+    public ScriptOverlay overlay() {
+        return null;
     }
 }

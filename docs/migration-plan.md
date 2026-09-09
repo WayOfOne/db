@@ -159,6 +159,38 @@ server, no credential vault, no packet code.
   position), `Actions.take`/`object`/`groundItemMenu`, `Woodcutter` sample.
   Covered by `smokeTest` (14 checks).
 
+## Phase 11 — Banking + equipment (local scripts only)
+
+- [x] `Bank` (open state, contents, booth/banker open, deposit buttons),
+  `Equipment` (worn reads), `Actions.widgetMenu`/`widget`, `BankRunner`
+  sample. Covered by `smokeTest` (19 checks).
+
+## Phase 13 — Full API fulfillment (local scripts only)
+
+- [x] Audited `org/dreambot/api/**` (packages: wrappers, methods/*, input,
+  script, utilities, data, settings, randoms) into `results/api-coverage.md`.
+- [x] `bot.util` (`Sleep`/`Timing`/`Calculations`), `Area`, `Widgets`
+  (recursive search), `Camera`, `Combat`, `Tabs`, `Prayers`, `Magic` (home
+  teleports), `Equipment.inSlot`, `Mouse`/`Keyboard`, `PathFinder` (A* over
+  RL's own movement bits) + `Walking.walkPath`.
+- [x] `smokeTest` at 40 checks, all offline. Deferred/out list in the
+  coverage doc (niche widgets, server-backed, auth, random solvers).
+
+## Phase 12 — Run-readiness (no live launch in this environment)
+
+- [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal
+  `libs/*.jar` path (`files()` does not glob) and Guava's plugin scan died
+  on it. Classpath is now `runtimeClasspath` + `fileTree`; the client got as
+  far as `PluginManager.loadCorePlugins` before that, and the fork side ran
+  Hello start-to-finish in-process.
+- [x] `checkRunClasspath` regression guard (59 entries, no globs, all exist).
+- [x] `Main` waits for login (10 min timeout, exits cleanly without running
+  blind), registers `Script.overlay()` for the run lifetime, reports
+  `fork.properties` version. `Game` also publishes the Guice injector.
+- [x] `scripts/` drop-in directory with README.
+- [ ] Live pass: `gradlew run -Pscripts=<dir> -Pscript=<name>` against the
+  real game (needs network + login; boot smoke reached plugin scan only).
+
 ## Guardrails (apply to every phase)
 
 - Jars stay in `%USERPROFILE%\DreamBot\BotData\`; this repo holds listings,

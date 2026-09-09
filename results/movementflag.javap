@@ -1,0 +1,225 @@
+Compiled from "MovementFlag.java"
+final class net.runelite.client.plugins.devtools.MovementFlag extends java.lang.Enum<net.runelite.client.plugins.devtools.MovementFlag> {
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_NORTH_WEST;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_NORTH;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_NORTH_EAST;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_EAST;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_SOUTH_EAST;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_SOUTH;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_SOUTH_WEST;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_WEST;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_OBJECT;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_FLOOR_DECORATION;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_FLOOR;
+
+  public static final net.runelite.client.plugins.devtools.MovementFlag BLOCK_MOVEMENT_FULL;
+
+  private int flag;
+
+  private static final net.runelite.client.plugins.devtools.MovementFlag[] $VALUES;
+
+  public static net.runelite.client.plugins.devtools.MovementFlag[] values();
+    Code:
+       0: getstatic     #1                  // Field $VALUES:[Lnet/runelite/client/plugins/devtools/MovementFlag;
+       3: invokevirtual #2                  // Method "[Lnet/runelite/client/plugins/devtools/MovementFlag;".clone:()Ljava/lang/Object;
+       6: checkcast     #3                  // class "[Lnet/runelite/client/plugins/devtools/MovementFlag;"
+       9: areturn
+
+  public static net.runelite.client.plugins.devtools.MovementFlag valueOf(java.lang.String);
+    Code:
+       0: ldc           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+       2: aload_0
+       3: invokestatic  #5                  // Method java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+       6: checkcast     #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+       9: areturn
+
+  public static java.util.Set<net.runelite.client.plugins.devtools.MovementFlag> getSetFlags(int);
+    Code:
+       0: invokestatic  #6                  // Method values:()[Lnet/runelite/client/plugins/devtools/MovementFlag;
+       3: invokestatic  #7                  // Method java/util/Arrays.stream:([Ljava/lang/Object;)Ljava/util/stream/Stream;
+       6: iload_0
+       7: invokedynamic #8,  0              // InvokeDynamic #0:test:(I)Ljava/util/function/Predicate;
+      12: invokeinterface #9,  2            // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+      17: invokestatic  #10                 // Method java/util/stream/Collectors.toSet:()Ljava/util/stream/Collector;
+      20: invokeinterface #11,  2           // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+      25: checkcast     #12                 // class java/util/Set
+      28: areturn
+
+  private net.runelite.client.plugins.devtools.MovementFlag(int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iload_2
+       3: invokespecial #13                 // Method java/lang/Enum."<init>":(Ljava/lang/String;I)V
+       6: aload_0
+       7: iload_3
+       8: putfield      #14                 // Field flag:I
+      11: return
+
+  public int getFlag();
+    Code:
+       0: aload_0
+       1: getfield      #14                 // Field flag:I
+       4: ireturn
+
+  private static boolean lambda$getSetFlags$0(int, net.runelite.client.plugins.devtools.MovementFlag);
+    Code:
+       0: aload_1
+       1: getfield      #14                 // Field flag:I
+       4: iload_0
+       5: iand
+       6: ifeq          13
+       9: iconst_1
+      10: goto          14
+      13: iconst_0
+      14: ireturn
+
+  static {};
+    Code:
+       0: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+       3: dup
+       4: ldc           #15                 // String BLOCK_MOVEMENT_NORTH_WEST
+       6: iconst_0
+       7: iconst_1
+       8: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+      11: putstatic     #18                 // Field BLOCK_MOVEMENT_NORTH_WEST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+      14: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+      17: dup
+      18: ldc           #19                 // String BLOCK_MOVEMENT_NORTH
+      20: iconst_1
+      21: iconst_2
+      22: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+      25: putstatic     #20                 // Field BLOCK_MOVEMENT_NORTH:Lnet/runelite/client/plugins/devtools/MovementFlag;
+      28: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+      31: dup
+      32: ldc           #21                 // String BLOCK_MOVEMENT_NORTH_EAST
+      34: iconst_2
+      35: iconst_4
+      36: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+      39: putstatic     #22                 // Field BLOCK_MOVEMENT_NORTH_EAST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+      42: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+      45: dup
+      46: ldc           #23                 // String BLOCK_MOVEMENT_EAST
+      48: iconst_3
+      49: bipush        8
+      51: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+      54: putstatic     #24                 // Field BLOCK_MOVEMENT_EAST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+      57: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+      60: dup
+      61: ldc           #25                 // String BLOCK_MOVEMENT_SOUTH_EAST
+      63: iconst_4
+      64: bipush        16
+      66: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+      69: putstatic     #26                 // Field BLOCK_MOVEMENT_SOUTH_EAST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+      72: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+      75: dup
+      76: ldc           #27                 // String BLOCK_MOVEMENT_SOUTH
+      78: iconst_5
+      79: bipush        32
+      81: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+      84: putstatic     #28                 // Field BLOCK_MOVEMENT_SOUTH:Lnet/runelite/client/plugins/devtools/MovementFlag;
+      87: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+      90: dup
+      91: ldc           #29                 // String BLOCK_MOVEMENT_SOUTH_WEST
+      93: bipush        6
+      95: bipush        64
+      97: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+     100: putstatic     #30                 // Field BLOCK_MOVEMENT_SOUTH_WEST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     103: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+     106: dup
+     107: ldc           #31                 // String BLOCK_MOVEMENT_WEST
+     109: bipush        7
+     111: sipush        128
+     114: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+     117: putstatic     #32                 // Field BLOCK_MOVEMENT_WEST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     120: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+     123: dup
+     124: ldc           #33                 // String BLOCK_MOVEMENT_OBJECT
+     126: bipush        8
+     128: sipush        256
+     131: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+     134: putstatic     #34                 // Field BLOCK_MOVEMENT_OBJECT:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     137: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+     140: dup
+     141: ldc           #35                 // String BLOCK_MOVEMENT_FLOOR_DECORATION
+     143: bipush        9
+     145: ldc           #36                 // int 262144
+     147: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+     150: putstatic     #37                 // Field BLOCK_MOVEMENT_FLOOR_DECORATION:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     153: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+     156: dup
+     157: ldc           #38                 // String BLOCK_MOVEMENT_FLOOR
+     159: bipush        10
+     161: ldc           #39                 // int 2097152
+     163: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+     166: putstatic     #40                 // Field BLOCK_MOVEMENT_FLOOR:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     169: new           #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+     172: dup
+     173: ldc           #41                 // String BLOCK_MOVEMENT_FULL
+     175: bipush        11
+     177: ldc           #42                 // int 2359552
+     179: invokespecial #17                 // Method "<init>":(Ljava/lang/String;II)V
+     182: putstatic     #43                 // Field BLOCK_MOVEMENT_FULL:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     185: bipush        12
+     187: anewarray     #4                  // class net/runelite/client/plugins/devtools/MovementFlag
+     190: dup
+     191: iconst_0
+     192: getstatic     #18                 // Field BLOCK_MOVEMENT_NORTH_WEST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     195: aastore
+     196: dup
+     197: iconst_1
+     198: getstatic     #20                 // Field BLOCK_MOVEMENT_NORTH:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     201: aastore
+     202: dup
+     203: iconst_2
+     204: getstatic     #22                 // Field BLOCK_MOVEMENT_NORTH_EAST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     207: aastore
+     208: dup
+     209: iconst_3
+     210: getstatic     #24                 // Field BLOCK_MOVEMENT_EAST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     213: aastore
+     214: dup
+     215: iconst_4
+     216: getstatic     #26                 // Field BLOCK_MOVEMENT_SOUTH_EAST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     219: aastore
+     220: dup
+     221: iconst_5
+     222: getstatic     #28                 // Field BLOCK_MOVEMENT_SOUTH:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     225: aastore
+     226: dup
+     227: bipush        6
+     229: getstatic     #30                 // Field BLOCK_MOVEMENT_SOUTH_WEST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     232: aastore
+     233: dup
+     234: bipush        7
+     236: getstatic     #32                 // Field BLOCK_MOVEMENT_WEST:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     239: aastore
+     240: dup
+     241: bipush        8
+     243: getstatic     #34                 // Field BLOCK_MOVEMENT_OBJECT:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     246: aastore
+     247: dup
+     248: bipush        9
+     250: getstatic     #37                 // Field BLOCK_MOVEMENT_FLOOR_DECORATION:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     253: aastore
+     254: dup
+     255: bipush        10
+     257: getstatic     #40                 // Field BLOCK_MOVEMENT_FLOOR:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     260: aastore
+     261: dup
+     262: bipush        11
+     264: getstatic     #43                 // Field BLOCK_MOVEMENT_FULL:Lnet/runelite/client/plugins/devtools/MovementFlag;
+     267: aastore
+     268: putstatic     #1                  // Field $VALUES:[Lnet/runelite/client/plugins/devtools/MovementFlag;
+     271: return
+}
