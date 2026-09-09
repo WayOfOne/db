@@ -34,6 +34,11 @@ public final class Keyboard {
         tap(robot, KeyEvent.VK_ENTER, false);
     }
 
+    public static void pressEscape() throws Exception {
+        Robot robot = new Robot();
+        tap(robot, KeyEvent.VK_ESCAPE, false);
+    }
+
     private static void tap(Robot robot, int key, boolean shift) {
         if (shift) {
             robot.keyPress(KeyEvent.VK_SHIFT);

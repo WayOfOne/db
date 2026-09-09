@@ -14,6 +14,7 @@ import bot.api.Bank;
 import bot.api.Dialogs;
 import bot.api.Equipment;
 import bot.api.Game;
+import bot.api.GrandExchange;
 import bot.api.GroundItems;
 import bot.api.Npcs;
 import bot.api.PathFinder;
@@ -26,6 +27,8 @@ import bot.script.ScriptLoader;
 import bot.script.ScriptRunner;
 import net.runelite.api.Client;
 import net.runelite.api.GameObject;
+import net.runelite.api.GrandExchangeOffer;
+import net.runelite.api.GrandExchangeOfferState;
 import net.runelite.api.InventoryID;
 import net.runelite.api.Item;
 import net.runelite.api.ItemComposition;
@@ -54,7 +57,7 @@ public final class Smoke {
 
         try (ScriptLoader loader = new ScriptLoader()) {
             List<ScriptLoader.LoadedScript> found = loader.loadAll(new File(argv[0]));
-            check(found.size() == 4, "four sample scripts load (failures=" + loader.failures() + ")");
+            check(found.size() == 5, "five sample scripts load (failures=" + loader.failures() + ")");
             ScriptLoader.LoadedScript hello = null;
             for (ScriptLoader.LoadedScript s : found) {
                 if ("Hello".equals(s.manifest().name())) {
@@ -106,12 +109,19 @@ public final class Smoke {
             && w.getParam0() == 123456
             && w.isForceLeftClick(), "widget menu entry fields");
 
-        check(!Dialogs.isOpen(), "no dialog open");
-        check(!Dialogs.choosing(), "no option choice open");
+        check(!Dialogs.isOpen(), "no dialog open");        check(!Dialogs.choosing(), "no option choice open");
         check(Vars.varbit(1) == 0, "varbit default");
         check(Vars.varp(1) == 0, "varp default");
         check(Vars.runEnergy() == 0, "energy default");
         check(Vars.healthPercent() == 0, "health percent guards div-zero");
+
+        check(!GrandExchange.isOpen(), "exchange closed");
+        check(GrandExchange.active().size() == 2, "two live offers");
+        GrandExchangeOffer buying = GrandExchange.active().get(0);
+        GrandExchangeOffer sold = GrandExchange.active().get(1);
+        check(!GrandExchange.isDone(buying), "buying not done");
+        check(GrandExchange.isDone(sold), "sold done");
+        check(Math.abs(GrandExchange.progress(buying) - 0.5) < 1e-9, "half-filled progress");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");
@@ -284,6 +294,20 @@ public final class Smoke {
             Smoke.class.getClassLoader(), new Class<?>[] { Widget.class }, h);
     }
 
+    private static GrandExchangeOffer stubOffer(
+            int id, int sold, int total, int price, GrandExchangeOfferState state) {
+        InvocationHandler h = (proxy, m, args) -> switch (m.getName()) {
+            case "getItemId" -> id;
+            case "getQuantitySold" -> sold;
+            case "getTotalQuantity" -> total;
+            case "getPrice" -> price;
+            case "getState" -> state;
+            default -> defaultValue(m.getReturnType());
+        };
+        return (GrandExchangeOffer) Proxy.newProxyInstance(
+            Smoke.class.getClassLoader(), new Class<?>[] { GrandExchangeOffer.class }, h);
+    }
+
     private static Client stubClient() {
         NPC cow = stubNpc();
         Player me = stubPlayer();
@@ -292,6 +316,12 @@ public final class Smoke {
         Widget widget = stubWidget();
         ItemContainer bank = stubContainer(new Item[] { new Item(995, 100) });
         ItemContainer empty = stubContainer(new Item[0]);
+        GrandExchangeOffer[] offers = new GrandExchangeOffer[8];
+        offers[0] = stubOffer(995, 50, 100, 2, GrandExchangeOfferState.BUYING);
+        offers[1] = stubOffer(995, 100, 100, 2, GrandExchangeOfferState.SOLD);
+        for (int i = 2; i < 8; i++) {
+            offers[i] = stubOffer(-1, 0, 0, 0, GrandExchangeOfferState.EMPTY);
+        }
         InvocationHandler h = (proxy, m, args) -> switch (m.getName()) {
             case "getNpcs" -> List.of(cow);
             case "getPlayers" -> List.of();
@@ -301,6 +331,7 @@ public final class Smoke {
             case "getItemDefinition" -> coins;
             case "createMenuEntry" -> stubEntry();
             case "getItemContainer" -> args[0] == InventoryID.BANK ? bank : empty;
+            case "getGrandExchangeOffers" -> offers;
             case "getWidget" -> args[0] == WidgetInfo.BANK_ITEM_CONTAINER
                 || args[0] == WidgetInfo.BANK_DEPOSIT_INVENTORY
                 || args[0] == WidgetInfo.BANK_DEPOSIT_EQUIPMENT ? widget : null;

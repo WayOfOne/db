@@ -63,4 +63,10 @@ public final class Bank {
         Widget w = Game.client().getWidget(WidgetInfo.BANK_DEPOSIT_EQUIPMENT);
         return Actions.widget(w);
     }
+
+    /** Close any open interface (escape). Game-only. */
+    public static boolean close() throws Exception {
+        Keyboard.pressEscape();
+        return true;
+    }
 }

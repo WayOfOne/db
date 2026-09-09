@@ -166,7 +166,6 @@ server, no credential vault, no packet code.
   sample. Covered by `smokeTest` (19 checks).
 
 ## Phase 13 — Full API fulfillment (local scripts only)
-
 - [x] Audited `org/dreambot/api/**` (packages: wrappers, methods/*, input,
   script, utilities, data, settings, randoms) into `results/api-coverage.md`.
 - [x] `bot.util` (`Sleep`/`Timing`/`Calculations`), `Area`, `Widgets`
@@ -175,6 +174,14 @@ server, no credential vault, no packet code.
   RL's own movement bits) + `Walking.walkPath`.
 - [x] `smokeTest` at 40 checks, all offline. Deferred/out list in the
   coverage doc (niche widgets, server-backed, auth, random solvers).
+
+## Phase 14 — Exchange + banking depth (local scripts only)
+
+- [x] `GrandExchange` (slot reads, done/progress, clerk open, Collect-all via
+  found actions — no hardcoded button ids), `Bank.close` (escape),
+  `Keyboard.pressEscape`, `GeCollector` sample.
+- [x] `smokeTest` at 45 checks, all offline. Offer *creation* (search/qty/
+  price widgets) deferred to a live pass.
 
 ## Phase 12 — Run-readiness (no live launch in this environment)
 

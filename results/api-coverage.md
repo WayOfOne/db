@@ -36,6 +36,7 @@ never cut for convenience on the core botting surface.
 | `Prayers` | quick-pray orb + `isActive` | Partial; per-prayer book clicks deferred |
 | `Tabs` | all fixed tabs + resizable inv/prayer, layout-aware | Covered (compiles; clicks game-only) |
 | `Dialogues` | `Dialogs` (widget state + space/number-key input) | Covered (smoke state reads) |
+| `GrandExchange` (excl. `LivePrices`) | `GrandExchange` reads + clerk open + Collect-all (no hardcoded button ids); offer *creation* deferred | Covered (smoke); creation wants a live pass |
 | `Combat` / `CombatStyle` | `Combat.isInCombat` (both directions) | Partial; styles deferred |
 | Widget search + Smithing/ItemProcessing helpers | `Widgets` recursive text/action/id search | Covered (structure); trade-skill helpers deferred |
 | Mouse/Keyboard | `Actions.click`, `Mouse.move`, `Keyboard.type` | Covered (builders offline; dispatch game-only) |
@@ -49,7 +50,7 @@ never cut for convenience on the core botting surface.
   `AccountManager`, telemetry, SDN deploy, `ClientSettings` sync — server,
   auth, or evasion-adjacent scope. The fork runs local scripts under the
   launcher's login and nothing else.
-- Deferred niche content (no core loop needs them): `GrandExchange` offers,
+- Deferred niche content (no core loop needs them): offer *creation*,
   `Trade`, `DepositBox`, quest book data, minigames, sailing, favour, music,
   emotes, diaries, fairy rings, hint arrows, clan/friend/ignore, bonds,
   `SkillTracker`, per-prayer toggles, full spellbooks, Smithing helpers.
