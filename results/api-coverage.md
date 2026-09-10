@@ -44,6 +44,11 @@ never cut for convenience on the core botting surface.
 | Camera/Minimap | `Camera` yaw/pitch targets; minimap projection in `Actions` | Covered (compiles; game-only) |
 | Varbits/varps/settings | `Vars` (+ energy, prayer, health%) | Covered (smoke defaults) |
 | Areas, Sleep, Timing, Calculations | `bot.api.Area`, `bot.util.*` | Covered (smoke) |
+| Emotes | `Emotes.perform` + `Emote` enum (54 mined slots, group 216) | Covered (lookup offline; dispatch game-only) |
+| Hint arrows | `HintArrows` reads + clear (DreamBot `HintArrow` parity) | Covered (smoke nulls) |
+| Friends/ignores | `Friends` reads (list, size, have, ignores) + tab | Covered (smoke empties); add/delete/message deferred (chatbox flows) |
+| Friends-chat/clan | `ClanChat` reads (inChat, name, owner, members, guild) + tab | Covered (smoke nulls); join/leave deferred |
+| Random events | `RandomEvents.dismiss` (Continue-boxes only — NOT a solver) | Covered fail-clean (smoke); solvers permanently out |
 
 ## Widget-id provenance
 
@@ -62,10 +67,9 @@ Every flow built on them still wants one live pass.
   `AccountManager`, telemetry, SDN deploy, `ClientSettings` sync — server,
   auth, or evasion-adjacent scope. The fork runs local scripts under the
   launcher's login and nothing else.
-- Deferred niche content (no core loop needs them): shop handling (no shop
-  API found in the original surface either), quest book data, minigames,
-  emotes, diaries, fairy rings, hint arrows, clan/friend/ignore, bonds,
-  Ruinous prayers, quick-prayer setup, envenom magnitude, full combat
-  spellbooks, Smithing helpers.
+- Deferred niche content (no core loop needs them): shop handling, quest
+  book data, minigames, diaries, fairy rings, bonds, Ruinous prayers,
+  quick-prayer setup, envenom magnitude, full combat spellbooks, Smithing
+  helpers, social mutations (friend add/delete, chat join/leave/message).
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.

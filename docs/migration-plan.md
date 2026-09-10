@@ -212,6 +212,19 @@ server, no credential vault, no packet code.
   (runtime-decrypted, never exposed statically).
 - [x] `smokeTest` at 77 checks, all offline. Clicks still want one live pass.
 
+## Phase 17 — Social + emotes + random-dismiss (local scripts only)
+
+- [x] Mined DreamBot's `Emotes`/`Emote` bytecode: container [216, 2] +
+  all 54 per-emote children (`results/emote-widget-table.txt`,
+  `tools/ParsePrayerEnum.py` block mode); friend tab switch [432, 1];
+  clan-chat cached widgets left unused (obfuscated holders, no semantics).
+- [x] `Emote` enum + `Emotes.perform`, `HintArrows` (reads + clear),
+  `Friends` (reads + tab), `ClanChat` (friends-chat + guild reads + tab),
+  `RandomEvents.dismiss` (Continue-boxes only — solvers permanently out),
+  `Tabs` friends/ignores/chat/emotes/music.
+- [x] `smokeTest` at 101 checks, all offline. Clicks/chat flows want one
+  live pass; friend add/delete/message and clan join/leave deferred.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

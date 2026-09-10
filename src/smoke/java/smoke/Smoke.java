@@ -11,16 +11,22 @@ import java.util.Map;
 import bot.api.Actions;
 import bot.api.Area;
 import bot.api.Bank;
+import bot.api.ClanChat;
 import bot.api.Combat;
 import bot.api.DepositBox;
 import bot.api.Dialogs;
+import bot.api.Emote;
+import bot.api.Emotes;
 import bot.api.Equipment;
+import bot.api.Friends;
 import bot.api.Game;
 import bot.api.GrandExchange;
 import bot.api.GroundItems;
+import bot.api.HintArrows;
 import bot.api.Npcs;
 import bot.api.PathFinder;
 import bot.api.Prayers;
+import bot.api.RandomEvents;
 import bot.api.SkillTracker;
 import bot.api.Trade;
 import bot.api.Vars;
@@ -178,6 +184,37 @@ public final class Smoke {
         check(tracker.millisTo(50) == 0, "tracker past target done");
         tracker.reset();
         check(tracker.gained() == 0, "tracker reset");
+
+        check(Emote.YES.child == 0 && Emote.BOW.child == 2
+            && Emote.DANCE.child == 12 && Emote.SKILL_CAPE.child == 43
+            && Emote.FLEX.child == 40, "emote book children");
+        check(Emotes.emoteWidget(Emote.YES) == null, "emote widget null offline");
+        check(Emote.values().length == 54, "54 emotes mined");
+        check(!Emotes.perform(Emote.WAVE), "emote perform fails clean");
+
+        check(!HintArrows.exists(), "no hint arrow");
+        check(HintArrows.point() == null, "no arrow point");
+        check(HintArrows.player() == null, "no arrow player");
+        check(HintArrows.npc() == null, "no arrow npc");
+
+        check(Friends.all().isEmpty(), "no friends offline");
+        check(Friends.size() == 0, "friend size zero");
+        check(!Friends.haveFriend("Nobody"), "unknown friend missing");
+        check(!Friends.haveFriend(null), "null friend missing");
+        check(Friends.ignores().isEmpty(), "no ignores offline");
+        check(!Friends.isIgnored("Nobody"), "unknown ignore missing");
+
+        check(!ClanChat.inChat(), "not in friends chat");
+        check(!ClanChat.inChat("Nobody"), "not in named chat");
+        check(ClanChat.getName() == null, "no chat name");
+        check(ClanChat.getOwner() == null, "no chat owner");
+        check(ClanChat.getMembers().isEmpty(), "no chat members");
+        check(ClanChat.getSize() == 0, "chat size zero");
+        check(ClanChat.guild() == null, "no guild offline");
+        check(ClanChat.guildName() == null, "no guild name");
+        check(ClanChat.guildMembers().isEmpty(), "no guild members");
+
+        check(!RandomEvents.dismiss(), "nothing to dismiss");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");

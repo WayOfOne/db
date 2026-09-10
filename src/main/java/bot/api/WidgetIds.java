@@ -87,4 +87,17 @@ public final class WidgetIds {
      * per-prayer grandchildren in results/prayer-widget-table.txt. */
     public static final int QUICK_PRAYER_GROUP = 77;
     public static final int QUICK_PRAYER_CHILD = 4;
+
+    // -- Emote book (group 216) --
+    /** Scroll root (DreamBot Emotes doEmote) and emote container
+     * (DreamBot Emotes getEmoteChild: [216, 2, child]); per-emote
+     * children in results/emote-widget-table.txt. */
+    public static final int EMOTE_GROUP = 216;
+    public static final int EMOTE_SCROLL = 1;
+    public static final int EMOTE_CONTAINER = 2;
+
+    // -- Friends tab switch (group 432) --
+    /** Friends/ignore tab button (DreamBot Friends swapToFriends). */
+    public static final int FRIENDS_TAB_GROUP = 432;
+    public static final int FRIENDS_TAB_CHILD = 1;
 }

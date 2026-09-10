@@ -46,4 +46,24 @@ public final class Tabs {
     public static boolean magic() throws Exception {
         return Actions.widget(Widgets.first(WidgetInfo.FIXED_VIEWPORT_MAGIC_TAB));
     }
+
+    public static boolean friends() throws Exception {
+        return Actions.widget(Widgets.first(WidgetInfo.FIXED_VIEWPORT_FRIENDS_TAB));
+    }
+
+    public static boolean ignores() throws Exception {
+        return Actions.widget(Widgets.first(WidgetInfo.FIXED_VIEWPORT_IGNORES_TAB));
+    }
+
+    public static boolean friendsChat() throws Exception {
+        return Actions.widget(Widgets.first(WidgetInfo.FIXED_VIEWPORT_FRIENDS_CHAT_TAB));
+    }
+
+    public static boolean emotes() throws Exception {
+        return Actions.widget(Widgets.first(WidgetInfo.FIXED_VIEWPORT_EMOTES_TAB));
+    }
+
+    public static boolean music() throws Exception {
+        return Actions.widget(Widgets.first(WidgetInfo.FIXED_VIEWPORT_MUSIC_TAB));
+    }
 }

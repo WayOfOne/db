@@ -1,0 +1,1180 @@
+Compiled from "Emote.java"
+public final class org.dreambot.api.methods.emotes.Emote extends java.lang.Enum<org.dreambot.api.methods.emotes.Emote> {
+  public static final org.dreambot.api.methods.emotes.Emote AIR_GUITAR;
+
+  public static final org.dreambot.api.methods.emotes.Emote ANGRY;
+
+  public static final org.dreambot.api.methods.emotes.Emote BECKON;
+
+  public static final org.dreambot.api.methods.emotes.Emote BLOW_KISS;
+
+  public static final org.dreambot.api.methods.emotes.Emote BOW;
+
+  public static final org.dreambot.api.methods.emotes.Emote CHEER;
+
+  public static final org.dreambot.api.methods.emotes.Emote CLAP;
+
+  public static final org.dreambot.api.methods.emotes.Emote CLIMB_ROPE;
+
+  public static final org.dreambot.api.methods.emotes.Emote CRAZY_DANCE;
+
+  public static final org.dreambot.api.methods.emotes.Emote CRY;
+
+  public static final org.dreambot.api.methods.emotes.Emote DANCE;
+
+  public static final org.dreambot.api.methods.emotes.Emote EXPLORE;
+
+  public static final org.dreambot.api.methods.emotes.Emote FORTIS_SALUTE;
+
+  public static final org.dreambot.api.methods.emotes.Emote FLAP;
+
+  public static final org.dreambot.api.methods.emotes.Emote GLASS_BOX;
+
+  public static final org.dreambot.api.methods.emotes.Emote GLASS_WALL;
+
+  public static final org.dreambot.api.methods.emotes.Emote GOBLIN_BOW;
+
+  public static final org.dreambot.api.methods.emotes.Emote GOBLIN_SALUTE;
+
+  public static final org.dreambot.api.methods.emotes.Emote HEADBANG;
+
+  public static final org.dreambot.api.methods.emotes.Emote HYPERMOBILE_DRINKER;
+
+  public static final org.dreambot.api.methods.emotes.Emote IDEA;
+
+  public static final org.dreambot.api.methods.emotes.Emote JIG;
+
+  public static final org.dreambot.api.methods.emotes.Emote JOG;
+
+  public static final org.dreambot.api.methods.emotes.Emote JUMP_FOR_JOY;
+
+  public static final org.dreambot.api.methods.emotes.Emote LAUGH;
+
+  public static final org.dreambot.api.methods.emotes.Emote LEAN;
+
+  public static final org.dreambot.api.methods.emotes.Emote NO;
+
+  public static final org.dreambot.api.methods.emotes.Emote PANIC;
+
+  public static final org.dreambot.api.methods.emotes.Emote PARTY;
+
+  public static final org.dreambot.api.methods.emotes.Emote PREMIER_SHIELD;
+
+  public static final org.dreambot.api.methods.emotes.Emote PUSH_UP;
+
+  public static final org.dreambot.api.methods.emotes.Emote RABBIT_HOP;
+
+  public static final org.dreambot.api.methods.emotes.Emote RASPBERRY;
+
+  public static final org.dreambot.api.methods.emotes.Emote SALUTE;
+
+  public static final org.dreambot.api.methods.emotes.Emote SCARED;
+
+  public static final org.dreambot.api.methods.emotes.Emote SHRUG;
+
+  public static final org.dreambot.api.methods.emotes.Emote SIT_DOWN;
+
+  public static final org.dreambot.api.methods.emotes.Emote SIT_UP;
+
+  public static final org.dreambot.api.methods.emotes.Emote SKILL_CAPE;
+
+  public static final org.dreambot.api.methods.emotes.Emote SLAP_HEAD;
+
+  public static final org.dreambot.api.methods.emotes.Emote SMOOTH_DANCE;
+
+  public static final org.dreambot.api.methods.emotes.Emote SPIN;
+
+  public static final org.dreambot.api.methods.emotes.Emote STAMP;
+
+  public static final org.dreambot.api.methods.emotes.Emote STAR_JUMP;
+
+  public static final org.dreambot.api.methods.emotes.Emote THINK;
+
+  public static final org.dreambot.api.methods.emotes.Emote TRICK;
+
+  public static final org.dreambot.api.methods.emotes.Emote URI_TRANSFORM;
+
+  public static final org.dreambot.api.methods.emotes.Emote WAVE;
+
+  public static final org.dreambot.api.methods.emotes.Emote YAWN;
+
+  public static final org.dreambot.api.methods.emotes.Emote YES;
+
+  public static final org.dreambot.api.methods.emotes.Emote ZOMBIE_DANCE;
+
+  public static final org.dreambot.api.methods.emotes.Emote ZOMBIE_HAND;
+
+  public static final org.dreambot.api.methods.emotes.Emote ZOMBIE_WALK;
+
+  public static final org.dreambot.api.methods.emotes.Emote FLEX;
+
+  public final int childwidget;
+
+  private static final org.dreambot.api.methods.emotes.Emote[] 4;
+
+  private static org.dreambot.7V[] 6;
+
+  private static final long a;
+
+  public static org.dreambot.api.methods.emotes.Emote[] values();
+    Code:
+       0: getstatic     #81                 // Field "4":[Lorg/dreambot/api/methods/emotes/Emote;
+       3: invokevirtual #40                 // Method "[Lorg/dreambot/api/methods/emotes/Emote;".clone:()Ljava/lang/Object;
+       6: checkcast     #278                // class "[Lorg/dreambot/api/methods/emotes/Emote;"
+       9: areturn
+
+  public static org.dreambot.api.methods.emotes.Emote valueOf(java.lang.String);
+    Code:
+       0: ldc           #3                  // class org/dreambot/api/methods/emotes/Emote
+       2: aload_0
+       3: invokestatic  #71                 // Method java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+       6: checkcast     #3                  // class org/dreambot/api/methods/emotes/Emote
+       9: areturn
+
+  private org.dreambot.api.methods.emotes.Emote(int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iload_2
+       3: invokespecial #143                // Method java/lang/Enum."<init>":(Ljava/lang/String;I)V
+       6: aload_0
+       7: iload_3
+       8: putfield      #114                // Field childwidget:I
+      11: return
+
+  public static org.dreambot.api.methods.emotes.Emote forChildWidgetId(int);
+    Code:
+       0: getstatic     #214                // Field a:J
+       3: ldc2_w        #340                // long 32107663429851l
+       6: lxor
+       7: lstore_1
+       8: invokestatic  #192                // Method values:()[Lorg/dreambot/api/methods/emotes/Emote;
+      11: astore        4
+      13: ldc2_w        #346                // long 2292963842079245321l
+      16: lload_1
+      17: invokedynamic #25,  0             // InvokeDynamic #0:Û:(JJ)[Lorg/dreambot/7V;
+      22: aload         4
+      24: arraylength
+      25: istore        5
+      27: iconst_0
+      28: istore        6
+      30: astore_3
+      31: iload         6
+      33: iload         5
+      35: if_icmpge     68
+      38: aload         4
+      40: iload         6
+      42: aaload
+      43: astore        7
+      45: aload_3
+      46: ifnonnull     64
+      49: aload         7
+      51: getfield      #114                // Field childwidget:I
+      54: iload_0
+      55: if_icmpne     61
+      58: aload         7
+      60: areturn
+      61: iinc          6, 1
+      64: aload_3
+      65: ifnull        31
+      68: aconst_null
+      69: areturn
+
+  static {};
+    Code:
+       0: ldc2_w        #354                // long 6116112458872100532l
+       3: ldc2_w        #344                // long -1246366728670570325l
+       6: invokestatic  #218                // Method java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+       9: invokevirtual #324                // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+      12: invokestatic  #31                 // Method org/dreambot/x.a:(JJLjava/lang/Object;)Lorg/dreambot/b;
+      15: ldc2_w        #342                // long 252703303344815l
+      18: invokeinterface #93,  3           // InterfaceMethod org/dreambot/b.a:(J)J
+      23: putstatic     #214                // Field a:J
+      26: getstatic     #214                // Field a:J
+      29: ldc2_w        #352                // long 82083438286104l
+      32: lxor
+      33: lstore        9
+      35: ldc2_w        #350                // long -2733287074789391926l
+      38: lload         9
+      40: invokedynamic #25,  0             // InvokeDynamic #0:Û:(JJ)[Lorg/dreambot/7V;
+      45: ifnull        62
+      48: iconst_4
+      49: anewarray     #321                // class "org/dreambot/7V"
+      52: ldc2_w        #348                // long -2721002644761157891l
+      55: lload         9
+      57: invokedynamic #274,  0            // InvokeDynamic #1:Û:(Ljava/lang/Object;JJ)V
+      62: ldc           #5                  // String DES/CBC/PKCS5Padding
+      64: invokestatic  #220                // Method javax/crypto/Cipher.getInstance:(Ljava/lang/String;)Ljavax/crypto/Cipher;
+      67: dup
+      68: astore_1
+      69: iconst_2
+      70: ldc           #6                  // String DES
+      72: invokestatic  #333                // Method javax/crypto/SecretKeyFactory.getInstance:(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;
+      75: bipush        8
+      77: newarray       byte
+      79: dup
+      80: iconst_0
+      81: lload         9
+      83: bipush        56
+      85: lushr
+      86: l2i
+      87: i2b
+      88: bastore
+      89: iconst_1
+      90: istore_2
+      91: iload_2
+      92: bipush        8
+      94: if_icmpge     118
+      97: dup
+      98: iload_2
+      99: lload         9
+     101: iload_2
+     102: bipush        8
+     104: imul
+     105: lshl
+     106: bipush        56
+     108: lushr
+     109: l2i
+     110: i2b
+     111: bastore
+     112: iinc          2, 1
+     115: goto          91
+     118: new           #107                // class javax/crypto/spec/DESKeySpec
+     121: dup_x1
+     122: swap
+     123: invokespecial #132                // Method javax/crypto/spec/DESKeySpec."<init>":([B)V
+     126: invokevirtual #182                // Method javax/crypto/SecretKeyFactory.generateSecret:(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
+     129: new           #287                // class javax/crypto/spec/IvParameterSpec
+     132: dup
+     133: bipush        8
+     135: newarray       byte
+     137: invokespecial #337                // Method javax/crypto/spec/IvParameterSpec."<init>":([B)V
+     140: invokevirtual #130                // Method javax/crypto/Cipher.init:(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+     143: bipush        54
+     145: anewarray     #213                // class java/lang/String
+     148: astore_0
+     149: iconst_0
+     150: istore        6
+     152: ldc           #4                  // String ³YZu¢\n\u009b\u008d\u0010o5\u008d÷q§DÆ¸$k\u0083\b÷g\u0081\b¡µ\u008e\u000eêP¢<\b>>î2«4\fE\b&-ÐVE]ÖH\bé¦]~iÀä-\u0010\b\u001a\u008aZàDÎ±|¬*¿@K­n\u0010\u000ec\u0087\u009c)H¨¢\u0093\u009b?\u0018\u0002hû\u007f\u0010`\u0082±±¬Sµá:«R/ý§tf\u0010àN\u001e\u0089Ãk7©w\u001c|\u0006÷xà\u0013\bâô\'\u0096<¼Q\u0012\u0010ò\u0007çO¨\u0000ã.Ë\u0012<L82+Í\bL7L&ÿÙà¥\b?\u000eJe-_\u0016x\b¹ï*)ê\u0084\"ô\ba­\u000eÂQßCr\bþò\u008c\u0086\u0092½\u0018Í\u0010Æº\u0017\u0003.ij\u000b\u008e\u0084cêvÇöm\b¬ÙA´u\u0001ß\u001c\u0010ö¬Ö\u009a\"æ\u0019\u0094ë>\u008c4Á\u0016kO\u0010\u0011\u001e\u0017¡\u001d%%$Á\u001aÙè\u0006\u0090Ó%\bxZ ­ê\u0014í:\u0010l\u009enÉÃ\u0081Ü\u007f\u0087\u008bÿ\u0000\u0001\u0095îÀ\u0010\u0086ªQIÀ\u0005xcÈ^ó¨¼Äo\u000f\b\u0086\u000f\u0014Ëì\u0006\u008f¯\u0010þqF\u009eé\u0098R+_B;%²\u0086ÊG\u00100\u0090JF@öïn¢\u008a-Ô\u008e÷\u0084\u0011\u0010\u008f0\f\u001b¿>d\u0016\u0084d2]·mp\r\bJ\u009f?n\u009fxKå\b\ro\u009b=â2ë\u0080\u0010 \u008ek£\u001c¬@Ìrmùë\u0012ÖßQ\u0010\u0003\u0019rN(Pá\u0000\u0080ñÞ\u0002g\u0017Òõ\bç\u008aæaÔß\u009f¡\u0010wÅ\u009e/ÛÙÍJQÜ;Lø\u0018¨²\u0010ÇHºü]öÅJ \njt\u0004¢\u0090í\u0018NÅ¸Áó\u001d\u0016¼±­ñÂ1ÅÍ\u008bÅa\u0081ýn\u0011W\u0083\b¨\u0004mÏô\u008eøz\bå\u0081\u001f-J÷lØ\b \u0086ÆÉ\u0018)\u0019÷\u0010û²xZBd¿\u0096\u000fü\u008a\f°Ça\n\bñ\u001dâ*\u0017p\u0099\t\bm\"£\u0014N\u008fÖ1\bC\u0088A\u0097ÊU\u0085\u0081\b\u0087;ÔSz:\u00881\b\u0081\u001bèô\u00019#q\b¾võ°W¨\u0018@\b\u00887cÓ\u0006\u0086\u001cç\bÑ\u008da·\u0081Ik\u0091\u0010}D\u001a\u0092Y\u0017\u0011ÍjÑ#ý·«Â¼\u0010·:ÔíKÝìa¾.K£&\u0004\u0083%\bë¡ëE#\u0010*[\b\u0011O®ß?Î¦\u009f
+     154: dup
+     155: astore        5
+     157: invokevirtual #303                // Method java/lang/String.length:()I
+     160: istore        7
+     162: bipush        8
+     164: istore        4
+     166: iconst_m1
+     167: istore_3
+     168: iinc          3, 1
+     171: aload         5
+     173: iload_3
+     174: dup
+     175: iload         4
+     177: iadd
+     178: invokevirtual #327                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     181: iconst_m1
+     182: goto          283
+     185: aload_0
+     186: swap
+     187: iload         6
+     189: iinc          6, 1
+     192: swap
+     193: aastore
+     194: iload_3
+     195: iload         4
+     197: iadd
+     198: dup
+     199: istore_3
+     200: iload         7
+     202: if_icmpge     216
+     205: aload         5
+     207: iload_3
+     208: invokevirtual #298                // Method java/lang/String.charAt:(I)C
+     211: istore        4
+     213: goto          168
+     216: ldc           #1                  // String e\n÷¹\u0086!éÑE\u000eIörÁòz\u0010÷ÐÆ¡ß\u0006>ÿ\u0004\u001eïý´ÊÃÿ
+     218: dup
+     219: astore        5
+     221: invokevirtual #303                // Method java/lang/String.length:()I
+     224: istore        7
+     226: bipush        16
+     228: istore        4
+     230: iconst_m1
+     231: istore_3
+     232: iinc          3, 1
+     235: aload         5
+     237: iload_3
+     238: dup
+     239: iload         4
+     241: iadd
+     242: invokevirtual #327                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     245: iconst_0
+     246: goto          283
+     249: aload_0
+     250: swap
+     251: iload         6
+     253: iinc          6, 1
+     256: swap
+     257: aastore
+     258: iload_3
+     259: iload         4
+     261: iadd
+     262: dup
+     263: istore_3
+     264: iload         7
+     266: if_icmpge     280
+     269: aload         5
+     271: iload_3
+     272: invokevirtual #298                // Method java/lang/String.charAt:(I)C
+     275: istore        4
+     277: goto          232
+     280: goto          324
+     283: swap
+     284: ldc           #2                  // String ISO-8859-1
+     286: invokevirtual #282                // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     289: aload_1
+     290: swap
+     291: invokevirtual #188                // Method javax/crypto/Cipher.doFinal:([B)[B
+     294: astore        8
+     296: aload         8
+     298: invokestatic  #151                // Method a:([B)Ljava/lang/String;
+     301: invokevirtual #325                // Method java/lang/String.intern:()Ljava/lang/String;
+     304: swap
+     305: tableswitch   { // 0 to 0
+                     0: 249
+               default: 185
+          }
+     324: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     327: dup
+     328: aload_0
+     329: bipush        6
+     331: aaload
+     332: iconst_0
+     333: bipush        44
+     335: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     338: putstatic     #314                // Field AIR_GUITAR:Lorg/dreambot/api/methods/emotes/Emote;
+     341: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     344: dup
+     345: aload_0
+     346: iconst_3
+     347: aaload
+     348: iconst_1
+     349: iconst_3
+     350: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     353: putstatic     #202                // Field ANGRY:Lorg/dreambot/api/methods/emotes/Emote;
+     356: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     359: dup
+     360: aload_0
+     361: bipush        15
+     363: aaload
+     364: iconst_2
+     365: bipush        8
+     367: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     370: putstatic     #281                // Field BECKON:Lorg/dreambot/api/methods/emotes/Emote;
+     373: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     376: dup
+     377: aload_0
+     378: bipush        22
+     380: aaload
+     381: iconst_3
+     382: bipush        17
+     384: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     387: putstatic     #21                 // Field BLOW_KISS:Lorg/dreambot/api/methods/emotes/Emote;
+     390: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     393: dup
+     394: aload_0
+     395: bipush        21
+     397: aaload
+     398: iconst_4
+     399: iconst_2
+     400: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     403: putstatic     #58                 // Field BOW:Lorg/dreambot/api/methods/emotes/Emote;
+     406: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     409: dup
+     410: aload_0
+     411: bipush        32
+     413: aaload
+     414: iconst_5
+     415: bipush        7
+     417: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     420: putstatic     #264                // Field CHEER:Lorg/dreambot/api/methods/emotes/Emote;
+     423: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     426: dup
+     427: aload_0
+     428: bipush        46
+     430: aaload
+     431: bipush        6
+     433: bipush        20
+     435: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     438: putstatic     #92                 // Field CLAP:Lorg/dreambot/api/methods/emotes/Emote;
+     441: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     444: dup
+     445: aload_0
+     446: bipush        7
+     448: aaload
+     449: bipush        7
+     451: bipush        25
+     453: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     456: putstatic     #168                // Field CLIMB_ROPE:Lorg/dreambot/api/methods/emotes/Emote;
+     459: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     462: dup
+     463: aload_0
+     464: bipush        23
+     466: aaload
+     467: bipush        8
+     469: bipush        47
+     471: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     474: putstatic     #121                // Field CRAZY_DANCE:Lorg/dreambot/api/methods/emotes/Emote;
+     477: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     480: dup
+     481: aload_0
+     482: bipush        41
+     484: aaload
+     485: bipush        9
+     487: bipush        16
+     489: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     492: putstatic     #190                // Field CRY:Lorg/dreambot/api/methods/emotes/Emote;
+     495: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     498: dup
+     499: aload_0
+     500: iconst_2
+     501: aaload
+     502: bipush        10
+     504: bipush        12
+     506: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     509: putstatic     #240                // Field DANCE:Lorg/dreambot/api/methods/emotes/Emote;
+     512: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     515: dup
+     516: aload_0
+     517: bipush        13
+     519: aaload
+     520: bipush        11
+     522: bipush        49
+     524: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     527: putstatic     #96                 // Field EXPLORE:Lorg/dreambot/api/methods/emotes/Emote;
+     530: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     533: dup
+     534: aload_0
+     535: bipush        25
+     537: aaload
+     538: bipush        12
+     540: bipush        53
+     542: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     545: putstatic     #140                // Field FORTIS_SALUTE:Lorg/dreambot/api/methods/emotes/Emote;
+     548: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     551: dup
+     552: aload_0
+     553: bipush        47
+     555: aaload
+     556: bipush        13
+     558: bipush        30
+     560: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     563: putstatic     #233                // Field FLAP:Lorg/dreambot/api/methods/emotes/Emote;
+     566: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     569: dup
+     570: aload_0
+     571: bipush        49
+     573: aaload
+     574: bipush        14
+     576: bipush        24
+     578: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     581: putstatic     #113                // Field GLASS_BOX:Lorg/dreambot/api/methods/emotes/Emote;
+     584: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     587: dup
+     588: aload_0
+     589: bipush        26
+     591: aaload
+     592: bipush        15
+     594: bipush        27
+     596: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     599: putstatic     #52                 // Field GLASS_WALL:Lorg/dreambot/api/methods/emotes/Emote;
+     602: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     605: dup
+     606: aload_0
+     607: bipush        39
+     609: aaload
+     610: bipush        16
+     612: bipush        22
+     614: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     617: putstatic     #148                // Field GOBLIN_BOW:Lorg/dreambot/api/methods/emotes/Emote;
+     620: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     623: dup
+     624: aload_0
+     625: bipush        8
+     627: aaload
+     628: bipush        17
+     630: bipush        23
+     632: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     635: putstatic     #239                // Field GOBLIN_SALUTE:Lorg/dreambot/api/methods/emotes/Emote;
+     638: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     641: dup
+     642: aload_0
+     643: bipush        11
+     645: aaload
+     646: bipush        18
+     648: bipush        15
+     650: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     653: putstatic     #179                // Field HEADBANG:Lorg/dreambot/api/methods/emotes/Emote;
+     656: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     659: dup
+     660: aload_0
+     661: bipush        35
+     663: aaload
+     664: bipush        19
+     666: bipush        42
+     668: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     671: putstatic     #134                // Field HYPERMOBILE_DRINKER:Lorg/dreambot/api/methods/emotes/Emote;
+     674: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     677: dup
+     678: aload_0
+     679: bipush        37
+     681: aaload
+     682: bipush        20
+     684: bipush        28
+     686: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     689: putstatic     #186                // Field IDEA:Lorg/dreambot/api/methods/emotes/Emote;
+     692: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     695: dup
+     696: aload_0
+     697: bipush        10
+     699: aaload
+     700: bipush        21
+     702: bipush        13
+     704: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     707: putstatic     #84                 // Field JIG:Lorg/dreambot/api/methods/emotes/Emote;
+     710: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     713: dup
+     714: aload_0
+     715: iconst_4
+     716: aaload
+     717: bipush        22
+     719: bipush        39
+     721: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     724: putstatic     #307                // Field JOG:Lorg/dreambot/api/methods/emotes/Emote;
+     727: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     730: dup
+     731: aload_0
+     732: bipush        27
+     734: aaload
+     735: bipush        23
+     737: bipush        10
+     739: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     742: putstatic     #35                 // Field JUMP_FOR_JOY:Lorg/dreambot/api/methods/emotes/Emote;
+     745: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     748: dup
+     749: aload_0
+     750: bipush        16
+     752: aaload
+     753: bipush        24
+     755: bipush        9
+     757: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     760: putstatic     #259                // Field LAUGH:Lorg/dreambot/api/methods/emotes/Emote;
+     763: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     766: dup
+     767: aload_0
+     768: iconst_0
+     769: aaload
+     770: bipush        25
+     772: bipush        26
+     774: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     777: putstatic     #254                // Field LEAN:Lorg/dreambot/api/methods/emotes/Emote;
+     780: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     783: dup
+     784: aload_0
+     785: bipush        24
+     787: aaload
+     788: bipush        26
+     790: iconst_1
+     791: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     794: putstatic     #302                // Field NO:Lorg/dreambot/api/methods/emotes/Emote;
+     797: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     800: dup
+     801: aload_0
+     802: bipush        36
+     804: aaload
+     805: bipush        27
+     807: bipush        18
+     809: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     812: putstatic     #16                 // Field PANIC:Lorg/dreambot/api/methods/emotes/Emote;
+     815: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     818: dup
+     819: aload_0
+     820: bipush        44
+     822: aaload
+     823: bipush        28
+     825: bipush        51
+     827: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     830: putstatic     #75                 // Field PARTY:Lorg/dreambot/api/methods/emotes/Emote;
+     833: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     836: dup
+     837: aload_0
+     838: bipush        17
+     840: aaload
+     841: bipush        29
+     843: bipush        48
+     845: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     848: putstatic     #219                // Field PREMIER_SHIELD:Lorg/dreambot/api/methods/emotes/Emote;
+     851: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     854: dup
+     855: aload_0
+     856: bipush        12
+     858: aaload
+     859: bipush        30
+     861: bipush        37
+     863: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     866: putstatic     #69                 // Field PUSH_UP:Lorg/dreambot/api/methods/emotes/Emote;
+     869: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     872: dup
+     873: aload_0
+     874: bipush        52
+     876: aaload
+     877: bipush        31
+     879: bipush        35
+     881: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     884: putstatic     #149                // Field RABBIT_HOP:Lorg/dreambot/api/methods/emotes/Emote;
+     887: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     890: dup
+     891: aload_0
+     892: bipush        9
+     894: aaload
+     895: bipush        32
+     897: bipush        19
+     899: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     902: putstatic     #243                // Field RASPBERRY:Lorg/dreambot/api/methods/emotes/Emote;
+     905: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     908: dup
+     909: aload_0
+     910: bipush        18
+     912: aaload
+     913: bipush        33
+     915: bipush        21
+     917: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     920: putstatic     #197                // Field SALUTE:Lorg/dreambot/api/methods/emotes/Emote;
+     923: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     926: dup
+     927: aload_0
+     928: iconst_5
+     929: aaload
+     930: bipush        34
+     932: bipush        34
+     934: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     937: putstatic     #49                 // Field SCARED:Lorg/dreambot/api/methods/emotes/Emote;
+     940: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     943: dup
+     944: aload_0
+     945: bipush        50
+     947: aaload
+     948: bipush        35
+     950: bipush        6
+     952: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     955: putstatic     #61                 // Field SHRUG:Lorg/dreambot/api/methods/emotes/Emote;
+     958: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     961: dup
+     962: aload_0
+     963: bipush        53
+     965: aaload
+     966: bipush        36
+     968: bipush        54
+     970: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     973: putstatic     #225                // Field SIT_DOWN:Lorg/dreambot/api/methods/emotes/Emote;
+     976: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     979: dup
+     980: aload_0
+     981: bipush        29
+     983: aaload
+     984: bipush        37
+     986: bipush        36
+     988: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+     991: putstatic     #285                // Field SIT_UP:Lorg/dreambot/api/methods/emotes/Emote;
+     994: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+     997: dup
+     998: aload_0
+     999: bipush        48
+    1001: aaload
+    1002: bipush        38
+    1004: bipush        43
+    1006: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1009: putstatic     #261                // Field SKILL_CAPE:Lorg/dreambot/api/methods/emotes/Emote;
+    1012: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1015: dup
+    1016: aload_0
+    1017: bipush        20
+    1019: aaload
+    1020: bipush        39
+    1022: bipush        31
+    1024: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1027: putstatic     #169                // Field SLAP_HEAD:Lorg/dreambot/api/methods/emotes/Emote;
+    1030: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1033: dup
+    1034: aload_0
+    1035: bipush        31
+    1037: aaload
+    1038: bipush        40
+    1040: bipush        46
+    1042: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1045: putstatic     #170                // Field SMOOTH_DANCE:Lorg/dreambot/api/methods/emotes/Emote;
+    1048: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1051: dup
+    1052: aload_0
+    1053: bipush        45
+    1055: aaload
+    1056: bipush        41
+    1058: bipush        14
+    1060: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1063: putstatic     #273                // Field SPIN:Lorg/dreambot/api/methods/emotes/Emote;
+    1066: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1069: dup
+    1070: aload_0
+    1071: bipush        42
+    1073: aaload
+    1074: bipush        42
+    1076: bipush        29
+    1078: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1081: putstatic     #204                // Field STAMP:Lorg/dreambot/api/methods/emotes/Emote;
+    1084: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1087: dup
+    1088: aload_0
+    1089: bipush        33
+    1091: aaload
+    1092: bipush        43
+    1094: bipush        38
+    1096: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1099: putstatic     #336                // Field STAR_JUMP:Lorg/dreambot/api/methods/emotes/Emote;
+    1102: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1105: dup
+    1106: aload_0
+    1107: bipush        14
+    1109: aaload
+    1110: bipush        44
+    1112: iconst_4
+    1113: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1116: putstatic     #30                 // Field THINK:Lorg/dreambot/api/methods/emotes/Emote;
+    1119: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1122: dup
+    1123: aload_0
+    1124: bipush        40
+    1126: aaload
+    1127: bipush        45
+    1129: bipush        52
+    1131: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1134: putstatic     #249                // Field TRICK:Lorg/dreambot/api/methods/emotes/Emote;
+    1137: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1140: dup
+    1141: aload_0
+    1142: bipush        19
+    1144: aaload
+    1145: bipush        46
+    1147: bipush        45
+    1149: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1152: putstatic     #22                 // Field URI_TRANSFORM:Lorg/dreambot/api/methods/emotes/Emote;
+    1155: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1158: dup
+    1159: aload_0
+    1160: bipush        51
+    1162: aaload
+    1163: bipush        47
+    1165: iconst_5
+    1166: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1169: putstatic     #191                // Field WAVE:Lorg/dreambot/api/methods/emotes/Emote;
+    1172: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1175: dup
+    1176: aload_0
+    1177: bipush        38
+    1179: aaload
+    1180: bipush        48
+    1182: bipush        11
+    1184: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1187: putstatic     #32                 // Field YAWN:Lorg/dreambot/api/methods/emotes/Emote;
+    1190: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1193: dup
+    1194: aload_0
+    1195: bipush        28
+    1197: aaload
+    1198: bipush        49
+    1200: iconst_0
+    1201: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1204: putstatic     #247                // Field YES:Lorg/dreambot/api/methods/emotes/Emote;
+    1207: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1210: dup
+    1211: aload_0
+    1212: iconst_1
+    1213: aaload
+    1214: bipush        50
+    1216: bipush        33
+    1218: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1221: putstatic     #104                // Field ZOMBIE_DANCE:Lorg/dreambot/api/methods/emotes/Emote;
+    1224: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1227: dup
+    1228: aload_0
+    1229: bipush        30
+    1231: aaload
+    1232: bipush        51
+    1234: bipush        41
+    1236: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1239: putstatic     #230                // Field ZOMBIE_HAND:Lorg/dreambot/api/methods/emotes/Emote;
+    1242: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1245: dup
+    1246: aload_0
+    1247: bipush        34
+    1249: aaload
+    1250: bipush        52
+    1252: bipush        32
+    1254: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1257: putstatic     #119                // Field ZOMBIE_WALK:Lorg/dreambot/api/methods/emotes/Emote;
+    1260: new           #3                  // class org/dreambot/api/methods/emotes/Emote
+    1263: dup
+    1264: aload_0
+    1265: bipush        43
+    1267: aaload
+    1268: bipush        53
+    1270: bipush        40
+    1272: invokespecial #242                // Method "<init>":(Ljava/lang/String;II)V
+    1275: putstatic     #20                 // Field FLEX:Lorg/dreambot/api/methods/emotes/Emote;
+    1278: bipush        54
+    1280: anewarray     #3                  // class org/dreambot/api/methods/emotes/Emote
+    1283: dup
+    1284: iconst_0
+    1285: getstatic     #314                // Field AIR_GUITAR:Lorg/dreambot/api/methods/emotes/Emote;
+    1288: aastore
+    1289: dup
+    1290: iconst_1
+    1291: getstatic     #202                // Field ANGRY:Lorg/dreambot/api/methods/emotes/Emote;
+    1294: aastore
+    1295: dup
+    1296: iconst_2
+    1297: getstatic     #281                // Field BECKON:Lorg/dreambot/api/methods/emotes/Emote;
+    1300: aastore
+    1301: dup
+    1302: iconst_3
+    1303: getstatic     #21                 // Field BLOW_KISS:Lorg/dreambot/api/methods/emotes/Emote;
+    1306: aastore
+    1307: dup
+    1308: iconst_4
+    1309: getstatic     #58                 // Field BOW:Lorg/dreambot/api/methods/emotes/Emote;
+    1312: aastore
+    1313: dup
+    1314: iconst_5
+    1315: getstatic     #264                // Field CHEER:Lorg/dreambot/api/methods/emotes/Emote;
+    1318: aastore
+    1319: dup
+    1320: bipush        6
+    1322: getstatic     #92                 // Field CLAP:Lorg/dreambot/api/methods/emotes/Emote;
+    1325: aastore
+    1326: dup
+    1327: bipush        7
+    1329: getstatic     #168                // Field CLIMB_ROPE:Lorg/dreambot/api/methods/emotes/Emote;
+    1332: aastore
+    1333: dup
+    1334: bipush        8
+    1336: getstatic     #121                // Field CRAZY_DANCE:Lorg/dreambot/api/methods/emotes/Emote;
+    1339: aastore
+    1340: dup
+    1341: bipush        9
+    1343: getstatic     #190                // Field CRY:Lorg/dreambot/api/methods/emotes/Emote;
+    1346: aastore
+    1347: dup
+    1348: bipush        10
+    1350: getstatic     #240                // Field DANCE:Lorg/dreambot/api/methods/emotes/Emote;
+    1353: aastore
+    1354: dup
+    1355: bipush        11
+    1357: getstatic     #96                 // Field EXPLORE:Lorg/dreambot/api/methods/emotes/Emote;
+    1360: aastore
+    1361: dup
+    1362: bipush        12
+    1364: getstatic     #140                // Field FORTIS_SALUTE:Lorg/dreambot/api/methods/emotes/Emote;
+    1367: aastore
+    1368: dup
+    1369: bipush        13
+    1371: getstatic     #233                // Field FLAP:Lorg/dreambot/api/methods/emotes/Emote;
+    1374: aastore
+    1375: dup
+    1376: bipush        14
+    1378: getstatic     #113                // Field GLASS_BOX:Lorg/dreambot/api/methods/emotes/Emote;
+    1381: aastore
+    1382: dup
+    1383: bipush        15
+    1385: getstatic     #52                 // Field GLASS_WALL:Lorg/dreambot/api/methods/emotes/Emote;
+    1388: aastore
+    1389: dup
+    1390: bipush        16
+    1392: getstatic     #148                // Field GOBLIN_BOW:Lorg/dreambot/api/methods/emotes/Emote;
+    1395: aastore
+    1396: dup
+    1397: bipush        17
+    1399: getstatic     #239                // Field GOBLIN_SALUTE:Lorg/dreambot/api/methods/emotes/Emote;
+    1402: aastore
+    1403: dup
+    1404: bipush        18
+    1406: getstatic     #179                // Field HEADBANG:Lorg/dreambot/api/methods/emotes/Emote;
+    1409: aastore
+    1410: dup
+    1411: bipush        19
+    1413: getstatic     #134                // Field HYPERMOBILE_DRINKER:Lorg/dreambot/api/methods/emotes/Emote;
+    1416: aastore
+    1417: dup
+    1418: bipush        20
+    1420: getstatic     #186                // Field IDEA:Lorg/dreambot/api/methods/emotes/Emote;
+    1423: aastore
+    1424: dup
+    1425: bipush        21
+    1427: getstatic     #84                 // Field JIG:Lorg/dreambot/api/methods/emotes/Emote;
+    1430: aastore
+    1431: dup
+    1432: bipush        22
+    1434: getstatic     #307                // Field JOG:Lorg/dreambot/api/methods/emotes/Emote;
+    1437: aastore
+    1438: dup
+    1439: bipush        23
+    1441: getstatic     #35                 // Field JUMP_FOR_JOY:Lorg/dreambot/api/methods/emotes/Emote;
+    1444: aastore
+    1445: dup
+    1446: bipush        24
+    1448: getstatic     #259                // Field LAUGH:Lorg/dreambot/api/methods/emotes/Emote;
+    1451: aastore
+    1452: dup
+    1453: bipush        25
+    1455: getstatic     #254                // Field LEAN:Lorg/dreambot/api/methods/emotes/Emote;
+    1458: aastore
+    1459: dup
+    1460: bipush        26
+    1462: getstatic     #302                // Field NO:Lorg/dreambot/api/methods/emotes/Emote;
+    1465: aastore
+    1466: dup
+    1467: bipush        27
+    1469: getstatic     #16                 // Field PANIC:Lorg/dreambot/api/methods/emotes/Emote;
+    1472: aastore
+    1473: dup
+    1474: bipush        28
+    1476: getstatic     #75                 // Field PARTY:Lorg/dreambot/api/methods/emotes/Emote;
+    1479: aastore
+    1480: dup
+    1481: bipush        29
+    1483: getstatic     #219                // Field PREMIER_SHIELD:Lorg/dreambot/api/methods/emotes/Emote;
+    1486: aastore
+    1487: dup
+    1488: bipush        30
+    1490: getstatic     #69                 // Field PUSH_UP:Lorg/dreambot/api/methods/emotes/Emote;
+    1493: aastore
+    1494: dup
+    1495: bipush        31
+    1497: getstatic     #149                // Field RABBIT_HOP:Lorg/dreambot/api/methods/emotes/Emote;
+    1500: aastore
+    1501: dup
+    1502: bipush        32
+    1504: getstatic     #243                // Field RASPBERRY:Lorg/dreambot/api/methods/emotes/Emote;
+    1507: aastore
+    1508: dup
+    1509: bipush        33
+    1511: getstatic     #197                // Field SALUTE:Lorg/dreambot/api/methods/emotes/Emote;
+    1514: aastore
+    1515: dup
+    1516: bipush        34
+    1518: getstatic     #49                 // Field SCARED:Lorg/dreambot/api/methods/emotes/Emote;
+    1521: aastore
+    1522: dup
+    1523: bipush        35
+    1525: getstatic     #61                 // Field SHRUG:Lorg/dreambot/api/methods/emotes/Emote;
+    1528: aastore
+    1529: dup
+    1530: bipush        36
+    1532: getstatic     #225                // Field SIT_DOWN:Lorg/dreambot/api/methods/emotes/Emote;
+    1535: aastore
+    1536: dup
+    1537: bipush        37
+    1539: getstatic     #285                // Field SIT_UP:Lorg/dreambot/api/methods/emotes/Emote;
+    1542: aastore
+    1543: dup
+    1544: bipush        38
+    1546: getstatic     #261                // Field SKILL_CAPE:Lorg/dreambot/api/methods/emotes/Emote;
+    1549: aastore
+    1550: dup
+    1551: bipush        39
+    1553: getstatic     #169                // Field SLAP_HEAD:Lorg/dreambot/api/methods/emotes/Emote;
+    1556: aastore
+    1557: dup
+    1558: bipush        40
+    1560: getstatic     #170                // Field SMOOTH_DANCE:Lorg/dreambot/api/methods/emotes/Emote;
+    1563: aastore
+    1564: dup
+    1565: bipush        41
+    1567: getstatic     #273                // Field SPIN:Lorg/dreambot/api/methods/emotes/Emote;
+    1570: aastore
+    1571: dup
+    1572: bipush        42
+    1574: getstatic     #204                // Field STAMP:Lorg/dreambot/api/methods/emotes/Emote;
+    1577: aastore
+    1578: dup
+    1579: bipush        43
+    1581: getstatic     #336                // Field STAR_JUMP:Lorg/dreambot/api/methods/emotes/Emote;
+    1584: aastore
+    1585: dup
+    1586: bipush        44
+    1588: getstatic     #30                 // Field THINK:Lorg/dreambot/api/methods/emotes/Emote;
+    1591: aastore
+    1592: dup
+    1593: bipush        45
+    1595: getstatic     #249                // Field TRICK:Lorg/dreambot/api/methods/emotes/Emote;
+    1598: aastore
+    1599: dup
+    1600: bipush        46
+    1602: getstatic     #22                 // Field URI_TRANSFORM:Lorg/dreambot/api/methods/emotes/Emote;
+    1605: aastore
+    1606: dup
+    1607: bipush        47
+    1609: getstatic     #191                // Field WAVE:Lorg/dreambot/api/methods/emotes/Emote;
+    1612: aastore
+    1613: dup
+    1614: bipush        48
+    1616: getstatic     #32                 // Field YAWN:Lorg/dreambot/api/methods/emotes/Emote;
+    1619: aastore
+    1620: dup
+    1621: bipush        49
+    1623: getstatic     #247                // Field YES:Lorg/dreambot/api/methods/emotes/Emote;
+    1626: aastore
+    1627: dup
+    1628: bipush        50
+    1630: getstatic     #104                // Field ZOMBIE_DANCE:Lorg/dreambot/api/methods/emotes/Emote;
+    1633: aastore
+    1634: dup
+    1635: bipush        51
+    1637: getstatic     #230                // Field ZOMBIE_HAND:Lorg/dreambot/api/methods/emotes/Emote;
+    1640: aastore
+    1641: dup
+    1642: bipush        52
+    1644: getstatic     #119                // Field ZOMBIE_WALK:Lorg/dreambot/api/methods/emotes/Emote;
+    1647: aastore
+    1648: dup
+    1649: bipush        53
+    1651: getstatic     #20                 // Field FLEX:Lorg/dreambot/api/methods/emotes/Emote;
+    1654: aastore
+    1655: putstatic     #81                 // Field "4":[Lorg/dreambot/api/methods/emotes/Emote;
+    1658: return
+
+  public static void 8(org.dreambot.7V[]);
+    Code:
+       0: aload_0
+       1: putstatic     #164                // Field "6":[Lorg/dreambot/7V;
+       4: return
+
+  public static org.dreambot.7V[] 1();
+    Code:
+       0: getstatic     #164                // Field "6":[Lorg/dreambot/7V;
+       3: areturn
+
+  private static java.lang.String a(byte[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: aload_0
+       3: arraylength
+       4: dup
+       5: istore_2
+       6: newarray       char
+       8: astore_3
+       9: iconst_0
+      10: istore        4
+      12: iload         4
+      14: iload_2
+      15: if_icmpge     178
+      18: sipush        255
+      21: aload_0
+      22: iload         4
+      24: baload
+      25: iand
+      26: dup
+      27: istore        5
+      29: sipush        192
+      32: if_icmpge     47
+      35: aload_3
+      36: iload_1
+      37: iinc          1, 1
+      40: iload         5
+      42: i2c
+      43: castore
+      44: goto          172
+      47: iload         5
+      49: sipush        224
+      52: if_icmpge     99
+      55: iload         5
+      57: bipush        31
+      59: iand
+      60: i2c
+      61: bipush        6
+      63: ishl
+      64: i2c
+      65: istore        6
+      67: aload_0
+      68: iinc          4, 1
+      71: iload         4
+      73: baload
+      74: istore        5
+      76: iload         6
+      78: iload         5
+      80: bipush        63
+      82: iand
+      83: i2c
+      84: ior
+      85: i2c
+      86: istore        6
+      88: aload_3
+      89: iload_1
+      90: iinc          1, 1
+      93: iload         6
+      95: castore
+      96: goto          172
+      99: iload         4
+     101: iload_2
+     102: iconst_2
+     103: isub
+     104: if_icmpge     172
+     107: iload         5
+     109: bipush        15
+     111: iand
+     112: i2c
+     113: bipush        12
+     115: ishl
+     116: i2c
+     117: istore        6
+     119: aload_0
+     120: iinc          4, 1
+     123: iload         4
+     125: baload
+     126: istore        5
+     128: iload         6
+     130: iload         5
+     132: bipush        63
+     134: iand
+     135: i2c
+     136: bipush        6
+     138: ishl
+     139: ior
+     140: i2c
+     141: istore        6
+     143: aload_0
+     144: iinc          4, 1
+     147: iload         4
+     149: baload
+     150: istore        5
+     152: iload         6
+     154: iload         5
+     156: bipush        63
+     158: iand
+     159: i2c
+     160: ior
+     161: i2c
+     162: istore        6
+     164: aload_3
+     165: iload_1
+     166: iinc          1, 1
+     169: iload         6
+     171: castore
+     172: iinc          4, 1
+     175: goto          12
+     178: new           #213                // class java/lang/String
+     181: dup
+     182: aload_3
+     183: iconst_0
+     184: iload_1
+     185: invokespecial #283                // Method java/lang/String."<init>":([CII)V
+     188: areturn
+}
