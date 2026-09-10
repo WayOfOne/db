@@ -56,7 +56,7 @@ def main() -> int:
     if len(sys.argv) != 2:
         print(__doc__)
         return 2
-    lines = open(sys.argv[1], encoding="utf-8").read().splitlines(keepends=True)
+    lines = open(sys.argv[1], encoding="utf-8", errors="replace").read().splitlines(keepends=True)
     text = "".join(lines)
     # line number lookup: char offset -> 1-based line
     offsets = [0]

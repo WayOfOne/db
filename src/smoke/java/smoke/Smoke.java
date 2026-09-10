@@ -11,6 +11,7 @@ import java.util.Map;
 import bot.api.Actions;
 import bot.api.Area;
 import bot.api.Bank;
+import bot.api.Combat;
 import bot.api.DepositBox;
 import bot.api.Dialogs;
 import bot.api.Equipment;
@@ -19,6 +20,8 @@ import bot.api.GrandExchange;
 import bot.api.GroundItems;
 import bot.api.Npcs;
 import bot.api.PathFinder;
+import bot.api.Prayers;
+import bot.api.SkillTracker;
 import bot.api.Trade;
 import bot.api.Vars;
 import bot.api.WidgetIds;
@@ -41,6 +44,7 @@ import net.runelite.api.MenuAction;
 import net.runelite.api.MenuEntry;
 import net.runelite.api.NPC;
 import net.runelite.api.Player;
+import net.runelite.api.Prayer;
 import net.runelite.api.Scene;
 import net.runelite.api.Tile;
 import net.runelite.api.TileItem;
@@ -141,6 +145,39 @@ public final class Smoke {
         check(!Trade.decline(), "decline with no screen fails clean");
         check(!Trade.tradeWith("Nobody"), "unknown player yields false");
         check(!DepositBox.isOpen(), "no deposit box open");
+
+        check(Combat.specialPercentage() == 50, "spec energy from varp");
+        check(Combat.specialActive(), "spec active from varp");
+        check(Combat.autoRetaliate(), "retaliate from varp");
+        check(Combat.styleIndex() == 2, "style index from varp");
+        check(!Combat.isPoisoned(), "clean of poison");
+        check(Combat.setAutoRetaliate(true), "retaliate already on");
+        check(!Combat.setAutoRetaliate(false), "retaliate toggle fails clean");
+        check(Combat.setStyle(2), "style already selected");
+        check(!Combat.setStyle(0), "style change fails clean");
+        check(Combat.toggleSpecial(true), "spec already on");
+        check(!Combat.toggleSpecial(false), "spec toggle fails clean");
+
+        check(Prayers.bookChild(Prayer.THICK_SKIN) == 9, "thick skin book child");
+        check(Prayers.bookChild(Prayer.PROTECT_FROM_MELEE) == 23, "protect melee book child");
+        check(Prayers.bookChild(Prayer.PIETY) == 35, "piety book child");
+        check(Prayers.bookChild(Prayer.AUGURY) == 36, "augury book child");
+        check(Prayers.bookChild(null) == -1, "null prayer unmapped");
+        check(Prayers.bookChild(Prayer.RP_WRATH) == -1, "ruinous prayer unmapped");
+        check(!Prayers.toggle(Prayer.SMITE), "prayer toggle fails clean");
+
+        long[] clock = {0L};
+        int[] xp = {0};
+        SkillTracker tracker = new SkillTracker(() -> clock[0], () -> xp[0]);
+        check(tracker.gained() == 0, "tracker starts at zero");
+        clock[0] = 3_600_000L;
+        xp[0] = 100;
+        check(tracker.gained() == 100, "tracker gained xp");
+        check(Math.abs(tracker.perHour() - 100.0) < 1e-9, "tracker xp per hour");
+        check(tracker.millisTo(200) == 3_600_000L, "tracker time to level");
+        check(tracker.millisTo(50) == 0, "tracker past target done");
+        tracker.reset();
+        check(tracker.gained() == 0, "tracker reset");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");
@@ -366,6 +403,14 @@ public final class Smoke {
             case "createMenuEntry" -> stubEntry();
             case "getItemContainer" -> args[0] == InventoryID.BANK ? bank : empty;
             case "getGrandExchangeOffers" -> offers;
+            case "getVarpValue" -> switch ((Integer) args[0]) {
+                case 300 -> 500;
+                case 301 -> 1;
+                case 172 -> 1;
+                case 43 -> 2;
+                default -> 0;
+            };
+            case "getVarbitValue" -> 0;
             case "getWidget" -> args[0] == WidgetInfo.BANK_ITEM_CONTAINER
                 || args[0] == WidgetInfo.BANK_DEPOSIT_INVENTORY
                 || args[0] == WidgetInfo.BANK_DEPOSIT_EQUIPMENT ? widget

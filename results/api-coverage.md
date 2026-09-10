@@ -23,7 +23,7 @@ never cut for convenience on the core botting surface.
 |---|---|---|
 | NPC/Player/GameObject/GroundItem wrappers | Used directly (RL interfaces *are* the wrappers) + `GroundItems.Loot` (item+tile, since `TileItem` carries no position — proven by compiler) | Covered (smoke) |
 | `NPCs`/`Players`/`GameObjects`/`GroundItems` queries | `bot.api.Npcs/Players/GameObjects/GroundItems` (scene-grid walks, range filters) | Covered (smoke) |
-| `Skills` + `SkillTracker` | `bot.api.Skills` (boosted + XP-derived); tracker (XP/hr over time) | Covered / tracker future |
+| `Skills` + `SkillTracker` | `bot.api.Skills` (boosted + XP-derived); `bot.api.SkillTracker` (gained, xp/hr, time-to-target, injectable clock) | Covered (smoke) |
 | `Inventory`, `Equipment`, containers | `bot.api.Inventory/Bank/Equipment` (incl. `inSlot`) | Covered (smoke) |
 
 ## Acting (`api/methods/{walking,combat,magic,prayer,tabs,dialogues,widget}`, `api/input`)
@@ -32,13 +32,13 @@ never cut for convenience on the core botting surface.
 |---|---|---|
 | Menu interaction | `Actions` builders (compiler-checked entries) + install + Robot dispatch | Covered offline; dispatch params want one live pass |
 | Local + web pathfinding (98 files) | `PathFinder` (A*, bits read from RL's own `MovementFlag`: `results/movementflag-clinit.txt`) + `Walking.walkPath`; web/server queries | Pathfinding covered (smoke incl. wall/gap/unreachable); web out (no server) |
-| `Magic` (4 books, costs) | `Magic` home teleports (verified widgets only) | Partial; full books deferred, not guessed |
-| `Prayers` | quick-pray orb + `isActive` | Partial; per-prayer book clicks deferred |
+| `Magic` (4 books, costs) | `Magic` home teleports for all five books (verified widgets) + rune-cost/target spells | Home teleports covered (compiles; clicks game-only); combat spells deferred, not guessed |
+| `Prayers` | quick-pray orb + `isActive` + per-prayer `toggle`/`activate` via mined book table (group 541, `results/prayer-widget-table.txt`) | Covered (lookup offline; dispatch game-only); Ruinous book + quick-prayer setup deferred |
 | `Tabs` | all fixed tabs + resizable inv/prayer, layout-aware | Covered (compiles; clicks game-only) |
 | `Dialogues` | `Dialogs` (widget state + space/number-key input) | Covered (smoke state reads) |
 | `GrandExchange` (excl. `LivePrices`) | `GrandExchange` reads, screens, search, qty/price, confirm, abort, collect + collect-to-bank, full `buyOffer`/`sellOffer` flows | Covered (builders + lookup offline; dispatch game-only) |
 | `Trade`, `DepositBox` | `Trade` (open/accept/decline/tradeWith, both stages), `DepositBox` (open/deposit-all ×3/close/slots) | Covered (lookup offline; dispatch game-only) |
-| `Combat` / `CombatStyle` | `Combat.isInCombat` (both directions) | Partial; styles deferred |
+| `Combat` / `CombatStyle` | `Combat` level, spec %/active/toggle, retaliate read/set, style read/set, poisoned (varps 300/301/172/43/102, probe-verified widgets) | Covered (reads + builders offline; dispatch game-only); envenom magnitude deferred (decrypted threshold) |
 | Widget search + Smithing/ItemProcessing helpers | `Widgets` recursive text/action/id search | Covered (structure); trade-skill helpers deferred |
 | Mouse/Keyboard | `Actions.click`, `Mouse.move`, `Keyboard.type` | Covered (builders offline; dispatch game-only) |
 | Camera/Minimap | `Camera` yaw/pitch targets; minimap projection in `Actions` | Covered (compiles; game-only) |
@@ -65,6 +65,7 @@ Every flow built on them still wants one live pass.
 - Deferred niche content (no core loop needs them): shop handling (no shop
   API found in the original surface either), quest book data, minigames,
   emotes, diaries, fairy rings, hint arrows, clan/friend/ignore, bonds,
-  `SkillTracker`, per-prayer toggles, full spellbooks, Smithing helpers.
+  Ruinous prayers, quick-prayer setup, envenom magnitude, full combat
+  spellbooks, Smithing helpers.
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.

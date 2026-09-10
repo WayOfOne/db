@@ -63,4 +63,28 @@ public final class WidgetIds {
 
     // -- Bank (group 12; used via WidgetInfo constants, listed for reference) --
     public static final int BANK_GROUP = 12;
+
+    // -- Combat tab (group 593) --
+    /** Attack-style buttons, index 0-3 (DreamBot Combat field "0";
+     * identical to WidgetInfo COMBAT_STYLE_ONE..FOUR, probe-verified). */
+    public static final int COMBAT_GROUP = 593;
+    public static final int COMBAT_STYLE_CHILDREN = 6; // +4 per style: 6, 10, 14, 18
+    /** Special-attack button on the combat tab (DreamBot Combat "8"). */
+    public static final int COMBAT_SPEC_CHILD = 38;
+    /** Auto-retaliate box (== WidgetInfo COMBAT_AUTO_RETALIATE, probe-verified). */
+    public static final int COMBAT_RETALIATE_CHILD = 32;
+
+    // -- Special-attack orb by the minimap (group 160) --
+    /** Spec orb widget (DreamBot Combat "7"; orb cluster, cf. orb at 160,20). */
+    public static final int SPEC_ORB_GROUP = 160;
+    public static final int SPEC_ORB_CHILD = 36;
+
+    // -- Prayer book (group 541) + quick prayers (group 77) --
+    /** Standard prayer book; per-prayer children in results/prayer-widget-table.txt
+     * (DreamBot Prayer.getWidgetIndex/getChildIndex). */
+    public static final int PRAYER_BOOK_GROUP = 541;
+    /** Quick-prayer setup root (== WidgetInfo QUICK_PRAYER_PRAYERS, probe-verified);
+     * per-prayer grandchildren in results/prayer-widget-table.txt. */
+    public static final int QUICK_PRAYER_GROUP = 77;
+    public static final int QUICK_PRAYER_CHILD = 4;
 }

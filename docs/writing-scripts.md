@@ -70,7 +70,7 @@ Three rules, no exceptions:
 | Scenery | `GameObjects.nearest(ids...)` — walks the scene grid, so no typed-in tiles |
 | Ground loot | `GroundItems.nearest/nearestWithin(ids...)` — returns a `Loot` (item + tile, since items carry no position); `Actions.take(loot, "Take", 2)` |
 | Self | `Local`: `location()`, `worldX/Y()`, `animation()`, `isIdle()`, `combatLevel()` |
-| Skills | `Skills.level/base/experience(Skill)` (boosted vs real, like the skill tab) |
+| Skills | `Skills.level/base/experience(Skill)` (boosted vs real, like the skill tab); `SkillTracker` (gained, xp/hr, time-to-target) |
 | Inventory | `Inventory.count/contains/full/items()`, `Inventory.health()` (current HP) |
 | Bank | `Bank.isOpen/count/contains`, `openBooth/openBanker(ids...)`, `depositInventory/depositEquipment()`, `close()` (escape) — widget clicks game-only |
 | Exchange | `GrandExchange.isOpen/offers/active/isDone/progress`, `openClerk(ids...)`, `collectAll()`, full `buyOffer`/`sellOffer` (screen, search, qty, price, confirm), `abortOffer`, `collectToBank()` |
@@ -82,7 +82,7 @@ Three rules, no exceptions:
 | Dialogs | `Dialogs.isOpen/choosing`, `continueDialogue()` (space), `chooseOption(n)` (number keys) — game-only input |
 | State | `Vars.varbit/varp`, `runEnergy()`, `prayerActive()`, `healthPercent()` |
 | Widgets/tabs | `Widgets.findByText/findByAction/first`, `Tabs` (all fixed tabs), `Camera` yaw/pitch |
-| Combat/prayer/magic | `Combat.isInCombat`, `Prayers` (quick-pray + active), `Magic` (home teleports) |
+| Combat/prayer/magic | `Combat` (level, spec %/toggle, retaliate, style 0-3, poisoned), `Prayers.toggle/activate(Prayer)` + quick-pray orb, `Magic` home teleport per book — widget clicks game-only |
 | Equipment slots | `Equipment.inSlot(slot)` |
 | Zones/timing | `Area` (contains/center/random), `Sleep`, `Timing.waitCondition`, `Calculations` |
 | Menus (advanced) | `Actions.npcMenu/objectMenu/groundItemMenu/widgetMenu` build entries; `Actions.install` sets them |

@@ -194,6 +194,24 @@ server, no credential vault, no packet code.
 - [x] `smokeTest` at 53 checks, all offline. Dispatch semantics want one
   live pass; ids are cited, never guessed.
 
+## Phase 16 — Combat depth + prayers + SkillTracker (local scripts only)
+
+- [x] Mined DreamBot's Combat/Prayer bytecode (`tools/ParsePrayerEnum.py`,
+  `results/javap-c-db-combat-prayer-tracker.txt`,
+  `results/javap-c-db-prayer-enum.txt`): varps 300/301/172/43/102,
+  varbit 2668, style table [6,10,14,18], prayer book group 541 with all
+  31 per-prayer children (`results/prayer-widget-table.txt`), quick-prayer
+  root [77,4], spec orb [160,36], tab spec button [593,38].
+- [x] Probe-verified the pinned RuneLite ids against the mined ones
+  (`results/widgetinfo-probe.txt`): styles, auto-retaliate, quick-prayer
+  root, minimap orb all match both ways.
+- [x] `Combat` (level, spec %/active/toggle, retaliate read/set, style
+  read/set, poisoned), `Prayers.toggle/activate/bookChild`,
+  `SkillTracker` (gained, xp/hr, time-to-target), all five `Magic` home
+  teleports. Per-prayer setting bits and envenom threshold stay out
+  (runtime-decrypted, never exposed statically).
+- [x] `smokeTest` at 77 checks, all offline. Clicks still want one live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

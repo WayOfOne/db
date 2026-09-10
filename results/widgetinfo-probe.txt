@@ -1,0 +1,32 @@
+# WidgetInfo probe — 2026-09-09
+
+Probe: tools-adjacent `ProbeWidgetInfo.java` (throwaway, Temp dir — not
+committed), compiled against the pinned
+`repository2/runelite-api-1.12.36-runtime.jar` (sha256 27B2E4B0...4E31)
+and run offline (enum constants only, no game needed). Output:
+
+COMBAT_STYLE_ONE group=593 child=6
+COMBAT_STYLE_TWO group=593 child=10
+COMBAT_STYLE_THREE group=593 child=14
+COMBAT_STYLE_FOUR group=593 child=18
+COMBAT_AUTO_RETALIATE group=593 child=32
+COMBAT_LEVEL group=593 child=4
+QUICK_PRAYER_PRAYERS group=77 child=4
+SPELL_LUMBRIDGE_HOME_TELEPORT group=218 child=6
+SPELL_EDGEVILLE_HOME_TELEPORT group=218 child=108
+SPELL_LUNAR_HOME_TELEPORT group=218 child=109
+SPELL_ARCEUUS_HOME_TELEPORT group=218 child=153
+SPELL_KOUREND_HOME_TELEPORT group=218 child=4
+MINIMAP_QUICK_PRAYER_ORB group=160 child=20
+
+Cross-checks vs DreamBot-mined ids (same build, see AGENTS.md hashes):
+- Styles 6/10/14/18 == DreamBot Combat static int[] field "0"
+  (parsed via `tools/ParsePrayerEnum.py --table`). Confirmed both ways.
+- QUICK_PRAYER_PRAYERS (77, 4) == DreamBot `getWidgetChildQuickPrayer`
+  root. Confirmed both ways.
+- MINIMAP_QUICK_PRAYER_ORB (160, 20) == DreamBot Prayers `8()`.
+  Confirmed both ways.
+- DreamBot-only (no pinned-API counterpart, strong inference from the
+  enclosing DreamBot method): spec orb [160, 36] (Combat `7()`, called
+  from toggleSpecialAttack), combat-tab spec button [593, 38]
+  (Combat `8()`, after openTab in toggleSpecialAttack).

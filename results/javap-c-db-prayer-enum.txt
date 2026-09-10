@@ -1,0 +1,1477 @@
+Compiled from "Prayer.java"
+public class org.dreambot.api.methods.prayer.Prayer extends java.lang.Enum<org.dreambot.api.methods.prayer.Prayer> {
+  public static final org.dreambot.api.methods.prayer.Prayer THICK_SKIN;
+
+  public static final org.dreambot.api.methods.prayer.Prayer BURST_OF_STRENGTH;
+
+  public static final org.dreambot.api.methods.prayer.Prayer CLARITY_OF_THOUGHT;
+
+  public static final org.dreambot.api.methods.prayer.Prayer SHARP_EYE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer MYSTIC_WILL;
+
+  public static final org.dreambot.api.methods.prayer.Prayer ROCK_SKIN;
+
+  public static final org.dreambot.api.methods.prayer.Prayer SUPERHUMAN_STRENGTH;
+
+  public static final org.dreambot.api.methods.prayer.Prayer IMPROVED_REFLEXES;
+
+  public static final org.dreambot.api.methods.prayer.Prayer RAPID_RESTORE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer RAPID_HEAL;
+
+  public static final org.dreambot.api.methods.prayer.Prayer PROTECT_ITEM;
+
+  public static final org.dreambot.api.methods.prayer.Prayer HAWK_EYE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer MYSTIC_LORE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer STEEL_SKIN;
+
+  public static final org.dreambot.api.methods.prayer.Prayer ULTIMATE_STRENGTH;
+
+  public static final org.dreambot.api.methods.prayer.Prayer INCREDIBLE_REFLEXES;
+
+  public static final org.dreambot.api.methods.prayer.Prayer PROTECT_FROM_MAGIC;
+
+  public static final org.dreambot.api.methods.prayer.Prayer PROTECT_FROM_MISSILES;
+
+  public static final org.dreambot.api.methods.prayer.Prayer PROTECT_FROM_MELEE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer EAGLE_EYE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer MYSTIC_MIGHT;
+
+  public static final org.dreambot.api.methods.prayer.Prayer RETRIBUTION;
+
+  public static final org.dreambot.api.methods.prayer.Prayer REDEMPTION;
+
+  public static final org.dreambot.api.methods.prayer.Prayer SMITE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer PRESERVE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer CHIVALRY;
+
+  public static final org.dreambot.api.methods.prayer.Prayer DEADEYE;
+
+  public static final org.dreambot.api.methods.prayer.Prayer MYSTIC_VIGOUR;
+
+  public static final org.dreambot.api.methods.prayer.Prayer PIETY;
+
+  public static final org.dreambot.api.methods.prayer.Prayer RIGOUR;
+
+  public static final org.dreambot.api.methods.prayer.Prayer AUGURY;
+
+  private final int 1;
+
+  private final int 3;
+
+  private final int 2;
+
+  private final int 6;
+
+  private static final org.dreambot.api.methods.prayer.Prayer[] 5;
+
+  private static boolean 4;
+
+  private static final long a;
+
+  public static org.dreambot.api.methods.prayer.Prayer[] values();
+    Code:
+       0: getstatic     #44                 // Field "5":[Lorg/dreambot/api/methods/prayer/Prayer;
+       3: invokevirtual #276                // Method "[Lorg/dreambot/api/methods/prayer/Prayer;".clone:()Ljava/lang/Object;
+       6: checkcast     #250                // class "[Lorg/dreambot/api/methods/prayer/Prayer;"
+       9: areturn
+
+  public static org.dreambot.api.methods.prayer.Prayer valueOf(java.lang.String);
+    Code:
+       0: ldc           #1                  // class org/dreambot/api/methods/prayer/Prayer
+       2: aload_0
+       3: invokestatic  #285                // Method java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+       6: checkcast     #1                  // class org/dreambot/api/methods/prayer/Prayer
+       9: areturn
+
+  private static boolean 9();
+    Code:
+       0: getstatic     #36                 // Field a:J
+       3: ldc2_w        #400                // long 55809207151721l
+       6: lxor
+       7: lstore_0
+       8: ldc2_w        #402                // long 8238096258684704203l
+      11: lload_0
+      12: invokedynamic #339,  0            // InvokeDynamic #1:Û:(JJ)I
+      17: istore_2
+      18: sipush        5314
+      21: invokestatic  #13                 // Method org/dreambot/api/methods/settings/PlayerSettings.getBitValue:(I)I
+      24: iload_2
+      25: ifne          32
+      28: ifeq          35
+      31: iconst_1
+      32: goto          36
+      35: iconst_0
+      36: ireturn
+
+  private org.dreambot.api.methods.prayer.Prayer(int, int, int, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iload_2
+       3: invokespecial #324                // Method java/lang/Enum."<init>":(Ljava/lang/String;I)V
+       6: aload_0
+       7: iload_3
+       8: putfield      #212                // Field "1":I
+      11: aload_0
+      12: iload         4
+      14: putfield      #94                 // Field "3":I
+      17: aload_0
+      18: iload         5
+      20: putfield      #345                // Field "2":I
+      23: aload_0
+      24: iload         6
+      26: putfield      #148                // Field "6":I
+      29: return
+
+  public static org.dreambot.api.methods.prayer.Prayer of(java.lang.String);
+    Code:
+       0: getstatic     #36                 // Field a:J
+       3: ldc2_w        #398                // long 35093385674082l
+       6: lxor
+       7: lstore_1
+       8: ldc2_w        #412                // long -6872872994641371961l
+      11: lload_1
+      12: invokedynamic #339,  0            // InvokeDynamic #1:Û:(JJ)I
+      17: invokestatic  #391                // Method values:()[Lorg/dreambot/api/methods/prayer/Prayer;
+      20: astore        4
+      22: aload         4
+      24: arraylength
+      25: istore        5
+      27: istore_3
+      28: iconst_0
+      29: istore        6
+      31: iload         6
+      33: iload         5
+      35: if_icmpge     71
+      38: aload         4
+      40: iload         6
+      42: aaload
+      43: astore        7
+      45: iload_3
+      46: ifeq          67
+      49: aload         7
+      51: invokevirtual #193                // Method toString:()Ljava/lang/String;
+      54: aload_0
+      55: invokevirtual #82                 // Method java/lang/String.equalsIgnoreCase:(Ljava/lang/String;)Z
+      58: ifeq          64
+      61: aload         7
+      63: areturn
+      64: iinc          6, 1
+      67: iload_3
+      68: ifne          31
+      71: aconst_null
+      72: areturn
+
+  public int getLevel();
+    Code:
+       0: aload_0
+       1: getfield      #212                // Field "1":I
+       4: ireturn
+
+  public int getSetting();
+    Code:
+       0: aload_0
+       1: getfield      #94                 // Field "3":I
+       4: ireturn
+
+  public int getChildIndex();
+    Code:
+       0: aload_0
+       1: getfield      #345                // Field "2":I
+       4: ireturn
+
+  public int getWidgetIndex();
+    Code:
+       0: sipush        541
+       3: ireturn
+
+  public org.dreambot.api.wrappers.widgets.WidgetChild getWidgetChild();
+    Code:
+       0: iconst_2
+       1: newarray       int
+       3: dup
+       4: iconst_0
+       5: aload_0
+       6: invokevirtual #281                // Method getWidgetIndex:()I
+       9: iastore
+      10: dup
+      11: iconst_1
+      12: aload_0
+      13: invokevirtual #257                // Method getChildIndex:()I
+      16: iastore
+      17: invokestatic  #214                // Method org/dreambot/api/methods/widget/Widgets.get:([I)Lorg/dreambot/api/wrappers/widgets/WidgetChild;
+      20: areturn
+
+  public boolean isUnlocked();
+    Code:
+       0: iconst_1
+       1: ireturn
+
+  public java.lang.String toString();
+    Code:
+       0: aload_0
+       1: invokespecial #298                // Method java/lang/Enum.name:()Ljava/lang/String;
+       4: astore_1
+       5: aload_1
+       6: iconst_0
+       7: invokevirtual #46                 // Method java/lang/String.charAt:(I)C
+      10: aload_1
+      11: iconst_1
+      12: invokevirtual #41                 // Method java/lang/String.substring:(I)Ljava/lang/String;
+      15: getstatic     #258                // Field java/util/Locale.ENGLISH:Ljava/util/Locale;
+      18: invokevirtual #149                // Method java/lang/String.toLowerCase:(Ljava/util/Locale;)Ljava/lang/String;
+      21: ldc           #11                 // String _
+      23: ldc           #4                  // String
+      25: invokevirtual #334                // Method java/lang/String.replace:(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+      28: invokedynamic #236,  0            // InvokeDynamic #0:makeConcatWithConstants:(CLjava/lang/String;)Ljava/lang/String;
+      33: areturn
+
+  public int getQuickPrayerChild();
+    Code:
+       0: aload_0
+       1: getfield      #148                // Field "6":I
+       4: ireturn
+
+  static {};
+    Code:
+       0: ldc2_w        #410                // long 8738548931775551530l
+       3: ldc2_w        #406                // long -7956858035287005312l
+       6: invokestatic  #28                 // Method java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+       9: invokevirtual #177                // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+      12: invokestatic  #20                 // Method org/dreambot/x.a:(JJLjava/lang/Object;)Lorg/dreambot/b;
+      15: ldc2_w        #418                // long 43354439856164l
+      18: invokeinterface #147,  3          // InterfaceMethod org/dreambot/b.a:(J)J
+      23: putstatic     #36                 // Field a:J
+      26: getstatic     #36                 // Field a:J
+      29: ldc2_w        #416                // long 104034596012790l
+      32: lxor
+      33: lstore        20
+      35: ldc2_w        #404                // long 2047232173888231119l
+      38: lload         20
+      40: invokedynamic #207,  0            // InvokeDynamic #2:Û:(JJ)Z
+      45: ifne          59
+      48: iconst_1
+      49: ldc2_w        #414                // long 2064705083956878861l
+      52: lload         20
+      54: invokedynamic #173,  0            // InvokeDynamic #3:Û:(ZJJ)V
+      59: ldc           #10                 // String DES/CBC/PKCS5Padding
+      61: invokestatic  #122                // Method javax/crypto/Cipher.getInstance:(Ljava/lang/String;)Ljavax/crypto/Cipher;
+      64: dup
+      65: astore        12
+      67: iconst_2
+      68: ldc           #6                  // String DES
+      70: invokestatic  #47                 // Method javax/crypto/SecretKeyFactory.getInstance:(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;
+      73: bipush        8
+      75: newarray       byte
+      77: dup
+      78: iconst_0
+      79: lload         20
+      81: bipush        56
+      83: lushr
+      84: l2i
+      85: i2b
+      86: bastore
+      87: iconst_1
+      88: istore        13
+      90: iload         13
+      92: bipush        8
+      94: if_icmpge     120
+      97: dup
+      98: iload         13
+     100: lload         20
+     102: iload         13
+     104: bipush        8
+     106: imul
+     107: lshl
+     108: bipush        56
+     110: lushr
+     111: l2i
+     112: i2b
+     113: bastore
+     114: iinc          13, 1
+     117: goto          90
+     120: new           #246                // class javax/crypto/spec/DESKeySpec
+     123: dup_x1
+     124: swap
+     125: invokespecial #196                // Method javax/crypto/spec/DESKeySpec."<init>":([B)V
+     128: invokevirtual #390                // Method javax/crypto/SecretKeyFactory.generateSecret:(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
+     131: new           #379                // class javax/crypto/spec/IvParameterSpec
+     134: dup
+     135: bipush        8
+     137: newarray       byte
+     139: invokespecial #56                 // Method javax/crypto/spec/IvParameterSpec."<init>":([B)V
+     142: invokevirtual #347                // Method javax/crypto/Cipher.init:(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+     145: bipush        31
+     147: anewarray     #16                 // class java/lang/String
+     150: astore        11
+     152: iconst_0
+     153: istore        17
+     155: ldc           #5                  // String \u0003Æ¦ßw)\u008c²©PNë\u0099+ïÔ\u0010¢\u0003\u0014\u008bÏ­s³É\u0087Ø4o58U\bÍ\u0094{\u0089\u008a\u008e.@\u0018\u0090³\'ÑÖ`L\u008fûäöS\u0012d5`¶Qèùª0Ï2\b\u0005\u009a\u0096ïãÀ\u0000Ô\u0018q\u0012u\u0097\u000e\u009ftú\\¬<¢ÃNôãÕp=Ðä£C\u0096\u0018\u0005\u00950ÉèÒÞ\u0019»:Ñéé\u009aT\u0011\u009d¼+\u001bÁ¨«ì\u0010x\u001d\u0082é\u0089tÚX=tÏ\u0013«üÅ\r\u0018\u0005\u00950ÉèÒÞ\u0019ý­Õçy¶\u0084LçR\u0001\nîÀ¾Ê\u0018¬Ð3û\u009b\u0098r RKRüH*,âL_j\u0085\u001eXKO\u0018\u0005\u00950ÉèÒÞ\u0019\u0098l\u0015Â0\u001e}Ê Ô¹à½\u0005bO\u00106\u0080ð&öýo¡ö\u0080µòÛN.¥\u0018¶Ê\u0012\u0086\u001aCRE\u0085\'\u00079T\u0003¸\u009d\u000bYW\rM\u001a!¸\u0010í\u0016Æ\u0084\u0093]\u0004LÖ\u008eþl²\u0084\u001b½\u0018°\u0097\u0012\u0095\u0083í5yc\u007f\u0096úÉ\u008c=\\j~=¥Iq?h\u0018\u0085B#Z9Xq\u0084eìx\u0014»\u001f- \u0088=}÷Ì{Í0\blù$\u0086Æ%hñ\u0010Ôû4=\u0003È\u008a]e¾\u008f\u009cÆ\u008bÆ\u0018\u0010Î\\\u008f\u0095ÔB\râÖ¥\u009c\u0003*ÚÄÁ\bÛîÿx\u0084\u0086\u0091ê\u0010G\u008c\u0099¸\u009aÒÅ \u0095\u0019F\u009cs¦\u001c)\u0010\u009e¬#$\u0018Ü~Û\u0011\u008f\u0089ÝÌ¿\u0082[\b\u008e\u0082²Ï\u0092\u0012Ö\u007f\u00100A\u009cÔz\u0095R\u0095\u0007\u0012º¢#\u009eÓ\u001a\u0010¼R\u0011þùí=$êgÊ\u00041Ðø~\u0010Û®µø*\u0085ØqÝJF3,eaÄ\u0010\u000f\'\u001f(±Ý¦ðü\u001cìß \u0002åÕ\u0010¬FÇ\u0088Òã\u0090\u009aÈëft`òÏ1\u0010\fQ\u008e®\u000brS\u0013\u008e\'Û\b\u0083å¯q
+     157: dup
+     158: astore        16
+     160: invokevirtual #87                 // Method java/lang/String.length:()I
+     163: istore        18
+     165: bipush        16
+     167: istore        15
+     169: iconst_m1
+     170: istore        14
+     172: iinc          14, 1
+     175: aload         16
+     177: iload         14
+     179: dup
+     180: iload         15
+     182: iadd
+     183: invokevirtual #335                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     186: iconst_m1
+     187: goto          298
+     190: aload         11
+     192: swap
+     193: iload         17
+     195: iinc          17, 1
+     198: swap
+     199: aastore
+     200: iload         14
+     202: iload         15
+     204: iadd
+     205: dup
+     206: istore        14
+     208: iload         18
+     210: if_icmpge     225
+     213: aload         16
+     215: iload         14
+     217: invokevirtual #46                 // Method java/lang/String.charAt:(I)C
+     220: istore        15
+     222: goto          172
+     225: ldc           #7                  // String \u0005\u00950ÉèÒÞ\u0019é®×;¤\u0016\u0088æ\u0010^à\u0000yñP¢îs[¾\u0002Õ\tÓ;
+     227: dup
+     228: astore        16
+     230: invokevirtual #87                 // Method java/lang/String.length:()I
+     233: istore        18
+     235: bipush        16
+     237: istore        15
+     239: iconst_m1
+     240: istore        14
+     242: iinc          14, 1
+     245: aload         16
+     247: iload         14
+     249: dup
+     250: iload         15
+     252: iadd
+     253: invokevirtual #335                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     256: iconst_0
+     257: goto          298
+     260: aload         11
+     262: swap
+     263: iload         17
+     265: iinc          17, 1
+     268: swap
+     269: aastore
+     270: iload         14
+     272: iload         15
+     274: iadd
+     275: dup
+     276: istore        14
+     278: iload         18
+     280: if_icmpge     295
+     283: aload         16
+     285: iload         14
+     287: invokevirtual #46                 // Method java/lang/String.charAt:(I)C
+     290: istore        15
+     292: goto          242
+     295: goto          340
+     298: swap
+     299: ldc           #8                  // String ISO-8859-1
+     301: invokevirtual #192                // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     304: aload         12
+     306: swap
+     307: invokevirtual #95                 // Method javax/crypto/Cipher.doFinal:([B)[B
+     310: astore        19
+     312: aload         19
+     314: invokestatic  #62                 // Method a:([B)Ljava/lang/String;
+     317: invokevirtual #213                // Method java/lang/String.intern:()Ljava/lang/String;
+     320: swap
+     321: tableswitch   { // 0 to 0
+                     0: 260
+               default: 190
+          }
+     340: ldc           #9                  // String DES/CBC/NoPadding
+     342: invokestatic  #122                // Method javax/crypto/Cipher.getInstance:(Ljava/lang/String;)Ljavax/crypto/Cipher;
+     345: dup
+     346: astore_1
+     347: iconst_2
+     348: ldc           #6                  // String DES
+     350: invokestatic  #47                 // Method javax/crypto/SecretKeyFactory.getInstance:(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;
+     353: bipush        8
+     355: newarray       byte
+     357: dup
+     358: iconst_0
+     359: lload         20
+     361: bipush        56
+     363: lushr
+     364: l2i
+     365: i2b
+     366: bastore
+     367: iconst_1
+     368: istore_2
+     369: iload_2
+     370: bipush        8
+     372: if_icmpge     396
+     375: dup
+     376: iload_2
+     377: lload         20
+     379: iload_2
+     380: bipush        8
+     382: imul
+     383: lshl
+     384: bipush        56
+     386: lushr
+     387: l2i
+     388: i2b
+     389: bastore
+     390: iinc          2, 1
+     393: goto          369
+     396: new           #246                // class javax/crypto/spec/DESKeySpec
+     399: dup_x1
+     400: swap
+     401: invokespecial #196                // Method javax/crypto/spec/DESKeySpec."<init>":([B)V
+     404: invokevirtual #390                // Method javax/crypto/SecretKeyFactory.generateSecret:(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
+     407: new           #379                // class javax/crypto/spec/IvParameterSpec
+     410: dup
+     411: bipush        8
+     413: newarray       byte
+     415: invokespecial #56                 // Method javax/crypto/spec/IvParameterSpec."<init>":([B)V
+     418: invokevirtual #347                // Method javax/crypto/Cipher.init:(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+     421: bipush        16
+     423: newarray       long
+     425: astore_0
+     426: iconst_0
+     427: istore        4
+     429: ldc           #2                  // String §\u001fB\u0080\u008fÐE\u0003\u001cÎv0\u0000ì8\n\u000bJT\\fÔ·êª\u000fðøc»\u0013`K¢W´{<¸åb\u001c\u0016D\u0093\bÝA×\u0003Â\u001aÿ6¬³f\u0084ªlÖ\r`å¡\u0095­z/û\n÷µ{\u0014~QfÔ6ÙÐxº\u0094Ç\u009bYâ\u0014ôÄtþ~V\u0005<øªåú\u0098\r\u0003ø#Ü\u008b¶\u0093\u0080
+     431: dup
+     432: astore        5
+     434: invokevirtual #87                 // Method java/lang/String.length:()I
+     437: istore        6
+     439: iconst_0
+     440: istore_3
+     441: aload         5
+     443: iload_3
+     444: iinc          3, 8
+     447: iload_3
+     448: invokevirtual #335                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     451: ldc           #8                  // String ISO-8859-1
+     453: invokevirtual #192                // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     456: astore        7
+     458: aload_0
+     459: iload         4
+     461: iinc          4, 1
+     464: aload         7
+     466: iconst_0
+     467: baload
+     468: i2l
+     469: ldc2_w        #408                // long 255l
+     472: land
+     473: bipush        56
+     475: lshl
+     476: aload         7
+     478: iconst_1
+     479: baload
+     480: i2l
+     481: ldc2_w        #408                // long 255l
+     484: land
+     485: bipush        48
+     487: lshl
+     488: lor
+     489: aload         7
+     491: iconst_2
+     492: baload
+     493: i2l
+     494: ldc2_w        #408                // long 255l
+     497: land
+     498: bipush        40
+     500: lshl
+     501: lor
+     502: aload         7
+     504: iconst_3
+     505: baload
+     506: i2l
+     507: ldc2_w        #408                // long 255l
+     510: land
+     511: bipush        32
+     513: lshl
+     514: lor
+     515: aload         7
+     517: iconst_4
+     518: baload
+     519: i2l
+     520: ldc2_w        #408                // long 255l
+     523: land
+     524: bipush        24
+     526: lshl
+     527: lor
+     528: aload         7
+     530: iconst_5
+     531: baload
+     532: i2l
+     533: ldc2_w        #408                // long 255l
+     536: land
+     537: bipush        16
+     539: lshl
+     540: lor
+     541: aload         7
+     543: bipush        6
+     545: baload
+     546: i2l
+     547: ldc2_w        #408                // long 255l
+     550: land
+     551: bipush        8
+     553: lshl
+     554: lor
+     555: aload         7
+     557: bipush        7
+     559: baload
+     560: i2l
+     561: ldc2_w        #408                // long 255l
+     564: land
+     565: lor
+     566: iconst_m1
+     567: goto          728
+     570: lastore
+     571: iload_3
+     572: iload         6
+     574: if_icmplt     441
+     577: ldc           #3                  // String \u009c*E\u0012JÒ­ÕtHå\u0086]h¢2
+     579: dup
+     580: astore        5
+     582: invokevirtual #87                 // Method java/lang/String.length:()I
+     585: istore        6
+     587: iconst_0
+     588: istore_3
+     589: aload         5
+     591: iload_3
+     592: iinc          3, 8
+     595: iload_3
+     596: invokevirtual #335                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     599: ldc           #8                  // String ISO-8859-1
+     601: invokevirtual #192                // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     604: astore        7
+     606: aload_0
+     607: iload         4
+     609: iinc          4, 1
+     612: aload         7
+     614: iconst_0
+     615: baload
+     616: i2l
+     617: ldc2_w        #408                // long 255l
+     620: land
+     621: bipush        56
+     623: lshl
+     624: aload         7
+     626: iconst_1
+     627: baload
+     628: i2l
+     629: ldc2_w        #408                // long 255l
+     632: land
+     633: bipush        48
+     635: lshl
+     636: lor
+     637: aload         7
+     639: iconst_2
+     640: baload
+     641: i2l
+     642: ldc2_w        #408                // long 255l
+     645: land
+     646: bipush        40
+     648: lshl
+     649: lor
+     650: aload         7
+     652: iconst_3
+     653: baload
+     654: i2l
+     655: ldc2_w        #408                // long 255l
+     658: land
+     659: bipush        32
+     661: lshl
+     662: lor
+     663: aload         7
+     665: iconst_4
+     666: baload
+     667: i2l
+     668: ldc2_w        #408                // long 255l
+     671: land
+     672: bipush        24
+     674: lshl
+     675: lor
+     676: aload         7
+     678: iconst_5
+     679: baload
+     680: i2l
+     681: ldc2_w        #408                // long 255l
+     684: land
+     685: bipush        16
+     687: lshl
+     688: lor
+     689: aload         7
+     691: bipush        6
+     693: baload
+     694: i2l
+     695: ldc2_w        #408                // long 255l
+     698: land
+     699: bipush        8
+     701: lshl
+     702: lor
+     703: aload         7
+     705: bipush        7
+     707: baload
+     708: i2l
+     709: ldc2_w        #408                // long 255l
+     712: land
+     713: lor
+     714: iconst_0
+     715: goto          728
+     718: lastore
+     719: iload_3
+     720: iload         6
+     722: if_icmplt     589
+     725: goto          944
+     728: dup_x2
+     729: pop
+     730: lstore        8
+     732: bipush        8
+     734: newarray       byte
+     736: dup
+     737: iconst_0
+     738: lload         8
+     740: bipush        56
+     742: lushr
+     743: l2i
+     744: i2b
+     745: bastore
+     746: dup
+     747: iconst_1
+     748: lload         8
+     750: bipush        48
+     752: lushr
+     753: l2i
+     754: i2b
+     755: bastore
+     756: dup
+     757: iconst_2
+     758: lload         8
+     760: bipush        40
+     762: lushr
+     763: l2i
+     764: i2b
+     765: bastore
+     766: dup
+     767: iconst_3
+     768: lload         8
+     770: bipush        32
+     772: lushr
+     773: l2i
+     774: i2b
+     775: bastore
+     776: dup
+     777: iconst_4
+     778: lload         8
+     780: bipush        24
+     782: lushr
+     783: l2i
+     784: i2b
+     785: bastore
+     786: dup
+     787: iconst_5
+     788: lload         8
+     790: bipush        16
+     792: lushr
+     793: l2i
+     794: i2b
+     795: bastore
+     796: dup
+     797: bipush        6
+     799: lload         8
+     801: bipush        8
+     803: lushr
+     804: l2i
+     805: i2b
+     806: bastore
+     807: dup
+     808: bipush        7
+     810: lload         8
+     812: l2i
+     813: i2b
+     814: bastore
+     815: aload_1
+     816: swap
+     817: invokevirtual #95                 // Method javax/crypto/Cipher.doFinal:([B)[B
+     820: astore        10
+     822: aload         10
+     824: iconst_0
+     825: baload
+     826: i2l
+     827: ldc2_w        #408                // long 255l
+     830: land
+     831: bipush        56
+     833: lshl
+     834: aload         10
+     836: iconst_1
+     837: baload
+     838: i2l
+     839: ldc2_w        #408                // long 255l
+     842: land
+     843: bipush        48
+     845: lshl
+     846: lor
+     847: aload         10
+     849: iconst_2
+     850: baload
+     851: i2l
+     852: ldc2_w        #408                // long 255l
+     855: land
+     856: bipush        40
+     858: lshl
+     859: lor
+     860: aload         10
+     862: iconst_3
+     863: baload
+     864: i2l
+     865: ldc2_w        #408                // long 255l
+     868: land
+     869: bipush        32
+     871: lshl
+     872: lor
+     873: aload         10
+     875: iconst_4
+     876: baload
+     877: i2l
+     878: ldc2_w        #408                // long 255l
+     881: land
+     882: bipush        24
+     884: lshl
+     885: lor
+     886: aload         10
+     888: iconst_5
+     889: baload
+     890: i2l
+     891: ldc2_w        #408                // long 255l
+     894: land
+     895: bipush        16
+     897: lshl
+     898: lor
+     899: aload         10
+     901: bipush        6
+     903: baload
+     904: i2l
+     905: ldc2_w        #408                // long 255l
+     908: land
+     909: bipush        8
+     911: lshl
+     912: lor
+     913: aload         10
+     915: bipush        7
+     917: baload
+     918: i2l
+     919: ldc2_w        #408                // long 255l
+     922: land
+     923: lor
+     924: dup2_x1
+     925: pop2
+     926: tableswitch   { // 0 to 0
+                     0: 718
+               default: 570
+          }
+     944: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+     947: dup
+     948: aload         11
+     950: iconst_0
+     951: aaload
+     952: iconst_0
+     953: iconst_1
+     954: iconst_1
+     955: bipush        9
+     957: iconst_0
+     958: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+     961: putstatic     #301                // Field THICK_SKIN:Lorg/dreambot/api/methods/prayer/Prayer;
+     964: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+     967: dup
+     968: aload         11
+     970: iconst_3
+     971: aaload
+     972: iconst_1
+     973: iconst_4
+     974: iconst_2
+     975: bipush        10
+     977: iconst_1
+     978: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+     981: putstatic     #90                 // Field BURST_OF_STRENGTH:Lorg/dreambot/api/methods/prayer/Prayer;
+     984: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+     987: dup
+     988: aload         11
+     990: bipush        12
+     992: aaload
+     993: iconst_2
+     994: bipush        7
+     996: iconst_4
+     997: bipush        11
+     999: iconst_2
+    1000: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1003: putstatic     #267                // Field CLARITY_OF_THOUGHT:Lorg/dreambot/api/methods/prayer/Prayer;
+    1006: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1009: dup
+    1010: aload         11
+    1012: bipush        28
+    1014: aaload
+    1015: iconst_3
+    1016: bipush        8
+    1018: aload_0
+    1019: bipush        6
+    1021: laload
+    1022: l2i
+    1023: bipush        27
+    1025: bipush        18
+    1027: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1030: putstatic     #235                // Field SHARP_EYE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1033: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1036: dup
+    1037: aload         11
+    1039: bipush        13
+    1041: aaload
+    1042: iconst_4
+    1043: bipush        9
+    1045: aload_0
+    1046: iconst_1
+    1047: laload
+    1048: l2i
+    1049: bipush        30
+    1051: bipush        19
+    1053: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1056: putstatic     #27                 // Field MYSTIC_WILL:Lorg/dreambot/api/methods/prayer/Prayer;
+    1059: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1062: dup
+    1063: aload         11
+    1065: iconst_1
+    1066: aaload
+    1067: iconst_5
+    1068: bipush        10
+    1070: bipush        8
+    1072: bipush        12
+    1074: iconst_3
+    1075: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1078: putstatic     #245                // Field ROCK_SKIN:Lorg/dreambot/api/methods/prayer/Prayer;
+    1081: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1084: dup
+    1085: aload         11
+    1087: bipush        14
+    1089: aaload
+    1090: bipush        6
+    1092: bipush        13
+    1094: bipush        16
+    1096: bipush        13
+    1098: iconst_4
+    1099: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1102: putstatic     #80                 // Field SUPERHUMAN_STRENGTH:Lorg/dreambot/api/methods/prayer/Prayer;
+    1105: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1108: dup
+    1109: aload         11
+    1111: iconst_5
+    1112: aaload
+    1113: bipush        7
+    1115: bipush        16
+    1117: bipush        32
+    1119: bipush        14
+    1121: iconst_5
+    1122: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1125: putstatic     #155                // Field IMPROVED_REFLEXES:Lorg/dreambot/api/methods/prayer/Prayer;
+    1128: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1131: dup
+    1132: aload         11
+    1134: bipush        20
+    1136: aaload
+    1137: bipush        8
+    1139: bipush        19
+    1141: bipush        64
+    1143: bipush        15
+    1145: bipush        6
+    1147: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1150: putstatic     #111                // Field RAPID_RESTORE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1153: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1156: dup
+    1157: aload         11
+    1159: bipush        11
+    1161: aaload
+    1162: bipush        9
+    1164: bipush        22
+    1166: sipush        128
+    1169: bipush        16
+    1171: bipush        7
+    1173: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1176: putstatic     #63                 // Field RAPID_HEAL:Lorg/dreambot/api/methods/prayer/Prayer;
+    1179: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1182: dup
+    1183: aload         11
+    1185: bipush        29
+    1187: aaload
+    1188: bipush        10
+    1190: bipush        25
+    1192: sipush        256
+    1195: bipush        17
+    1197: bipush        8
+    1199: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1202: putstatic     #251                // Field PROTECT_ITEM:Lorg/dreambot/api/methods/prayer/Prayer;
+    1205: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1208: dup
+    1209: aload         11
+    1211: bipush        24
+    1213: aaload
+    1214: bipush        11
+    1216: bipush        26
+    1218: aload_0
+    1219: bipush        7
+    1221: laload
+    1222: l2i
+    1223: bipush        28
+    1225: bipush        20
+    1227: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1230: putstatic     #278                // Field HAWK_EYE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1233: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1236: dup
+    1237: aload         11
+    1239: bipush        30
+    1241: aaload
+    1242: bipush        12
+    1244: bipush        27
+    1246: aload_0
+    1247: bipush        11
+    1249: laload
+    1250: l2i
+    1251: bipush        31
+    1253: bipush        21
+    1255: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1258: putstatic     #292                // Field MYSTIC_LORE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1261: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1264: dup
+    1265: aload         11
+    1267: bipush        25
+    1269: aaload
+    1270: bipush        13
+    1272: bipush        28
+    1274: sipush        512
+    1277: bipush        18
+    1279: bipush        9
+    1281: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1284: putstatic     #48                 // Field STEEL_SKIN:Lorg/dreambot/api/methods/prayer/Prayer;
+    1287: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1290: dup
+    1291: aload         11
+    1293: bipush        15
+    1295: aaload
+    1296: bipush        14
+    1298: bipush        31
+    1300: sipush        1024
+    1303: bipush        19
+    1305: bipush        10
+    1307: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1310: putstatic     #183                // Field ULTIMATE_STRENGTH:Lorg/dreambot/api/methods/prayer/Prayer;
+    1313: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1316: dup
+    1317: aload         11
+    1319: bipush        9
+    1321: aaload
+    1322: bipush        15
+    1324: bipush        34
+    1326: sipush        2048
+    1329: bipush        20
+    1331: bipush        11
+    1333: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1336: putstatic     #45                 // Field INCREDIBLE_REFLEXES:Lorg/dreambot/api/methods/prayer/Prayer;
+    1339: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1342: dup
+    1343: aload         11
+    1345: bipush        10
+    1347: aaload
+    1348: bipush        16
+    1350: bipush        37
+    1352: sipush        4096
+    1355: bipush        21
+    1357: bipush        12
+    1359: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1362: putstatic     #397                // Field PROTECT_FROM_MAGIC:Lorg/dreambot/api/methods/prayer/Prayer;
+    1365: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1368: dup
+    1369: aload         11
+    1371: bipush        8
+    1373: aaload
+    1374: bipush        17
+    1376: bipush        40
+    1378: sipush        8192
+    1381: bipush        22
+    1383: bipush        13
+    1385: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1388: putstatic     #178                // Field PROTECT_FROM_MISSILES:Lorg/dreambot/api/methods/prayer/Prayer;
+    1391: new           #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1394: dup
+    1395: aload         11
+    1397: bipush        6
+    1399: aaload
+    1400: bipush        18
+    1402: bipush        43
+    1404: sipush        16384
+    1407: bipush        23
+    1409: bipush        14
+    1411: invokespecial #277                // Method "<init>":(Ljava/lang/String;IIIII)V
+    1414: putstatic     #243                // Field PROTECT_FROM_MELEE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1417: new           #69                 // class org/dreambot/api/methods/prayer/Prayer$1
+    1420: dup
+    1421: aload         11
+    1423: bipush        26
+    1425: aaload
+    1426: bipush        19
+    1428: bipush        44
+    1430: aload_0
+    1431: bipush        14
+    1433: laload
+    1434: l2i
+    1435: bipush        29
+    1437: bipush        22
+    1439: invokespecial #40                 // Method org/dreambot/api/methods/prayer/Prayer$1."<init>":(Ljava/lang/String;IIIII)V
+    1442: putstatic     #371                // Field EAGLE_EYE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1445: new           #33                 // class org/dreambot/api/methods/prayer/Prayer$2
+    1448: dup
+    1449: aload         11
+    1451: bipush        27
+    1453: aaload
+    1454: bipush        20
+    1456: bipush        45
+    1458: aload_0
+    1459: iconst_5
+    1460: laload
+    1461: l2i
+    1462: bipush        32
+    1464: bipush        23
+    1466: invokespecial #23                 // Method org/dreambot/api/methods/prayer/Prayer$2."<init>":(Ljava/lang/String;IIIII)V
+    1469: putstatic     #112                // Field MYSTIC_MIGHT:Lorg/dreambot/api/methods/prayer/Prayer;
+    1472: new           #128                // class org/dreambot/api/methods/prayer/Prayer$3
+    1475: dup
+    1476: aload         11
+    1478: bipush        23
+    1480: aaload
+    1481: bipush        21
+    1483: bipush        46
+    1485: aload_0
+    1486: bipush        8
+    1488: laload
+    1489: l2i
+    1490: bipush        24
+    1492: bipush        15
+    1494: invokespecial #51                 // Method org/dreambot/api/methods/prayer/Prayer$3."<init>":(Ljava/lang/String;IIIII)V
+    1497: putstatic     #166                // Field RETRIBUTION:Lorg/dreambot/api/methods/prayer/Prayer;
+    1500: new           #140                // class org/dreambot/api/methods/prayer/Prayer$4
+    1503: dup
+    1504: aload         11
+    1506: bipush        18
+    1508: aaload
+    1509: bipush        22
+    1511: bipush        49
+    1513: aload_0
+    1514: iconst_0
+    1515: laload
+    1516: l2i
+    1517: bipush        25
+    1519: bipush        16
+    1521: invokespecial #181                // Method org/dreambot/api/methods/prayer/Prayer$4."<init>":(Ljava/lang/String;IIIII)V
+    1524: putstatic     #356                // Field REDEMPTION:Lorg/dreambot/api/methods/prayer/Prayer;
+    1527: new           #348                // class org/dreambot/api/methods/prayer/Prayer$5
+    1530: dup
+    1531: aload         11
+    1533: bipush        16
+    1535: aaload
+    1536: bipush        23
+    1538: bipush        52
+    1540: aload_0
+    1541: bipush        15
+    1543: laload
+    1544: l2i
+    1545: bipush        26
+    1547: bipush        17
+    1549: invokespecial #392                // Method org/dreambot/api/methods/prayer/Prayer$5."<init>":(Ljava/lang/String;IIIII)V
+    1552: putstatic     #120                // Field SMITE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1555: new           #202                // class org/dreambot/api/methods/prayer/Prayer$6
+    1558: dup
+    1559: aload         11
+    1561: bipush        21
+    1563: aaload
+    1564: bipush        24
+    1566: bipush        55
+    1568: aload_0
+    1569: iconst_3
+    1570: laload
+    1571: l2i
+    1572: bipush        37
+    1574: bipush        28
+    1576: invokespecial #103                // Method org/dreambot/api/methods/prayer/Prayer$6."<init>":(Ljava/lang/String;IIIII)V
+    1579: putstatic     #105                // Field PRESERVE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1582: new           #314                // class org/dreambot/api/methods/prayer/Prayer$7
+    1585: dup
+    1586: aload         11
+    1588: bipush        7
+    1590: aaload
+    1591: bipush        25
+    1593: bipush        60
+    1595: aload_0
+    1596: bipush        13
+    1598: laload
+    1599: l2i
+    1600: bipush        34
+    1602: bipush        25
+    1604: invokespecial #228                // Method org/dreambot/api/methods/prayer/Prayer$7."<init>":(Ljava/lang/String;IIIII)V
+    1607: putstatic     #380                // Field CHIVALRY:Lorg/dreambot/api/methods/prayer/Prayer;
+    1610: new           #135                // class org/dreambot/api/methods/prayer/Prayer$8
+    1613: dup
+    1614: aload         11
+    1616: iconst_4
+    1617: aaload
+    1618: bipush        26
+    1620: bipush        62
+    1622: aload_0
+    1623: iconst_4
+    1624: laload
+    1625: l2i
+    1626: bipush        29
+    1628: bipush        22
+    1630: invokespecial #226                // Method org/dreambot/api/methods/prayer/Prayer$8."<init>":(Ljava/lang/String;IIIII)V
+    1633: putstatic     #204                // Field DEADEYE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1636: new           #200                // class org/dreambot/api/methods/prayer/Prayer$9
+    1639: dup
+    1640: aload         11
+    1642: bipush        17
+    1644: aaload
+    1645: bipush        27
+    1647: bipush        63
+    1649: aload_0
+    1650: iconst_2
+    1651: laload
+    1652: l2i
+    1653: bipush        32
+    1655: bipush        23
+    1657: invokespecial #129                // Method org/dreambot/api/methods/prayer/Prayer$9."<init>":(Ljava/lang/String;IIIII)V
+    1660: putstatic     #182                // Field MYSTIC_VIGOUR:Lorg/dreambot/api/methods/prayer/Prayer;
+    1663: new           #338                // class org/dreambot/api/methods/prayer/Prayer$10
+    1666: dup
+    1667: aload         11
+    1669: bipush        22
+    1671: aaload
+    1672: bipush        28
+    1674: bipush        70
+    1676: aload_0
+    1677: bipush        9
+    1679: laload
+    1680: l2i
+    1681: bipush        35
+    1683: bipush        26
+    1685: invokespecial #14                 // Method org/dreambot/api/methods/prayer/Prayer$10."<init>":(Ljava/lang/String;IIIII)V
+    1688: putstatic     #318                // Field PIETY:Lorg/dreambot/api/methods/prayer/Prayer;
+    1691: new           #176                // class org/dreambot/api/methods/prayer/Prayer$11
+    1694: dup
+    1695: aload         11
+    1697: iconst_2
+    1698: aaload
+    1699: bipush        29
+    1701: bipush        74
+    1703: aload_0
+    1704: bipush        12
+    1706: laload
+    1707: l2i
+    1708: bipush        33
+    1710: bipush        24
+    1712: invokespecial #89                 // Method org/dreambot/api/methods/prayer/Prayer$11."<init>":(Ljava/lang/String;IIIII)V
+    1715: putstatic     #360                // Field RIGOUR:Lorg/dreambot/api/methods/prayer/Prayer;
+    1718: new           #372                // class org/dreambot/api/methods/prayer/Prayer$12
+    1721: dup
+    1722: aload         11
+    1724: bipush        19
+    1726: aaload
+    1727: bipush        30
+    1729: bipush        77
+    1731: aload_0
+    1732: bipush        10
+    1734: laload
+    1735: l2i
+    1736: bipush        36
+    1738: bipush        27
+    1740: invokespecial #220                // Method org/dreambot/api/methods/prayer/Prayer$12."<init>":(Ljava/lang/String;IIIII)V
+    1743: putstatic     #184                // Field AUGURY:Lorg/dreambot/api/methods/prayer/Prayer;
+    1746: bipush        31
+    1748: anewarray     #1                  // class org/dreambot/api/methods/prayer/Prayer
+    1751: dup
+    1752: iconst_0
+    1753: getstatic     #301                // Field THICK_SKIN:Lorg/dreambot/api/methods/prayer/Prayer;
+    1756: aastore
+    1757: dup
+    1758: iconst_1
+    1759: getstatic     #90                 // Field BURST_OF_STRENGTH:Lorg/dreambot/api/methods/prayer/Prayer;
+    1762: aastore
+    1763: dup
+    1764: iconst_2
+    1765: getstatic     #267                // Field CLARITY_OF_THOUGHT:Lorg/dreambot/api/methods/prayer/Prayer;
+    1768: aastore
+    1769: dup
+    1770: iconst_3
+    1771: getstatic     #235                // Field SHARP_EYE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1774: aastore
+    1775: dup
+    1776: iconst_4
+    1777: getstatic     #27                 // Field MYSTIC_WILL:Lorg/dreambot/api/methods/prayer/Prayer;
+    1780: aastore
+    1781: dup
+    1782: iconst_5
+    1783: getstatic     #245                // Field ROCK_SKIN:Lorg/dreambot/api/methods/prayer/Prayer;
+    1786: aastore
+    1787: dup
+    1788: bipush        6
+    1790: getstatic     #80                 // Field SUPERHUMAN_STRENGTH:Lorg/dreambot/api/methods/prayer/Prayer;
+    1793: aastore
+    1794: dup
+    1795: bipush        7
+    1797: getstatic     #155                // Field IMPROVED_REFLEXES:Lorg/dreambot/api/methods/prayer/Prayer;
+    1800: aastore
+    1801: dup
+    1802: bipush        8
+    1804: getstatic     #111                // Field RAPID_RESTORE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1807: aastore
+    1808: dup
+    1809: bipush        9
+    1811: getstatic     #63                 // Field RAPID_HEAL:Lorg/dreambot/api/methods/prayer/Prayer;
+    1814: aastore
+    1815: dup
+    1816: bipush        10
+    1818: getstatic     #251                // Field PROTECT_ITEM:Lorg/dreambot/api/methods/prayer/Prayer;
+    1821: aastore
+    1822: dup
+    1823: bipush        11
+    1825: getstatic     #278                // Field HAWK_EYE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1828: aastore
+    1829: dup
+    1830: bipush        12
+    1832: getstatic     #292                // Field MYSTIC_LORE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1835: aastore
+    1836: dup
+    1837: bipush        13
+    1839: getstatic     #48                 // Field STEEL_SKIN:Lorg/dreambot/api/methods/prayer/Prayer;
+    1842: aastore
+    1843: dup
+    1844: bipush        14
+    1846: getstatic     #183                // Field ULTIMATE_STRENGTH:Lorg/dreambot/api/methods/prayer/Prayer;
+    1849: aastore
+    1850: dup
+    1851: bipush        15
+    1853: getstatic     #45                 // Field INCREDIBLE_REFLEXES:Lorg/dreambot/api/methods/prayer/Prayer;
+    1856: aastore
+    1857: dup
+    1858: bipush        16
+    1860: getstatic     #397                // Field PROTECT_FROM_MAGIC:Lorg/dreambot/api/methods/prayer/Prayer;
+    1863: aastore
+    1864: dup
+    1865: bipush        17
+    1867: getstatic     #178                // Field PROTECT_FROM_MISSILES:Lorg/dreambot/api/methods/prayer/Prayer;
+    1870: aastore
+    1871: dup
+    1872: bipush        18
+    1874: getstatic     #243                // Field PROTECT_FROM_MELEE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1877: aastore
+    1878: dup
+    1879: bipush        19
+    1881: getstatic     #371                // Field EAGLE_EYE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1884: aastore
+    1885: dup
+    1886: bipush        20
+    1888: getstatic     #112                // Field MYSTIC_MIGHT:Lorg/dreambot/api/methods/prayer/Prayer;
+    1891: aastore
+    1892: dup
+    1893: bipush        21
+    1895: getstatic     #166                // Field RETRIBUTION:Lorg/dreambot/api/methods/prayer/Prayer;
+    1898: aastore
+    1899: dup
+    1900: bipush        22
+    1902: getstatic     #356                // Field REDEMPTION:Lorg/dreambot/api/methods/prayer/Prayer;
+    1905: aastore
+    1906: dup
+    1907: bipush        23
+    1909: getstatic     #120                // Field SMITE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1912: aastore
+    1913: dup
+    1914: bipush        24
+    1916: getstatic     #105                // Field PRESERVE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1919: aastore
+    1920: dup
+    1921: bipush        25
+    1923: getstatic     #380                // Field CHIVALRY:Lorg/dreambot/api/methods/prayer/Prayer;
+    1926: aastore
+    1927: dup
+    1928: bipush        26
+    1930: getstatic     #204                // Field DEADEYE:Lorg/dreambot/api/methods/prayer/Prayer;
+    1933: aastore
+    1934: dup
+    1935: bipush        27
+    1937: getstatic     #182                // Field MYSTIC_VIGOUR:Lorg/dreambot/api/methods/prayer/Prayer;
+    1940: aastore
+    1941: dup
+    1942: bipush        28
+    1944: getstatic     #318                // Field PIETY:Lorg/dreambot/api/methods/prayer/Prayer;
+    1947: aastore
+    1948: dup
+    1949: bipush        29
+    1951: getstatic     #360                // Field RIGOUR:Lorg/dreambot/api/methods/prayer/Prayer;
+    1954: aastore
+    1955: dup
+    1956: bipush        30
+    1958: getstatic     #184                // Field AUGURY:Lorg/dreambot/api/methods/prayer/Prayer;
+    1961: aastore
+    1962: putstatic     #44                 // Field "5":[Lorg/dreambot/api/methods/prayer/Prayer;
+    1965: return
+
+  public static void 7(boolean);
+    Code:
+       0: iload_0
+       1: putstatic     #150                // Field "4":Z
+       4: return
+
+  public static boolean 8();
+    Code:
+       0: getstatic     #150                // Field "4":Z
+       3: ireturn
+
+  public static boolean 3();
+    Code:
+       0: invokestatic  #171                // Method "8":()Z
+       3: istore_0
+       4: iload_0
+       5: ifne          10
+       8: iconst_1
+       9: ireturn
+      10: iconst_0
+      11: ireturn
+
+  private static java.lang.String a(byte[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: aload_0
+       3: arraylength
+       4: dup
+       5: istore_2
+       6: newarray       char
+       8: astore_3
+       9: iconst_0
+      10: istore        4
+      12: iload         4
+      14: iload_2
+      15: if_icmpge     178
+      18: sipush        255
+      21: aload_0
+      22: iload         4
+      24: baload
+      25: iand
+      26: dup
+      27: istore        5
+      29: sipush        192
+      32: if_icmpge     47
+      35: aload_3
+      36: iload_1
+      37: iinc          1, 1
+      40: iload         5
+      42: i2c
+      43: castore
+      44: goto          172
+      47: iload         5
+      49: sipush        224
+      52: if_icmpge     99
+      55: iload         5
+      57: bipush        31
+      59: iand
+      60: i2c
+      61: bipush        6
+      63: ishl
+      64: i2c
+      65: istore        6
+      67: aload_0
+      68: iinc          4, 1
+      71: iload         4
+      73: baload
+      74: istore        5
+      76: iload         6
+      78: iload         5
+      80: bipush        63
+      82: iand
+      83: i2c
+      84: ior
+      85: i2c
+      86: istore        6
+      88: aload_3
+      89: iload_1
+      90: iinc          1, 1
+      93: iload         6
+      95: castore
+      96: goto          172
+      99: iload         4
+     101: iload_2
+     102: iconst_2
+     103: isub
+     104: if_icmpge     172
+     107: iload         5
+     109: bipush        15
+     111: iand
+     112: i2c
+     113: bipush        12
+     115: ishl
+     116: i2c
+     117: istore        6
+     119: aload_0
+     120: iinc          4, 1
+     123: iload         4
+     125: baload
+     126: istore        5
+     128: iload         6
+     130: iload         5
+     132: bipush        63
+     134: iand
+     135: i2c
+     136: bipush        6
+     138: ishl
+     139: ior
+     140: i2c
+     141: istore        6
+     143: aload_0
+     144: iinc          4, 1
+     147: iload         4
+     149: baload
+     150: istore        5
+     152: iload         6
+     154: iload         5
+     156: bipush        63
+     158: iand
+     159: i2c
+     160: ior
+     161: i2c
+     162: istore        6
+     164: aload_3
+     165: iload_1
+     166: iinc          1, 1
+     169: iload         6
+     171: castore
+     172: iinc          4, 1
+     175: goto          12
+     178: new           #16                 // class java/lang/String
+     181: dup
+     182: aload_3
+     183: iconst_0
+     184: iload_1
+     185: invokespecial #15                 // Method java/lang/String."<init>":([CII)V
+     188: areturn
+}

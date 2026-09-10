@@ -1,0 +1,67 @@
+# Prayer widget table — 2026-09-09
+
+Source: `org/dreambot/api/methods/prayer/Prayer*.class` in
+`repository2/dreambot-client.jar`
+(sha256 66036CB5...0882A; see AGENTS.md).
+Dump: `results/javap-c-db-prayer-enum.txt`
+Parser: `tools/ParsePrayerEnum.py` (enum static{} block parse).
+
+Confirmed static facts (read straight from bytecode):
+- `Prayer.getWidgetIndex()` returns constant 541 (prayer book group).
+- `Prayer.getWidgetChild()` = `Widgets.get([541, getChildIndex()])`.
+- Constructor maps arg1 -> level, arg2 -> setting-bit, arg3 -> child,
+  arg4 -> quick-prayer child (putfield trace in the dump).
+- `Prayers.getWidgetChildQuickPrayer(p)` = `Widgets.get([77, 4, p.getQuickPrayerChild()])`
+  (see `results/javap-c-db-combat-prayer-tracker.txt`:4394).
+- `Prayers` quick-prayer toggle widget = [160, 20]
+  (`results/javap-c-db-combat-prayer-tracker.txt`:4414); the pinned
+  RuneLite API agrees (`results/widgetinfo-probe.txt`):
+  QUICK_PRAYER_PRAYERS = (77, 4), MINIMAP_QUICK_PRAYER_ORB = (160, 20).
+
+Per-constant rows: NAME level child quick.
+Levels match the game's known prayer levels 1..77 exactly, which
+triple-validates the parse alignment (name from putstatic, ordinal,
+levels). Children/quick-children are plain int pushes in every block.
+
+NOT VERIFIED / excluded: the per-prayer "setting" bitmask is
+runtime-decrypted for most prayers (laload over a decrypted long[] in
+Prayer$1..$12 and in SHARP_EYE/MYSTIC_WILL/HAWK_EYE/MYSTIC_LORE blocks)
+— only the shown plain-push values would be constants, so settings are
+not recorded at all. The fork reads prayer state via the maintained
+`Client.isPrayerActive`, never via setting bits.
+
+THICK_SKIN 1 9 0
+BURST_OF_STRENGTH 4 10 1
+CLARITY_OF_THOUGHT 7 11 2
+SHARP_EYE 8 27 18
+MYSTIC_WILL 9 30 19
+ROCK_SKIN 10 12 3
+SUPERHUMAN_STRENGTH 13 13 4
+IMPROVED_REFLEXES 16 14 5
+RAPID_RESTORE 19 15 6
+RAPID_HEAL 22 16 7
+PROTECT_ITEM 25 17 8
+HAWK_EYE 26 28 20
+MYSTIC_LORE 27 31 21
+STEEL_SKIN 28 18 9
+ULTIMATE_STRENGTH 31 19 10
+INCREDIBLE_REFLEXES 34 20 11
+PROTECT_FROM_MAGIC 37 21 12
+PROTECT_FROM_MISSILES 40 22 13
+PROTECT_FROM_MELEE 43 23 14
+EAGLE_EYE 44 29 22
+MYSTIC_MIGHT 45 32 23
+RETRIBUTION 46 24 15
+REDEMPTION 49 25 16
+SMITE 52 26 17
+PRESERVE 55 37 28
+CHIVALRY 60 34 25
+DEADEYE 62 29 22
+MYSTIC_VIGOUR 63 32 23
+PIETY 70 35 26
+RIGOUR 74 33 24
+AUGURY 77 36 27
+
+Note: DEADEYE shares EAGLE_EYE's widgets (29/22) and MYSTIC_VIGOUR
+shares MYSTIC_MIGHT's (32/23) in DreamBot's own table — recorded as
+found; a live pass should confirm which slot actually lights up.
