@@ -32,13 +32,13 @@ never cut for convenience on the core botting surface.
 |---|---|---|
 | Menu interaction | `Actions` builders (compiler-checked entries) + install + Robot dispatch | Covered offline; dispatch params want one live pass |
 | Local + web pathfinding (98 files) | `PathFinder` (A*, bits read from RL's own `MovementFlag`: `results/movementflag-clinit.txt`) + `Walking.walkPath`; web/server queries | Pathfinding covered (smoke incl. wall/gap/unreachable); web out (no server) |
-| `Magic` (4 books, costs) | `Magic` home teleports for all five books (verified widgets) + rune-cost/target spells | Home teleports covered (compiles; clicks game-only); combat spells deferred, not guessed |
-| `Prayers` | quick-pray orb + `isActive` + per-prayer `toggle`/`activate` via mined book table (group 541, `results/prayer-widget-table.txt`) | Covered (lookup offline; dispatch game-only); Ruinous book + quick-prayer setup deferred |
+| `Magic` (4 books, costs) | `Magic` home teleports for all five books (verified widgets) + 180-spell `cast` (level-gated) | Home teleports + slots covered (dispatch game-only); rune costs deferred (decrypted) |
+| `Prayers` | quick-pray orb + `isActive` + per-prayer `toggle`/`activate` via mined book table (group 541, `results/prayer-widget-table.txt`) + quick-prayer `selectQuick` | Covered (lookup offline; dispatch game-only); Ruinous book deferred |
 | `Tabs` | all fixed tabs + resizable inv/prayer, layout-aware | Covered (compiles; clicks game-only) |
 | `Dialogues` | `Dialogs` (widget state + space/number-key input) | Covered (smoke state reads) |
 | `GrandExchange` (excl. `LivePrices`) | `GrandExchange` reads, screens, search, qty/price, confirm, abort, collect + collect-to-bank, full `buyOffer`/`sellOffer` flows | Covered (builders + lookup offline; dispatch game-only) |
 | `Trade`, `DepositBox` | `Trade` (open/accept/decline/tradeWith, both stages), `DepositBox` (open/deposit-all ×3/close/slots) | Covered (lookup offline; dispatch game-only) |
-| `Combat` / `CombatStyle` | `Combat` level, spec %/active/toggle, retaliate read/set, style read/set, poisoned (varps 300/301/172/43/102, probe-verified widgets) | Covered (reads + builders offline; dispatch game-only); envenom magnitude deferred (decrypted threshold) |
+| `Combat` / `CombatStyle` | `Combat` level, spec %/active/toggle, retaliate read/set, style read/set, poisoned, envenomed (varps 300/301/172/43/102, probe-verified widgets) | Covered (reads + builders offline; dispatch game-only); envenom band is strong inference |
 | Widget search + Smithing/ItemProcessing helpers | `Widgets` recursive text/action/id search | Covered (structure); trade-skill helpers deferred |
 | Mouse/Keyboard | `Actions.click`, `Mouse.move`, `Keyboard.type` | Covered (builders offline; dispatch game-only) |
 | Camera/Minimap | `Camera` yaw/pitch targets; minimap projection in `Actions` | Covered (compiles; game-only) |
@@ -55,6 +55,9 @@ never cut for convenience on the core botting surface.
 | Quests | `Quests.questPoints` (varp 101) + tab open | Covered (smoke); per-quest states deferred (decrypted color map) |
 | Diaries | `Diaries` 12 areas x 4 tiers (mined varbits, `results/diary-varbit-table.txt`) | Covered (smoke) |
 | Minigames | `Minigames` open check, selection read, name-matched teleport (group 76) | Covered (lookup offline; dispatch game-only); clan-tab opener deferred |
+| Combat spells | `Spell` enum (180 mined slots, all books) + `Magic.cast/canCast` (level gate; rune costs decrypted-out) | Covered (lookup offline; dispatch game-only) |
+| Quick prayers | `Prayers.quickChild/selectQuick` (mined slots, probe-matched root) | Covered (lookup offline; dispatch game-only) |
+| Envenom | `Combat.isEnvenomed/poisonValue` (varp-102 venom band per RL `POISON` scale) | Strong inference (smoke); needs a live pass |
 
 ## Widget-id provenance
 
@@ -75,8 +78,8 @@ Every flow built on them still wants one live pass.
   launcher's login and nothing else.
 - Deferred niche content (no core loop needs them): per-quest states
   (decrypted color map — needs one live pass), bonds (no static ids and
-  no pinned constants), Ruinous prayers, quick-prayer setup, envenom
-  magnitude, full combat spellbooks, social mutations (friend add/delete,
-  chat join/leave/message), fairy travel-log matching, clan-tab opener.
+  no pinned constants), Ruinous prayers (no DreamBot-side table — standard
+  book only), social mutations (friend add/delete, chat join/leave/message),
+  fairy travel-log matching, clan-tab opener.
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.

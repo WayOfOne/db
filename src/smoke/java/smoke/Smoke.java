@@ -34,6 +34,7 @@ import bot.api.RandomEvents;
 import bot.api.Shop;
 import bot.api.SkillTracker;
 import bot.api.Smithing;
+import bot.api.Spell;
 import bot.api.Trade;
 import bot.api.Vars;
 import bot.api.WidgetIds;
@@ -263,6 +264,22 @@ public final class Smoke {
         check(Minigames.selected() == null, "no minigame selected");
         check(!Minigames.teleport(null), "null minigame rejected");
         check(!Minigames.teleport("Pest Control"), "teleport fails clean");
+
+        check(Spell.WIND_STRIKE.child == 11 && Spell.WIND_STRIKE.level == 1, "wind strike slot");
+        check(Spell.ICE_BARRAGE.child == 87 && Spell.ICE_BARRAGE.level == 94, "ice barrage slot");
+        check(Spell.HUMIDIFY.child == 115 && Spell.HUMIDIFY.level == 68, "humidify slot");
+        check(Spell.values().length == 180, "180 spells mined");
+        check(!bot.api.Magic.canCast(Spell.ICE_BARRAGE), "barrage level gate");
+        check(!bot.api.Magic.cast(Spell.WIND_STRIKE), "cast fails clean");
+
+        check(Prayers.quickChild(Prayer.PROTECT_ITEM) == 8, "protect item quick slot");
+        check(Prayers.quickChild(Prayer.AUGURY) == 27, "augury quick slot");
+        check(Prayers.quickChild(null) == -1, "null quick unmapped");
+        check(Prayers.quickChild(Prayer.RP_WRATH) == -1, "ruinous quick unmapped");
+        check(!Prayers.selectQuick(Prayer.SMITE), "quick select fails clean");
+
+        check(!Combat.isEnvenomed(), "clean of venom");
+        check(Combat.poisonValue() == 0, "poison value default");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");

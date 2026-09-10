@@ -1,12 +1,32 @@
 package bot.api;
 
 import net.runelite.api.widgets.WidgetInfo;
+import net.runelite.api.Skill;
 
 /** Spellbook home teleports (one per book, no runes or levels). Each widget
  * is compiler-checked against the pinned API; combat/utility spells with
  * rune costs and target selection are deferred, not guessed. */
 public final class Magic {
     private Magic() {
+    }
+
+    /** Cast a spell by its mined book slot (DreamBot `castSpell` parity:
+     * click (218, child)). Rune costs ride DreamBot decrypted tables, so
+     * casting never checks runes — use `canCast` for the level gate.
+     * Targeted spells need a post-click target tap by the script.
+     * Game-only. */
+    public static boolean cast(Spell spell) throws Exception {
+        if (spell == null) {
+            return false;
+        }
+        Tabs.magic();
+        return Actions.widget(Widgets.child(WidgetIds.SPELL_GROUP, spell.child));
+    }
+
+    /** True when our Magic level meets the spell's requirement. Level gate
+     * only — rune costs are not statically minable (see `Spell`). */
+    public static boolean canCast(Spell spell) {
+        return spell != null && Skills.level(Skill.MAGIC) >= spell.level;
     }
 
     /** Cast a home teleport by its verified spellbook widget. Game-only. */

@@ -107,4 +107,18 @@ public final class Combat {
     public static boolean isPoisoned() {
         return Vars.varp(102) > 0;
     }
+
+    /** Raw poison/venom varp (102). Negative = protection ticks, 0 = clean,
+     * 1-100 = poison, >= 1000000 = venom (RuneLite `VarPlayer.POISON`
+     * scale — strong inference from upstream docs, wants a live pass). */
+    public static int poisonValue() {
+        return Vars.varp(102);
+    }
+
+    /** True while envenomed (DreamBot isEnvenomed parity: varp 102 at the
+     * venom band, >= 1000000 per RuneLite's documented `POISON` scale).
+     * Strong inference — confirm on the live client. */
+    public static boolean isEnvenomed() {
+        return poisonValue() >= 1_000_000;
+    }
 }

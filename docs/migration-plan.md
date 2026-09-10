@@ -255,6 +255,23 @@ server, no credential vault, no packet code.
   the list is open, fails clean otherwise.
 - [x] `smokeTest` at 135 checks, all offline. Clicks want one live pass.
 
+## Phase 20 — Combat spells + quick-prayer setup + envenom (local scripts only)
+
+- [x] Mined all four DreamBot spellbook enums: group 218 everywhere,
+  180 per-spell (child, level) rows with levels matching game-known
+  values (`results/spell-table.txt`, `tools/ParseSpells.py`) ->
+  `Spell` enum + `Magic.cast/canCast` (level gate only; rune costs ride
+  decrypted tables and stay out).
+- [x] `Prayers.quickChild/selectQuick` from the mined quick-prayer
+  children (root (77, 4) probe-matches the pinned `QUICK_PRAYER_PRAYERS`).
+- [x] `Combat.isEnvenomed/poisonValue` (varp 102 venom band >= 1000000
+  per RuneLite's documented `POISON` scale — strong inference, needs a
+  live pass).
+- [x] Ruinous prayers stay out (DreamBot's own table is standard-book
+  only; no static source). Bonds stay out (no static ids, no pinned
+  constants). Both documented in api-coverage.
+- [x] `smokeTest` at 148 checks, all offline. Clicks want one live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal
