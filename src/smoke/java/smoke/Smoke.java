@@ -14,6 +14,7 @@ import bot.api.Bank;
 import bot.api.ClanChat;
 import bot.api.Combat;
 import bot.api.DepositBox;
+import bot.api.Diaries;
 import bot.api.Dialogs;
 import bot.api.Emote;
 import bot.api.Emotes;
@@ -24,9 +25,11 @@ import bot.api.Game;
 import bot.api.GrandExchange;
 import bot.api.GroundItems;
 import bot.api.HintArrows;
+import bot.api.Minigames;
 import bot.api.Npcs;
 import bot.api.PathFinder;
 import bot.api.Prayers;
+import bot.api.Quests;
 import bot.api.RandomEvents;
 import bot.api.Shop;
 import bot.api.SkillTracker;
@@ -246,6 +249,20 @@ public final class Smoke {
         check(!FairyRings.enterCode(new String[] {"a"}), "short code rejected");
         check(!FairyRings.enterCode(new String[] {"a", "i", "q"}), "enter code fails clean");
         check(!FairyRings.travel(new String[] {"a", "i", "q"}), "travel fails clean");
+
+        check(Quests.questPoints() == 0, "quest points default");
+        check(!Diaries.finished(Diaries.Area.LUMBRIDGE_DRAYNOR, Diaries.Tier.EASY),
+            "lumby easy unfinished");
+        check(!Diaries.finished(null, Diaries.Tier.EASY), "null area unfinished");
+        check(!Diaries.finished(Diaries.Area.VARROCK, null), "null tier unfinished");
+        check(!Diaries.allFinished(Diaries.Area.KARAMJA), "karamja incomplete");
+        check(!Diaries.allFinished(null), "null area incomplete");
+        check(Diaries.Area.values().length == 12, "12 diary areas");
+
+        check(!Minigames.isOpen(), "no minigame list open");
+        check(Minigames.selected() == null, "no minigame selected");
+        check(!Minigames.teleport(null), "null minigame rejected");
+        check(!Minigames.teleport("Pest Control"), "teleport fails clean");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");

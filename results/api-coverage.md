@@ -52,6 +52,9 @@ never cut for convenience on the core botting surface.
 | Shop | `Shop` reads, buy/sell 1-5-10-50, keeper open, escape close (group 300, probe-verified) | Covered (lookup offline; dispatch game-only) |
 | Smithing | `Smithing` reads, item click, anvil open (group 312, probe-verified; no DreamBot class exists) | Covered (lookup offline; dispatch game-only) |
 | Fairy rings | `FairyRings` dial reads, rotate, code entry, travel (mined varp-816 mechanics, `results/fairy-ring-table.txt`) | Covered (reads + builders offline; dispatch game-only); log matching deferred |
+| Quests | `Quests.questPoints` (varp 101) + tab open | Covered (smoke); per-quest states deferred (decrypted color map) |
+| Diaries | `Diaries` 12 areas x 4 tiers (mined varbits, `results/diary-varbit-table.txt`) | Covered (smoke) |
+| Minigames | `Minigames` open check, selection read, name-matched teleport (group 76) | Covered (lookup offline; dispatch game-only); clan-tab opener deferred |
 
 ## Widget-id provenance
 
@@ -70,11 +73,10 @@ Every flow built on them still wants one live pass.
   `AccountManager`, telemetry, SDN deploy, `ClientSettings` sync — server,
   auth, or evasion-adjacent scope. The fork runs local scripts under the
   launcher's login and nothing else.
-- Deferred niche content (no core loop needs them): quest book data,
-  minigames, diaries, bonds (no static ids and no pinned constants —
-  needs one live pass to identify the redeem screen), Ruinous prayers,
-  quick-prayer setup, envenom magnitude, full combat spellbooks, social
-  mutations (friend add/delete, chat join/leave/message), fairy travel-log
-  matching.
+- Deferred niche content (no core loop needs them): per-quest states
+  (decrypted color map — needs one live pass), bonds (no static ids and
+  no pinned constants), Ruinous prayers, quick-prayer setup, envenom
+  magnitude, full combat spellbooks, social mutations (friend add/delete,
+  chat join/leave/message), fairy travel-log matching, clan-tab opener.
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.

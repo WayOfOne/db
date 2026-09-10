@@ -123,4 +123,15 @@ public final class WidgetIds {
     /** Dial state varp (DreamBot FairyRings getCode: masks [3,12,48],
      * shift slot*2, letters [a,d,c,b]/[i,l,k,j]/[p,s,r,q]). */
     public static final int FAIRY_VARP = 816;
+
+    // -- Minigame teleports (group 76, clan interface) --
+    /** Selected-entry text (DreamBot MinigameTeleports `9`), entry list
+     * (`9(Minigame)` picker), confirm button (`8i`). */
+    public static final int MINIGAME_GROUP = 76;
+    public static final int MINIGAME_SELECTED = 11;
+    public static final int MINIGAME_LIST = 22;
+    public static final int MINIGAME_CONFIRM = 32;
+
+    /** Quest points varp (DreamBot Quests.getQuestPoints, one-line read). */
+    public static final int QUEST_POINTS_VARP = 101;
 }

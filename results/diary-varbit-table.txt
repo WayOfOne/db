@@ -1,0 +1,28 @@
+# Diary tier varbits — 2026-09-10
+
+Source: org/dreambot/api/methods/diary/*Diary.class in
+repository2/dreambot-client.jar (sha256 66036CB5...0882A).
+Dump: results/javap-c-db-diaries.txt
+Parser: tools/ParseDiaries.py (per-tier getBitValue arg).
+
+Confirmed static facts:
+- Each area diary has easy/medium/hard/eliteFinished() shaped as
+  getBitValue(varbit) == 1 (full read: LumbridgeDraynorDiary in the
+  dump; spot-verified Ardougne easy 4458 and Karamja elite 4566 share
+  the identical shape).
+- All 48 varbits below are plain sipush constants.
+
+Rows: AREA easy medium hard elite.
+
+ArdougneDiary 4458 4459 4460 4461
+DesertDiary 4483 4484 4485 4486
+FaladorDiary 4462 4463 4464 4465
+FremennikDiary 4491 4492 4493 4494
+KandarinDiary 4475 4476 4477 4478
+KaramjaDiary 3578 3599 3611 4566
+KourendKebosDiary 7925 7926 7927 7928
+LumbridgeDraynorDiary 4495 4496 4497 4498
+MorytaniaDiary 4487 4488 4489 4490
+VarrockDiary 4479 4480 4481 4482
+WesternProvincesDiary 4471 4472 4473 4474
+WildernessDiary 4466 4467 4468 4469

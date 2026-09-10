@@ -240,6 +240,21 @@ server, no credential vault, no packet code.
   one live pass to identify the redeem screen, documented in api-coverage.
 - [x] `smokeTest` at 124 checks, all offline. Clicks want one live pass.
 
+## Phase 19 — Quests + diaries + minigames (local scripts only)
+
+- [x] `Quests.questPoints` (varp 101, one-line read). Per-quest states stay
+  out: DreamBot derives them from quest-tab text colors through a
+  runtime-decrypted map (`Quest$State.getForID`) — needs one live pass.
+- [x] Mined all 12 diary classes: 48 tier varbits, uniform
+  `getBitValue(v) == 1` shape (`results/diary-varbit-table.txt`,
+  `tools/ParseDiaries.py`) -> `Diaries` area/tier reads.
+- [x] Mined `MinigameTeleports`: clan-interface list [76, 22], selection
+  [76, 11], confirm [76, 32] -> `Minigames` (open check, selection read,
+  name-matched teleport). The clan-tab opener resolves through
+  runtime-decrypted holders (no pinned constant), so teleport works when
+  the list is open, fails clean otherwise.
+- [x] `smokeTest` at 135 checks, all offline. Clicks want one live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal
