@@ -49,6 +49,9 @@ never cut for convenience on the core botting surface.
 | Friends/ignores | `Friends` reads (list, size, have, ignores) + tab | Covered (smoke empties); add/delete/message deferred (chatbox flows) |
 | Friends-chat/clan | `ClanChat` reads (inChat, name, owner, members, guild) + tab | Covered (smoke nulls); join/leave deferred |
 | Random events | `RandomEvents.dismiss` (Continue-boxes only — NOT a solver) | Covered fail-clean (smoke); solvers permanently out |
+| Shop | `Shop` reads, buy/sell 1-5-10-50, keeper open, escape close (group 300, probe-verified) | Covered (lookup offline; dispatch game-only) |
+| Smithing | `Smithing` reads, item click, anvil open (group 312, probe-verified; no DreamBot class exists) | Covered (lookup offline; dispatch game-only) |
+| Fairy rings | `FairyRings` dial reads, rotate, code entry, travel (mined varp-816 mechanics, `results/fairy-ring-table.txt`) | Covered (reads + builders offline; dispatch game-only); log matching deferred |
 
 ## Widget-id provenance
 
@@ -67,9 +70,11 @@ Every flow built on them still wants one live pass.
   `AccountManager`, telemetry, SDN deploy, `ClientSettings` sync — server,
   auth, or evasion-adjacent scope. The fork runs local scripts under the
   launcher's login and nothing else.
-- Deferred niche content (no core loop needs them): shop handling, quest
-  book data, minigames, diaries, fairy rings, bonds, Ruinous prayers,
-  quick-prayer setup, envenom magnitude, full combat spellbooks, Smithing
-  helpers, social mutations (friend add/delete, chat join/leave/message).
+- Deferred niche content (no core loop needs them): quest book data,
+  minigames, diaries, bonds (no static ids and no pinned constants —
+  needs one live pass to identify the redeem screen), Ruinous prayers,
+  quick-prayer setup, envenom magnitude, full combat spellbooks, social
+  mutations (friend add/delete, chat join/leave/message), fairy travel-log
+  matching.
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.

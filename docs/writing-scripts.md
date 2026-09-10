@@ -84,6 +84,7 @@ Three rules, no exceptions:
 | Widgets/tabs | `Widgets.findByText/findByAction/first`, `Tabs` (all fixed tabs), `Camera` yaw/pitch |
 | Combat/prayer/magic | `Combat` (level, spec %/toggle, retaliate, style 0-3, poisoned), `Prayers.toggle/activate(Prayer)` + quick-pray orb, `Magic` home teleport per book — widget clicks game-only |
 | Social/emotes/randoms | `Friends` (list/ignores reads), `ClanChat` (chat + guild reads), `Emotes.perform(Emote)`, `HintArrows` (reads + clear), `RandomEvents.dismiss()` (Continue-boxes only, never a solver) |
+| Shop/smith/fairy | `Shop` (stock reads, buy/sell 1-5-10-50), `Smithing` (list reads, item click), `FairyRings.travel(code)` (dial + confirm) — widget clicks game-only |
 | Equipment slots | `Equipment.inSlot(slot)` |
 | Zones/timing | `Area` (contains/center/random), `Sleep`, `Timing.waitCondition`, `Calculations` |
 | Menus (advanced) | `Actions.npcMenu/objectMenu/groundItemMenu/widgetMenu` build entries; `Actions.install` sets them |

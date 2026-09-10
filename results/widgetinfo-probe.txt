@@ -30,3 +30,14 @@ Cross-checks vs DreamBot-mined ids (same build, see AGENTS.md hashes):
   enclosing DreamBot method): spec orb [160, 36] (Combat `7()`, called
   from toggleSpecialAttack), combat-tab spec button [593, 38]
   (Combat `8()`, after openTab in toggleSpecialAttack).
+
+Probe 2 (same method, 2026-09-10):
+
+SHOP_INVENTORY_ITEMS_CONTAINER group=300 child=0
+SMITHING_INVENTORY_ITEMS_CONTAINER group=312 child=0
+FAIRY_RING_TELEPORT_BUTTON group=398 child=26
+
+Cross-checks: FAIRY_RING_TELEPORT_BUTTON (398, 26) == DreamBot
+FairyRings `5()`/`travelInterfaceOpen`. Shop (300) and smithing (312)
+have no DreamBot-side static ids (runtime-decrypted holders), so the
+probe is the only provenance — recorded as such in `WidgetIds`.

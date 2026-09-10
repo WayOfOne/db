@@ -225,6 +225,21 @@ server, no credential vault, no packet code.
 - [x] `smokeTest` at 101 checks, all offline. Clicks/chat flows want one
   live pass; friend add/delete/message and clan join/leave deferred.
 
+## Phase 18 — Shop + smithing + fairy rings (local scripts only)
+
+- [x] Pinned-probe ids for the groups DreamBot hides behind
+  runtime-decrypted holders: shop 300, smithing 312 (`results/widgetinfo-probe.txt`).
+- [x] Mined DreamBot's `FairyRings` bytecode in full: dial widgets
+  (398, 19/21/23), varp-816 masks/shifts/letter tables, confirm (398, 26),
+  travel log (381, 7) (`results/fairy-ring-table.txt`,
+  `results/javap-c-db-fairy.txt`). Destination codes are decrypted at
+  runtime, so scripts pass plain letters (DreamBot's `travel(String[])` shape).
+- [x] `Shop` (reads, buy/sell 1-5-10-50, open/close), `Smithing` (reads,
+  item click, anvil open), `FairyRings` (dial reads, rotate, code entry,
+  travel). Bonds stay out: no static ids and no pinned constants — needs
+  one live pass to identify the redeem screen, documented in api-coverage.
+- [x] `smokeTest` at 124 checks, all offline. Clicks want one live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

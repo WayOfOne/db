@@ -1,0 +1,30 @@
+# Fairy-ring table — 2026-09-10
+
+Source: `org/dreambot/api/methods/fairyring/FairyRings*.class` in
+`repository2/dreambot-client.jar` (sha256 66036CB5...0882A).
+Dump: `results/javap-c-db-fairy.txt` (FairyRings + FairyLocation).
+
+Confirmed static facts (read straight from bytecode):
+- `travelInterfaceOpen()` = widget [398, 26] visible (fairy.txt:94).
+- `5()` (confirm/teleport getter) = `Widgets.get([398, 26])` (fairy.txt:1125).
+  The pinned RuneLite API agrees: FAIRY_RING_TELEPORT_BUTTON = (398, 26)
+  (see probe note in `results/widgetinfo-probe.txt`).
+- `2(slot)` (dial getter, slots 0-2 range-checked) =
+  `Widgets.get([398, "0f"[slot]])` (fairy.txt:1168).
+- `0()` (travel-log getter) = cached `Widgets.get([381, 7])` (fairy.txt:607).
+- `getCode(slot)` = letters[slot][(varp816 & masks[slot]) >> (slot*2)]
+  (fairy.txt:1082), with static tables in FairyRings static{}:
+  - dial children "0f" = [19, 21, 23] (fairy.txt:2272)
+  - masks "0m" = [3, 12, 48] (fairy.txt:2287)
+  - letters "04" (fairy.txt:2288-2353):
+    slot 0: [a, d, c, b]
+    slot 1: [i, l, k, j]
+    slot 2: [p, s, r, q]
+- `rotateSlotClockwise(slot)` clicks `2(slot)` and waits for the letter to
+  change; `enterCode(slot, letter)` rotates up to 6 times.
+
+NOT VERIFIED / excluded: `FairyLocation` destination codes ride in
+decrypted string tables (ctor takes String... from a decrypted array),
+so no code table is recorded — scripts pass plain letters, matching
+DreamBot's own `travel(String[])` overload. Quick-travel log matching
+needs live text formats; left out.

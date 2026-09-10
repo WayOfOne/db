@@ -100,4 +100,27 @@ public final class WidgetIds {
     /** Friends/ignore tab button (DreamBot Friends swapToFriends). */
     public static final int FRIENDS_TAB_GROUP = 432;
     public static final int FRIENDS_TAB_CHILD = 1;
+
+    // -- Shop (group 300) + smithing (group 312) --
+    /** Stock list (== WidgetInfo SHOP_INVENTORY_ITEMS_CONTAINER,
+     * probe-verified). DreamBot's own Shop resolves its parent through a
+     * runtime-decrypted holder — no DreamBot-side id to mine. */
+    public static final int SHOP_GROUP = 300;
+    /** Smithing item list (== WidgetInfo SMITHING_INVENTORY_ITEMS_CONTAINER,
+     * probe-verified). DreamBot ships no smithing class. */
+    public static final int SMITHING_GROUP = 312;
+
+    // -- Fairy rings (group 398, log 381, dial varp 816) --
+    /** Confirm/teleport button (DreamBot FairyRings "5"; ==
+     * WidgetInfo FAIRY_RING_TELEPORT_BUTTON, probe-verified). */
+    public static final int FAIRY_GROUP = 398;
+    public static final int FAIRY_CONFIRM = 26;
+    /** Dial widgets, slot 0-2 (DreamBot FairyRings "2" via table "0f"). */
+    public static final int[] FAIRY_DIALS = {19, 21, 23};
+    /** Travel-log list (DreamBot FairyRings "0"). */
+    public static final int FAIRY_LOG_GROUP = 381;
+    public static final int FAIRY_LOG_CHILD = 7;
+    /** Dial state varp (DreamBot FairyRings getCode: masks [3,12,48],
+     * shift slot*2, letters [a,d,c,b]/[i,l,k,j]/[p,s,r,q]). */
+    public static final int FAIRY_VARP = 816;
 }

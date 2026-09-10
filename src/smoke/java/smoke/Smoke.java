@@ -18,6 +18,7 @@ import bot.api.Dialogs;
 import bot.api.Emote;
 import bot.api.Emotes;
 import bot.api.Equipment;
+import bot.api.FairyRings;
 import bot.api.Friends;
 import bot.api.Game;
 import bot.api.GrandExchange;
@@ -27,7 +28,9 @@ import bot.api.Npcs;
 import bot.api.PathFinder;
 import bot.api.Prayers;
 import bot.api.RandomEvents;
+import bot.api.Shop;
 import bot.api.SkillTracker;
+import bot.api.Smithing;
 import bot.api.Trade;
 import bot.api.Vars;
 import bot.api.WidgetIds;
@@ -215,6 +218,34 @@ public final class Smoke {
         check(ClanChat.guildMembers().isEmpty(), "no guild members");
 
         check(!RandomEvents.dismiss(), "nothing to dismiss");
+
+        check(!Shop.isOpen(), "no shop open");
+        check(Shop.stock().isEmpty(), "no shop stock");
+        check(Shop.stockCount(995) == 0, "no shop stock count");
+        check(!Shop.hasStock(995), "shop misses stock");
+        check(!Shop.buyOne(995), "shop buy fails clean");
+        check(!Shop.sellOne(995), "shop sell fails clean");
+        check(!Shop.open(9999), "unknown keeper yields false");
+
+        check(!Smithing.isOpen(), "no smithing open");
+        check(Smithing.items().isEmpty(), "no smithing items");
+        check(!Smithing.hasItem(2349), "smithing misses item");
+        check(!Smithing.smith(2349), "smith fails clean");
+        check(!Smithing.openAnvil(9999), "unknown anvil yields false");
+
+        check("a".equals(FairyRings.dialLetter(0)), "dial 0 letter from varp");
+        check("i".equals(FairyRings.dialLetter(1)), "dial 1 letter from varp");
+        check("p".equals(FairyRings.dialLetter(2)), "dial 2 letter from varp");
+        String[] code = FairyRings.currentCode();
+        check(code.length == 3 && "a".equals(code[0]) && "i".equals(code[1])
+            && "p".equals(code[2]), "current code from varp");
+        check(!FairyRings.isOpen(), "no fairy interface open");
+        check(!FairyRings.rotateSlot(9), "bad dial slot fails clean");
+        check(!FairyRings.rotateSlot(0), "dial rotate fails clean");
+        check(!FairyRings.dialTo(0, "d"), "dial to fails clean");
+        check(!FairyRings.enterCode(new String[] {"a"}), "short code rejected");
+        check(!FairyRings.enterCode(new String[] {"a", "i", "q"}), "enter code fails clean");
+        check(!FairyRings.travel(new String[] {"a", "i", "q"}), "travel fails clean");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");
@@ -445,6 +476,7 @@ public final class Smoke {
                 case 301 -> 1;
                 case 172 -> 1;
                 case 43 -> 2;
+                case 816 -> 0;
                 default -> 0;
             };
             case "getVarbitValue" -> 0;
