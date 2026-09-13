@@ -80,10 +80,14 @@ Every flow built on them still wants one live pass.
   runs local scripts and nothing else.
 - Random-event *puzzle* solvers beyond dismiss/continue flows: DreamBot's
   own set is dismiss-shaped, and anything deeper stays out.
-- Deferred niche content (no core loop needs them): per-quest states
-  (decrypted color map — needs one live pass), bonds (no static ids and
-  no pinned constants), Ruinous prayers (no DreamBot-side table — standard
-  book only), social mutations (friend add/delete, chat join/leave/message),
-  fairy travel-log matching, clan-tab opener.
+- Still to implement (in scope, recon done): world hopping (`Worlds`
+  reads + switcher hop — group 69 mined, `WORLD_SWITCHER_LIST` (69, 18)
+  probe-matched) and the randoms framework (dismiss/continue/pin-at-runtime/
+  welcome/login-retry solvers — DreamBot's own set is dismiss-shaped).
+- Deferred niche content (needs one live pass each): per-quest states
+  (decrypted color map), bonds (no static ids and no pinned constants),
+  Ruinous prayers (no DreamBot-side table), social mutations (friend
+  add/delete, chat join/leave/message), fairy travel-log matching,
+  clan-tab opener.
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.
