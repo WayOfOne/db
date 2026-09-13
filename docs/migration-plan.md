@@ -272,6 +272,20 @@ server, no credential vault, no packet code.
   constants). Both documented in api-coverage.
 - [x] `smokeTest` at 148 checks, all offline. Clicks want one live pass.
 
+## Phase 21 — Login driver (local scripts only)
+
+- [x] Re-scoped per owner direction: login, world hopping, and randoms
+  moved from non-goals into scope (`docs/fork-plan.md`,
+  `results/api-coverage.md`). Remaining hard lines: no stored
+  credentials, no account manager/switching, no telemetry/HWID, no SDN,
+  no packet code, no server feeds.
+- [x] `Login` (state via maintained `GameState.of(loginIndex)`,
+  runtime-credential login via client fields + Enter, authenticator
+  fails clean, logout via tab + probe-verified button), `Tabs.logout`,
+  launcher env auto-login (`DREAMBOT_USERNAME`/`DREAMBOT_PASSWORD`,
+  never logged). Credential rule added to `docs/writing-scripts.md`.
+- [x] `smokeTest` at 153 checks, all offline. Real login wants a live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

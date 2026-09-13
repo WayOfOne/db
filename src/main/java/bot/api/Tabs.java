@@ -66,4 +66,8 @@ public final class Tabs {
     public static boolean music() throws Exception {
         return Actions.widget(Widgets.first(WidgetInfo.FIXED_VIEWPORT_MUSIC_TAB));
     }
+
+    public static boolean logout() throws Exception {
+        return Actions.widget(Widgets.first(WidgetInfo.FIXED_VIEWPORT_LOGOUT_TAB));
+    }
 }

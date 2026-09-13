@@ -21,6 +21,13 @@ import net.runelite.client.ui.overlay.OverlayManager;
  * <p>Usage: {@code Main <scripts-dir> <script-name> [client args...]}.
  * Needs the live game (network + login happen in the client itself); the
  * offline suite ({@code gradlew smokeTest}) covers everything short of that.
+ *
+ * <p>Auto-login: when BOTH {@code DREAMBOT_USERNAME} and
+ * {@code DREAMBOT_PASSWORD} are set in the environment, one login attempt
+ * runs before the wait loop. Credentials live in the environment only —
+ * never in files, never in logs, never in this repo (see
+ * {@code docs/writing-scripts.md}). An authenticator prompt still needs a
+ * human; the attempt then fails and the wait loop takes over.
  */
 public final class Main {
     /** How long to wait for a logged-in player before giving up. */
@@ -42,6 +49,16 @@ public final class Main {
         Client client = injector.getInstance(Client.class);
         Game.install(client, injector);
 
+        String envUser = System.getenv("DREAMBOT_USERNAME");
+        String envPass = System.getenv("DREAMBOT_PASSWORD");
+        if (envUser != null && !envUser.isEmpty() && envPass != null && !envPass.isEmpty()) {
+            System.out.println("credentials present: attempting one login (never logged)");
+            try {
+                bot.api.Login.login(envUser, envPass, 60_000L);
+            } catch (Exception e) {
+                System.out.println("auto-login failed: " + e.getClass().getSimpleName());
+            }
+        }
         System.out.println("waiting for login...");
         long deadline = System.currentTimeMillis() + LOGIN_TIMEOUT_MS;
         while (!Game.ready() && System.currentTimeMillis() < deadline) {

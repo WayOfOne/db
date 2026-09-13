@@ -25,6 +25,7 @@ import bot.api.Game;
 import bot.api.GrandExchange;
 import bot.api.GroundItems;
 import bot.api.HintArrows;
+import bot.api.Login;
 import bot.api.Minigames;
 import bot.api.Npcs;
 import bot.api.PathFinder;
@@ -280,6 +281,12 @@ public final class Smoke {
 
         check(!Combat.isEnvenomed(), "clean of venom");
         check(Combat.poisonValue() == 0, "poison value default");
+
+        check(!Login.loggedIn(), "logged out offline");
+        check(!Login.login(null, "pass", 1000), "null user rejected");
+        check(!Login.login("user", null, 1000), "null pass rejected");
+        check(!Login.login("", "", 1000), "empty creds rejected");
+        check(!Login.logout(), "logout fails clean");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");

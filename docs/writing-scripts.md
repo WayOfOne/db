@@ -59,6 +59,11 @@ Three rules, no exceptions:
    acting mid-animation stacks inputs.
 3. **Search before you act.** `nearestWithin` returns null; acting on null
    does nothing but thinking it can't be null is how scripts click the void.
+4. **Credentials live in the environment, never in code.** `Login.login`
+   takes runtime strings; the launcher reads `DREAMBOT_USERNAME` /
+   `DREAMBOT_PASSWORD`. Never commit, log, print, or store credentials —
+   no properties files, no scripts bundling passwords, no screenshots of
+   env dumps. No account switching or vault exists by design.
 
 ## What a script can see and do (`bot.api`)
 
@@ -86,6 +91,7 @@ Three rules, no exceptions:
 | Social/emotes/randoms | `Friends` (list/ignores reads), `ClanChat` (chat + guild reads), `Emotes.perform(Emote)`, `HintArrows` (reads + clear), `RandomEvents.dismiss()` (Continue-boxes only, never a solver) |
 | Shop/smith/fairy | `Shop` (stock reads, buy/sell 1-5-10-50), `Smithing` (list reads, item click), `FairyRings.travel(code)` (dial + confirm) — widget clicks game-only |
 | Quests/diaries/minigames | `Quests.questPoints()`, `Diaries.finished(area, tier)`, `Minigames.teleport(name)` (list must be open) |
+| Login/worlds | `Login.state/loggedIn/login/logout` (runtime credentials only — see rule 4), `Worlds` (list reads, switcher hop) |
 | Equipment slots | `Equipment.inSlot(slot)` |
 | Zones/timing | `Area` (contains/center/random), `Sleep`, `Timing.waitCondition`, `Calculations` |
 | Menus (advanced) | `Actions.npcMenu/objectMenu/groundItemMenu/widgetMenu` build entries; `Actions.install` sets them |

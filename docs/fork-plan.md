@@ -47,7 +47,9 @@ only (clean-room rule, enforced in review).
 | 6 | Skills/inventory/state (levels, XP, idle/animation, counts) | `Skills`, `Inventory`, `Local` (self) facades | `Client.getSkillExperiences/getBoostedSkillLevels`, `ItemContainer`, `Player.getAnimation()` |
 | 7 | Overlays/paint + script panels | `Overlay` helpers + per-script panel | `OverlayManager`, `OverlayPanel`, `OverlayUtil` |
 | 8 | Per-script config + profiles | `Config` (auto-UI settings) + local profiles | `@ConfigGroup`/`ConfigManager` (DreamBot's `config.json`-per-script becomes RL config, no new code) |
-| 9 | Account switching / authentication | Out of scope — local scripts run under whatever account the launcher is logged into. No profiles, no credentials, no auth code, no account server. | — |
+| 9 | Login / logout | `Login` (state via maintained `GameState`, runtime-credential login, logout button) | `Client.getLoginIndex/setUsername/setPassword`, `GameState.of`, login-screen widgets |
+| 10 | World hopping | `Worlds` (list reads, switcher hop by id) | `Client.getWorldList`, `World`, `WorldType`, switcher widgets |
+| 11 | Random events | `Randoms` (dismiss/continue/pin-at-runtime/welcome/login-retry solvers) | Dialogue widgets, bank-pin interface, client state |
 
 ## Explicit non-goals
 
@@ -56,7 +58,10 @@ only (clean-room rule, enforced in review).
   in this fork reads, writes, or substitutes identity values.
 - **No telemetry/WebSocket exfiltration layer** (`4z_`/`404` have no fork
   counterpart, by design).
-- **No SDN server, no credential vault, no packet code.**
+- **No SDN server, no credential vault, no packet code.** Login takes
+  runtime-only credentials (method args / environment); nothing is stored,
+  logged, or synced anywhere. No account manager, no switching, no
+  `JSocket`-style server comms, no `LivePrices` server feed.
 - **No DreamBot code in this repo.** Behavior notes only; violations fail review.
 
 ## Build shape (mirrors bot-client's ergonomics)

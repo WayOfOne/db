@@ -58,6 +58,7 @@ never cut for convenience on the core botting surface.
 | Combat spells | `Spell` enum (180 mined slots, all books) + `Magic.cast/canCast` (level gate; rune costs decrypted-out) | Covered (lookup offline; dispatch game-only) |
 | Quick prayers | `Prayers.quickChild/selectQuick` (mined slots, probe-matched root) | Covered (lookup offline; dispatch game-only) |
 | Envenom | `Combat.isEnvenomed/poisonValue` (varp-102 venom band per RL `POISON` scale) | Strong inference (smoke); needs a live pass |
+| Login | `Login` state/logged-in/login/logout (runtime credentials only) + launcher env auto-login | Covered fail-clean (smoke); real login needs a live pass |
 
 ## Widget-id provenance
 
@@ -72,10 +73,13 @@ Every flow built on them still wants one live pass.
 
 ## Explicitly out (non-goals, unchanged)
 
-- `randoms/*` solvers, `LoginUtility`, `WorldHopper`/`JSocket`, `LivePrices`,
-  `AccountManager`, telemetry, SDN deploy, `ClientSettings` sync — server,
-  auth, or evasion-adjacent scope. The fork runs local scripts under the
-  launcher's login and nothing else.
+- `LivePrices`, `AccountManager`/switching/vault, `ClientSettings` sync,
+  `JSocket` server comms, telemetry, SDN deploy — server, auth-storage, or
+  exfiltration scope. Login takes runtime-only credentials (never stored,
+  never logged); world hopping drives the in-game switcher only. The fork
+  runs local scripts and nothing else.
+- Random-event *puzzle* solvers beyond dismiss/continue flows: DreamBot's
+  own set is dismiss-shaped, and anything deeper stays out.
 - Deferred niche content (no core loop needs them): per-quest states
   (decrypted color map — needs one live pass), bonds (no static ids and
   no pinned constants), Ruinous prayers (no DreamBot-side table — standard
