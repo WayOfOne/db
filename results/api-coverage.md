@@ -46,12 +46,12 @@ never cut for convenience on the core botting surface.
 | Areas, Sleep, Timing, Calculations | `bot.api.Area`, `bot.util.*` | Covered (smoke) |
 | Emotes | `Emotes.perform` + `Emote` enum (54 mined slots, group 216) | Covered (lookup offline; dispatch game-only) |
 | Hint arrows | `HintArrows` reads + clear (DreamBot `HintArrow` parity) | Covered (smoke nulls) |
-| Friends/ignores | `Friends` reads (list, size, have, ignores) + tab | Covered (smoke empties); add/delete/message deferred (chatbox flows) |
-| Friends-chat/clan | `ClanChat` reads (inChat, name, owner, members, guild) + tab | Covered (smoke nulls); join/leave deferred |
+| Friends/ignores | `Friends` reads + add/delete/message/online (mined [429, 11/14/16] entries) | Covered (lookup offline; dispatch game-only); ignore mutations deferred (no source) |
+| Friends-chat/clan | `ClanChat` reads + join/leave (runtime-discovered entry actions — NOT VERIFIED) | Covered (lookup offline; dispatch game-only) |
 | Random events | `RandomEvents.dismiss` (Continue-boxes only — NOT a solver) | Covered fail-clean (smoke); solvers permanently out |
 | Shop | `Shop` reads, buy/sell 1-5-10-50, keeper open, escape close (group 300, probe-verified) | Covered (lookup offline; dispatch game-only) |
 | Smithing | `Smithing` reads, item click, anvil open (group 312, probe-verified; no DreamBot class exists) | Covered (lookup offline; dispatch game-only) |
-| Fairy rings | `FairyRings` dial reads, rotate, code entry, travel (mined varp-816 mechanics, `results/fairy-ring-table.txt`) | Covered (reads + builders offline; dispatch game-only); log matching deferred |
+| Fairy rings | `FairyRings` dial reads, rotate, code entry, travel (mined varp-816 mechanics, `results/fairy-ring-table.txt`) + log row readers | Covered (reads + builders offline; dispatch game-only); log format matching with scripts |
 | Quests | `Quests.questPoints` (varp 101) + tab open | Covered (smoke); per-quest states deferred (decrypted color map) |
 | Diaries | `Diaries` 12 areas x 4 tiers (mined varbits, `results/diary-varbit-table.txt`) | Covered (smoke) |
 | Minigames | `Minigames` open check, selection read, name-matched teleport (group 76) | Covered (lookup offline; dispatch game-only); clan-tab opener deferred |
@@ -86,8 +86,7 @@ Every flow built on them still wants one live pass.
   live-gated.
 - Deferred niche content (needs one live pass each): per-quest states
   (decrypted color map), bonds (no static ids and no pinned constants),
-  Ruinous prayers (no DreamBot-side table), social mutations (friend
-  add/delete, chat join/leave/message), fairy travel-log matching,
-  clan-tab opener, roof/zoom/death/tutorial handlers.
+  Ruinous prayers (no DreamBot-side table), ignore-list mutations (no
+  source), clan-tab opener, roof/zoom/death/tutorial handlers.
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.

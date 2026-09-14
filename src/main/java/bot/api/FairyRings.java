@@ -88,4 +88,33 @@ public final class FairyRings {
         return enterCode(code)
             && Actions.widget(Game.client().getWidget(WidgetInfo.FAIRY_RING_TELEPORT_BUTTON));
     }
+
+    /** Travel-log row texts (DreamBot `0()` = (381, 7) children). Log
+     * formats are live content, so matching stays with the script — this
+     * only reads the rows. Never null. */
+    public static java.util.List<String> logRows() {
+        java.util.List<String> out = new java.util.ArrayList<>();
+        Widget log = Widgets.child(WidgetIds.FAIRY_LOG_GROUP, WidgetIds.FAIRY_LOG_CHILD);
+        if (log == null || log.getChildren() == null) {
+            return out;
+        }
+        for (Widget row : log.getChildren()) {
+            if (row != null && !row.isHidden() && row.getText() != null
+                && !row.getText().isEmpty()) {
+                out.add(row.getText());
+            }
+        }
+        return out;
+    }
+
+    /** Click a travel-log row by index (DreamBot `quickTravel` shape minus
+     * the format matching, which needs a live pass). Game-only. */
+    public static boolean clickLogRow(int index) throws Exception {
+        Widget log = Widgets.child(WidgetIds.FAIRY_LOG_GROUP, WidgetIds.FAIRY_LOG_CHILD);
+        if (log == null || log.getChildren() == null
+            || index < 0 || index >= log.getChildren().length) {
+            return false;
+        }
+        return Actions.widget(log.getChildren()[index]);
+    }
 }

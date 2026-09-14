@@ -319,6 +319,20 @@ public final class Smoke {
         check(!BankPinSolver.enterPin("1234"), "pin entry fails clean");
         check(!new BreakSolver().shouldExecute(), "no break due");
 
+        check(WidgetIds.FRIENDS_GROUP == 429 && WidgetIds.FRIENDS_MESSAGE == 11
+            && WidgetIds.FRIENDS_ADD == 14 && WidgetIds.FRIENDS_DELETE == 16,
+            "friends entry ids");
+        check(!Friends.isOnline("Nobody"), "nobody online");
+        check(!Friends.isOnline(null), "null online missing");
+        check(!Friends.addFriend("Nobody"), "add friend fails clean");
+        check(Friends.deleteFriend("Nobody"), "deleting stranger is no-op");
+        check(!Friends.sendMessage("Nobody", "hi"), "message offline fails clean");
+        check(!ClanChat.join(null), "null chat rejected");
+        check(!ClanChat.join("Nobody"), "join fails clean");
+        check(ClanChat.leave(), "leaving no chat is no-op");
+        check(FairyRings.logRows().isEmpty(), "no log rows offline");
+        check(!FairyRings.clickLogRow(0), "log click fails clean");
+
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");
         check(!lumby.contains(new WorldPoint(3200, 3200, 0)), "area excludes outside");

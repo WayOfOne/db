@@ -7,10 +7,12 @@ import net.runelite.api.Friend;
 import net.runelite.api.Ignore;
 import net.runelite.api.NameableContainer;
 
-/** Friends/ignore reads off the maintained containers. Mutating flows
- * (add/delete/message) type into the friends-tab chatbox in DreamBot with
- * no statically minable widget ids, so they stay out until a live pass —
- * reads are the covered surface. Pure reads unless noted. */
+/** Friends/ignore reads and mutations. Reads come off the maintained
+ * containers; mutations follow DreamBot's own `Friends` flow
+ * (`results/javap-c-db-friends.txt`): friends tab, entry button
+ * ([429,14] add / [429,16] delete / [429,11] message), chatbox typing,
+ * verification through the list reads. Ignore-list mutations have no
+ * DreamBot counterpart and stay out. Game-only unless noted. */
 public final class Friends {
     private Friends() {
     }
@@ -77,5 +79,70 @@ public final class Friends {
      * the pinned tab constant is the maintained equivalent). Game-only. */
     public static boolean openTab() throws Exception {
         return Tabs.friends();
+    }
+
+    /** True when the friend is online (world != 0). */
+    public static boolean isOnline(String name) {
+        if (name == null) {
+            return false;
+        }
+        NameableContainer<Friend> c = friends();
+        if (c == null) {
+            return false;
+        }
+        Friend f = c.findByName(name);
+        return f != null && f.getWorld() != 0;
+    }
+
+    private static boolean promptAndType(int buttonChild, String name) throws Exception {
+        openTab();
+        if (!Actions.widget(Widgets.child(WidgetIds.FRIENDS_GROUP, buttonChild))) {
+            return false;
+        }
+        bot.util.Sleep.sleep(600, 1000);
+        Keyboard.type(name);
+        Keyboard.pressEnter();
+        return true;
+    }
+
+    /** Add a friend (tab, entry button, chatbox typing, list verify).
+     * Game-only. */
+    public static boolean addFriend(String name) throws Exception {
+        if (name == null || haveFriend(name)) {
+            return haveFriend(name);
+        }
+        if (!promptAndType(WidgetIds.FRIENDS_ADD, name)) {
+            return false;
+        }
+        bot.util.Timing.waitCondition(() -> haveFriend(name), 5000);
+        return haveFriend(name);
+    }
+
+    /** Delete a friend (same flow through the delete entry). Game-only. */
+    public static boolean deleteFriend(String name) throws Exception {
+        if (name == null || !haveFriend(name)) {
+            return !haveFriend(name);
+        }
+        if (!promptAndType(WidgetIds.FRIENDS_DELETE, name)) {
+            return false;
+        }
+        bot.util.Timing.waitCondition(() -> !haveFriend(name), 5000);
+        return !haveFriend(name);
+    }
+
+    /** Private-message an online friend (tab, message entry, chatbox
+     * typing). Game-only. */
+    public static boolean sendMessage(String name, String text) throws Exception {
+        if (name == null || text == null || !isOnline(name)) {
+            return false;
+        }
+        openTab();
+        if (!Actions.widget(Widgets.child(WidgetIds.FRIENDS_GROUP, WidgetIds.FRIENDS_MESSAGE))) {
+            return false;
+        }
+        bot.util.Sleep.sleep(600, 1000);
+        Keyboard.type(text);
+        Keyboard.pressEnter();
+        return true;
     }
 }

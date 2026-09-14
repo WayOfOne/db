@@ -101,6 +101,14 @@ public final class WidgetIds {
     public static final int FRIENDS_TAB_GROUP = 432;
     public static final int FRIENDS_TAB_CHILD = 1;
 
+    // -- Friends tab interface (group 429) --
+    /** Message / add / delete entry buttons (DreamBot Friends
+     * sendMessage/addFriend/deleteFriend). */
+    public static final int FRIENDS_GROUP = 429;
+    public static final int FRIENDS_MESSAGE = 11;
+    public static final int FRIENDS_ADD = 14;
+    public static final int FRIENDS_DELETE = 16;
+
     // -- Shop (group 300) + smithing (group 312) --
     /** Stock list (== WidgetInfo SHOP_INVENTORY_ITEMS_CONTAINER,
      * probe-verified). DreamBot's own Shop resolves its parent through a

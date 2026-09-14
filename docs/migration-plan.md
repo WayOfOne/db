@@ -318,6 +318,21 @@ server, no credential vault, no packet code.
   widgets with no static source — needs a live pass).
 - [x] `smokeTest` at 173 checks, all offline. Live events want a live pass.
 
+## Phase 24 — Social mutations + fairy log readers (local scripts only)
+
+- [x] Mined DreamBot's `Friends`/`Friend`/`ClanChat` flows: entry buttons
+  (429, 11 message / 14 add / 16 delete), tab-swap-chatbox-type-verify
+  shape for add/delete/message, chat-tab entry + typing for clan
+  join/leave (`results/javap-c-db-friends.txt`,
+  `results/javap-c-db-friend-one.txt`, `results/javap-c-db-clanchat.txt`).
+- [x] `Friends.addFriend/deleteFriend/sendMessage/isOnline`,
+  `ClanChat.join/leave` (join/leave buttons resolve through DreamBot
+  decrypted holders, so the fork clicks the visible join/leave action
+  found at runtime — NOT VERIFIED labels), `FairyRings.logRows/clickLogRow`
+  (rows read off mined (381, 7); format matching stays with scripts).
+- [x] Ignore-list mutations stay out (no DreamBot counterpart).
+- [x] `smokeTest` at 184 checks, all offline. Typing flows want a live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal
