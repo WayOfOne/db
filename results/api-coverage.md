@@ -60,6 +60,7 @@ never cut for convenience on the core botting surface.
 | Envenom | `Combat.isEnvenomed/poisonValue` (varp-102 venom band per RL `POISON` scale) | Strong inference (smoke); needs a live pass |
 | Login | `Login` state/logged-in/login/logout (runtime credentials only) + launcher env auto-login | Covered fail-clean (smoke); real login needs a live pass |
 | Worlds | `Worlds` list reads, filters, emptiest, switcher open, row-matched hop (group 69 mined + probe-matched) | Covered (lookup offline; dispatch game-only); no `JSocket` by design |
+| Randoms | `Randoms` manager + Dismiss/Genie/Welcome/BankPin/Login/Break solvers (mined mechanics, `results/randoms-table.txt`; PIN + session creds memory-only) | Covered fail-clean (smoke); live events need a live pass; roof/zoom/death deferred |
 
 ## Widget-id provenance
 
@@ -81,13 +82,12 @@ Every flow built on them still wants one live pass.
   runs local scripts and nothing else.
 - Random-event *puzzle* solvers beyond dismiss/continue flows: DreamBot's
   own set is dismiss-shaped, and anything deeper stays out.
-- Still to implement (in scope, recon done): the randoms framework
-  (dismiss/continue/pin-at-runtime/welcome/login-retry solvers —
-  DreamBot's own set is dismiss-shaped).
+- Still to implement: nothing offline — the deferred list below is all
+  live-gated.
 - Deferred niche content (needs one live pass each): per-quest states
   (decrypted color map), bonds (no static ids and no pinned constants),
   Ruinous prayers (no DreamBot-side table), social mutations (friend
   add/delete, chat join/leave/message), fairy travel-log matching,
-  clan-tab opener.
+  clan-tab opener, roof/zoom/death/tutorial handlers.
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.

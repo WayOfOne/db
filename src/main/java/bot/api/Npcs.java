@@ -63,4 +63,42 @@ public final class Npcs {
         }
         return best;
     }
+
+    /** NPCs whose name contains {@code text} (case-insensitive), never null. */
+    public static java.util.List<NPC> withName(String text) {
+        java.util.List<NPC> out = new java.util.ArrayList<>();
+        if (text == null) {
+            return out;
+        }
+        String want = text.toLowerCase(java.util.Locale.ROOT);
+        for (NPC n : all()) {
+            if (n != null && n.getName() != null
+                && n.getName().toLowerCase(java.util.Locale.ROOT).contains(want)) {
+                out.add(n);
+            }
+        }
+        return out;
+    }
+
+    /** Nearest name-matching NPC within {@code range} tiles, or null. */
+    public static NPC nearestNameWithin(int range, String text) {
+        Local me = Game.me();
+        if (me == null) {
+            return null;
+        }
+        WorldPoint at = me.location();
+        NPC best = null;
+        int bestDist = range + 1;
+        for (NPC n : withName(text)) {
+            if (n.getWorldLocation() == null) {
+                continue;
+            }
+            int d = at.distanceTo(n.getWorldLocation());
+            if (d <= range && d < bestDist) {
+                bestDist = d;
+                best = n;
+            }
+        }
+        return best;
+    }
 }

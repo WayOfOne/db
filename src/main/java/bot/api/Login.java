@@ -13,6 +13,13 @@ public final class Login {
     private Login() {
     }
 
+    /** Session-only credentials for re-login on disconnect. Process memory
+     * only: never written anywhere, never logged, cleared by
+     * `clearSessionCredentials`. This is NOT a vault — nothing persists
+     * past the process, and nothing here touches `accounts.db`. */
+    private static String sessionUser;
+    private static String sessionPass;
+
     /** Current login state (RuneLite's maintained mapping of the raw login
      * index). Pure read. */
     public static GameState state() {
@@ -59,5 +66,33 @@ public final class Login {
     public static boolean logout() throws Exception {
         Tabs.logout();
         return Actions.widget(Game.client().getWidget(WidgetInfo.LOGOUT_BUTTON));
+    }
+
+    /** Remember runtime credentials for re-login ONLY (see field note).
+     * Pass nulls to forget. Never call this with committed values. */
+    public static void setSessionCredentials(String username, String password) {
+        sessionUser = username;
+        sessionPass = password;
+    }
+
+    /** Forget session credentials. */
+    public static void clearSessionCredentials() {
+        sessionUser = null;
+        sessionPass = null;
+    }
+
+    /** True when session credentials are held. */
+    public static boolean hasSessionCredentials() {
+        return sessionUser != null && !sessionUser.isEmpty()
+            && sessionPass != null && !sessionPass.isEmpty();
+    }
+
+    /** Re-login with the held session credentials (no-op false when none
+     * are held or already in-game). Game-only. */
+    public static boolean relogin(long timeoutMs) throws Exception {
+        if (loggedIn() || !hasSessionCredentials()) {
+            return loggedIn();
+        }
+        return login(sessionUser, sessionPass, timeoutMs);
     }
 }

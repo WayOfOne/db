@@ -38,6 +38,10 @@ import bot.api.Smithing;
 import bot.api.Spell;
 import bot.api.Trade;
 import bot.api.Vars;
+import bot.api.randoms.BankPinSolver;
+import bot.api.randoms.BreakSolver;
+import bot.api.randoms.Randoms;
+import bot.api.randoms.WelcomeSolver;
 import bot.api.WidgetIds;
 import bot.api.Widgets;
 import bot.api.Worlds;
@@ -302,6 +306,18 @@ public final class Smoke {
             && WidgetIds.WORLD_SWITCHER_BUTTON_CHILD == 3, "switcher ids");
         check(!Worlds.isOpen(), "switcher closed");
         check(!Worlds.hop(301), "hop fails clean");
+
+        check(Randoms.solvers().size() == 6, "six default solvers");
+        check(Randoms.runOnce() == -1, "no solver applies offline");
+        Randoms.setEnabled("DISMISS", false);
+        check(Randoms.runOnce() == -1, "disabled solver skipped");
+        Randoms.setEnabled("DISMISS", true);
+        check(!WelcomeSolver.isOpen(), "no welcome open");
+        check(!BankPinSolver.isOpen(), "no pin open");
+        check(BankPinSolver.pendingSlot() == -1, "no pin slot pending");
+        check(BankPinSolver.digitButton('1') == null, "no pin button offline");
+        check(!BankPinSolver.enterPin("1234"), "pin entry fails clean");
+        check(!new BreakSolver().shouldExecute(), "no break due");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");

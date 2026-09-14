@@ -300,6 +300,24 @@ server, no credential vault, no packet code.
   double-install).
 - [x] `smokeTest` at 164 checks, all offline. Real hops want a live pass.
 
+## Phase 23 — Randoms framework (local scripts only)
+
+- [x] Mined DreamBot's `randoms/` package (dismiss-shaped set — no puzzle
+  solvers exist to mirror): welcome close (378, 72), bank-pin group 213
+  with slots at +3..+6 ("?" pending) and digit buttons at +16+2i matched
+  by child(1) label (`results/randoms-table.txt`,
+  `results/javap-c-db-randoms.txt`).
+- [x] `RandomSolver`/`BaseSolver` + `Randoms` manager (6 defaults,
+  enable/disable, `runOnce`, session-only PIN holder): Dismiss, Genie
+  (dialogue only — lamp claiming is an XP choice), Welcome, BankPin
+  (runtime PIN only), Login (re-login on disconnect via session
+  credentials), Break (scheduled logout/rest/re-login).
+- [x] `Login` session credentials (process memory only — never persisted,
+  never logged; documented as not-a-vault); `Npcs.withName/nearestNameWithin`.
+- [x] Roof/resizable/zoom/death/tutorial handlers stay out (settings
+  widgets with no static source — needs a live pass).
+- [x] `smokeTest` at 173 checks, all offline. Live events want a live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

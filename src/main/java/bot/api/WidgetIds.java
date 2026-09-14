@@ -154,4 +154,13 @@ public final class WidgetIds {
      * probe-verified). */
     public static final int WORLD_SWITCHER_BUTTON_GROUP = 182;
     public static final int WORLD_SWITCHER_BUTTON_CHILD = 3;
+
+    // -- Bank PIN (group 213) + welcome screen (group 378) --
+    /** Pin interface root (DreamBot BankPinSolver `6()`; packed id 213).
+     * Digit slots at root children +3..+6 ("?" needs entry); digit
+     * buttons at +16+2i matched by child(1) label. */
+    public static final int BANK_PIN_GROUP = 213;
+    /** Welcome-screen close widget (DreamBot WelcomeScreenSolver `4()`). */
+    public static final int WELCOME_GROUP = 378;
+    public static final int WELCOME_CLOSE = 72;
 }

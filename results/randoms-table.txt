@@ -1,0 +1,34 @@
+# Randoms table — 2026-09-11
+
+Source: `org/dreambot/api/randoms/*.class` in
+`repository2/dreambot-client.jar` (sha256 66036CB5...0882A).
+Dump: `results/javap-c-db-randoms.txt`.
+
+DreamBot's set is dismiss-shaped — no puzzle solvers exist to mirror:
+RandomEvent lists LOGIN, WELCOME_SCREEN, BANK_PIN, DISMISS,
+BANK_PIN_CONFIRM, BREAK, RESIZABLE_DISABLER, ROOF_DISABLER, ZOOM_SOLVER
+(+ GENIE); solvers implement shouldExecute/onLoop with enable/disable.
+
+Mined mechanics (all Confirmed static, read straight from bytecode):
+- WelcomeScreenSolver: when logged in and widget `4()` visible, click it;
+  `4()` = Widgets.get([378, 72]) (randoms.txt:6513; the file's only
+  array-idiom site).
+- BankPinSolver.shouldExecute: logged in + account PIN held + Widget 213
+  visible (packed id; the bank-pin interface group).
+- BankPinSolver `6()` = cached Widgets.getWidget(213) (randoms.txt:7616).
+- BankPinSolver `1()`: digit slots = root children [i+3] for i in 0..3.
+- BankPinSolver `0()`: first visible slot with text "?" (randoms.txt:7795).
+- BankPinSolver `8()`: ten buttons at root children [16+2i] (randoms.txt:7726).
+- BankPinSolver `4(digit)`: button whose child(1) label equals the digit,
+  falling back to the first empty-labelled button (randoms.txt:7846).
+- BankPinSolver.onLoop: click the digit button, wait for the slot to
+  change (randoms.txt:7503).
+- LoginSolver: re-login flow on disconnect (runtime account, never stored
+  by the fork beyond process memory).
+- RoofDisabler: gated on ClientSettings.areRoofsHidden + safe conditions
+  (logged in, options tab available, not in dialogue/combat); the actual
+  toggle drives settings widgets with no pinned-API counterpart, so the
+  fork leaves roof-hiding out with this note.
+
+NOT ported (no static source, needs a live pass): roof/resizable/zoom
+toggles, deaths-door handling, bank-tutorial dismissals.

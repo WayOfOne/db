@@ -92,6 +92,7 @@ Three rules, no exceptions:
 | Shop/smith/fairy | `Shop` (stock reads, buy/sell 1-5-10-50), `Smithing` (list reads, item click), `FairyRings.travel(code)` (dial + confirm) — widget clicks game-only |
 | Quests/diaries/minigames | `Quests.questPoints()`, `Diaries.finished(area, tier)`, `Minigames.teleport(name)` (list must be open) |
 | Login/worlds | `Login.state/loggedIn/login/logout` (runtime credentials only — see rule 4), `Worlds` (list reads, switcher hop) |
+| Randoms | `Randoms.runOnce()` (Dismiss/Genie/Welcome/BankPin/Login/Break solvers; PIN + session creds memory-only) |
 | Equipment slots | `Equipment.inSlot(slot)` |
 | Zones/timing | `Area` (contains/center/random), `Sleep`, `Timing.waitCondition`, `Calculations` |
 | Menus (advanced) | `Actions.npcMenu/objectMenu/groundItemMenu/widgetMenu` build entries; `Actions.install` sets them |
