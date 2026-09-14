@@ -64,6 +64,9 @@ Three rules, no exceptions:
    `DREAMBOT_PASSWORD`. Never commit, log, print, or store credentials —
    no properties files, no scripts bundling passwords, no screenshots of
    env dumps. No account switching or vault exists by design.
+5. **Events beat polling.** Implement `bot.script.listener.*` interfaces
+   (`ChatListener`, `GameTickListener`, `ExperienceListener`, …) instead
+   of re-checking state every loop — the runner wires them for free.
 
 ## What a script can see and do (`bot.api`)
 

@@ -14,6 +14,7 @@ never cut for convenience on the core botting surface.
 |---|---|---|
 | `AbstractScript`, `ScriptManifest` (start/loop/exit) | `bot.script.Script`, `ScriptManifest`, `ScriptRunner` | Covered (smoke) |
 | `ScriptManager` (discovery, state) | `bot.script.ScriptLoader` (dir scan, per-jar loaders, reload/unload) | Covered (smoke) |
+| Listeners (chat/tick/xp/animation/spawns/menus/state/…) | `bot.script.listener.*` (22 contracts) + `bot.script.Events` bus fan-out, runner-wired | Covered (dispatch offline; delivery game-only); varp/pre-tick/spot/walk/decoded/HumanMouse omitted (no source) |
 | `Category`, `TaskNode`, frameworks, SDN deploy | — | Out (server scope) |
 | `ScriptSettings`, `ClientSettings` | `bot.ui.ScriptConfig` (`@ConfigGroup` auto-UI) | Covered (compiles; UI is client-rendered) |
 

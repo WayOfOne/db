@@ -41,14 +41,19 @@ public final class BreakSolver extends BaseSolver {
 
     @Override
     public int onLoop() throws Exception {
-        Login.logout();
-        long remaining = breakMs;
-        while (remaining > 0) {
-            int chunk = (int) Math.min(60_000L, remaining);
-            Sleep.sleep(chunk, chunk);
-            remaining -= chunk;
+        bot.script.Events.fireBreakStart();
+        try {
+            Login.logout();
+            long remaining = breakMs;
+            while (remaining > 0) {
+                int chunk = (int) Math.min(60_000L, remaining);
+                Sleep.sleep(chunk, chunk);
+                remaining -= chunk;
+            }
+            Login.relogin(120_000L);
+        } finally {
+            bot.script.Events.fireBreakEnd();
         }
-        Login.relogin(120_000L);
         nextBreakAt = System.currentTimeMillis() + workMs;
         return 1000;
     }

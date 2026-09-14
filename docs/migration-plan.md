@@ -348,6 +348,25 @@ server, no credential vault, no packet code.
   the procedure is in the table doc.
 - [x] `smokeTest` at 192 checks, all offline.
 
+## Phase 26 — Event listeners (local scripts only)
+
+- [x] Mirrored all 22 portable DreamBot listener contracts
+  (`bot.script.listener.*`, default no-op methods, RL payloads):
+  chat (+typed fan-out), game/client tick, XP (gained/level-up/change),
+  animation, hitsplat, varbit, spawns (NPC/player/object/loot/projectile
+  first-sight), projectile moves, containers (inventory/equipment +
+  added/removed diffs), menu entries/clicks, login/logout edges, game
+  state, widgets, region approximation (LOADING-exit edge), world id,
+  client scripts, script callbacks, render, breaks.
+- [x] `bot.script.Events` fan-out on the maintained bus (XP/level,
+  container-snapshot, projectile, edge trackers inside) + `ScriptRunner`
+  register/unregister for the run lifetime + `BreakSolver` break broadcasts.
+- [x] Deliberately omitted (no pinned source): varp updates, fake-XP
+  drops, pre/server ticks, spot-animation ids, walk events, decoded
+  widgets, HumanMouse (Robot input has no event stream — design
+  difference), paint (covered by `ScriptOverlay`).
+- [x] `smokeTest` at 199 checks, all offline. Bus delivery wants a live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

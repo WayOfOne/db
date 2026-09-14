@@ -18,6 +18,8 @@ public final class ScriptRunner {
         script.init(client);
         int loops = 0;
         script.onStart();
+        Events.register(script);
+        Events.FanOut.ensure();
         try {
             while (!stop && loops < maxIterations) {
                 int sleep = script.onLoop();
@@ -33,6 +35,7 @@ public final class ScriptRunner {
                 }
             }
         } finally {
+            Events.unregister(script);
             script.onExit();
         }
         return loops;

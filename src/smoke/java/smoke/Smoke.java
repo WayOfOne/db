@@ -46,6 +46,13 @@ import bot.api.randoms.WelcomeSolver;
 import bot.api.WidgetIds;
 import bot.api.Widgets;
 import bot.api.Worlds;
+import bot.script.Events;
+import bot.script.listener.BreakListener;
+import bot.script.listener.ChatListener;
+import bot.script.listener.ExperienceListener;
+import bot.script.listener.GameTickListener;
+import bot.script.listener.WidgetEventListener;
+import bot.script.listener.WorldViewListener;
 import bot.util.Calculations;
 import bot.util.Sleep;
 import bot.util.Timing;
@@ -257,6 +264,79 @@ public final class Smoke {
         check(!FairyRings.enterCode(new String[] {"a"}), "short code rejected");
         check(!FairyRings.enterCode(new String[] {"a", "i", "q"}), "enter code fails clean");
         check(!FairyRings.travel(new String[] {"a", "i", "q"}), "travel fails clean");
+
+        int[] chatHits = new int[7];
+        ChatListener chat = new ChatListener() {
+            @Override public void onMessage(net.runelite.api.events.ChatMessage m) { chatHits[0]++; }
+            @Override public void onGameMessage(String s, String m) { chatHits[1]++; }
+            @Override public void onPlayerMessage(String s, String m) { chatHits[2]++; }
+            @Override public void onPrivateOutMessage(String s, String m) { chatHits[3]++; }
+            @Override public void onClanMessage(String s, String m) { chatHits[4]++; }
+            @Override public void onTradeMessage(String s, String m) { chatHits[5]++; }
+        };
+        check(chatHits[0] == 0, "chat listener starts quiet");
+        ChatListener.dispatch(chat, chatLine(
+            net.runelite.api.ChatMessageType.GAMEMESSAGE, "Bob", "hi"));
+        ChatListener.dispatch(chat, chatLine(
+            net.runelite.api.ChatMessageType.PUBLICCHAT, "Bob", "hi"));
+        ChatListener.dispatch(chat, chatLine(
+            net.runelite.api.ChatMessageType.PRIVATECHATOUT, "Bob", "hi"));
+        ChatListener.dispatch(chat, chatLine(
+            net.runelite.api.ChatMessageType.CLAN_MESSAGE, "Bob", "hi"));
+        ChatListener.dispatch(chat, chatLine(
+            net.runelite.api.ChatMessageType.TRADE, "Bob", "hi"));
+        check(chatHits[0] == 5 && chatHits[1] == 1 && chatHits[2] == 1
+            && chatHits[3] == 1 && chatHits[4] == 1 && chatHits[5] == 1
+            && chatHits[6] == 0, "chat fan-out routes by type");
+
+        int[] first = Events.xpDelta(net.runelite.api.Skill.ATTACK, 1000, 10);
+        check(first[0] == 0 && first[1] == 0, "xp tracker seeds silently");
+        int[] second = Events.xpDelta(net.runelite.api.Skill.ATTACK, 1100, 11);
+        check(second[0] == 100 && second[1] == 1, "xp gain and level delta");
+
+        java.util.Map<Integer, int[]> before = new java.util.HashMap<>();
+        before.put(0, new int[] {995, 10});
+        java.util.Map<Integer, int[]> after = new java.util.HashMap<>();
+        after.put(0, new int[] {995, 7});
+        after.put(1, new int[] {123, 1});
+        java.util.Map<Integer, Integer> removed = new java.util.HashMap<>();
+        java.util.Map<Integer, Integer> added = Events.diffAdded(before, after, removed);
+        check(added.getOrDefault(123, 0) == 1 && removed.getOrDefault(995, 0) == 3,
+            "container diff finds delta");
+
+        int[] ticks = new int[3];
+        GameTickListener tickListener = new GameTickListener() {
+            @Override public void onGameTick() { ticks[0]++; }
+            @Override public void onClientTick() { ticks[1]++; }
+        };
+        WidgetEventListener widgetListener = new WidgetEventListener() {
+            @Override public void onWidgetClosed(int group) { ticks[2] += group; }
+        };
+        WorldViewListener worldListener = new WorldViewListener() {
+            @Override public void onWorldChanged(int world) { ticks[2] += world + 1; }
+        };
+        BreakListener breakListener = new BreakListener() {
+            @Override public void onBreakStart() { ticks[0] += 10; }
+            @Override public void onBreakEnd() { ticks[0] += 100; }
+        };
+        Events.register(tickListener);
+        Events.register(widgetListener);
+        Events.register(worldListener);
+        Events.register(breakListener);
+        Events.FanOut fan = new Events.FanOut();
+        fan.onGameTick(new net.runelite.api.events.GameTick());
+        fan.onClientTick(new net.runelite.api.events.ClientTick());
+        fan.onWidgetClosed(new net.runelite.api.events.WidgetClosed(12, 0, false));
+        fan.onWorldChanged(new net.runelite.api.events.WorldChanged());
+        Events.fireBreakStart();
+        Events.fireBreakEnd();
+        check(ticks[0] == 111 && ticks[1] == 1 && ticks[2] == 13, "fan-out reaches listeners");
+        Events.unregister(tickListener);
+        Events.unregister(widgetListener);
+        Events.unregister(worldListener);
+        Events.unregister(breakListener);
+        check(Events.registered().stream().noneMatch(
+            o -> o == tickListener), "unregister removes listener");
 
         check(Quests.questPoints() == 0, "quest points default");
         check(Quest.COOKS_ASSISTANT.configId == 29, "cooks varp mined");
@@ -498,6 +578,15 @@ public final class Smoke {
         };
         return (ItemContainer) Proxy.newProxyInstance(
             Smoke.class.getClassLoader(), new Class<?>[] { ItemContainer.class }, h);
+    }
+
+    private static net.runelite.api.events.ChatMessage chatLine(
+            net.runelite.api.ChatMessageType type, String sender, String text) {
+        net.runelite.api.events.ChatMessage m = new net.runelite.api.events.ChatMessage();
+        m.setType(type);
+        m.setName(sender);
+        m.setMessage(text);
+        return m;
     }
 
     private static Widget stubWidget() {
