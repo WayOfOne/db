@@ -53,6 +53,7 @@ never cut for convenience on the core botting surface.
 | Smithing | `Smithing` reads, item click, anvil open (group 312, probe-verified; no DreamBot class exists) | Covered (lookup offline; dispatch game-only) |
 | Fairy rings | `FairyRings` dial reads, rotate, code entry, travel (mined varp-816 mechanics, `results/fairy-ring-table.txt`) + log row readers | Covered (reads + builders offline; dispatch game-only); log format matching with scripts |
 | Quests | `Quests.questPoints` (varp 101) + tab open | Covered (smoke); per-quest states deferred (decrypted color map) |
+| Quest journal | `Quest` enum (230 mined rows: slots, QP, varp/varbit, tables) + `settingValue/rowWidget/rowColor` reads | Covered (smoke); started/finished verdicts need one live calibration |
 | Diaries | `Diaries` 12 areas x 4 tiers (mined varbits, `results/diary-varbit-table.txt`) | Covered (smoke) |
 | Minigames | `Minigames` open check, selection read, name-matched teleport (group 76) | Covered (lookup offline; dispatch game-only); clan-tab opener deferred |
 | Combat spells | `Spell` enum (180 mined slots, all books) + `Magic.cast/canCast` (level gate; rune costs decrypted-out) | Covered (lookup offline; dispatch game-only) |
@@ -84,9 +85,10 @@ Every flow built on them still wants one live pass.
   own set is dismiss-shaped, and anything deeper stays out.
 - Still to implement: nothing offline — the deferred list below is all
   live-gated.
-- Deferred niche content (needs one live pass each): per-quest states
-  (decrypted color map), bonds (no static ids and no pinned constants),
-  Ruinous prayers (no DreamBot-side table), ignore-list mutations (no
-  source), clan-tab opener, roof/zoom/death/tutorial handlers.
+- Deferred niche content (needs one live pass each): quest state
+  verdicts (tables mined, calibration pending), bonds (no static ids
+  and no pinned constants), Ruinous prayers (no DreamBot-side table),
+  ignore-list mutations (no source), clan-tab opener, roof/zoom/death/
+  tutorial handlers.
   Each is a widget-data task a script author can add following the
   `Bank`/`Widgets` pattern; none is architectural.

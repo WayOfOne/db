@@ -31,6 +31,7 @@ import bot.api.Npcs;
 import bot.api.PathFinder;
 import bot.api.Prayers;
 import bot.api.Quests;
+import bot.api.Quest;
 import bot.api.RandomEvents;
 import bot.api.Shop;
 import bot.api.SkillTracker;
@@ -258,6 +259,14 @@ public final class Smoke {
         check(!FairyRings.travel(new String[] {"a", "i", "q"}), "travel fails clean");
 
         check(Quests.questPoints() == 0, "quest points default");
+        check(Quest.COOKS_ASSISTANT.configId == 29, "cooks varp mined");
+        check(Quest.COOKS_ASSISTANT.grandchild == 1, "cooks row mined");
+        check(Quest.BARBARIAN_TRAINING.varbitId == 9613, "barbarian varbit mined");
+        check(Quest.values().length == 230, "230 quests mined");
+        check(Quests.settingValue(Quest.COOKS_ASSISTANT) == 0, "cooks setting default");
+        check(Quests.settingValue(null) == -1, "null quest unset");
+        check(Quests.rowWidget(Quest.COOKS_ASSISTANT) == null, "no journal offline");
+        check(Quests.rowColor(Quest.COOKS_ASSISTANT) == -1, "no row color offline");
         check(!Diaries.finished(Diaries.Area.LUMBRIDGE_DRAYNOR, Diaries.Tier.EASY),
             "lumby easy unfinished");
         check(!Diaries.finished(null, Diaries.Tier.EASY), "null area unfinished");

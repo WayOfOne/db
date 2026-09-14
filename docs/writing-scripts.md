@@ -90,7 +90,7 @@ Three rules, no exceptions:
 | Combat/prayer/magic | `Combat` (level, spec %/toggle, retaliate, style 0-3, poison/venom), `Prayers.toggle/activate/selectQuick(Prayer)` + quick-pray orb, `Magic` home teleport per book + `cast(Spell)`/`canCast` (180 mined slots, level gate) — widget clicks game-only |
 | Social/emotes/randoms | `Friends` (list/ignore reads, add/delete/message), `ClanChat` (chat + guild reads, join/leave), `Emotes.perform(Emote)`, `HintArrows` (reads + clear), `RandomEvents.dismiss()` (Continue-boxes only, never a solver) |
 | Shop/smith/fairy | `Shop` (stock reads, buy/sell 1-5-10-50), `Smithing` (list reads, item click), `FairyRings.travel(code)` (dial + confirm) — widget clicks game-only |
-| Quests/diaries/minigames | `Quests.questPoints()`, `Diaries.finished(area, tier)`, `Minigames.teleport(name)` (list must be open) |
+| Quests/diaries/minigames | `Quests.questPoints()`, `Quest` journal data (230 mined rows) + `settingValue/rowColor` reads, `Diaries.finished(area, tier)`, `Minigames.teleport(name)` (list must be open) |
 | Login/worlds | `Login.state/loggedIn/login/logout` (runtime credentials only — see rule 4), `Worlds` (list reads, switcher hop) |
 | Randoms | `Randoms.runOnce()` (Dismiss/Genie/Welcome/BankPin/Login/Break solvers; PIN + session creds memory-only) |
 | Equipment slots | `Equipment.inSlot(slot)` |

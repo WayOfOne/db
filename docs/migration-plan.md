@@ -333,6 +333,21 @@ server, no credential vault, no packet code.
 - [x] Ignore-list mutations stay out (no DreamBot counterpart).
 - [x] `smokeTest` at 184 checks, all offline. Typing flows want a live pass.
 
+## Phase 25 — Quest journal data (local scripts only)
+
+- [x] Mined all three DreamBot quest-book enums with per-book
+  constructor mapping verified by putfield trace: 230 quests with
+  journal rows (399, 7, grandchild), QP, varp/varbit ids, progression
+  tables (`results/quest-table.txt`, `tools/ParseQuests.py`) ->
+  `Quest` enum + `Quests.settingValue/rowWidget/rowColor`.
+- [x] State verdicts deliberately NOT implemented: single-element tables
+  ([10]) read like completion values but multi-element tables
+  ([35,2,0,19]) are non-monotonic and [-1] tables (all free quests)
+  carry nothing — inventing thresholds would break the best-known
+  quests. One live calibration (row colors vs raw values) unlocks them;
+  the procedure is in the table doc.
+- [x] `smokeTest` at 192 checks, all offline.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

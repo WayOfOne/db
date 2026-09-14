@@ -1,0 +1,1309 @@
+Compiled from "FreeQuest.java"
+public final class org.dreambot.api.methods.quest.book.FreeQuest extends java.lang.Enum<org.dreambot.api.methods.quest.book.FreeQuest> implements org.dreambot.api.methods.quest.book.Quest {
+  public static final org.dreambot.api.methods.quest.book.FreeQuest BELOW_ICE_MOUNTAIN;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest BLACK_KNIGHTS_FORTRESS;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest COOKS_ASSISTANT;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest CORSAIR_CURSE;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest THE_CORSAIR_CURSE;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest DEMON_SLAYER;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest DORICS_QUEST;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest DRAGON_SLAYER;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest DRAGON_SLAYER_I;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest ERNEST_THE_CHICKEN;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest GOBLIN_DIPLOMACY;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest IMP_CATCHER;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest THE_KNIGHTS_SWORD;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest MISTHALIN_MYSTERY;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest PIRATES_TREASURE;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest PRINCE_ALI_RESCUE;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest THE_RESTLESS_GHOST;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest ROMEO_AND_JULIET;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest RUNE_MYSTERIES;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest SHEEP_SHEARER;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest SHIELD_OF_ARRAV;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest VAMPIRE_SLAYER;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest VAMPYRE_SLAYER;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest WITCHS_POTION;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest X_MARKS_THE_SPOT;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest TUTORIAL_ISLAND;
+
+  public static final org.dreambot.api.methods.quest.book.FreeQuest THE_IDES_OF_MILK;
+
+  private final int 2;
+
+  private final int[] 5;
+
+  private final int 7;
+
+  private final int 1;
+
+  private final int 9;
+
+  private final org.dreambot.api.data.requirements.Requirement 8;
+
+  private final org.dreambot.api.data.requirements.Requirement 0;
+
+  private static final org.dreambot.api.methods.quest.book.FreeQuest[] 6;
+
+  private static java.lang.String 3;
+
+  private static final long a;
+
+  public static org.dreambot.api.methods.quest.book.FreeQuest[] values();
+    Code:
+       0: getstatic     #381                // Field "6":[Lorg/dreambot/api/methods/quest/book/FreeQuest;
+       3: invokevirtual #83                 // Method "[Lorg/dreambot/api/methods/quest/book/FreeQuest;".clone:()Ljava/lang/Object;
+       6: checkcast     #276                // class "[Lorg/dreambot/api/methods/quest/book/FreeQuest;"
+       9: areturn
+
+  public static org.dreambot.api.methods.quest.book.FreeQuest valueOf(java.lang.String);
+    Code:
+       0: ldc           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+       2: aload_0
+       3: invokestatic  #133                // Method java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+       6: checkcast     #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+       9: areturn
+
+  private org.dreambot.api.methods.quest.book.FreeQuest(int, int, int, int, int[], org.dreambot.api.data.requirements.Requirement, org.dreambot.api.data.requirements.Requirement);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iload_2
+       3: invokespecial #365                // Method java/lang/Enum."<init>":(Ljava/lang/String;I)V
+       6: aload_0
+       7: iload_3
+       8: putfield      #168                // Field "2":I
+      11: aload_0
+      12: iload         4
+      14: putfield      #30                 // Field "9":I
+      17: aload_0
+      18: iload         5
+      20: putfield      #87                 // Field "7":I
+      23: aload_0
+      24: iload         6
+      26: putfield      #11                 // Field "1":I
+      29: aload_0
+      30: aload         7
+      32: putfield      #395                // Field "5":[I
+      35: aload_0
+      36: aload         8
+      38: putfield      #118                // Field "8":Lorg/dreambot/api/data/requirements/Requirement;
+      41: aload_0
+      42: aload         9
+      44: putfield      #96                 // Field "0":Lorg/dreambot/api/data/requirements/Requirement;
+      47: return
+
+  public int getQP();
+    Code:
+       0: aload_0
+       1: getfield      #30                 // Field "9":I
+       4: ireturn
+
+  public int getChild();
+    Code:
+       0: bipush        7
+       2: ireturn
+
+  public int getGrandChild();
+    Code:
+       0: aload_0
+       1: getfield      #168                // Field "2":I
+       4: ireturn
+
+  public int[] getSettings();
+    Code:
+       0: aload_0
+       1: getfield      #395                // Field "5":[I
+       4: areturn
+
+  public int getStartedSetting();
+    Code:
+       0: aload_0
+       1: getfield      #395                // Field "5":[I
+       4: iconst_0
+       5: iaload
+       6: ireturn
+
+  public int getFinishedSetting();
+    Code:
+       0: aload_0
+       1: getfield      #395                // Field "5":[I
+       4: aload_0
+       5: getfield      #395                // Field "5":[I
+       8: arraylength
+       9: iconst_1
+      10: isub
+      11: iaload
+      12: ireturn
+
+  public int getConfigId();
+    Code:
+       0: aload_0
+       1: getfield      #87                 // Field "7":I
+       4: ireturn
+
+  public int getVarBitId();
+    Code:
+       0: aload_0
+       1: getfield      #11                 // Field "1":I
+       4: ireturn
+
+  public org.dreambot.api.data.requirements.Requirement getQuests();
+    Code:
+       0: aload_0
+       1: getfield      #118                // Field "8":Lorg/dreambot/api/data/requirements/Requirement;
+       4: areturn
+
+  public org.dreambot.api.data.requirements.Requirement getSkills();
+    Code:
+       0: aload_0
+       1: getfield      #96                 // Field "0":Lorg/dreambot/api/data/requirements/Requirement;
+       4: areturn
+
+  public boolean find();
+    Code:
+       0: getstatic     #404                // Field a:J
+       3: ldc2_w        #429                // long 10389187590521l
+       6: lxor
+       7: lstore_1
+       8: invokestatic  #79                 // Method "org/dreambot/0E"."8":()[Lorg/dreambot/0E;
+      11: invokestatic  #81                 // Method java/util/Arrays.stream:([Ljava/lang/Object;)Ljava/util/stream/Stream;
+      14: aload_0
+      15: invokedynamic #267,  0            // InvokeDynamic #0:test:(Lorg/dreambot/api/methods/quest/book/FreeQuest;)Ljava/util/function/Predicate;
+      20: invokeinterface #211,  2          // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+      25: invokeinterface #306,  1          // InterfaceMethod java/util/stream/Stream.findFirst:()Ljava/util/Optional;
+      30: aconst_null
+      31: invokevirtual #366                // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+      34: checkcast     #418                // class "org/dreambot/0E"
+      37: astore_3
+      38: aload_3
+      39: ifnull        46
+      42: iconst_1
+      43: goto          47
+      46: iconst_0
+      47: ireturn
+
+  public org.dreambot.api.methods.quest.book.Quest$State getState();
+    Code:
+       0: getstatic     #404                // Field a:J
+       3: ldc2_w        #437                // long 84368977628682l
+       6: lxor
+       7: lstore_1
+       8: lload_1
+       9: dup2
+      10: ldc2_w        #441                // long 21578420035679l
+      13: lxor
+      14: lstore_3
+      15: dup2
+      16: ldc2_w        #447                // long 89205916584403l
+      19: lxor
+      20: lstore        5
+      22: pop2
+      23: aconst_null
+      24: astore        8
+      26: invokestatic  #79                 // Method "org/dreambot/0E"."8":()[Lorg/dreambot/0E;
+      29: astore        9
+      31: aload         9
+      33: arraylength
+      34: istore        10
+      36: ldc2_w        #431                // long -6606384784100585498l
+      39: lload_1
+      40: invokedynamic #132,  0            // InvokeDynamic #1:Û:(JJ)Ljava/lang/String;
+      45: iconst_0
+      46: istore        11
+      48: astore        7
+      50: iload         11
+      52: iload         10
+      54: if_icmpge     98
+      57: aload         9
+      59: iload         11
+      61: aaload
+      62: astore        12
+      64: aload         7
+      66: ifnull        95
+      69: aload         12
+      71: iconst_0
+      72: anewarray     #170                // class java/lang/Object
+      75: invokevirtual #274                // Method "org/dreambot/0E"."4":([Ljava/lang/Object;)I
+      78: aload_0
+      79: invokevirtual #397                // Method getGrandChild:()I
+      82: if_icmpne     92
+      85: aload         12
+      87: astore        8
+      89: goto          98
+      92: iinc          11, 1
+      95: goto          50
+      98: aload         8
+     100: aload         7
+     102: ifnull        122
+     105: ifnonnull     120
+     108: aload_0
+     109: invokevirtual #153                // Method getColor:()I
+     112: istore        9
+     114: iload         9
+     116: invokestatic  #91                 // Method org/dreambot/api/methods/quest/book/Quest$State.getForID:(I)Lorg/dreambot/api/methods/quest/book/Quest$State;
+     119: areturn
+     120: aload         8
+     122: lload         5
+     124: iconst_1
+     125: anewarray     #170                // class java/lang/Object
+     128: dup_x2
+     129: dup_x2
+     130: pop
+     131: invokestatic  #362                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     134: iconst_0
+     135: swap
+     136: aastore
+     137: invokevirtual #123                // Method "org/dreambot/0E"."1":([Ljava/lang/Object;)Z
+     140: aload         7
+     142: ifnull        157
+     145: ifeq          152
+     148: getstatic     #186                // Field org/dreambot/api/methods/quest/book/Quest$State.NOT_STARTED:Lorg/dreambot/api/methods/quest/book/Quest$State;
+     151: areturn
+     152: aload         8
+     154: invokevirtual #177                // Method "org/dreambot/0E"."9":()Z
+     157: aload         7
+     159: ifnull        188
+     162: ifeq          169
+     165: getstatic     #229                // Field org/dreambot/api/methods/quest/book/Quest$State.FINISHED:Lorg/dreambot/api/methods/quest/book/Quest$State;
+     168: areturn
+     169: aload         8
+     171: lload_3
+     172: iconst_1
+     173: anewarray     #170                // class java/lang/Object
+     176: dup_x2
+     177: dup_x2
+     178: pop
+     179: invokestatic  #362                // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+     182: iconst_0
+     183: swap
+     184: aastore
+     185: invokevirtual #169                // Method "org/dreambot/0E"."0":([Ljava/lang/Object;)Z
+     188: ifeq          195
+     191: getstatic     #273                // Field org/dreambot/api/methods/quest/book/Quest$State.STARTED:Lorg/dreambot/api/methods/quest/book/Quest$State;
+     194: areturn
+     195: getstatic     #54                 // Field org/dreambot/api/methods/quest/book/Quest$State.INVALID:Lorg/dreambot/api/methods/quest/book/Quest$State;
+     198: ldc2_w        #435                // long -6363927371419552875l
+     201: lload_1
+     202: invokedynamic #370,  0            // InvokeDynamic #2:Û:(JJ)I
+     207: ifeq          221
+     210: ldc           #8                  // String awdsd
+     212: ldc2_w        #419                // long -6371715471764479642l
+     215: lload_1
+     216: invokedynamic #77,  0             // InvokeDynamic #3:Û:(Ljava/lang/Object;JJ)V
+     221: areturn
+
+  private boolean 5(org.dreambot.0E);
+    Code:
+       0: getstatic     #404                // Field a:J
+       3: ldc2_w        #427                // long 116257345199532l
+       6: lxor
+       7: lstore_2
+       8: ldc2_w        #421                // long -578909306362930112l
+      11: lload_2
+      12: invokedynamic #132,  0            // InvokeDynamic #1:Û:(JJ)Ljava/lang/String;
+      17: astore        4
+      19: aload_1
+      20: iconst_0
+      21: anewarray     #170                // class java/lang/Object
+      24: invokevirtual #274                // Method "org/dreambot/0E"."4":([Ljava/lang/Object;)I
+      27: aload         4
+      29: ifnull        40
+      32: aload_0
+      33: invokevirtual #397                // Method getGrandChild:()I
+      36: if_icmpne     43
+      39: iconst_1
+      40: goto          44
+      43: iconst_0
+      44: ireturn
+
+  static {};
+    Code:
+       0: ldc2_w        #425                // long -3780326238781526345l
+       3: ldc2_w        #433                // long -5515669969880897602l
+       6: invokestatic  #41                 // Method java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+       9: invokevirtual #22                 // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+      12: invokestatic  #210                // Method org/dreambot/x.a:(JJLjava/lang/Object;)Lorg/dreambot/b;
+      15: ldc2_w        #445                // long 155719624868720l
+      18: invokeinterface #226,  3          // InterfaceMethod org/dreambot/b.a:(J)J
+      23: putstatic     #404                // Field a:J
+      26: getstatic     #404                // Field a:J
+      29: ldc2_w        #423                // long 124151039748181l
+      32: lxor
+      33: lstore        9
+      35: ldc2_w        #439                // long -4463537426659415623l
+      38: lload         9
+      40: invokedynamic #132,  0            // InvokeDynamic #1:Û:(JJ)Ljava/lang/String;
+      45: ifnonnull     60
+      48: ldc           #2                  // String Q6Vjgc
+      50: ldc2_w        #443                // long -4482169217966127303l
+      53: lload         9
+      55: invokedynamic #77,  0             // InvokeDynamic #3:Û:(Ljava/lang/Object;JJ)V
+      60: ldc           #1                  // String DES/CBC/PKCS5Padding
+      62: invokestatic  #105                // Method javax/crypto/Cipher.getInstance:(Ljava/lang/String;)Ljavax/crypto/Cipher;
+      65: dup
+      66: astore_1
+      67: iconst_2
+      68: ldc           #6                  // String DES
+      70: invokestatic  #283                // Method javax/crypto/SecretKeyFactory.getInstance:(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;
+      73: bipush        8
+      75: newarray       byte
+      77: dup
+      78: iconst_0
+      79: lload         9
+      81: bipush        56
+      83: lushr
+      84: l2i
+      85: i2b
+      86: bastore
+      87: iconst_1
+      88: istore_2
+      89: iload_2
+      90: bipush        8
+      92: if_icmpge     116
+      95: dup
+      96: iload_2
+      97: lload         9
+      99: iload_2
+     100: bipush        8
+     102: imul
+     103: lshl
+     104: bipush        56
+     106: lushr
+     107: l2i
+     108: i2b
+     109: bastore
+     110: iinc          2, 1
+     113: goto          89
+     116: new           #66                 // class javax/crypto/spec/DESKeySpec
+     119: dup_x1
+     120: swap
+     121: invokespecial #387                // Method javax/crypto/spec/DESKeySpec."<init>":([B)V
+     124: invokevirtual #40                 // Method javax/crypto/SecretKeyFactory.generateSecret:(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
+     127: new           #201                // class javax/crypto/spec/IvParameterSpec
+     130: dup
+     131: bipush        8
+     133: newarray       byte
+     135: invokespecial #109                // Method javax/crypto/spec/IvParameterSpec."<init>":([B)V
+     138: invokevirtual #302                // Method javax/crypto/Cipher.init:(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+     141: bipush        27
+     143: anewarray     #243                // class java/lang/String
+     146: astore_0
+     147: iconst_0
+     148: istore        6
+     150: ldc           #7                  // String DSà[|\u0015µçÁ\u001c\u0013\u008d¢d[9\u0018Æ\u007f5\u0001­G\r¾hK¦Â@7&\u001aÊþM&¹ÂÓ\u0091\u0010C\u001cçn¥¸seWaÜ\u0016\u0094¬\nv\u0010\u009ctøPvd±Ü\u007f{\u0011[ÏC\tü\u0018@p\u0080Âs3ÙÔ\f\u0012v¹Ð!\u0094{\\ä¬5\'\u0090é@\u0010n\fÒu\u0099\u001cnï¸\u001f^\u00847\u009bð1\u0018Xm¢>ä\u0080­-\n\u0085\u009b\f\u0018ÄÒ:*\u0003x²ÀÃ¡Q\u0018µx=*Î(o©\u008dz\u0086,\u008f¯Ótõs\u009dÄ7Ô\u0001\u008d\u0018ù;2\u008dn±ç4f³\u008fèÂ×|ÿ¢@u×âµ®º\u0010\u0081\u009dK\u0093\u008eàcÝ±UÇÛ^@»\u0081\u0018ÆºY\u0081¡ºæå\u0094ÕYìsU\u001b\u009aþaÀ\u001cçitf\u0018bô¬¯Ô\u0082\u0084}\n\u0015\u0018¾f\u0098O¡Z>\u000b \u0099\t\u0099\u0086\u0018±T\u0099úþ]\u0083;È\u000b\u009a\u0082½f^\"(N2\u0004êÌÝ\u0084\u0010\u001d\u009e\u0087W\u0007-\u007fE\u0004ôd!\u0098>§/\u0018þ\f\u008bÜ\u0019l\u000f\u0094Ê¤\u0093y\u0084_zkÎ\u0091®Ö\u0097³>\u0094\u0018\rÀ$\u009eÓ$QÐ\u0099\u0098\u0085\u008f\bN\u001b­Í7\u009enB^pi\u0010\u0001w¨e=\u009dÚì\u0090º¶¨\u009cdCÃ\u0010ÔpÈ\u008fP\u0006µá\u001c\u0001\u009dý\u001fÍÑ×\u0010\\©æ×l/\u0086Ã\u0085:Ïñ&L/Ð\u0018sí\u009b\u001c\u0083;É;\u0093\u0016\u0015Î)\u0089\fè\u0013ÿP-e¹E¹\u0018\u008b\u007f;H°Ýèp½R×vë\u007fUÍ#\u009e\u009fª©Ømx\u0010YÇ\u0016ÞÇ×C]\t¶ÆñÅô_j\u0010ð*\u0000\u000f\u0084\u007fd-\få\u0007\u001dÏ\u0085\'V\u0010n\fÒu\u0099\u001cnï\u0095\u001b@úm\u000bt@\u0010Ð\u0092Þ\u00061\u0019|y±BÌã\u00997ÿQ
+     152: dup
+     153: astore        5
+     155: invokevirtual #142                // Method java/lang/String.length:()I
+     158: istore        7
+     160: bipush        16
+     162: istore        4
+     164: iconst_m1
+     165: istore_3
+     166: iinc          3, 1
+     169: aload         5
+     171: iload_3
+     172: dup
+     173: iload         4
+     175: iadd
+     176: invokevirtual #405                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     179: iconst_m1
+     180: goto          281
+     183: aload_0
+     184: swap
+     185: iload         6
+     187: iinc          6, 1
+     190: swap
+     191: aastore
+     192: iload_3
+     193: iload         4
+     195: iadd
+     196: dup
+     197: istore_3
+     198: iload         7
+     200: if_icmpge     214
+     203: aload         5
+     205: iload_3
+     206: invokevirtual #292                // Method java/lang/String.charAt:(I)C
+     209: istore        4
+     211: goto          166
+     214: ldc           #4                  // String ä¿\u0082\u0082ûaA\u0096ìÛ£t-\u0096\u0015æ2£\u0000(g]\u008co\u0010»Zc\u009e\u0094j\u0004l¯ï\f­qßÄï
+     216: dup
+     217: astore        5
+     219: invokevirtual #142                // Method java/lang/String.length:()I
+     222: istore        7
+     224: bipush        24
+     226: istore        4
+     228: iconst_m1
+     229: istore_3
+     230: iinc          3, 1
+     233: aload         5
+     235: iload_3
+     236: dup
+     237: iload         4
+     239: iadd
+     240: invokevirtual #405                // Method java/lang/String.substring:(II)Ljava/lang/String;
+     243: iconst_0
+     244: goto          281
+     247: aload_0
+     248: swap
+     249: iload         6
+     251: iinc          6, 1
+     254: swap
+     255: aastore
+     256: iload_3
+     257: iload         4
+     259: iadd
+     260: dup
+     261: istore_3
+     262: iload         7
+     264: if_icmpge     278
+     267: aload         5
+     269: iload_3
+     270: invokevirtual #292                // Method java/lang/String.charAt:(I)C
+     273: istore        4
+     275: goto          230
+     278: goto          320
+     281: swap
+     282: ldc           #5                  // String ISO-8859-1
+     284: invokevirtual #90                 // Method java/lang/String.getBytes:(Ljava/lang/String;)[B
+     287: aload_1
+     288: swap
+     289: invokevirtual #196                // Method javax/crypto/Cipher.doFinal:([B)[B
+     292: astore        8
+     294: aload         8
+     296: invokestatic  #129                // Method a:([B)Ljava/lang/String;
+     299: invokevirtual #245                // Method java/lang/String.intern:()Ljava/lang/String;
+     302: swap
+     303: tableswitch   { // 0 to 0
+                     0: 247
+               default: 183
+          }
+     320: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     323: dup
+     324: aload_0
+     325: bipush        25
+     327: aaload
+     328: iconst_0
+     329: sipush        162
+     332: iconst_1
+     333: iconst_m1
+     334: sipush        12063
+     337: iconst_1
+     338: newarray       int
+     340: dup
+     341: iconst_0
+     342: iconst_m1
+     343: iastore
+     344: new           #408                // class org/dreambot/api/data/requirements/QuestPointRequirement
+     347: dup
+     348: bipush        16
+     350: invokespecial #236                // Method org/dreambot/api/data/requirements/QuestPointRequirement."<init>":(I)V
+     353: aconst_null
+     354: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     357: putstatic     #64                 // Field BELOW_ICE_MOUNTAIN:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     360: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     363: dup
+     364: aload_0
+     365: bipush        6
+     367: aaload
+     368: iconst_1
+     369: bipush        12
+     371: iconst_3
+     372: sipush        130
+     375: iconst_m1
+     376: iconst_1
+     377: newarray       int
+     379: dup
+     380: iconst_0
+     381: iconst_m1
+     382: iastore
+     383: new           #408                // class org/dreambot/api/data/requirements/QuestPointRequirement
+     386: dup
+     387: bipush        12
+     389: invokespecial #236                // Method org/dreambot/api/data/requirements/QuestPointRequirement."<init>":(I)V
+     392: aconst_null
+     393: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     396: putstatic     #290                // Field BLACK_KNIGHTS_FORTRESS:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     399: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     402: dup
+     403: aload_0
+     404: bipush        17
+     406: aaload
+     407: iconst_2
+     408: iconst_1
+     409: iconst_1
+     410: bipush        29
+     412: iconst_m1
+     413: iconst_1
+     414: newarray       int
+     416: dup
+     417: iconst_0
+     418: iconst_m1
+     419: iastore
+     420: aconst_null
+     421: aconst_null
+     422: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     425: putstatic     #125                // Field COOKS_ASSISTANT:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     428: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     431: dup
+     432: aload_0
+     433: iconst_3
+     434: aaload
+     435: iconst_3
+     436: sipush        147
+     439: iconst_2
+     440: iconst_m1
+     441: sipush        6071
+     444: iconst_1
+     445: newarray       int
+     447: dup
+     448: iconst_0
+     449: iconst_m1
+     450: iastore
+     451: aconst_null
+     452: aconst_null
+     453: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     456: putstatic     #188                // Field CORSAIR_CURSE:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     459: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     462: dup
+     463: aload_0
+     464: bipush        14
+     466: aaload
+     467: iconst_4
+     468: sipush        147
+     471: iconst_2
+     472: iconst_m1
+     473: sipush        6071
+     476: iconst_1
+     477: newarray       int
+     479: dup
+     480: iconst_0
+     481: iconst_m1
+     482: iastore
+     483: aconst_null
+     484: aconst_null
+     485: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     488: putstatic     #410                // Field THE_CORSAIR_CURSE:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     491: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     494: dup
+     495: aload_0
+     496: iconst_0
+     497: aaload
+     498: iconst_5
+     499: iconst_2
+     500: iconst_3
+     501: iconst_m1
+     502: sipush        2561
+     505: iconst_1
+     506: newarray       int
+     508: dup
+     509: iconst_0
+     510: iconst_m1
+     511: iastore
+     512: aconst_null
+     513: aconst_null
+     514: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     517: putstatic     #71                 // Field DEMON_SLAYER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     520: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     523: dup
+     524: aload_0
+     525: bipush        18
+     527: aaload
+     528: bipush        6
+     530: bipush        11
+     532: iconst_1
+     533: bipush        31
+     535: iconst_m1
+     536: iconst_1
+     537: newarray       int
+     539: dup
+     540: iconst_0
+     541: iconst_m1
+     542: iastore
+     543: aconst_null
+     544: aconst_null
+     545: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     548: putstatic     #29                 // Field DORICS_QUEST:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     551: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     554: dup
+     555: aload_0
+     556: bipush        23
+     558: aaload
+     559: bipush        7
+     561: bipush        17
+     563: iconst_2
+     564: sipush        176
+     567: iconst_m1
+     568: iconst_1
+     569: newarray       int
+     571: dup
+     572: iconst_0
+     573: iconst_m1
+     574: iastore
+     575: new           #408                // class org/dreambot/api/data/requirements/QuestPointRequirement
+     578: dup
+     579: bipush        32
+     581: invokespecial #236                // Method org/dreambot/api/data/requirements/QuestPointRequirement."<init>":(I)V
+     584: aconst_null
+     585: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     588: putstatic     #372                // Field DRAGON_SLAYER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     591: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     594: dup
+     595: aload_0
+     596: iconst_5
+     597: aaload
+     598: bipush        8
+     600: bipush        17
+     602: iconst_2
+     603: sipush        176
+     606: iconst_m1
+     607: iconst_1
+     608: newarray       int
+     610: dup
+     611: iconst_0
+     612: iconst_m1
+     613: iastore
+     614: new           #408                // class org/dreambot/api/data/requirements/QuestPointRequirement
+     617: dup
+     618: bipush        32
+     620: invokespecial #236                // Method org/dreambot/api/data/requirements/QuestPointRequirement."<init>":(I)V
+     623: aconst_null
+     624: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     627: putstatic     #183                // Field DRAGON_SLAYER_I:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     630: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     633: dup
+     634: aload_0
+     635: bipush        7
+     637: aaload
+     638: bipush        9
+     640: bipush        7
+     642: iconst_4
+     643: bipush        32
+     645: iconst_m1
+     646: iconst_1
+     647: newarray       int
+     649: dup
+     650: iconst_0
+     651: iconst_m1
+     652: iastore
+     653: aconst_null
+     654: aconst_null
+     655: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     658: putstatic     #347                // Field ERNEST_THE_CHICKEN:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     661: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     664: dup
+     665: aload_0
+     666: bipush        15
+     668: aaload
+     669: bipush        10
+     671: bipush        15
+     673: iconst_5
+     674: iconst_m1
+     675: sipush        2378
+     678: iconst_1
+     679: newarray       int
+     681: dup
+     682: iconst_0
+     683: iconst_m1
+     684: iastore
+     685: aconst_null
+     686: aconst_null
+     687: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     690: putstatic     #198                // Field GOBLIN_DIPLOMACY:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     693: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     696: dup
+     697: aload_0
+     698: bipush        22
+     700: aaload
+     701: bipush        11
+     703: bipush        9
+     705: iconst_1
+     706: sipush        160
+     709: iconst_m1
+     710: iconst_1
+     711: newarray       int
+     713: dup
+     714: iconst_0
+     715: iconst_m1
+     716: iastore
+     717: aconst_null
+     718: aconst_null
+     719: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     722: putstatic     #221                // Field IMP_CATCHER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     725: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     728: dup
+     729: aload_0
+     730: iconst_1
+     731: aaload
+     732: bipush        12
+     734: bipush        14
+     736: iconst_1
+     737: bipush        122
+     739: iconst_m1
+     740: iconst_1
+     741: newarray       int
+     743: dup
+     744: iconst_0
+     745: iconst_m1
+     746: iastore
+     747: aconst_null
+     748: new           #212                // class org/dreambot/api/data/requirements/Requirement
+     751: dup
+     752: iconst_0
+     753: anewarray     #212                // class org/dreambot/api/data/requirements/Requirement
+     756: invokespecial #324                // Method org/dreambot/api/data/requirements/Requirement."<init>":([Lorg/dreambot/api/data/requirements/Requirement;)V
+     759: new           #327                // class org/dreambot/api/data/requirements/SkillRequirement
+     762: dup
+     763: getstatic     #256                // Field org/dreambot/api/methods/skills/Skill.MINING:Lorg/dreambot/api/methods/skills/Skill;
+     766: bipush        10
+     768: invokespecial #228                // Method org/dreambot/api/data/requirements/SkillRequirement."<init>":(Lorg/dreambot/api/methods/skills/Skill;I)V
+     771: invokevirtual #239                // Method org/dreambot/api/data/requirements/Requirement.add:(Lorg/dreambot/api/data/requirements/Requirement;)Lorg/dreambot/api/data/requirements/Requirement;
+     774: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     777: putstatic     #373                // Field THE_KNIGHTS_SWORD:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     780: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     783: dup
+     784: aload_0
+     785: bipush        10
+     787: aaload
+     788: bipush        13
+     790: sipush        141
+     793: iconst_1
+     794: iconst_m1
+     795: sipush        3468
+     798: iconst_1
+     799: newarray       int
+     801: dup
+     802: iconst_0
+     803: iconst_m1
+     804: iastore
+     805: aconst_null
+     806: aconst_null
+     807: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     810: putstatic     #399                // Field MISTHALIN_MYSTERY:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     813: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     816: dup
+     817: aload_0
+     818: bipush        20
+     820: aaload
+     821: bipush        14
+     823: bipush        16
+     825: iconst_2
+     826: bipush        71
+     828: iconst_m1
+     829: iconst_1
+     830: newarray       int
+     832: dup
+     833: iconst_0
+     834: iconst_m1
+     835: iastore
+     836: aconst_null
+     837: aconst_null
+     838: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     841: putstatic     #149                // Field PIRATES_TREASURE:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     844: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     847: dup
+     848: aload_0
+     849: iconst_4
+     850: aaload
+     851: bipush        15
+     853: bipush        10
+     855: iconst_3
+     856: sipush        273
+     859: iconst_m1
+     860: iconst_1
+     861: newarray       int
+     863: dup
+     864: iconst_0
+     865: iconst_m1
+     866: iastore
+     867: aconst_null
+     868: aconst_null
+     869: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     872: putstatic     #192                // Field PRINCE_ALI_RESCUE:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     875: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     878: dup
+     879: aload_0
+     880: bipush        19
+     882: aaload
+     883: bipush        16
+     885: iconst_3
+     886: iconst_1
+     887: bipush        107
+     889: iconst_m1
+     890: iconst_1
+     891: newarray       int
+     893: dup
+     894: iconst_0
+     895: iconst_m1
+     896: iastore
+     897: aconst_null
+     898: aconst_null
+     899: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     902: putstatic     #92                 // Field THE_RESTLESS_GHOST:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     905: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     908: dup
+     909: aload_0
+     910: bipush        11
+     912: aaload
+     913: bipush        17
+     915: iconst_4
+     916: iconst_5
+     917: sipush        144
+     920: iconst_m1
+     921: iconst_1
+     922: newarray       int
+     924: dup
+     925: iconst_0
+     926: iconst_m1
+     927: iastore
+     928: aconst_null
+     929: aconst_null
+     930: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     933: putstatic     #130                // Field ROMEO_AND_JULIET:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     936: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     939: dup
+     940: aload_0
+     941: bipush        24
+     943: aaload
+     944: bipush        18
+     946: bipush        53
+     948: iconst_1
+     949: bipush        63
+     951: iconst_m1
+     952: iconst_1
+     953: newarray       int
+     955: dup
+     956: iconst_0
+     957: iconst_m1
+     958: iastore
+     959: aconst_null
+     960: aconst_null
+     961: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     964: putstatic     #223                // Field RUNE_MYSTERIES:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     967: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+     970: dup
+     971: aload_0
+     972: iconst_2
+     973: aaload
+     974: bipush        19
+     976: iconst_5
+     977: iconst_1
+     978: sipush        179
+     981: iconst_m1
+     982: iconst_1
+     983: newarray       int
+     985: dup
+     986: iconst_0
+     987: iconst_m1
+     988: iastore
+     989: aconst_null
+     990: aconst_null
+     991: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+     994: putstatic     #204                // Field SHEEP_SHEARER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+     997: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+    1000: dup
+    1001: aload_0
+    1002: bipush        16
+    1004: aaload
+    1005: bipush        20
+    1007: bipush        6
+    1009: iconst_1
+    1010: iconst_m1
+    1011: sipush        13716
+    1014: iconst_1
+    1015: newarray       int
+    1017: dup
+    1018: iconst_0
+    1019: iconst_m1
+    1020: iastore
+    1021: aconst_null
+    1022: aconst_null
+    1023: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+    1026: putstatic     #14                 // Field SHIELD_OF_ARRAV:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1029: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+    1032: dup
+    1033: aload_0
+    1034: bipush        13
+    1036: aaload
+    1037: bipush        21
+    1039: bipush        8
+    1041: iconst_3
+    1042: sipush        178
+    1045: iconst_m1
+    1046: iconst_1
+    1047: newarray       int
+    1049: dup
+    1050: iconst_0
+    1051: iconst_m1
+    1052: iastore
+    1053: aconst_null
+    1054: aconst_null
+    1055: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+    1058: putstatic     #172                // Field VAMPIRE_SLAYER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1061: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+    1064: dup
+    1065: aload_0
+    1066: bipush        26
+    1068: aaload
+    1069: bipush        22
+    1071: bipush        8
+    1073: iconst_3
+    1074: sipush        178
+    1077: iconst_m1
+    1078: iconst_1
+    1079: newarray       int
+    1081: dup
+    1082: iconst_0
+    1083: iconst_m1
+    1084: iastore
+    1085: aconst_null
+    1086: aconst_null
+    1087: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+    1090: putstatic     #313                // Field VAMPYRE_SLAYER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1093: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+    1096: dup
+    1097: aload_0
+    1098: bipush        21
+    1100: aaload
+    1101: bipush        23
+    1103: bipush        13
+    1105: iconst_1
+    1106: bipush        67
+    1108: iconst_m1
+    1109: iconst_1
+    1110: newarray       int
+    1112: dup
+    1113: iconst_0
+    1114: iconst_m1
+    1115: iastore
+    1116: aconst_null
+    1117: aconst_null
+    1118: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+    1121: putstatic     #114                // Field WITCHS_POTION:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1124: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+    1127: dup
+    1128: aload_0
+    1129: bipush        8
+    1131: aaload
+    1132: bipush        24
+    1134: sipush        154
+    1137: iconst_1
+    1138: iconst_m1
+    1139: sipush        8063
+    1142: iconst_1
+    1143: newarray       int
+    1145: dup
+    1146: iconst_0
+    1147: iconst_m1
+    1148: iastore
+    1149: aconst_null
+    1150: aconst_null
+    1151: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+    1154: putstatic     #208                // Field X_MARKS_THE_SPOT:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1157: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+    1160: dup
+    1161: aload_0
+    1162: bipush        9
+    1164: aaload
+    1165: bipush        25
+    1167: sipush        205
+    1170: iconst_1
+    1171: sipush        281
+    1174: iconst_m1
+    1175: iconst_1
+    1176: newarray       int
+    1178: dup
+    1179: iconst_0
+    1180: iconst_m1
+    1181: iastore
+    1182: aconst_null
+    1183: aconst_null
+    1184: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+    1187: putstatic     #379                // Field TUTORIAL_ISLAND:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1190: new           #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+    1193: dup
+    1194: aload_0
+    1195: bipush        12
+    1197: aaload
+    1198: bipush        26
+    1200: sipush        212
+    1203: iconst_1
+    1204: iconst_m1
+    1205: sipush        20106
+    1208: iconst_1
+    1209: newarray       int
+    1211: dup
+    1212: iconst_0
+    1213: iconst_m1
+    1214: iastore
+    1215: aconst_null
+    1216: aconst_null
+    1217: invokespecial #335                // Method "<init>":(Ljava/lang/String;IIIII[ILorg/dreambot/api/data/requirements/Requirement;Lorg/dreambot/api/data/requirements/Requirement;)V
+    1220: putstatic     #89                 // Field THE_IDES_OF_MILK:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1223: bipush        27
+    1225: anewarray     #3                  // class org/dreambot/api/methods/quest/book/FreeQuest
+    1228: dup
+    1229: iconst_0
+    1230: getstatic     #64                 // Field BELOW_ICE_MOUNTAIN:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1233: aastore
+    1234: dup
+    1235: iconst_1
+    1236: getstatic     #290                // Field BLACK_KNIGHTS_FORTRESS:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1239: aastore
+    1240: dup
+    1241: iconst_2
+    1242: getstatic     #125                // Field COOKS_ASSISTANT:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1245: aastore
+    1246: dup
+    1247: iconst_3
+    1248: getstatic     #188                // Field CORSAIR_CURSE:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1251: aastore
+    1252: dup
+    1253: iconst_4
+    1254: getstatic     #410                // Field THE_CORSAIR_CURSE:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1257: aastore
+    1258: dup
+    1259: iconst_5
+    1260: getstatic     #71                 // Field DEMON_SLAYER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1263: aastore
+    1264: dup
+    1265: bipush        6
+    1267: getstatic     #29                 // Field DORICS_QUEST:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1270: aastore
+    1271: dup
+    1272: bipush        7
+    1274: getstatic     #372                // Field DRAGON_SLAYER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1277: aastore
+    1278: dup
+    1279: bipush        8
+    1281: getstatic     #183                // Field DRAGON_SLAYER_I:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1284: aastore
+    1285: dup
+    1286: bipush        9
+    1288: getstatic     #347                // Field ERNEST_THE_CHICKEN:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1291: aastore
+    1292: dup
+    1293: bipush        10
+    1295: getstatic     #198                // Field GOBLIN_DIPLOMACY:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1298: aastore
+    1299: dup
+    1300: bipush        11
+    1302: getstatic     #221                // Field IMP_CATCHER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1305: aastore
+    1306: dup
+    1307: bipush        12
+    1309: getstatic     #373                // Field THE_KNIGHTS_SWORD:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1312: aastore
+    1313: dup
+    1314: bipush        13
+    1316: getstatic     #399                // Field MISTHALIN_MYSTERY:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1319: aastore
+    1320: dup
+    1321: bipush        14
+    1323: getstatic     #149                // Field PIRATES_TREASURE:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1326: aastore
+    1327: dup
+    1328: bipush        15
+    1330: getstatic     #192                // Field PRINCE_ALI_RESCUE:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1333: aastore
+    1334: dup
+    1335: bipush        16
+    1337: getstatic     #92                 // Field THE_RESTLESS_GHOST:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1340: aastore
+    1341: dup
+    1342: bipush        17
+    1344: getstatic     #130                // Field ROMEO_AND_JULIET:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1347: aastore
+    1348: dup
+    1349: bipush        18
+    1351: getstatic     #223                // Field RUNE_MYSTERIES:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1354: aastore
+    1355: dup
+    1356: bipush        19
+    1358: getstatic     #204                // Field SHEEP_SHEARER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1361: aastore
+    1362: dup
+    1363: bipush        20
+    1365: getstatic     #14                 // Field SHIELD_OF_ARRAV:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1368: aastore
+    1369: dup
+    1370: bipush        21
+    1372: getstatic     #172                // Field VAMPIRE_SLAYER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1375: aastore
+    1376: dup
+    1377: bipush        22
+    1379: getstatic     #313                // Field VAMPYRE_SLAYER:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1382: aastore
+    1383: dup
+    1384: bipush        23
+    1386: getstatic     #114                // Field WITCHS_POTION:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1389: aastore
+    1390: dup
+    1391: bipush        24
+    1393: getstatic     #208                // Field X_MARKS_THE_SPOT:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1396: aastore
+    1397: dup
+    1398: bipush        25
+    1400: getstatic     #379                // Field TUTORIAL_ISLAND:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1403: aastore
+    1404: dup
+    1405: bipush        26
+    1407: getstatic     #89                 // Field THE_IDES_OF_MILK:Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1410: aastore
+    1411: putstatic     #381                // Field "6":[Lorg/dreambot/api/methods/quest/book/FreeQuest;
+    1414: return
+
+  public static void 9(java.lang.String);
+    Code:
+       0: aload_0
+       1: putstatic     #49                 // Field "3":Ljava/lang/String;
+       4: return
+
+  public static java.lang.String 2();
+    Code:
+       0: getstatic     #49                 // Field "3":Ljava/lang/String;
+       3: areturn
+
+  private static java.lang.String a(byte[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: aload_0
+       3: arraylength
+       4: dup
+       5: istore_2
+       6: newarray       char
+       8: astore_3
+       9: iconst_0
+      10: istore        4
+      12: iload         4
+      14: iload_2
+      15: if_icmpge     178
+      18: sipush        255
+      21: aload_0
+      22: iload         4
+      24: baload
+      25: iand
+      26: dup
+      27: istore        5
+      29: sipush        192
+      32: if_icmpge     47
+      35: aload_3
+      36: iload_1
+      37: iinc          1, 1
+      40: iload         5
+      42: i2c
+      43: castore
+      44: goto          172
+      47: iload         5
+      49: sipush        224
+      52: if_icmpge     99
+      55: iload         5
+      57: bipush        31
+      59: iand
+      60: i2c
+      61: bipush        6
+      63: ishl
+      64: i2c
+      65: istore        6
+      67: aload_0
+      68: iinc          4, 1
+      71: iload         4
+      73: baload
+      74: istore        5
+      76: iload         6
+      78: iload         5
+      80: bipush        63
+      82: iand
+      83: i2c
+      84: ior
+      85: i2c
+      86: istore        6
+      88: aload_3
+      89: iload_1
+      90: iinc          1, 1
+      93: iload         6
+      95: castore
+      96: goto          172
+      99: iload         4
+     101: iload_2
+     102: iconst_2
+     103: isub
+     104: if_icmpge     172
+     107: iload         5
+     109: bipush        15
+     111: iand
+     112: i2c
+     113: bipush        12
+     115: ishl
+     116: i2c
+     117: istore        6
+     119: aload_0
+     120: iinc          4, 1
+     123: iload         4
+     125: baload
+     126: istore        5
+     128: iload         6
+     130: iload         5
+     132: bipush        63
+     134: iand
+     135: i2c
+     136: bipush        6
+     138: ishl
+     139: ior
+     140: i2c
+     141: istore        6
+     143: aload_0
+     144: iinc          4, 1
+     147: iload         4
+     149: baload
+     150: istore        5
+     152: iload         6
+     154: iload         5
+     156: bipush        63
+     158: iand
+     159: i2c
+     160: ior
+     161: i2c
+     162: istore        6
+     164: aload_3
+     165: iload_1
+     166: iinc          1, 1
+     169: iload         6
+     171: castore
+     172: iinc          4, 1
+     175: goto          12
+     178: new           #243                // class java/lang/String
+     181: dup
+     182: aload_3
+     183: iconst_0
+     184: iload_1
+     185: invokespecial #200                // Method java/lang/String."<init>":([CII)V
+     188: areturn
+}

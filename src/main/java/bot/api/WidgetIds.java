@@ -143,6 +143,13 @@ public final class WidgetIds {
     /** Quest points varp (DreamBot Quests.getQuestPoints, one-line read). */
     public static final int QUEST_POINTS_VARP = 101;
 
+    // -- Quest journal (group 399) --
+    /** Journal rows (DreamBot Quest.getParent() == 399 default;
+     * getChild() == 7 constant in all three books; per-quest rows in
+     * results/quest-table.txt). */
+    public static final int QUEST_GROUP = 399;
+    public static final int QUEST_LIST = 7;
+
     // -- Spellbooks (group 218, all books) --
     /** Spell widgets (DreamBot per-book getParent() == 218 for Normal,
      * Ancient, Lunar, Arceuus; == pinned home-teleport group).
