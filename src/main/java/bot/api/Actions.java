@@ -226,4 +226,19 @@ public final class Actions {
         click(new Point(at.getX(), at.getY()));
         return true;
     }
+
+    /** Click a widget button with an explicit option (quantity presets,
+     * switch actions, Cancel vs Collect). Game-only. */
+    public static boolean widget(Widget widget, String option) throws Exception {
+        if (widget == null || widget.isHidden() || option == null) {
+            return false;
+        }
+        install(widgetMenu(widget, option));
+        net.runelite.api.Point at = widget.getCanvasLocation();
+        if (at == null) {
+            return false;
+        }
+        click(new Point(at.getX(), at.getY()));
+        return true;
+    }
 }

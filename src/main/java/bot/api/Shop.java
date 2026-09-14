@@ -56,8 +56,7 @@ public final class Shop {
         }
         for (Widget w : root.getChildren()) {
             if (w != null && !w.isHidden() && w.getItemId() == id) {
-                return Actions.widgetMenu(w, option) != null
-                    && Actions.widget(w);
+                return Actions.widget(w, option);
             }
         }
         return false;
@@ -90,8 +89,7 @@ public final class Shop {
         }
         for (Widget w : root.getChildren()) {
             if (w != null && !w.isHidden() && w.getItemId() == id) {
-                return Actions.widgetMenu(w, option) != null
-                    && Actions.widget(w);
+                return Actions.widget(w, option);
             }
         }
         return false;

@@ -140,4 +140,18 @@ public final class WidgetIds {
      * Ancient, Lunar, Arceuus; == pinned home-teleport group).
      * Per-spell children + levels in results/spell-table.txt. */
     public static final int SPELL_GROUP = 218;
+
+    // -- World switcher (group 69; button 182,3) --
+    /** List root (DreamBot WorldHopper `0`; == WidgetInfo
+     * WORLD_SWITCHER_LIST, probe-verified) and sibling rows; sort headers
+     * (DreamBot hopWorld branches). */
+    public static final int WORLD_SWITCHER_GROUP = 69;
+    public static final int WORLD_SWITCHER_LIST = 18;
+    public static final int WORLD_SWITCHER_ROW_ALT = 17;
+    public static final int WORLD_SWITCHER_SORT_A = 23;
+    public static final int WORLD_SWITCHER_SORT_B = 24;
+    /** Switcher button (== WidgetInfo WORLD_SWITCHER_BUTTON,
+     * probe-verified). */
+    public static final int WORLD_SWITCHER_BUTTON_GROUP = 182;
+    public static final int WORLD_SWITCHER_BUTTON_CHILD = 3;
 }

@@ -41,3 +41,15 @@ Cross-checks: FAIRY_RING_TELEPORT_BUTTON (398, 26) == DreamBot
 FairyRings `5()`/`travelInterfaceOpen`. Shop (300) and smithing (312)
 have no DreamBot-side static ids (runtime-decrypted holders), so the
 probe is the only provenance — recorded as such in `WidgetIds`.
+
+Probe 3 (same method, 2026-09-11):
+
+WORLD_SWITCHER_BUTTON group=182 child=3
+WORLD_SWITCHER_LIST group=69 child=18
+LOGOUT_BUTTON group=182 child=6
+LOGIN_CLICK_TO_PLAY group=378 child=0
+
+Cross-checks: WORLD_SWITCHER_LIST (69, 18) == DreamBot WorldHopper
+`0()`; sibling rows [69, 17] and sort headers [69, 23]/[69, 24] appear
+in the hop branches. LOGOUT_BUTTON (182, 6) and the click-to-play
+screen (378, 0) back the `Login` driver.

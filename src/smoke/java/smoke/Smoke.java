@@ -40,6 +40,7 @@ import bot.api.Trade;
 import bot.api.Vars;
 import bot.api.WidgetIds;
 import bot.api.Widgets;
+import bot.api.Worlds;
 import bot.util.Calculations;
 import bot.util.Sleep;
 import bot.util.Timing;
@@ -287,6 +288,20 @@ public final class Smoke {
         check(!Login.login("user", null, 1000), "null pass rejected");
         check(!Login.login("", "", 1000), "empty creds rejected");
         check(!Login.logout(), "logout fails clean");
+
+        check(Worlds.current() == 0, "world default");
+        check(Worlds.all().isEmpty(), "no world list offline");
+        check(Worlds.get(301) == null, "unknown world missing");
+        check(Worlds.members().isEmpty() && Worlds.f2p().isEmpty(), "no world filters offline");
+        check(Worlds.pvp().isEmpty() && Worlds.highRisk().isEmpty(), "no pvp filters offline");
+        check(Worlds.byActivity("anything").isEmpty(), "no activity match offline");
+        check(Worlds.byActivity(null).isEmpty(), "null activity rejected");
+        check(Worlds.leastPopulated() == null, "no emptiest world");
+        check(WidgetIds.WORLD_SWITCHER_GROUP == 69 && WidgetIds.WORLD_SWITCHER_LIST == 18
+            && WidgetIds.WORLD_SWITCHER_BUTTON_GROUP == 182
+            && WidgetIds.WORLD_SWITCHER_BUTTON_CHILD == 3, "switcher ids");
+        check(!Worlds.isOpen(), "switcher closed");
+        check(!Worlds.hop(301), "hop fails clean");
 
         Area lumby = new Area(3215, 3215, 3230, 3230, 0);
         check(lumby.contains(new WorldPoint(3222, 3218, 0)), "area contains");

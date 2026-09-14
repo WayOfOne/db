@@ -286,6 +286,20 @@ server, no credential vault, no packet code.
   never logged). Credential rule added to `docs/writing-scripts.md`.
 - [x] `smokeTest` at 153 checks, all offline. Real login wants a live pass.
 
+## Phase 22 — World hopping (local scripts only)
+
+- [x] Mined DreamBot's `WorldHopper`/`Worlds` bytecode: switcher list
+  (69, 18), sibling rows (69, 17), sort headers (69, 23/24)
+  (`results/javap-c-db-hop.txt`); `WORLD_SWITCHER_LIST` (69, 18) and the
+  switcher/logout buttons probe-match the pinned API
+  (`results/widgetinfo-probe.txt`, probe 3).
+- [x] `Worlds` (list reads off `getWorldList`, members/f2p/pvp/high-risk/
+  activity filters, emptiest, switcher open, row-matched hop with the
+  row's own switch action). No `JSocket` server comms by design.
+- [x] `Actions.widget(widget, option)` overload (also un-warts `Shop`'s
+  double-install).
+- [x] `smokeTest` at 164 checks, all offline. Real hops want a live pass.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

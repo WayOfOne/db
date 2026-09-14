@@ -59,6 +59,7 @@ never cut for convenience on the core botting surface.
 | Quick prayers | `Prayers.quickChild/selectQuick` (mined slots, probe-matched root) | Covered (lookup offline; dispatch game-only) |
 | Envenom | `Combat.isEnvenomed/poisonValue` (varp-102 venom band per RL `POISON` scale) | Strong inference (smoke); needs a live pass |
 | Login | `Login` state/logged-in/login/logout (runtime credentials only) + launcher env auto-login | Covered fail-clean (smoke); real login needs a live pass |
+| Worlds | `Worlds` list reads, filters, emptiest, switcher open, row-matched hop (group 69 mined + probe-matched) | Covered (lookup offline; dispatch game-only); no `JSocket` by design |
 
 ## Widget-id provenance
 
@@ -80,10 +81,9 @@ Every flow built on them still wants one live pass.
   runs local scripts and nothing else.
 - Random-event *puzzle* solvers beyond dismiss/continue flows: DreamBot's
   own set is dismiss-shaped, and anything deeper stays out.
-- Still to implement (in scope, recon done): world hopping (`Worlds`
-  reads + switcher hop — group 69 mined, `WORLD_SWITCHER_LIST` (69, 18)
-  probe-matched) and the randoms framework (dismiss/continue/pin-at-runtime/
-  welcome/login-retry solvers — DreamBot's own set is dismiss-shaped).
+- Still to implement (in scope, recon done): the randoms framework
+  (dismiss/continue/pin-at-runtime/welcome/login-retry solvers —
+  DreamBot's own set is dismiss-shaped).
 - Deferred niche content (needs one live pass each): per-quest states
   (decrypted color map), bonds (no static ids and no pinned constants),
   Ruinous prayers (no DreamBot-side table), social mutations (friend
