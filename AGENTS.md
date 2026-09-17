@@ -40,6 +40,14 @@ payloads are stale: on 2026-09-09 `.cache\bin` holds one payload
 (`838b43e2b04f367b132c939dc2ae8abf`, 6702000 bytes). Never treat old hashes,
 old class names, or old payload counts as live values.
 
+> 2026-09-17 note: DreamBot announced shutdown on legal advice (forums);
+> the client is EOL as of September 2026 and `sdn.dreambot.org` no longer
+> responds. No further jar updates are expected — the fingerprints above
+> are final. `.cache\bin` payloads are fully encrypted blobs (magic
+> `41 7E 5F AB`, zero plaintext metadata); hash-to-script attribution is
+> Unknown, and payload contents are out of scope for this repo
+> (clean-room rule).
+
 ## Toolchain
 
 - JDK: Temurin 17.0.20.1 at `C:\Users\thewa\.jdks\temurin-17.0.20.1`

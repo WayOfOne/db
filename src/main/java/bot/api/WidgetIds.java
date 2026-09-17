@@ -143,6 +143,10 @@ public final class WidgetIds {
     /** Quest points varp (DreamBot Quests.getQuestPoints, one-line read). */
     public static final int QUEST_POINTS_VARP = 101;
 
+    // -- Music (group 239) --
+    /** Music-tab interface (DreamBot Music player widgets). */
+    public static final int MUSIC_GROUP = 239;
+
     // -- Quest journal (group 399) --
     /** Journal rows (DreamBot Quest.getParent() == 399 default;
      * getChild() == 7 constant in all three books; per-quest rows in

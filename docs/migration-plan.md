@@ -367,6 +367,19 @@ server, no credential vault, no packet code.
   difference), paint (covered by `ScriptOverlay`).
 - [x] `smokeTest` at 199 checks, all offline. Bus delivery wants a live pass.
 
+## Phase 27 — Script structure + favour + music (local scripts only)
+
+- [x] `TaskNode` (priority/accept/execute + best-node dispatch) and the
+  `bot.script.tree` framework (`Leaf`/`Branch`/`Root`/`TreeScript` with
+  tree-link propagation) mirroring DreamBot's contracts — additive, plain
+  `Script` subclasses keep working.
+- [x] `bot.util.Requirements` (skill/combat/QP/favour gates + all/any;
+  quest requirements stay out — verdicts uncalibrated).
+- [x] `Favour` (5 Arceuus houses, mined varbits, value + percent) and
+  `Music` (793-track `Song` unlock table mined; per-track playback stays
+  out — rows match decrypted titles, scripts click rows themselves).
+- [x] `smokeTest` at 217 checks, all offline.
+
 ## Phase 12 — Run-readiness (no live launch in this environment)
 
 - [x] Fixed the boot failure seen 2026-09-09: `run` passed a literal

@@ -13,6 +13,9 @@ never cut for convenience on the core botting surface.
 | DreamBot (`api/script`, `api/settings`) | Fork | Status |
 |---|---|---|
 | `AbstractScript`, `ScriptManifest` (start/loop/exit) | `bot.script.Script`, `ScriptManifest`, `ScriptRunner` | Covered (smoke) |
+| `TaskNode`, tree framework | `bot.script.TaskNode`, `bot.script.tree` (`Leaf`/`Branch`/`Root`/`TreeScript`) | Covered (smoke) |
+| Requirements | `bot.util.Requirements` (skill/combat/QP/favour/all/any) | Covered (smoke); quest reqs deferred (verdicts) |
+| Favour, music | `Favour` (5 houses), `Music.isUnlocked` + 793-track `Song` table | Covered (smoke); per-track play deferred (decrypted titles) |
 | `ScriptManager` (discovery, state) | `bot.script.ScriptLoader` (dir scan, per-jar loaders, reload/unload) | Covered (smoke) |
 | Listeners (chat/tick/xp/animation/spawns/menus/state/…) | `bot.script.listener.*` (22 contracts) + `bot.script.Events` bus fan-out, runner-wired | Covered (dispatch offline; delivery game-only); varp/pre-tick/spot/walk/decoded/HumanMouse omitted (no source) |
 | `Category`, `TaskNode`, frameworks, SDN deploy | — | Out (server scope) |

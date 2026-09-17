@@ -43,10 +43,18 @@ import bot.api.randoms.BankPinSolver;
 import bot.api.randoms.BreakSolver;
 import bot.api.randoms.Randoms;
 import bot.api.randoms.WelcomeSolver;
+import bot.api.Favour;
+import bot.api.Music;
+import bot.api.Song;
 import bot.api.WidgetIds;
 import bot.api.Widgets;
 import bot.api.Worlds;
 import bot.script.Events;
+import bot.script.TaskNode;
+import bot.script.tree.Branch;
+import bot.script.tree.Leaf;
+import bot.script.tree.TreeScript;
+import bot.util.Requirements;
 import bot.script.listener.BreakListener;
 import bot.script.listener.ChatListener;
 import bot.script.listener.ExperienceListener;
@@ -347,6 +355,47 @@ public final class Smoke {
         check(Quests.settingValue(null) == -1, "null quest unset");
         check(Quests.rowWidget(Quest.COOKS_ASSISTANT) == null, "no journal offline");
         check(Quests.rowColor(Quest.COOKS_ASSISTANT) == -1, "no row color offline");
+
+        TaskNode low = new TaskNode() {
+            @Override public boolean accept() { return true; }
+            @Override public int execute() { return 100; }
+        };
+        TaskNode high = new TaskNode() {
+            @Override public int priority() { return 5; }
+            @Override public boolean accept() { return true; }
+            @Override public int execute() { return 200; }
+        };
+        TaskNode never = new TaskNode() {
+            @Override public boolean accept() { return false; }
+            @Override public int execute() { return 300; }
+        };
+        check(TaskNode.run(java.util.List.of(low, high, never)) == 200, "priority task wins");
+        check(TaskNode.run(java.util.List.of(never)) == -1, "no task applies");
+
+        Leaf nap = new NapLeaf();
+        Branch day = new DayBranch();
+        day.addLeaves(nap);
+        TreeScript tree = new TreeScript() { };
+        tree.addBranches(day);
+        check(tree.onLoop() == 42, "tree runs first valid leaf");
+        check("DayBranch".equals(tree.getCurrentBranchName()), "branch name tracked");
+        check(nap.getParent() == day && nap.getTree() == tree, "leaf links wired");
+        tree.clear();
+        check(tree.onLoop() == 600, "cleared tree idles");
+
+        check(!Requirements.skill(net.runelite.api.Skill.ATTACK, 99).meets(), "skill gate closed");
+        check(Requirements.questPoints(0).meets(), "zero qp gate open");
+        check(!Requirements.combat(126).meets(), "combat gate closed");
+        check(Requirements.favour(Favour.House.HOSIDIUS, 0.0).meets(), "zero favour open");
+        check(Requirements.all().meets(), "empty all holds");
+        check(!Requirements.any().meets(), "empty any fails");
+        check(!Requirements.all(null).meets(), "null requirement fails");
+
+        check(Favour.percent(Favour.House.ARCEUUS) == 0.0, "favour default");
+        check(Favour.House.SHAYZIEN.varbit == 4894, "shayzien varbit mined");
+        check(!Music.isUnlocked(Song.ADVENTURE), "track locked offline");
+        check(Music.isUnlocked(null) == false, "null track locked");
+        check(Song.values().length == 793, "793 songs mined");
         check(!Diaries.finished(Diaries.Area.LUMBRIDGE_DRAYNOR, Diaries.Tier.EASY),
             "lumby easy unfinished");
         check(!Diaries.finished(null, Diaries.Tier.EASY), "null area unfinished");
@@ -578,6 +627,15 @@ public final class Smoke {
         };
         return (ItemContainer) Proxy.newProxyInstance(
             Smoke.class.getClassLoader(), new Class<?>[] { ItemContainer.class }, h);
+    }
+
+    private static final class NapLeaf extends Leaf {
+        @Override public boolean isValid() { return true; }
+        @Override public int onLoop() { return 42; }
+    }
+
+    private static final class DayBranch extends Branch {
+        @Override public boolean isValid() { return true; }
     }
 
     private static net.runelite.api.events.ChatMessage chatLine(

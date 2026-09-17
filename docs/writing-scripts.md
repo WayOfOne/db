@@ -67,6 +67,9 @@ Three rules, no exceptions:
 5. **Events beat polling.** Implement `bot.script.listener.*` interfaces
    (`ChatListener`, `GameTickListener`, `ExperienceListener`, …) instead
    of re-checking state every loop — the runner wires them for free.
+6. **Structure big scripts.** `TaskNode` (priority/accept/execute) for
+   flat priority lists, `bot.script.tree.TreeScript` for behavior trees,
+   `bot.util.Requirements` for prerequisites.
 
 ## What a script can see and do (`bot.api`)
 
