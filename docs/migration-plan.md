@@ -88,16 +88,22 @@ jar hash) and lands in `tools/` with compiled output under `tools/classes/`.
 
 ## Phase 3 — Resolve the NOT VERIFIED list (no scope creep)
 
-Decisive experiments only, each with a stop condition:
+Decisive experiments only, each with a stop condition
+(outcomes 2026-09-18 in `results/deob-remap-2026-09-18.md`):
 
-1. `aar -> 406` rewrite: before/after `ClassNode` dump of runtime `aar`.
-2. `40o.2` rule table: decrypted suffix + replacement strings, or observed
-   path-in/path-out pairs from a disposable profile.
-3. `4kY` id-file path: decrypted property/filename or observed file access.
-4. `P2P Master AI` payload: before/after `.cache\bin` inventory + classloader
-   code-source correlation across two disposable profiles.
-5. Live request framing: sanitized local instrumentation (lengths/hashes,
-   offsets, ordering) — never credentials, tokens, or full identifiers.
+1. `aar -> 406` rewrite: module `0Y` (name `cache`) + `406` target confirmed
+   statically; runtime before/after `ClassNode` dump still open.
+2. `40o.2` rule table: DONE — decrypted suffix + replacement strings offline
+   (`xtea` rule; `random.dat`/`preferences` via `40o.7`; callers `406`/`4zF`).
+3. `4kY` id-file path: inputs (`user.home`, `.jid`) + fallback constants +
+   build-constant `7` mapped; exact subdir/filename Unknown (runtime salt,
+   reflective-only invocation) — stopped per identity-tooling boundary
+   (map, don't execute).
+4. `P2P Master AI` payload: unchanged — SDN dead since 2026-08-31, key
+   server-side only (see sdn-payload-decrypt session).
+5. Live request framing: static ceiling recorded (`dd` form fields, RSA pair,
+   server markers); sanitized-trace experiment still open — never
+   credentials, tokens, or full identifiers.
 
 Mark anything blocked by encryption-without-key, credential exposure, or
 server-side unobservability as Unknown and stop.

@@ -106,6 +106,7 @@ there is nothing to copy, only specs to reimplement:
 | `Call40o.java` | Offline probe of path-mapper `40o.2(String)` |
 | `TransformProbe.java` | Offline ASM before/after probe (needs `asm-8.0.1.jar` + `asm-tree-8.0.1.jar` from `repository2/`) |
 | `FileProbe.java` | Payload size, magic bytes, SHA-256, printable strings — never executes cached scripts |
+| `BootParse.java` + `IndyDecrypt.java` | Layer-1 string recovery without running client logic: ASM-parse invokedynamic callsites, then invoke the class's own private `(int,long)->String` decryptor with bytecode-derived args (method: `results/deob-remap-2026-09-18.md`; sources live in the `sdn-payload-decrypt` skill's `tools/`) |
 
 Repeatable commands:
 
