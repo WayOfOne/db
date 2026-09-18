@@ -79,16 +79,29 @@ sweep found no plaintext `random.dat`/`me.aw`/`jl.ab` (only unrelated
 | `org.dreambot.404` | `HttpClient` + `WebSocket` + `BlockingQueue<String>` + `Gson`; `9x` envelope -> `toJson` -> `offer` -> `take` -> `sendText`; `buildAsync` with config headers | Confirmed static |
 | `4z_` vs `random.dat` | Separate flows: `4z_`->`9x`->JSON->DreamBot WebSocket vs `me.aw`->`jl.ab`->`dd/gy`->RSA->client web request | Confirmed static |
 
-## 5. Script-loader / SDN map (`BotData\client.jar` + `.cache`)
+## 5. Script-loader / SDN map (`dreambot-client.jar` + `.cache`)
+
+Re-derived 2026-09-17 against the macOS install (`~/DreamBot/...`; this build
+has no `BotData\client.jar` — the SDN loader lives in `dreambot-client.jar`,
+sha256 `66036CB5…0882A`). Full evidence: `results/sdn-payload-decrypt-2026-09-17.md`;
+procedure: `.agents/skills/sdn-payload-decrypt/SKILL.md`. Names `4_M`, `4_W`,
+`4cs` are per-build — re-derive via the skill's anchor chain.
 
 | Item | Meaning | Status |
 |---|---|---|
-| `scripts.dat` | Line-separated catalog; contains `P2P Master AI` (full list re-verified 2026-09-09, 46 names) | Confirmed static |
-| `.cache\bin\<hash>` | Opaque payload(s), no `.jar` extension, no `PK` magic at last inspection; count varies (5 then, 1 now) | Unknown (format + mapping) |
-| `LocalLoader` -> `8Q` ([DRIFT] was `9O9`; absent from all jars) | Local discovery/reload/clear; temp-file copies + suffix-matched dir scan into `URLClassLoader` (suffix decrypted) | Confirmed static |
-| `NetworkLoader` -> `3Z` ([DRIFT] was `9OT`) | Free/premium catalog retrieval + mode feature gate | Confirmed static |
-| `ScriptManager` | Discovered lists + current script state, calls local loader | Confirmed static |
-| `P2P Master AI` payload hash | Which `.cache\bin` file (if any) is this script | Unknown (needs before/after inventory + classloader code-source correlation x2 profiles) |
+| `scripts.dat` | Line-separated catalog; contains `P2P Master AI` (48 names on 2026-09-17); plaintext, no keys | Confirmed static |
+| `.cache/bin/<hash>` | Per-script encrypted payload: `[16-byte IV][AES-CBC/PKCS5Padding body]`; one file on 2026-09-17: `838b43e2…` 7,237,888 B, sha256 `d9a5971e…` | Confirmed static (format) |
+| Layer 1 string crypto | Per-class: `a:J = x.a(JJ,lookupClass).a(J)`; key long = `a:J ^ const`; DES/CBC/PKCS5, zero IV, BE key bytes; ciphertext in `String[] b/c`; INDY `(int,long)` callsites; `Object[]`-packed reflectively dispatched methods | Confirmed static + runtime |
+| Derived key longs (this build) | ScriptManager `89269067584905`, `4_M` a:J `50324244270421`, `4cs` a:J `131601469286517` | Confirmed runtime |
+| `4_M` ([DRIFT] supersedes `8Q`/`9O9` for this install) | Script loader: MD5 file hashes (Tink `Hex.encode`), decrypted strings `-script.tmp`/`libs`/`scripts.path`/`.jar`/`SHA-1`/`.class`/`db-`, `402` URLClassLoader, local jar scan | Confirmed static |
+| `4_W` | SDN list/accounts crypto: embedded **cleartext Tink keyset** (108 B, md5 `720af153…`) → static `Aead`; list JSON decrypted with AD = 4-byte BE int; also wraps `accounts.db` (do not touch) | Confirmed static + runtime |
+| `4cs` | In-memory script classloader: `4cs(long salt, byte[] jarBytes)` wraps decrypted bytes in `JarInputStream`; `HashMap<String,byte[]>` entries; `defineClass` | Confirmed static |
+| `4cs.5` | Payload decryptor: `l3 = a:J ^ salt`; IV = `data[0:16]`; key = `Base64.decode(keyString)`; `AES/CBC/PKCS5Padding` (16-byte IV; name INDY-decrypted); reflective dispatch, exceptions swallowed | Confirmed static (cipher name Strong inference) |
+| Per-script AES key + salt | Delivered only inside the authenticated SDN list response (layer 2); **not on disk**. Capture via `sdn-capture-agent` during a normal session, then `SdnFinish` replays offline | Unknown offline / Confirmed runtime (agent) |
+| Filename vs payload | Same 32-hex filename on Mac (7.2 MB, Aug 27) and Windows (6.7 MB, Sep 9) with different content → revision-stable, derived from server-side script identity; disproven: MD5(ciphertext), MD5(plaintext), MD5(name variants) | Unknown (identity input) |
+| Decrypted jar temp file | `4_M.2g` writes plaintext jar via `File.createTempFile("db-", "-script.tmp")` to `java.io.tmpdir` on every script load; survives crash/kill, removed on clean exit + macOS 3-day purge (Mac copies gone; Windows `%TEMP%` unchecked) | Confirmed static |
+| SDN service | DEAD since 2026-08-31 ~22:07 per mac client log (last list refresh 22:05:34); no future key delivery or live capture | Confirmed (log evidence) |
+| `P2P Master AI` payload hash | `.cache/bin/838b43e2b04f367b132c939dc2ae8abf` is the only payload and predates this analysis; script↔payload mapping needs a capture-time correlation | Strong inference |
 
 ## 6. Data-flow summary (do not merge branches without observed copies)
 
